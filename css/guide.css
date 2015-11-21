@@ -1,0 +1,314 @@
+/* Century Schoolbook font is very similar to Computer Modern Math: cmmi */
+.MATH    { font-family: "Century Schoolbook", serif; }
+.MATH I  { font-family: "Century Schoolbook", serif; font-style: italic }
+.BOLDMATH { font-family: "Century Schoolbook", serif; font-weight: bold }
+
+/* implement both fixed-size and relative sizes */
+SMALL.XTINY     { font-size : xx-small }
+SMALL.TINY      { font-size : x-small  }
+SMALL.SCRIPTSIZE    { font-size : smaller  }
+SMALL.FOOTNOTESIZE  { font-size : small    }
+SMALL.SMALL     {  }
+BIG.LARGE       {  }
+BIG.XLARGE      { font-size : large    }
+BIG.XXLARGE     { font-size : x-large  }
+BIG.HUGE        { font-size : larger   }
+BIG.XHUGE       { font-size : xx-large }
+
+/* mathematics styles */
+DIV.displaymath     { } /* math displays */
+TD.eqno         { } /* equation-number cells */
+
+/* document-specific styles come next */
+DIV.navigation      {   }
+DIV.center      {   }
+PRE.preform     {   }
+SPAN.arabic     {   }
+SPAN.textit     { font-style: italic  }
+SPAN.textbf     { font-weight: bold  }
+
+
+/*** blackarch related here ***/
+body {
+  font: 80% Arial, Helvetica, Sans-Serif;
+  color: #ffffff;
+  background: #000000;
+  line-height: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: #C40000;
+}
+
+a:hover {
+  color: #808080;
+}
+
+a:focus {
+  outline: 0;
+}
+
+h1 {
+  color: #c40000;
+  font: bold 180% Arial, Sans-Serif;
+  letter-spacing: -1px;
+  padding: 0;
+  margin: 0 0 0px;
+}
+
+h2 {
+  color: #c40000;
+  font: bold 140% Arial, Sans-Serif;
+  letter-spacing: -1px;
+  padding: 0;
+  margin: 0 0 0px;
+}
+
+h3 {
+  text-decoration: none;
+  color: #C40000;
+  font: bold 130% Arial, Sans-Serif;
+  letter-spacing: -1px;
+  padding: 0;
+  margin: 0 0 0px;
+}
+
+h4 {
+  color: #f4f4f4;
+  font: bold 120% Arial, Sans-Serif;
+  letter-spacing: -1px;
+  padding: 0;
+  margin: 0 0 0px;
+}
+
+d {
+  float: right;
+  font: Arial, Sans-Serif;
+  font-size: .8em;
+}
+
+img {
+  border: 0;
+}
+
+.grey {
+  color: #565656;
+}
+
+div.box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 7px;
+  font-size: .9em;
+  background: #f4f4f4;
+}
+
+code {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000000;
+  padding: 1px 3px; -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#cfont {
+  font-size: .8em;
+  font-family: Pragmata, Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono',
+  Consolas, 'Everson Mono', 'Lucida Console', 'Andale Mono', 'Nimbus Mono L',
+  'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier',
+  monospace;
+}
+
+#cfont_tab {
+  color: #888888;
+  font-family: Pragmata, Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono',
+  Consolas, 'Everson Mono', 'Lucida Console', 'Andale Mono', 'Nimbus Mono L',
+  'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier',
+  monospace;
+}
+
+#wrap {
+  width: 95%;
+  margin: 10px auto 0;
+}
+
+#logo {
+  float: left;
+  padding-top: 12px;
+  width: 100px;
+  background: url("../images/logo.png") center left no-repeat;
+  margin: 0 0 7px;
+}
+
+#header_top {
+  color: #454545;
+  clear: both;
+  height: 74px;
+}
+
+#header_top p {
+  padding: 0;
+  margin: 0;
+}
+
+#header_top ul {
+  float: right;
+  padding: 15px 0 0 0;
+  margin: 0 0 10px 0;
+}
+
+#header_top ul li {
+  list-style-type: none;
+  display: inline;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#header_top ul li a {
+  padding-left: 7px;
+  margin-right: 5px;
+  color: #C40000;
+}
+
+#header_top ul li a:hover {
+  padding-left: 7px;
+  margin-right: 5px;
+  color: #808080;
+}
+
+#header_bottom {
+  background: #454545;
+  color: #EBEBEB;
+  padding: 20px 240px 20px 10px;
+  clear: both;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  margin: 0 0 1px 0;
+  height: 190px;
+}
+
+#header_bottom h2 {
+  color: #F3F2BF;
+  width: 400px;
+  margin: 0 0 10px;
+  background: #454545;
+}
+
+#header_bottom p a {
+  color: #808080;
+}
+
+#header_bottom p a:hover {
+  color: #C40000;
+}
+
+#header_search {
+  background: #454545;
+  color: #EBEBEB;
+  padding: 60px 240px 20px 20px;
+  clear: both;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  margin: 0 0 1px 0;
+  height: 70px;
+}
+
+#bar {
+  clear: left;
+  width: 100%;
+  border-top: 2px solid #C40000;
+  margin: 0;
+  padding: 5px 0 0 0;
+}
+
+#maincontent {
+  padding: 20px 0;
+  clear: both;
+  color: #ffffff;
+}
+
+#left {
+  float: left;
+  width: 700px;
+  padding: 5px 15px 0 5px;
+  margin: 0 0 25px 0;
+}
+
+#left p {
+  margin: 0 0 15px;
+}
+
+#right {
+  width: 300px;
+  float: right;
+}
+
+#applink {
+  float: right;
+}
+
+#info {
+  border: 1px solid #ccc;
+  padding: 7px;
+  font-size: .9em;
+  background: #000000;
+}
+
+#info b {
+  font-size: 1.6em;
+}
+
+#dl_body {
+  border: 1px solid #ccc;
+  padding: 7px;
+  background: #000000;
+  color: #ffffff;
+}
+
+#footer {
+  clear: both;
+  padding: 10px;
+  margin: 10px 0 0 0;
+  border-top: 1px solid #ccc;
+  line-height: 2em;
+  text-align: center;
+}
+
+#tbl-minimalist {
+  font: Arial, Sans-Serif;
+  font-size: 11px;
+  background: #000000;
+  margin: 20px;
+  width: 95%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+#tbl-minimalist th {
+  font-size: 11.5px;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding: 4px 15px;
+  border-bottom: 2px solid #C40000;
+}
+
+#tbl-minimalist td {
+  border-bottom: 1px solid #ccc;
+  color: #ffffff;
+  padding: 2px 2px;
+}
+
+#tbl-minimalist tbody tr:hover td {
+  color: #C40000;
+}
+
+tt {
+  font: 100% Arial, Sans-Serif;
+}
+
+pre {
+  color: #aaaaaa;
+  font-size: 11px;
+}
