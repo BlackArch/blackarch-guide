@@ -89,8 +89,17 @@ menucolor=red, pagecolor=red, urlcolor=red}
 
 \chapter{Introduction}
 
+\section{Overview}
+The BlackArch Linux guide is divided into four chapters:
+\begin{enumerate}
+\item Introduction - covers an overview, introduction and further information
+\item User Guide - covers all necessary parts for users
+\item Developer Guide - covers all necessary parts for developers
+\item Tools Guide - covers tool definitions along example usages
+\end{enumerate}
+
 \section{What is BlackArch Linux?}
-\href{http://www.blackarch.org}{BlackArch Linux} is a lightweight expansion to
+\href{https://www.blackarch.org}{BlackArch Linux} is a lightweight expansion to
 Arch Linux for penetration testers.
 \\\\
 The toolset is distributed as an Arch Linux
@@ -99,20 +108,20 @@ The toolset is distributed as an Arch Linux
 existing Arch Linux installation. Packages may be installed individually or by
 category.
 \\\\
-We currently have over 650 tools in our toolset and the repository is constantly
-expanding. All tools are thoroughly tested before being added to the codebase to
-maintain the quality of the repository.
+We currently have over 1300 tools in our toolset and the repository is
+constantly expanding. All tools are thoroughly tested before being added to the
+codebase to maintain the quality of the repository.
 
-%\section{The story of BlackArch Linux}
-%foo bar
+\section{History of BlackArch Linux}
+Coming soon...
 
-%\section{Supported platforms}
-%foo bar
+\section{Supported platforms}
+Coming soon...
 
 \section{Get involved}
 You can get in touch with the BlackArch team. Just check out the following:
 \\\\
-Web: \url{http://www.blackarch.org/}
+Web: \url{https://www.blackarch.org/}
 \\\\
 Mail: \href{mailto:blackarchlinux@gmail.com}{blackarchlinux@gmail.com}
 \\\\
@@ -129,50 +138,27 @@ binary packages as well as compiling and installing from sources.
 \\\\
 BlackArch is compatible with normal Arch installations. It acts as an unofficial
 user repository. If you want an ISO instead, see the
-\href{http://www.blackarch.org/download.html#iso}{Live ISO} section.
+\href{https://www.blackarch.org/downloads.html#iso}{Live ISO} section.
 \\\\
 
-\subsection{Setting up repository}
-There are 6 steps in order to setup and use the BlackArch repository
-successfully. You must follow the instuctions in order. Do not add
-\textbf{blackarch} to your \textit{pacman.conf} file without following steps 0
-to 2 first.
-\begin{enumerate}
-\item If you have installed BlackArch before and there is an existing
-\textbf{[blackarch]} entry in \textit{/etc/pacman.conf}, remove or comment out
-the entry and run \textit{pacman -Syy}.
-\item Run the following as root. This is for package signing.
+\subsection{Installing on top of ArchLinux}
+Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
+instructions. See the following example.
 {\small
 \color{gray}
 \begin{verbatim}
-wget -q http://blackarch.org/keyring/blackarch-keyring.pkg.tar.xz{,.sig}
-gpg --keyserver hkp://pgp.mit.edu --recv 4345771566D76038C7FEB43863EC0ADBEA87E4E3
-gpg --keyserver-o no-auto-key-retrieve --with-f blackarch-keyring.pkg.tar.xz.sig
-pacman-key --init
-rm blackarch-keyring.pkg.tar.xz.sig
-pacman --noc -U blackarch-keyring.pkg.tar.xz
+$ curl -k -O https://blackarch.org/strap.sh
+$ sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+$ sudo ./strap.sh
 \end{verbatim}
 }
-\item If possible, please verify the signing key's fingerprint against as many
-sources as possible.
-\item Append the following lines to your /etc/pacman.conf file:
+Now download a fresh copy of the master package list and synchronize packages:
 {\small
 \color{gray}
 \begin{verbatim}
-[blackarch]
-Server = <mirror_site>/$repo/os/$arch
+$ sudo pacman -Syyu
 \end{verbatim}
 }
-Replace \textit{\textless mirror\_site\textgreater} with a mirror site of your
-choosing. Please use one of our official mirrors.
-\item Now run:
-{\small
-\color{gray}
-\begin{verbatim}
-# pacman -Syyu
-\end{verbatim}
-}
-\end{enumerate}
 
 \subsection{Installing packages}
 You may now install tools from the blackarch repository.
@@ -283,7 +269,7 @@ $ blackman -p category
 
 \subsection{Installing from live-, netinstall- ISO or ArchLinux}
 You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
-\url{http://www.blackarch.org/download.html#iso}. The following steps are
+\url{https://www.blackarch.org/download.html#iso}. The following steps are
 required after the ISO boot up.
 \begin{itemize}
 \item Install blackarch-install-scripts package:
@@ -810,6 +796,14 @@ AUTHORS section of BlackArch guide.
 \subsection{General tips}
 \href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
 errors.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Tools Guide}
+Coming soon...
+
+\section{TBD}
+Coming soon...
 
 %%% APPENDIX %%%
 \appendix
