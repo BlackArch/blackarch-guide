@@ -99,8 +99,10 @@ The BlackArch Linux guide is divided into four chapters:
 \end{enumerate}
 
 \section{What is BlackArch Linux?}
-\href{https://www.blackarch.org}{BlackArch Linux} is a lightweight expansion to
-Arch Linux for penetration testers.
+BlackArch Linux is an \href{https://www.archlinux.org/}{ArchLinux}-based
+distribution for penetration testers and security researchers. You can install
+tools individually or in groups. BlackArch Linux is compatible with
+existing Arch installs.
 \\\\
 The toolset is distributed as an Arch Linux
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
@@ -108,9 +110,10 @@ The toolset is distributed as an Arch Linux
 existing Arch Linux installation. Packages may be installed individually or by
 category.
 \\\\
-We currently have over 1300 tools in our toolset and the repository is
-constantly expanding. All tools are thoroughly tested before being added to the
-codebase to maintain the quality of the repository.
+We currently have over \href{https://www.blackarch.org/tools.html}{1300} tools
+in our toolset and the repository is constantly expanding. All tools are
+thoroughly tested before being added to the codebase to maintain the quality of
+the repository.
 
 \section{History of BlackArch Linux}
 Coming soon...
@@ -121,11 +124,15 @@ Coming soon...
 \section{Get involved}
 You can get in touch with the BlackArch team. Just check out the following:
 \\\\
-Web: \url{https://www.blackarch.org/}
+Website: \url{https://www.blackarch.org/}
 \\\\
 Mail: \href{mailto:blackarchlinux@gmail.com}{blackarchlinux@gmail.com}
 \\\\
 IRC: \url{irc://irc.freenode.net/blackarch}
+\\\\
+Twitter: \url{https://twitter.com/blackarchlinux}
+\\\\
+Github: \url{https://github.com/Blackarch/}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -294,341 +301,334 @@ $ sudo blackarch-install
 
 \section{Arch's Build System and Repositories}
 
-PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a package. PKGBUILD files
-are written in Bash.
+PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
+package. PKGBUILD files are written in Bash.
 
 For more information, read (or skim through) the following:
 \begin{itemize}
-	\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
-	\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
-	\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
-	\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
 \end{itemize}
 
 \section{Blackarch PKGBUILD standards}
-
-For the sake of simplicity, our PKGBUILDs are similar to that of the AUR ones, with a few small differences that I will outline below. Every package must belond to blackarch at the minimum, there will also be a lot of crossover with multiple packages belonging to multiple groups.
+For the sake of simplicity, our PKGBUILDs are similar to that of the AUR ones,
+with a few small differences that I will outline below. Every package must
+belond to blackarch at the minimum, there will also be a lot of crossover with
+multiple packages belonging to multiple groups.
 
 \subsection{Groups}
-
-To allow users to install a specific range of packages quickly and easily, we have separated our packages into groups. These groups allow users to simple go "pacman -S <group name>" in order to pull a lot of packages.
+To allow users to install a specific range of packages quickly and easily,
+we have separated our packages into groups. These groups allow users to simple
+go "pacman -S <group name>" in order to pull a lot of packages.
 
 \subsubsection{blackarch}
-
-The blackarch group is what every package must be included in along with its relevant group, to allow users to install every package very easily.
+The blackarch group is what every package must be included in along with its
+relevant group, to allow users to install every package very easily.
 
 What should be in here: Everything.
 
 \subsubsection{blackarch-anti-forensic}
-
-This group is for packages that are used for countering forensic activities, such as encryption, steganography, anything that modifies files/file attributes, or just anything that makes changes to the system for the purposes of hiding information.
+This group is for packages that are used for countering forensic activities,
+such as encryption, steganography, anything that modifies files/file attributes,
+or just anything that makes changes to the system for the purposes of hiding
+information.
 
 Examples: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 
 \subsubsection{blackarch-automation}
-
-This group is for packages that are used for automating anything. Should be fairly self-explanatory.
+This group is for packages that are used for automating anything. Should be
+fairly self-explanatory.
 
 Examples: blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
-
-This group is for packages that exploit or open backdoors on already vulnerable systems. Again should be reasonably self-explanatory.
+This group is for packages that exploit or open backdoors on already vulnerable
+systems. Again should be reasonably self-explanatory.
 
 Examples: backdoor-factory, rrs, weevely
 
 \subsubsection{blackarch-binary}
-
 This group is for packages that operate on binary files in one form or another.
 
 Examples: binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
-
-This group is for any packages that exploits anything to do with the Bluetooth standard (802.15.1).
+This group is for any packages that exploits anything to do with the Bluetooth
+standard (802.15.1).
 
 Examples: ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
-
-This group is for any packages that audit existing source code for vulnerability analysis.
+This group is for any packages that audit existing source code for vulnerability
+analysis.
 
 Examples: flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
-
-This group is for any packages that is used for cracking any kind of cryptographic function, ie hashes.
+This group is for any packages that is used for cracking any kind of
+cryptographic function, ie hashes.
 
 Examples: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
-
-This group is for any packages that is to do with cryptography, be it cracking or analysis or anything.
+This group is for any packages that is to do with cryptography, be it cracking
+or analysis or anything.
 
 Examples: ciphertest, xortool, sbd
 
 \subsubsection{blackarch-database}
-
-This group is for any packages that involve some kind of database exploitation on any level.
+This group is for any packages that involve some kind of database exploitation
+on any level.
 
 Examples: metacoretex, blindsql
 
 \subsubsection{blackarch-debugger}
-
-This group is for packages that allow the user to view what a particular program is "doing" as it runs its instructions.
+This group is for packages that allow the user to view what a particular program
+is "doing" as it runs its instructions.
 
 Examples: radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
-
-This group is for packages that attempt to reverse a compiled program into bare source code.
+This group is for packages that attempt to reverse a compiled program into bare
+source code.
 
 Examples: flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
-
-This group is for any packages that are used to protect a user from malware \& attacks from other users.
+This group is for any packages that are used to protect a user from malware \&
+attacks from other users.
 
 Examples: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
-
-This group is similar to blackarch-decompiler, and there will probably be a lot of programs that fall into both, however these packages produce assembly output rather than the raw source code.
+This group is similar to blackarch-decompiler, and there will probably be a lot
+of programs that fall into both, however these packages produce assembly output
+rather than the raw source code.
 
 Examples: inguma, radare2
 
 \subsubsection{blackarch-dos}
-
 This group is for packages that use DoS (Denial of Service) attacks.
 
 Examples: 42zip, nkiller2
 
 \subsubsection{blackarch-drone}
-
-This group is for packages that are used for managing physical engineered drones.
+This group is for packages that are used for managing physical engineered
+drones.
 
 Examples: meshdeck, skyjack
 
 \subsubsection{blackarch-exploitation}
-
-This group is for any packages that takes advantages of exploits in other programs or services.
+This group is for any packages that takes advantages of exploits in other
+programs or services.
 
 Examples: armitage, metasploit, zarp
 
 \subsubsection{blackarch-fingerprint}
-
 This group is for any packages that exploit fingerprint biometric equipment.
 
 Examples: dns-map, p0f, httprint
 
 \subsubsection{blackarch-firmware}
-
 This group is for any packages that exploit vulnerabilities in firmware
 
 Examples: None yet, amend asap.
 
 \subsubsection{blackarch-forensic}
-
-This group is for any packages that are used to find data using on physical disks or embedded memory.
+This group is for any packages that are used to find data using on physical
+disks or embedded memory.
 
 Examples: aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
-
-This group is for any packages that use the fuzz testing principle, ie "throwing" random inputs at the subject to see what happens.
+This group is for any packages that use the fuzz testing principle, ie
+"throwing" random inputs at the subject to see what happens.
 
 Examples: msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
-
-This group is for any packages that exploit or manage anything to do with physical hardware.
+This group is for any packages that exploit or manage anything to do with
+physical hardware.
 
 Examples: arduino, smali
 
 \subsubsection{blackarch-honeypot}
-
-This group is for packages that act as "honeypots", ie programs that appear to be vulnerable services used to attract hackers into a trap.
+This group is for packages that act as "honeypots", ie programs that appear to
+be vulnerable services used to attract hackers into a trap.
 
 Examples: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
-
 This group is for packages that record and retain keystrokes on another system.
 
 Examples: None yet, amend asap.
 
 \subsubsection{blackarch-malware}
-
-This group is for packages that count as any type of malicious software or malware detection.
+This group is for packages that count as any type of malicious software or
+malware detection.
 
 Examples: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-
 This group is for packages that don't particularly fit into any categories.
 
 Examples: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-
 This group is for packages that manipulate mobile platforms.
 
 Examples: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
-
-This group is for any package that involes IP networking at any point for any reason.
+This group is for any package that involes IP networking at any point for any
+reason.
 
 Examples: Anything pretty much
 
 \subsubsection{blackarch-nfc}
-
-This group is for any package that uses nfc (near-field communications) at any point for any reason.
+This group is for any package that uses nfc (near-field communications) at any
+point for any reason.
 
 Examples: nfcutils
 
 \subsubsection{blackarch-packer}
-
-This group is for any packages that operate on or invlve packers, packers being programs that embed malware within other executables.
+This group is for any packages that operate on or invlve packers, packers being
+programs that embed malware within other executables.
 
 Examples: packerid
 
 \subsubsection{blackarch-proxy}
-
-This group is for any package that acts as a proxy, ie redirecting traffic through another node on the internet.
+This group is for any package that acts as a proxy, ie redirecting traffic
+through another node on the internet.
 
 Examples: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-
-This group is for any package that actively seeks vulnerable exploits in the wild. More of an umbrella group for similar packages.
+This group is for any package that actively seeks vulnerable exploits in the
+wild. More of an umbrella group for similar packages.
 
 Examples: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
-
-This group is for any package that acts as an umbrella group for any decompiler, disassembler or any similar program.
+This group is for any package that acts as an umbrella group for any decompiler,
+disassembler or any similar program.
 
 Examples: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
-
 This group is for packages that scan selected systems for vulnerabilities.
 
 Examples: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
-
 This group is for any package that involve analyzing network traffic.
 
 Examples: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
-
 This group is for any package that attacks social networking sites primarily.
 
 Examples: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-
-This group is for any package that attempts to spoof the attacker such, in that the attacker doesn't show up as an attacker to the victim.
+This group is for any package that attempts to spoof the attacker such, in that
+the attacker doesn't show up as an attacker to the victim.
 
 Examples: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-
-This group is for any package that would be used for reporting/recording the threat model outlined in a particular scenario.
+This group is for any package that would be used for reporting/recording the
+threat model outlined in a particular scenario.
 
 Examples: magictree
 
 \subsubsection{blackarch-tunnel}
-
-This group is for packages that are used to tunnel network traffic on a given network.
+This group is for packages that are used to tunnel network traffic on a given
+network.
 
 Examples: ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-
-This group is for any package that is used to extract pre-packed malware from an executable.
+This group is for any package that is used to extract pre-packed malware from an
+executable.
 
 Examples: js-beautify
 
 \subsubsection{blackarch-voip}
-
 This group is for packages that operate on voip programs and protocols.
 
 Examples: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-
 This group is for packages that operate on internet-facing applications.
 
 Examples: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-
 This groups is for any native Windows package that runs via wine.
 
 Examples: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-
-iThis group is for any package that operates on wireless networks on any level.
+This group is for any package that operates on wireless networks on any level.
 
 Examples: airpwn, mdk3, wiffy
 
 \section{Repository structure}
-
 You can find the main BlackArch git repo here:
-\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}. There are
-also several secondary repos here:
+\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
+There are also several secondary repos here:
 \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
 Within the main git repo, there are three important directories:
 
 \begin{itemize}
-	\item docs - Documentation.
-	\item packages - PKGBUILD files.
-	\item scripts - Useful little scripts.
+\item docs - Documentation.
+\item packages - PKGBUILD files.
+\item scripts - Useful little scripts.
 \end{itemize}
 
 \subsection{Scripts}
-
 Here is a reference for scripts in the \verb|scripts/| directory:
 
 \begin{itemize}
-	\item baaur - Soon, this will upload packages to the AUR.
-	\item babuild - Build a package.
-	\item bachroot - Manage a chroot for testing.
-	\item baclean - Clean old .pkg.tar.xz files from the package repo.
-	\item baconflict - Soon this will replace \verb|scripts/conflicts|.
-	\item bad-files - Find bad files in built packages.
-	\item balock - Obtain or release the package repo lock.
-	\item banotify - Notify IRC about package pushes.
-	\item barelease - Release packages to the package repo.
-	\item baright - Print the BlackArch copyright info.
-	\item basign - Sign packages.
-	\item basign-key - Sign a key.
-	\item blackman - This behaves sort of like pacman but builds from git (not to be confused with nrz's Blackman).
-	\item check-groups - Check groups.
-	\item checkpkgs - Check packages for errors.
-	\item conflicts - Check for file conflicts.
-	\item dbmod - Modify a package database.
-	\item depth-list - Create a list sorted by dependency depth.
-	\item deptree - Create a dependency tree, listing only blackarch-provided packages.
-	\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-	\item get-official - Get official packages for release.
-	\item list-loose-packages - List packages that are not in groups and are not dependencies for other packages.
-	\item list-needed - List missing dependencies.
-	\item list-removed - List packages that are in the package repo but not in git.
-	\item list-tools - List tools.
-	\item outdated - Look for packages that are out-dated in the package repo relative to the git repo.
-	\item pkgmod - Modify a build package.
-	\item pkgrel - Increment pkgrel in a package.
-	\item prep - Clean up a PKGBUILD file's style and find errors.
-	\item sitesync - Sync between a local copy of the package repo and a remote copy.
-	\item size-hunt - Hunt for large packages.
-	\item source-backup - Backup package source files.
+\item baaur - Soon, this will upload packages to the AUR.
+\item babuild - Build a package.
+\item bachroot - Manage a chroot for testing.
+\item baclean - Clean old .pkg.tar.xz files from the package repo.
+\item baconflict - Soon this will replace \verb|scripts/conflicts|.
+\item bad-files - Find bad files in built packages.
+\item balock - Obtain or release the package repo lock.
+\item banotify - Notify IRC about package pushes.
+\item barelease - Release packages to the package repo.
+\item baright - Print the BlackArch copyright info.
+\item basign - Sign packages.
+\item basign-key - Sign a key.
+\item blackman - This behaves sort of like pacman but builds from git (not to be
+    confused with nrz's Blackman).
+\item check-groups - Check groups.
+\item checkpkgs - Check packages for errors.
+\item conflicts - Check for file conflicts.
+\item dbmod - Modify a package database.
+\item depth-list - Create a list sorted by dependency depth.
+\item deptree - Create a dependency tree, listing only blackarch-provided packages.
+\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
+\item get-official - Get official packages for release.
+\item list-loose-packages - List packages that are not in groups and are not
+    dependencies for other packages.
+\item list-needed - List missing dependencies.
+\item list-removed - List packages that are in the package repo but not in git.
+\item list-tools - List tools.
+\item outdated - Look for packages that are out-dated in the package repo
+    relative to the git repo.
+\item pkgmod - Modify a build package.
+\item pkgrel - Increment pkgrel in a package.
+\item prep - Clean up a PKGBUILD file's style and find errors.
+\item sitesync - Sync between a local copy of the package repo and a remote copy.
+\item size-hunt - Hunt for large packages.
+\item source-backup - Backup package source files.
 \end{itemize}
 
 \section{Contributing to repository}
@@ -780,9 +780,12 @@ origin <the url of your fork> (push)
 upstream https://github.com/blackarch/blackarch (fetch)
 upstream https://github.com/blackarch/blackarch (push)
 \end{verbatim}
-By defualt, git should push straight to origin, but make sure your git config is configured correctly. This won't be an issue unless you have commit rights as you won't be able to push upstream without them.
+By defualt, git should push straight to origin, but make sure your git config is
+configured correctly. This won't be an issue unless you have commit rights as
+you won't be able to push upstream without them.
 
-If you do have the ability to commit, you might have more success using \textit{git@github.com:blackarch/blackarch.git} but it's up to you.
+If you do have the ability to commit, you might have more success using
+\textit{git@github.com:blackarch/blackarch.git} but it's up to you.
 }
 \subsection{Requests}
 \begin{enumerate}
@@ -802,7 +805,10 @@ errors.
 \chapter{Tools Guide}
 Coming soon...
 
-\section{TBD}
+\section{Coming Soon}
+Coming soon...
+
+\subsection{Coming Soon}
 Coming soon...
 
 %%% APPENDIX %%%

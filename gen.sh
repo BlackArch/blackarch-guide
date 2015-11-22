@@ -15,9 +15,16 @@ fi
 
 make_final_html()
 {
+    # add header
     cat html/header.html > ${HTMLFILE}
+
     sed '1,23d' latex/guide/${HTMLFILE} | sed '$d' | sed '$d' \
         >> ${HTMLFILE}
+
+    # remove hr and address line
+    sed -i '/<br><hr>/,/<\/address>/d' ${HTMLFILE}
+
+    # add footer
     cat html/footer.html >> ${HTMLFILE}
 }
 
