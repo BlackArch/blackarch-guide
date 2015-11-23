@@ -31,6 +31,8 @@ pdfauthor={BlackArch Linux, BlackArch Linux},
 pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
 pdfcenterwindow=true
 ]{hyperref}
+\usepackage{html}
+\usepackage{ifpdf}
 
 
 %%% LAYOUT %%%
@@ -59,8 +61,11 @@ menucolor=red, pagecolor=red, urlcolor=red}
 
 
 %%% OWN MACROS %%%
-% put own macros here, like renewcommand newcommand etc.
 
+% for html links
+\ifpdf\else
+\def\href#1#2{\htmladdnormallink{#2}{#1}}
+\fi
 
 %%% DOCUMENT %%%
 \begin{document}
