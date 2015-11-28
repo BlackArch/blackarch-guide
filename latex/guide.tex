@@ -8,22 +8,26 @@
 %%% BEGIN %%%
 \documentclass[a4paper, oneside, 11pt]{book}
 
-
 %%% INCLUDES %%%
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage{verbatim}
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
+
 \usepackage{array}
-\usepackage{graphicx}
-\usepackage{supertabular}
-\usepackage{verbatim}
-\usepackage{pstricks}
-\usepackage{fancyhdr}
-\usepackage{fancyvrb}
-\usepackage{tocloft}
 \usepackage{color}
 \usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{html}
+\usepackage{ifpdf}
+\usepackage{pstricks}
+\usepackage{supertabular}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+
+% \usepackage{verbatim}
+
 \usepackage[
 pdftitle={BlackArch Linux, The BlackArch Linux Guide},
 pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
@@ -31,8 +35,6 @@ pdfauthor={BlackArch Linux, BlackArch Linux},
 pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
 pdfcenterwindow=true
 ]{hyperref}
-\usepackage{html}
-\usepackage{ifpdf}
 
 
 %%% LAYOUT %%%
@@ -60,7 +62,7 @@ menucolor=red, pagecolor=red, urlcolor=red}
 %\rfoot{\small{bar}}
 
 
-%%% OWN MACROS %%%
+%%% CUSTOM MACROS %%%
 
 % for html links
 \ifpdf\else
