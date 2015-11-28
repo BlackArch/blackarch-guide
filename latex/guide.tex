@@ -324,259 +324,246 @@ multiple packages belonging to multiple groups.
 
 \subsection{Groups}
 To allow users to install a specific range of packages quickly and easily,
-packages have benn separated into groups. Groups allow users to simply
+packages have been separated into groups. Groups allow users to simply
 go "pacman -S <group name>" in order to pull a lot of packages.
 
 \subsubsection{blackarch}
-The blackarch group is what every package must be included in along with its
-relevant group, to allow users to install every package with ease.
+The blackarch group is the base group that all packages must belong too. This allows
+users to install every package with ease.
 
 What should be in here: Everything.
 
 \subsubsection{blackarch-anti-forensic}
-This group is for packages that are used for countering forensic activities,
-such as encryption, steganography, anything that modifies files/file attributes,
-or just anything that makes changes to the system for the purposes of hiding
-information.
+Packages that are used for countering forensic activities,
+including encryption, steganography, and anything that modifies files/file attributes.
+This all includes tools to work with anything in general that makes changes to a system
+for the purposes of hiding information.
 
 Examples: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 
 \subsubsection{blackarch-automation}
-This group is for packages that are used for automating anything. Should be
-fairly self-explanatory.
+Packages that are used for tool or workflow automation.
 
 Examples: blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
-This group is for packages that exploit or open backdoors on already vulnerable
-systems. Again should be reasonably self-explanatory.
+Packages that exploit or open backdoors on already vulnerable systems.
 
 Examples: backdoor-factory, rrs, weevely
 
 \subsubsection{blackarch-binary}
-This group is for packages that operate on binary files in one form or another.
+Packages that operate on binary files in some form.
 
 Examples: binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
-This group is for any packages that exploits anything to do with the Bluetooth
-standard (802.15.1).
+Packages that exploit anything concerning the Bluetooth standard (802.15.1).
 
 Examples: ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
-This group is for any packages that audit existing source code for vulnerability
-analysis.
+Packages that audit existing source code for vulnerability analysis.
 
 Examples: flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
-This group is for any packages that is used for cracking any kind of
-cryptographic function, ie hashes.
+Packages used for cracking cryptographic functions, ie hashes.
 
 Examples: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
-This group is for any packages that is to do with cryptography, be it cracking
-or analysis or anything.
+Packages that work with cryptography, with the exception of cracking.
 
 Examples: ciphertest, xortool, sbd
 
 \subsubsection{blackarch-database}
-This group is for any packages that involve some kind of database exploitation
-on any level.
+Packages that involve database exploitations on any level.
 
 Examples: metacoretex, blindsql
 
 \subsubsection{blackarch-debugger}
-This group is for packages that allow the user to view what a particular program
-is "doing" as it runs its instructions.
+Packages that allow the user to view what a particular program is "doing" in realtime.
 
 Examples: radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
-This group is for packages that attempt to reverse a compiled program into bare
-source code.
+Packages that attempt to reverse a compiled program into source code.
 
 Examples: flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
-This group is for any packages that are used to protect a user from malware \&
-attacks from other users.
+Packages that are used to protect a user from malware \& attacks from other users.
 
 Examples: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
-This group is similar to blackarch-decompiler, and there will probably be a lot
+This is similar to blackarch-decompiler, and there will probably be a lot
 of programs that fall into both, however these packages produce assembly output
 rather than the raw source code.
 
 Examples: inguma, radare2
 
 \subsubsection{blackarch-dos}
-This group is for packages that use DoS (Denial of Service) attacks.
+Packages that use DoS (Denial of Service) attacks.
 
 Examples: 42zip, nkiller2
 
 \subsubsection{blackarch-drone}
-This group is for packages that are used for managing physical engineered
+Packages that are used for managing physically engineered
 drones.
 
 Examples: meshdeck, skyjack
 
 \subsubsection{blackarch-exploitation}
-This group is for any packages that takes advantages of exploits in other
-programs or services.
+Packages that takes advantages of exploits in other programs or services.
 
 Examples: armitage, metasploit, zarp
 
 \subsubsection{blackarch-fingerprint}
-This group is for any packages that exploit fingerprint biometric equipment.
+Packages that exploit fingerprint biometric equipment.
 
 Examples: dns-map, p0f, httprint
 
 \subsubsection{blackarch-firmware}
-This group is for any packages that exploit vulnerabilities in firmware
+Packages that exploit vulnerabilities in firmware
 
 Examples: None yet, amend asap.
 
 \subsubsection{blackarch-forensic}
-This group is for any packages that are used to find data using on physical
-disks or embedded memory.
+Packages that are used to find data on physical disks or embedded memory.
 
 Examples: aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
-This group is for any packages that use the fuzz testing principle, ie
+Packages that use the fuzz testing principle, ie
 "throwing" random inputs at the subject to see what happens.
 
 Examples: msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
-This group is for any packages that exploit or manage anything to do with
+Packages that exploit or manage anything to do with
 physical hardware.
 
 Examples: arduino, smali
 
 \subsubsection{blackarch-honeypot}
-This group is for packages that act as "honeypots", ie programs that appear to
+Packages that act as "honeypots", ie programs that appear to
 be vulnerable services used to attract hackers into a trap.
 
 Examples: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
-This group is for packages that record and retain keystrokes on another system.
+Packages that record and retain keystrokes on another system.
 
 Examples: None yet, amend asap.
 
 \subsubsection{blackarch-malware}
-This group is for packages that count as any type of malicious software or
+Packages that count as any type of malicious software or
 malware detection.
 
 Examples: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-This group is for packages that don't particularly fit into any categories.
+Packages that don't particularly fit into any categories.
 
 Examples: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-This group is for packages that manipulate mobile platforms.
+Packages that manipulate mobile platforms.
 
 Examples: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
-This group is for any package that involes IP networking at any point for any
-reason.
+Package that involve IP networking.
 
 Examples: Anything pretty much
 
 \subsubsection{blackarch-nfc}
-This group is for any package that uses nfc (near-field communications) at any
-point for any reason.
+Packages that use nfc (near-field communications).
 
 Examples: nfcutils
 
 \subsubsection{blackarch-packer}
-This group is for any packages that operate on or invlve packers, packers being
-programs that embed malware within other executables.
+Packages that operate on or invlove packers.
+
+/textif{packers are programs that embed malware within other executables.}
 
 Examples: packerid
 
 \subsubsection{blackarch-proxy}
-This group is for any package that acts as a proxy, ie redirecting traffic
+Packages that acts as a proxy, ie redirecting traffic
 through another node on the internet.
 
 Examples: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-This group is for any package that actively seeks vulnerable exploits in the
+Packages that actively seeks vulnerable exploits in the
 wild. More of an umbrella group for similar packages.
 
 Examples: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
-This group is for any package that acts as an umbrella group for any decompiler,
+This is an umbrella group for any decompiler,
 disassembler or any similar program.
 
 Examples: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
-This group is for packages that scan selected systems for vulnerabilities.
+Packages that scan selected systems for vulnerabilities.
 
 Examples: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
-This group is for any package that involve analyzing network traffic.
+Packages that involve analyzing network traffic.
 
 Examples: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
-This group is for any package that attacks social networking sites primarily.
+Packages that primarily attack social networking sites.
 
 Examples: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-This group is for any package that attempts to spoof the attacker such, in that
+Packages that attempt to spoof the attacker such, in that
 the attacker doesn't show up as an attacker to the victim.
 
 Examples: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-This group is for any package that would be used for reporting/recording the
+Packages that would be used for reporting/recording the
 threat model outlined in a particular scenario.
 
 Examples: magictree
 
 \subsubsection{blackarch-tunnel}
-This group is for packages that are used to tunnel network traffic on a given
+Packages that are used to tunnel network traffic on a given
 network.
 
 Examples: ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-This group is for any package that is used to extract pre-packed malware from an
+Packages that are used to extract pre-packed malware from an
 executable.
 
 Examples: js-beautify
 
 \subsubsection{blackarch-voip}
-This group is for packages that operate on voip programs and protocols.
+Packages that operate on voip programs and protocols.
 
 Examples: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-This group is for packages that operate on internet-facing applications.
+Packages that operate on internet-facing applications.
 
 Examples: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-This groups is for any native Windows package that runs via wine.
+This group is for any native Windows package that runs via wine.
 
 Examples: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-This group is for any package that operates on wireless networks on any level.
+Packages that operates on wireless networks on any level.
 
 Examples: airpwn, mdk3, wiffy
 
