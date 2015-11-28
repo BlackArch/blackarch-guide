@@ -32,3 +32,5 @@
 *.tdo
 *.pdf
 /guide.html
+
+.vagrant
