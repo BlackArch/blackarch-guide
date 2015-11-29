@@ -19,11 +19,11 @@
 \usepackage{html}
 \usepackage{hyperref}
 \usepackage{ifpdf}
+\usepackage{listings}
 \usepackage{pstricks}
 \usepackage{supertabular}
 \usepackage{tocloft}
 \usepackage[utf8]{inputenc}
-\usepackage{verbatim}
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -37,12 +37,37 @@
 \color{white}
 \setcounter{tocdepth}{10}
 \setcounter{secnumdepth}{10}
-\hypersetup{pdftitle={BlackArch Linux, The BlackArch Linux Guide},
-pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
-pdfauthor={BlackArch Linux, BlackArch Linux},
-pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
-pdfcenterwindow=true, colorlinks=true, breaklinks=true, linkcolor=red,
-menucolor=red, urlcolor=red}
+
+\hypersetup{
+  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
+  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdfauthor={BlackArch Linux, BlackArch Linux},
+  pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
+  pdfcenterwindow=true,
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=red,
+  menucolor=red,
+  urlcolor=red
+}
+
+% syntax highlighting
+% all options should be set here document wide
+\lstset{
+backgroundcolor=\color[HTML]{858585},
+frame=single,
+basicstyle=\tiny,
+float,
+deletekeywords={return},
+otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort},
+keywordstyle=\color{green},
+commentstyle=\color{black},
+stringstyle=\color{yellow},
+language=bash,
+showspaces=false,
+showtabs=false,
+tabsize=2
+}
 
 %%% HEADER / FOOTER %%%
 \setlength{\headheight}{33pt}
@@ -147,53 +172,41 @@ user repository. If you want an ISO instead, see the
 \subsection{Installing on top of ArchLinux}
 Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
 instructions. See the following example.
-{\small
-\color{gray}
-\begin{verbatim}
-$ curl -k -O https://blackarch.org/strap.sh
-$ sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
-$ sudo ./strap.sh
-\end{verbatim}
-}
+\begin{lstlisting}
+  curl -k -O https://blackarch.org/strap.sh
+  sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+  sudo ./strap.sh
+\end{lstlisting}
+
 Now download a fresh copy of the master package list and synchronize packages:
-{\small
-\color{gray}
-\begin{verbatim}
-$ sudo pacman -Syyu
-\end{verbatim}
-}
+\begin{lstlisting}
+  sudo pacman -Syyu
+\end{lstlisting}
+
 
 \subsection{Installing packages}
 You may now install tools from the blackarch repository.
 \begin{enumerate}
 \item To list all of the available tools, run
-{\small
-\color{gray}
-\begin{verbatim}
-# pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
-\end{verbatim}
-}
+\begin{lstlisting}
+  pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+\end{lstlisting}
+
 \item To install all of the tools, run
-{\small
-\color{gray}
-\begin{verbatim}
-# pacman -S blackarch
-\end{verbatim}
-}
+\begin{lstlisting}
+  pacman -S blackarch
+\end{lstlisting}
+
 \item To install a category of tools, run
-{\small
-\color{gray}
-\begin{verbatim}
-# pacman -S blackarch-<category>
-\end{verbatim}
-}
+\begin{lstlisting}
+  pacman -S blackarch-<category>
+\end{lstlisting}
+
 \item To see the blackarch categories, run
-{\small
-\color{gray}
-\begin{verbatim}
-# pacman -Sg | grep blackarch
-\end{verbatim}
-}
+\begin{lstlisting}
+  pacman -Sg | grep blackarch
+\end{lstlisting}
+
 \end{enumerate}
 
 \subsection{Installing packages from source}
@@ -205,69 +218,54 @@ build the entire repo, you can use the
 \begin{itemize}
 \item First, you have to install Blackman. If the BlackArch package repository
 is setup on your machine, you can install Blackman:
-{\small
-\begin{verbatim}
-pacman -S blackman
-\end{verbatim}
-}
+\begin{lstlisting}
+  pacman -S blackman
+\end{lstlisting}
+
 \item You can build and install Blackman from source:
-{\small
-\color{gray}
-\begin{verbatim}
-mkdir blackman
-cd blackman
-wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-# Make sure the PKGBUILD has not been maliciously tampered with.
-makepkg -s
-\end{verbatim}
-}
+\begin{lstlisting}
+  mkdir blackman
+  cd blackman
+  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # Make sure the PKGBUILD has not been maliciously tampered with.
+  makepkg -s
+\end{lstlisting}
+
 \item Or you can install Blackman from the AUR:
-{\small
-\color{gray}
-\begin{verbatim}
-<whatever AUR helper you use> -S blackman
-\end{verbatim}
-}
+\begin{lstlisting}
+  <whatever AUR helper you use> -S blackman
+\end{lstlisting}
+
 \end{itemize}
 
 \subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
 would typically expect from something like pacman. Basic usage has been outlined below.
 \begin{itemize}
 \item Download, compile and install packages:
-{\small
-\color{gray}
-\begin{verbatim}
-$ sudo blackman -i package
-\end{verbatim}
-}
+\begin{lstlisting}
+  sudo blackman -i package
+\end{lstlisting}
+
 \item Download, compile and install whole category:
-{\small
-\color{gray}
-\begin{verbatim}
-$ sudo blackman -g group
-\end{verbatim}
-}
+\begin{lstlisting}
+  sudo blackman -g group
+\end{lstlisting}
+
 \item Download, compile and install all of the BlackArch tools:
-{\small
-\color{gray}
-\begin{verbatim}
-$ sudo blackman -a
-\end{verbatim}
-}
+\begin{lstlisting}
+  sudo blackman -a
+\end{lstlisting}
+
 \item To list the blackarch categories:
-{\small
-\color{gray}
-\begin{verbatim}
-$ blackman -l
-\end{verbatim}
-}
+\begin{lstlisting}
+  blackman -l
+\end{lstlisting}
+
 \item To list category tools:
-{\small
-\color{gray}
-\begin{verbatim}
-$ blackman -p category
-\end{verbatim}
-}
+\begin{lstlisting}
+  blackman -p category
+\end{lstlisting}
+
 \end{itemize}
 
 \subsection{Installing from live-, netinstall- ISO or ArchLinux}
@@ -276,19 +274,15 @@ You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
 required after the ISO boot up.
 \begin{itemize}
 \item Install blackarch-install-scripts package:
-{\small
-\color{gray}
-\begin{verbatim}
-$ sudo pacman -S blackarch-install-scripts
-\end{verbatim}
-}
+\begin{lstlisting}
+  sudo pacman -S blackarch-install-scripts
+\end{lstlisting}
+
 \item Run
-{\small
-\color{gray}
-\begin{verbatim}
-$ sudo blackarch-install
-\end{verbatim}
-}
+\begin{lstlisting}
+  sudo blackarch-install
+\end{lstlisting}
+
 \end{itemize}
 
 %------------------%
@@ -656,52 +650,40 @@ according to our needs.
 
 \subsubsection{Fetch PKGBUILD}
 Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux $ yaourt -G nfsshell
-==> Download nfsshell sources
-x LICENSE
-x PKGBUILD
-x gcc.patch
-user@blackarchlinux $ cd nfsshell/
-\end{verbatim}
-}
+\begin{lstlisting}
+  user@blackarchlinux $ yaourt -G nfsshell
+  ==> Download nfsshell sources
+  x LICENSE
+  x PKGBUILD
+  x gcc.patch
+  user@blackarchlinux $ cd nfsshell/
+\end{lstlisting}
 
 \subsubsection{Clean up PKGBUILD}
 Clean up the \textit{PKGBUILD} file and save some time:
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
-cleaning 'PKGBUILD'...
-expanding tabs...
-removing vim modeline...
-removing id comment...
-removing contributor and maintainer comments...
-squeezing extra blank lines...
-removing '|| return'...
-removing leading blank line...
-removing $pkgname...
-removing trailing whitespace...
-\end{verbatim}
-}
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
+  cleaning 'PKGBUILD'...
+  expanding tabs...
+  removing vim modeline...
+  removing id comment...
+  removing contributor and maintainer comments...
+  squeezing extra blank lines...
+  removing '|| return'...
+  removing leading blank line...
+  removing $pkgname...
+  removing trailing whitespace...
+\end{lstlisting}
 
 \subsubsection{Adjust PKGBUILD}
 Adjust the \textit{PKGBUILD} file:
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux nfsshell $ vi PKGBUILD
-\end{verbatim}
-}
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ vi PKGBUILD
+\end{lstlisting}
 
 \subsubsection{Build the package}
 Build the package:
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux nfsshell $ makepkg -sf
+\begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
 ==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
@@ -717,61 +699,49 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 ...
 ==> Leaving fakeroot environment.
 ==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
-\end{verbatim}
-}
+\end{lstlisting}
 
 \subsubsection{Install and test the package}
 Install and test the package:
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
-user@blackarchlinux nfsshell $ nfsshell # test it
-\end{verbatim}
-}
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
+  user@blackarchlinux nfsshell $ nfsshell # test it
+\end{lstlisting}
 
 \subsubsection{Add, commit and push package}
 Add, commit and push the package
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
+\begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
-\end{verbatim}
-}
+\end{lstlisting}
 
 \subsubsection{Create a pull request}
 Create a pull request on \href{https://github.com/}{github.com}
-{\small
-\color{gray}
-\begin{verbatim}
-firefox https://github.com/<contributor>/blackarchlinux
-\end{verbatim}
-}
+\begin{lstlisting}
+  firefox https://github.com/<contributor>/blackarchlinux
+\end{lstlisting}
 
 \subsubsection{Adding a remote for upstream}
 A smart thing to do if you're working upstream and on a fork is to pull your own fork and add the main ba repo as a remote
-{\small
-\color{gray}
-\begin{verbatim}
-user@blackarchlinux ~/blackarchlinux $ git remote -v
-origin <the url of your fork> (fetch)
-origin <the url of your fork> (push)
-user@blackarchlinux ~/blackarchlinux $ git remote add upstream https://github.com/blackarch/blackarch
-user@blackarchlinux ~/blackarchlinux $ git remote -v
-origin <the url of your fork> (fetch)
-origin <the url of your fork> (push)
-upstream https://github.com/blackarch/blackarch (fetch)
-upstream https://github.com/blackarch/blackarch (push)
-\end{verbatim}
-By defualt, git should push straight to origin, but make sure your git config is
+\begin{lstlisting}
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  user@blackarchlinux ~/blackarchlinux $ git remote add upstream https://github.com/blackarch/blackarch
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  upstream https://github.com/blackarch/blackarch (fetch)
+  upstream https://github.com/blackarch/blackarch (push)
+\end{lstlisting}
+
+By default, git should push straight to origin, but make sure your git config is
 configured correctly. This won't be an issue unless you have commit rights as
 you won't be able to push upstream without them.
 
 If you do have the ability to commit, you might have more success using
 \textit{git@github.com:blackarch/blackarch.git} but it's up to you.
-}
+
 \subsection{Requests}
 \begin{enumerate}
 \item Don't add \textbf{Maintainer} or \textbf{Contributor} comments to
