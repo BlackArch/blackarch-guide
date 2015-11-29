@@ -33,8 +33,8 @@
 \clubpenalty=1000
 \frenchspacing
 \sloppy
-\pagecolor[HTML]{353333}
-\color{white}
+\pagecolor[HTML]{FFFFFF}
+\color{black}
 \setcounter{tocdepth}{10}
 \setcounter{secnumdepth}{10}
 
@@ -54,15 +54,16 @@
 % syntax highlighting
 % all options should be set here document wide
 \lstset{
-backgroundcolor=\color[HTML]{858585},
+backgroundcolor=\color[HTML]{EEEEEE},
 frame=single,
-basicstyle=\tiny,
+basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
-otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort},
-keywordstyle=\color{green},
-commentstyle=\color{black},
-stringstyle=\color{yellow},
+otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
+pacman, blackman},
+keywordstyle=\color{orange},
+commentstyle=\color{blue},
+stringstyle=\color{red},
 language=bash,
 showspaces=false,
 showtabs=false,
@@ -173,9 +174,9 @@ user repository. If you want an ISO instead, see the
 Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
 instructions. See the following example.
 \begin{lstlisting}
-  curl -k -O https://blackarch.org/strap.sh
-  sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
-  sudo ./strap.sh
+   curl -k -O https://blackarch.org/strap.sh
+   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sudo ./strap.sh
 \end{lstlisting}
 
 Now download a fresh copy of the master package list and synchronize packages:
