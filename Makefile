@@ -22,7 +22,7 @@ build: pdf html
 # this is a hack, the build should be done in a tmp directory and the pdf/html
 # files moved to a more permanent location
 clean:
-	@rm *.aux *.log *.out *.toc
+	@rm *.aux *.log *.out *.toc ./build_log
 
 # update all deps to the latest versions available
 deps:
@@ -49,4 +49,5 @@ lint:
 
 # generate a pdf using lualatex
 pdf:
+	@lualatex ${srcdir}/guide.tex 1>./build_log
 	@lualatex ${srcdir}/guide.tex 1>./build_log
