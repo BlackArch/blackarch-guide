@@ -30,7 +30,7 @@ make_final_html()
 
 if [ "${1}" = "pdf" ]
 then
-    pdflatex "${TEXFILE}"
+    lualatex "${TEXFILE}"
 elif [ "${1}" = "html" ]
 then
     latex2html -nonavigation -notop_navigation -nobottom_navigation \
