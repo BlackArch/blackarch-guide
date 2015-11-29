@@ -4,8 +4,6 @@
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%% BEGIN %%%
 \documentclass[a4paper, oneside, 11pt]{book}
 
 %%% INCLUDES %%%
@@ -19,22 +17,13 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{html}
+\usepackage{hyperref}
 \usepackage{ifpdf}
 \usepackage{pstricks}
 \usepackage{supertabular}
 \usepackage{tocloft}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
-
-\usepackage{hyperref}
-\hypersetup{pdftitle={A Perfect Day}
-pdftitle={BlackArch Linux, The BlackArch Linux Guide},
-pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
-pdfauthor={BlackArch Linux, BlackArch Linux},
-pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
-pdfcenterwindow=true}
-% ]{hyperref}
-
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -46,35 +35,36 @@ pdfcenterwindow=true}
 \sloppy
 \pagecolor{black}
 \color{white}
-\hypersetup{pdftex=true, colorlinks=true, breaklinks=true, linkcolor=red,
-menucolor=red, pagecolor=red, urlcolor=red}
 \setcounter{tocdepth}{10}
 \setcounter{secnumdepth}{10}
-
+\hypersetup{pdftitle={BlackArch Linux, The BlackArch Linux Guide},
+pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+pdfauthor={BlackArch Linux, BlackArch Linux},
+pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
+pdfcenterwindow=true, pdftex=true, colorlinks=true, breaklinks=true, linkcolor=red,
+menucolor=red, pagecolor=red, urlcolor=red}
 
 %%% HEADER / FOOTER %%%
 \setlength{\headheight}{1.0cm}
 \setlength{\headsep}{1.0cm}
 \lhead{{\includegraphics[width=1cm,height=1cm]{logo.png}}}
 \rhead{The BlackArch Linux Guide}
-%\lfoot{\small{foo}}
-%\rfoot{\small{bar}}
-
 
 %%% CUSTOM MACROS %%%
-
 % for html links
 \ifpdf\else
 \def\href#1#2{\htmladdnormallink{#2}{#1}}
 \fi
 
 %%% DOCUMENT %%%
+%------------------%
+%	TITLE PAGE       %
+%------------------%
 \begin{document}
 \pagestyle{empty}
 \begin{center}
 \begin{figure}[htbp]
 \centering
-%\Huge{\textbf{BlackArch \color{red}Linux}}\\
 \vspace{0.5cm}
 \includegraphics[width=8cm]{logo.png}
 \label{fig:logo}
@@ -84,14 +74,15 @@ menucolor=red, pagecolor=red, urlcolor=red}
 \vspace{1cm}
 \Large{\color{red}https://www.blackarch.org/}\\
 \vspace{0.5cm}
-\Large{\today}
 \end{center}
 \newpage
 \tableofcontents
 \newpage
 \pagestyle{fancy}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------%
+%	Chapter 1        %
+%------------------%
 
 \chapter{Introduction}
 
@@ -108,15 +99,16 @@ The BlackArch Linux guide is divided into four chapters:
 BlackArch Linux is a complete Linux distribution for penetration testers and security researchers.
 It is derived from \href{https://www.archlinux.org/}{ArchLinux} and users can install BlackArch components
 individually or in groups. BlackArch Linux is compatible with current existing Arch installations.
-\\\\
+
 The toolset is distributed as an Arch Linux
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
 {unofficial user repository} so you can install BlackArch on top of an
 existing Arch Linux installation. Packages may be installed individually or by
 category.
-\\\\
+
 The constantly expanding repository currently includes over \href{https://www.blackarch.org/tools.html}{1300} tools.
 All tools are thoroughly tested before being added to the codebase to maintain the quality of the repository.
+
 % should quickly describe the testing methods/code review procedures etc
 \section{History of BlackArch Linux}
 Coming soon...
@@ -126,18 +118,21 @@ Coming soon...
 
 \section{Get involved}
 You can get in touch with the BlackArch team using the following avenues:
-\\\\
+
 Website: \url{https://www.blackarch.org/}
-\\\\
+
 Mail: \href{mailto:blackarchlinux@gmail.com}{blackarchlinux@gmail.com}
-\\\\
+
 IRC: \url{irc://irc.freenode.net/blackarch}
-\\\\
+
 Twitter: \url{https://twitter.com/blackarchlinux}
-\\\\
+
 Github: \url{https://github.com/Blackarch/}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------%
+%	Chapter 2        %
+%------------------%
+
 
 \chapter{User Guide}
 
@@ -145,11 +140,10 @@ Github: \url{https://github.com/Blackarch/}
 The following sections will show you how to setup the BlackArch repository and
 install packages. BlackArch supports both, installing from the repository using
 binary packages as well as compiling and installing from sources.
-\\\\
+
 BlackArch is compatible with normal Arch installations. It acts as an unofficial
 user repository. If you want an ISO instead, see the
 \href{https://www.blackarch.org/downloads.html#iso}{Live ISO} section.
-\\\\
 
 \subsection{Installing on top of ArchLinux}
 Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
@@ -298,7 +292,9 @@ $ sudo blackarch-install
 }
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------%
+%	Chapter 3        %
+%------------------%
 
 \chapter{Developer Guide}
 
@@ -790,15 +786,14 @@ AUTHORS section of BlackArch guide.
 \href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
 errors.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------%
+%	Chapter 4        %
+%------------------%
 
 \chapter{Tools Guide}
 Coming soon...
 
 \section{Coming Soon}
-Coming soon...
-
-\subsection{Coming Soon}
 Coming soon...
 
 %%% APPENDIX %%%
