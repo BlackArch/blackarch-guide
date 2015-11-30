@@ -33,10 +33,12 @@ then
     lualatex "${TEXFILE}"
 elif [ "${1}" = "html" ]
 then
-    latex2html -nonavigation -notop_navigation -nobottom_navigation \
-        -split 0 -toc_depth 10 -lcase_tags -address "BlackArch Linux" \
-        -show_section_numbers -html_version "4.0" -info 0 "${TEXFILE}"
-    make_final_html
+    echo "not implemented"
+    exit 1
+    #latex2html -nonavigation -notop_navigation -nobottom_navigation \
+    #    -split 0 -toc_depth 10 -lcase_tags -address "BlackArch Linux" \
+    #    -show_section_numbers -html_version "4.0" -info 0 "${TEXFILE}"
+    #make_final_html
 elif [ "${1}" = "clean" ]
 then
     rm -rf *.pdf *.toc *.log *.aux *.out *.exs ${HTMLFILE} latex/guide guide.pdf
