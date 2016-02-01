@@ -161,48 +161,45 @@ Github: \url{https://github.com/Blackarch/}
 \chapter{Kullanıcı Rehberi}
 
 \section{Kurulum}
-The following sections will show you how to setup the BlackArch repository and
-install packages. BlackArch supports both, installing from the repository using
-binary packages as well as compiling and installing from sources.
+Bu kısım altında BlackArch deposunun nasıl sisteme dahil edileceği ve paketlerin nasıl kurulacağı yer almaktadır. BlackArch depolarda yer alan derlenmiş paketleri desteklediği gibi kaynak kod ile paket kurulumunu da desteklemektedir.
 
-BlackArch is compatible with normal Arch installations. It acts as an unofficial
-user repository. If you want an ISO instead, see the
-\href{https://www.blackarch.org/downloads.html#iso}{Live ISO} section.
+BlackArch normal bir Arch Linux kurulumu ile uyumludur. Resmi olmayan kullanıcı deposu olarak düşünülebilir. Paket deposu yerine doğrudan ISO ile kurulum yapmak isterseniz \href{https://www.blackarch.org/downloads.html#iso}{Live ISO} kısmına bakabilirsiniz.
+
 
 \subsection{Var olan Arch Linux üzerine kurulum}
-Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
-instructions. See the following example.
+\href{https://blackarch.org/strap.sh}{strap.sh} betiğini root yetkileri ile çalıştırınız ve aşağıdaki adımları takip ediniz. Hash değeri kontrolünü yapmayı unutmayınız.
+
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sha1sum strap.sh # bu degere esit olmali: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
    sudo ./strap.sh
 \end{lstlisting}
 
-Now download a fresh copy of the master package list and synchronize packages:
+Şimdi, ana paket listesinin güncellenmesi ve paketlerinizin senkron olması için aşağıdaki komutu kullanınız:
 \begin{lstlisting}
   sudo pacman -Syyu
 \end{lstlisting}
 
 
 \subsection{Paket kurulumu}
-You may now install tools from the blackarch repository.
+Araçları blackarch deposundan kurabilirsiniz.
 \begin{enumerate}
-\item To list all of the available tools, run
+\item Kurulabilir tüm araçları listelemek için:
 \begin{lstlisting}
   pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 \end{lstlisting}
 
-\item To install all of the tools, run
+\item Tüm araçları kurmak için:
 \begin{lstlisting}
   pacman -S blackarch
 \end{lstlisting}
 
-\item To install a category of tools, run
+\item Belirli bir kategoride yer alan araçları kurmak için:
 \begin{lstlisting}
   pacman -S blackarch-<category>
 \end{lstlisting}
 
-\item To see the blackarch categories, run
+\item Tüm blackarch kategorilerini görmek için:
 \begin{lstlisting}
   pacman -Sg | grep blackarch
 \end{lstlisting}
@@ -210,58 +207,55 @@ You may now install tools from the blackarch repository.
 \end{enumerate}
 
 \subsection{Kaynak koddan paket kurulumu}
-As part of an alternative method of installation, you can build the BlackArch
-packages from source. You can find the PKGBUILDs on
-\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
-build the entire repo, you can use the
-\href{https://github.com/BlackArch/blackman}{Blackman} tool.
+Kurulumlara alternatif olarak BlackArch paketlerini doğrudan kaynak kod yardımı ile kurabilirsiniz. Bunun için PKGBUILD dosyalarına \href{https://github.com/BlackArch/blackarch/tree/master/packages}{paketler} dizini altından erişebilirsiniz. Tüm depoyu derlemek için \href{https://github.com/BlackArch/blackman}{Blackman} aracını kullanabilirsiniz.
+
 \begin{itemize}
-\item First, you have to install Blackman. If the BlackArch package repository
-is setup on your machine, you can install Blackman:
+\item BlackArch paket deposu sisteminizde ekliyse doğrudan aşağıdaki komut yardımıyla Blackman aracını kurabilirsiniz.
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item You can build and install Blackman from source:
+\item Blackman'i kaynak koddan kurmak için aşağıdaki adımları takip edebilirsiniz.
 \begin{lstlisting}
   mkdir blackman
   cd blackman
   wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Make sure the PKGBUILD has not been maliciously tampered with.
+  # PKGBUILD dosyasinda herhangi bir sikinti olmadigini kontrol etmeyi unutmayiniz!
   makepkg -s
 \end{lstlisting}
 
-\item Or you can install Blackman from the AUR:
+\item Blackman'i AUR aracılığı ile de kurabilirsiniz.
 \begin{lstlisting}
-  <whatever AUR helper you use> -S blackman
+  <AUR yardımcı aracınız> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Temel BlackMan kullanımı} Blackman is very simple to use, though the flags are different from what you
-would typically expect from something like pacman. Basic usage has been outlined below.
+\subsection{Temel BlackMan kullanımı}
+Blackman her ne kadar alıştığınız diğer paket yöneticilerinin parametrelerinden farklı bir yapı kullansa da, gayet kolay bir kullanıma sahiptir. En temel kullanımı aşağıda gösterilmiştir.
+
 \begin{itemize}
-\item Download, compile and install packages:
+\item Pakedi indir, derle ve kur:
 \begin{lstlisting}
-  sudo blackman -i package
+  sudo blackman -i paket
 \end{lstlisting}
 
-\item Download, compile and install whole category:
+\item Paket grubunu indir, derle ve içerisinde yer alan tüm paketleri kur:
 \begin{lstlisting}
-  sudo blackman -g group
+  sudo blackman -g grup
 \end{lstlisting}
 
-\item Download, compile and install all of the BlackArch tools:
+\item Tüm BlackArch araçlarını indir, derle ve kur:
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
 
-\item To list the blackarch categories:
+\item BlackArch kategorilerini listeleme:
 \begin{lstlisting}
   blackman -l
 \end{lstlisting}
 
-\item To list category tools:
+\item Kategori içerisinde yer alan araçları listeleme:
 \begin{lstlisting}
   blackman -p category
 \end{lstlisting}
