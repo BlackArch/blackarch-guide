@@ -226,7 +226,7 @@ Kurulumlara alternatif olarak BlackArch paketlerini doğrudan kaynak kod yardım
 
 \item Blackman'i AUR aracılığı ile de kurabilirsiniz.
 \begin{lstlisting}
-  <AUR yardımcı aracınız> -S blackman
+  <AUR yardimci araciniz> -S blackman
 \end{lstlisting}
 
 \end{itemize}
@@ -235,7 +235,7 @@ Kurulumlara alternatif olarak BlackArch paketlerini doğrudan kaynak kod yardım
 Blackman her ne kadar alıştığınız diğer paket yöneticilerinin parametrelerinden farklı bir yapı kullansa da, gayet kolay bir kullanıma sahiptir. En temel kullanımı aşağıda gösterilmiştir.
 
 \begin{itemize}
-\item Pakedi indir, derle ve kur:
+\item Paketi indir, derle ve kur:
 \begin{lstlisting}
   sudo blackman -i paket
 \end{lstlisting}
@@ -263,16 +263,15 @@ Blackman her ne kadar alıştığınız diğer paket yöneticilerinin parametrel
 \end{itemize}
 
 \subsection{Doğrudan çalıştırılabilir ISO ile kurulum yapma}
-You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
-\url{https://www.blackarch.org/download.html#iso}. The following steps are
-required after the ISO boot up.
+BlackArch'ı doğrudan çalıştırılabilir ISO aracılığı ile de kurabilirsiniz. Bunun için \url{https://www.blackarch.org/download.html#iso} sayfasından bulabileceğiniz imaj ile aşağıdaki adımları takip edebilirsiniz. Adımları takip edebilmek için bilgisayarınızı indirdiğiniz imaj ile boot etmeniz gerekmektedir.
+
 \begin{itemize}
-\item Install blackarch-install-scripts package:
+\item blackarch-install-scripts paketi kurulumu:
 \begin{lstlisting}
   sudo pacman -S blackarch-install-scripts
 \end{lstlisting}
 
-\item Run
+\item Çalıştırma
 \begin{lstlisting}
   sudo blackarch-install
 \end{lstlisting}
@@ -287,15 +286,15 @@ required after the ISO boot up.
 
 \section{Arch Linux Paket Derleme ve Paket Depoları}
 
-PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
-package. PKGBUILD files are written in Bash.
+PKGBUILD dosyaları derleme betikleridir. Bu betikler makepkg(1) uygulamasına paketin nasıl oluşturulacağı bilgisini sağlamaktadır. PKGBUILD dosyaları Bash betikleri olarak yazılmaktadır.
 
-For more information, read (or skim through) the following:
+Daha fazla bilgi için aşağıdaki kaynaklara bakabilirsiniz:
+
 \begin{itemize}
-\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Paket Oluşturulması}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
 \item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
-\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Paketleri Standartları}
 \end{itemize}
 
 \section{Blackarch PKGBUILD standartları}
