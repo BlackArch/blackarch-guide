@@ -27,6 +27,7 @@
 
 %%% LOCALIZATION %%%
 \renewcommand{\contentsname}{İçindekiler}
+\renewcommand{\chaptername}{Bölüm}
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -298,15 +299,10 @@ Daha fazla bilgi için aşağıdaki kaynaklara bakabilirsiniz:
 \end{itemize}
 
 \section{Blackarch PKGBUILD standartları}
-For the sake of simplicity, our PKGBUILDs are similar to that of the AUR ones,
-with a few small differences outlined below. Every package must
-belong to blackarch at the minimum, there will also be a lot of crossover with
-multiple packages belonging to multiple groups.
+AUR deposundaki paketler ile benzerliği korumak için PKGBUILD dosyaları ufak farklar haricinde benzer şekilde oluşturulmaktadır. Her bir paket en az blackarch grubuna dahil olmalıdır. Benzer şekilde bir paket birden fazla gruba dahil olabileceği gibi bir grup içerisinde de birden fazla paket bulunabilir.
 
 \subsection{Gruplar}
-To allow users to install a specific range of packages quickly and easily,
-packages have been separated into groups. Groups allow users to simply
-go "pacman -S <group name>" in order to pull a lot of packages.
+Kullanıcılar kolay ve hızlı bir şekilde benzer paketleri kurabilmesi için çeşitli gruplamalar yapılmıştır. Gruplamanın getirdiği avantaj sayesinde "pacman -S <grup_adi>" şeklinde bir komut ile tüm paketler kurulabilir.
 
 \subsubsection{blackarch}
 The blackarch group is the base group that all packages must belong too. This allows
