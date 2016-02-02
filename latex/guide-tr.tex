@@ -305,68 +305,65 @@ AUR deposundaki paketler ile benzerliği korumak için PKGBUILD dosyaları ufak 
 Kullanıcılar kolay ve hızlı bir şekilde benzer paketleri kurabilmesi için çeşitli gruplamalar yapılmıştır. Gruplamanın getirdiği avantaj sayesinde "pacman -S <grup_adi>" şeklinde bir komut ile tüm paketler kurulabilir.
 
 \subsubsection{blackarch}
-The blackarch group is the base group that all packages must belong too. This allows
-users to install every package with ease.
+"blackarch" grubu diğer tüm grupların dahil olmak zorunda olduğu temel gruptur. Bu, tüm kullanıcıların tüm paketleri rahatlıkla kurmasını sağlar.
 
-What should be in here: Everything.
+Bu grupta ne bulunabilir? Herşey.
 
 \subsubsection{blackarch-anti-forensic}
-Packages that are used for countering forensic activities,
-including encryption, steganography, and anything that modifies files/file attributes.
-This all includes tools to work with anything in general that makes changes to a system
-for the purposes of hiding information.
+Şifreleme, steganografi ve dosya özelliklerini düzenleme işlemlerini içeren adli bilişim işlemleri için kullanılan paketlerdir. 
+İçerdiği tüm araçların amacı sistemde bilgi gizlemek için değişiklik yapmaktır.
 
-Examples: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+Örnek: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 
 \subsubsection{blackarch-automation}
-Packages that are used for tool or workflow automation.
+Araçların veya iş akışının düzenlenmesi için kullanılan paketlerdir.
 
-Examples: blueranger, tiger, wiffy
+Örnek: blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
-Packages that exploit or open backdoors on already vulnerable systems.
+Zafiyetli sistemlerdeki açık backdoorlar veya exploitlerdir.
 
-Examples: backdoor-factory, rrs, weevely
+Örnek: backdoor-factory, rrs, weevely
 
 \subsubsection{blackarch-binary}
-Packages that operate on binary files in some form.
+Bazı formlardaki binary dosya işlemleri için kullanılan paketlerdir.
 
-Examples: binwally, packerid
+Örnek: binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
-Packages that exploit anything concerning the Bluetooth standard (802.15.1).
+Bluetooth standardı(802.15.1) ile alakalı exploitlerdir.
 
-Examples: ubertooth, tbear, redfang
+Örnek: ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
-Packages that audit existing source code for vulnerability analysis.
+Zafiyet analizi için kaynak kod denetimi yapan paketlerdir.
 
-Examples: flawfinder, pscan
+Örnek: flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
-Packages used for cracking cryptographic functions, ie hashes.
+Hash gibi kriptografik fonksiyonların cracklenmesinde kullanılan paketlerdir.
 
-Examples: hashcat, john, crunch
+Örnek: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
-Packages that work with cryptography, with the exception of cracking.
+Crack işlemleri haricindeki kriptografik işlemlerde kullanılan paketlerdir.
 
-Examples: ciphertest, xortool, sbd
+Örnek: ciphertest, xortool, sbd
 
 \subsubsection{blackarch-database}
-Packages that involve database exploitations on any level.
+Herhangi bir seviyedeki veritabanı exploitlerini içeren palketlerdir.
 
-Examples: metacoretex, blindsql
+Örnek: metacoretex, blindsql
 
 \subsubsection{blackarch-debugger}
-Packages that allow the user to view what a particular program is "doing" in realtime.
+Belirli bir programın realtime'da yaptığı işi incelemeye yarayan paketlerdir.
 
-Examples: radare2, shellnoob
+Örnek: radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
-Packages that attempt to reverse a compiled program into source code.
+Derlenmiş programları kaynak koduna çevirmeye yarayan paketlerdir.
 
-Examples: flasm, jd-gui
+Örnek: flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
 Packages that are used to protect a user from malware \& attacks from other users.
