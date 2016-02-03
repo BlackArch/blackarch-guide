@@ -366,193 +366,179 @@ Derlenmiş programları kaynak koduna çevirmeye yarayan paketlerdir.
 Örnek: flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
-Packages that are used to protect a user from malware \& attacks from other users.
+Kullanıcıyı zararlı yazılımlardan ve saldırılardan koruyan paketlerdir.
 
-Examples: arpon, chkrootkit, sniffjoke
+Örnek: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
-This is similar to blackarch-decompiler, and there will probably be a lot
-of programs that fall into both, however these packages produce assembly output
-rather than the raw source code.
+Bu paketler blackarch-decompiler paketlerine benzer ve bir çok paket her iki grupta da bulunabilir. Bunların farkı ise binary dosyayı reverse ederek kaynak kodu yerine assembly çıktısı verirler.
 
-Examples: inguma, radare2
+Örnek: inguma, radare2
 
 \subsubsection{blackarch-dos}
-Packages that use DoS (Denial of Service) attacks.
+DoS (Denial of Service) saldırıları için kullanılan paketlerdir.
 
-Examples: 42zip, nkiller2
+Örnek: 42zip, nkiller2
 
 \subsubsection{blackarch-drone}
-Packages that are used for managing physically engineered
-drones.
+Fiziksel olarak drone'ları yönetmek için kullanılan paketlerdir.
 
-Examples: meshdeck, skyjack
+Örnek: meshdeck, skyjack
 
 \subsubsection{blackarch-exploitation}
-Packages that takes advantages of exploits in other programs or services.
+Diğer program ve servisleri exploit ederken avantaj sağlayan paketlerdir.
 
-Examples: armitage, metasploit, zarp
+Örnek: armitage, metasploit, zarp
 
 \subsubsection{blackarch-fingerprint}
-Packages that exploit fingerprint biometric equipment.
+Parmak izi biyometrik okuyucuların exploit edilmesinde kullanılan paketlerdir.
 
-Examples: dns-map, p0f, httprint
+Örnek: dns-map, p0f, httprint
 
 \subsubsection{blackarch-firmware}
-Packages that exploit vulnerabilities in firmware
+Firmware'deki zafiyetlerin exploit edilmesinde kullanılan paketlerdir.
 
-Examples: None yet, amend asap.
+Örnek: Henüz yok, en kısa sürede değiştirilecek.
 
 \subsubsection{blackarch-forensic}
-Packages that are used to find data on physical disks or embedded memory.
+Fiziksel disk ve hafızadaki verilerin bulunmasında kullanılan paketlerdir.
 
-Examples: aesfix, nfex, wyd
+Örnek: aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
-Packages that use the fuzz testing principle, ie
-"throwing" random inputs at the subject to see what happens.
+Fuzzing işlemlerinde kullanılan paketlerdir. Örneğin bu paketlerle hedefe random değerler göndererek sonucunda ne olduğunu inceleyebilirsiniz.
 
-Examples: msf, mdk3, wfuzz
+Örnek: msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
-Packages that exploit or manage anything to do with
-physical hardware.
+Fiziksel donanım ile yapılabilecek şeyleri yönetmek veya exploit etmek için kullanılan paketlerdir.
 
-Examples: arduino, smali
+Örnek: arduino, smali
 
 \subsubsection{blackarch-honeypot}
-Packages that act as "honeypots", ie programs that appear to
-be vulnerable services used to attract hackers into a trap.
+"Honeypot" görevi gören araçlardır. Honeypot'lar saldırganları tuzağa düşürmek için kullanılan programlardır.
 
-Examples: artillery, bluepot, wifi-honey
+Örnek: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
-Packages that record and retain keystrokes on another system.
+Bir sistemdeki klavye girdilerini saklayan paketlerdir.
 
-Examples: None yet, amend asap.
+Örnek: Henüz yok, en kısa sürede değiştirilecek.
 
 \subsubsection{blackarch-malware}
-Packages that count as any type of malicious software or
-malware detection.
+Malware'lerin veya zararlı olabilecek yazılımların tespitinde kullanılan paketlerdir.
 
-Examples: malwaredetect, peepdf, yara
+Örnek: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-Packages that don't particularly fit into any categories.
+Başka herhangi bir gruba ait olmayan paketlerdir.
 
-Examples: oh-my-zsh-git, winexe, stompy
+Örnek: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-Packages that manipulate mobile platforms.
+Mobil platformların manipüle edilmesinde kullanılan paketlerdir.
 
-Examples: android-sdk-platform-tools, android-udev-rules
+Örnek: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
-Package that involve IP networking.
+Network işlemlerinde kullanılan paketlerdir.
 
-Examples: Anything pretty much
+Örnek: Hemen hemen herşey
 
 \subsubsection{blackarch-nfc}
-Packages that use nfc (near-field communications).
+NFC (near-field communications) işlemlerinde kullanılan paketlerdir.
 
-Examples: nfcutils
+Örnek: nfcutils
 
 \subsubsection{blackarch-packer}
-Packages that operate on or invlove packers.
+Packerları içeren paketlerdir.
 
-/textif{packers are programs that embed malware within other executables.}
+/textif{Packerlar diğer yazılımlara zararlı yazılım gömebilen paketlerdir.}
 
-Examples: packerid
+Örnek: packerid
 
 \subsubsection{blackarch-proxy}
-Packages that acts as a proxy, ie redirecting traffic
-through another node on the internet.
+Proxy görevi görevi gören uygulamalardır. Proxy'ler trafiği internetteki başka node'lar üzerinden geçiren yapılardır.
 
-Examples: burpsuite, ratproxy, sslnuke
+Örnek: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-Packages that actively seeks vulnerable exploits in the
-wild. More of an umbrella group for similar packages.
+Aktif zafiyet taraması yapan paketlerdir. Daha çok benzer paketlerin bir araya toplandığı şemsiye görevi görür.
 
-Examples: canri, dnsrecon, netmask
+Örnek: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
-This is an umbrella group for any decompiler,
-disassembler or any similar program.
+Decompiler, disassembler gruplarının veya benzer programların bir araya toplandığı gruptur.
 
-Examples: capstone, radare2, zerowine
+Örnek: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
-Packages that scan selected systems for vulnerabilities.
+Hedef sistemde zafiyet taraması yapan paketlerdir.
 
-Examples: scanssh, tiger, zmap
+Örnek: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
-Packages that involve analyzing network traffic.
+Ağ trafiğini analiz etmeye yarayan paketlerdir.
 
-Examples: hexinject, pytactle, xspy
+Örnek: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
-Packages that primarily attack social networking sites.
+Öncelikli olarak sosyal ağ sitelerine saldırmaya yarayan paketlerdir.
 
-Examples: jigsaw, websploit
+Örnek: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-Packages that attempt to spoof the attacker such, in that
-the attacker doesn't show up as an attacker to the victim.
+Saldırganın kendisini gizleyerek kurbanı aldatma girişimlerinde kullandığı paketlerdir.
 
 Examples: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-Packages that would be used for reporting/recording the
-threat model outlined in a particular scenario.
+Belirli bir senaryoda verilen tehdit modelini kaydetmek/raporlamak için kullanılan araçlardır.
 
-Examples: magictree
+Örnek: magictree
 
 \subsubsection{blackarch-tunnel}
-Packages that are used to tunnel network traffic on a given
-network.
+Verilen ağa tünnel ap trafiği oluşturmak için kullanılan paketlerdir.
 
-Examples: ctunnel, iodine, ptunnel
+Örnek: ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-Packages that are used to extract pre-packed malware from an
-executable.
+Çalıştırılabilir dosyalara yerleştirilmiş zararlı yazılımları çıkarmak için kullanılan paketlerdir.
 
-Examples: js-beautify
+Örnek: js-beautify
 
 \subsubsection{blackarch-voip}
-Packages that operate on voip programs and protocols.
+Voip programları ve protokolleri üzerinde işlem yapan paketlerdir.
 
-Examples: iaxflood, rtp-flood, teardown
+Örnek: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-Packages that operate on internet-facing applications.
+İnternet arayüzü olan uygulamaların işlemlerinde kullanılan paketlerdir.
 
-Examples: metoscan, whatweb, zaproxy
+Örnek: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-This group is for any native Windows package that runs via wine.
+"wine" ile çalışan windows uygulamalarının bulunduğu paketlerdir.
 
-Examples: 3proxy-win32, pwdump, winexe
+Örnek: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-Packages that operates on wireless networks on any level.
+Kablosuz ağ işlemleri yapan paketlerdir.
 
-Examples: airpwn, mdk3, wiffy
+Örnek: airpwn, mdk3, wiffy
 
 \section{Repository structure}
-You can find the main BlackArch git repo here:
+Ana BlackArch git deposuna buradan erişebilirsiniz:
 \href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
-There are also several secondary repos here:
+Bir kaç tane ikincil depoya da erişmek için aşağıdaki linki kullanabilirsiniz:
 \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
-Within the main git repo, there are three important directories:
+Ana git deposunda üç önemli klasör bulunmaktadır:
 
 \begin{itemize}
-\item docs - Documentation.
-\item packages - PKGBUILD files.
-\item scripts - Useful little scripts.
+\item docs - Dökümantasyon.
+\item packages - PKGBUILD dosyaları.
+\item scripts - Basit kullanışlı scriptler.
 \end{itemize}
 
 \subsection{Betikler}
