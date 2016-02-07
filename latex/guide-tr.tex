@@ -542,86 +542,89 @@ Ana git deposunda üç önemli klasör bulunmaktadır:
 \end{itemize}
 
 \subsection{Betikler}
-Here is a reference for scripts in the \verb|scripts/| directory:
+Aşağıda \verb|scripts/| klasöründe bulunan betikler için referanslar listelenmiştir:
 
 \begin{itemize}
-\item baaur - Soon, this will upload packages to the AUR.
-\item babuild - Build a package.
-\item bachroot - Manage a chroot for testing.
-\item baclean - Clean old .pkg.tar.xz files from the package repo.
-\item baconflict - Soon this will replace \verb|scripts/conflicts|.
-\item bad-files - Find bad files in built packages.
-\item balock - Obtain or release the package repo lock.
-\item banotify - Notify IRC about package pushes.
-\item barelease - Release packages to the package repo.
-\item baright - Print the BlackArch copyright info.
-\item basign - Sign packages.
-\item basign-key - Sign a key.
-\item blackman - This behaves sort of like pacman but builds from git (not to be
-    confused with nrz's Blackman).
-\item check-groups - Check groups.
-\item checkpkgs - Check packages for errors.
-\item conflicts - Check for file conflicts.
-\item dbmod - Modify a package database.
-\item depth-list - Create a list sorted by dependency depth.
-\item deptree - Create a dependency tree, listing only blackarch-provided packages.
-\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-\item get-official - Get official packages for release.
-\item list-loose-packages - List packages that are not in groups and are not
-    dependencies for other packages.
-\item list-needed - List missing dependencies.
-\item list-removed - List packages that are in the package repo but not in git.
-\item list-tools - List tools.
-\item outdated - Look for packages that are out-dated in the package repo
-    relative to the git repo.
-\item pkgmod - Modify a build package.
-\item pkgrel - Increment pkgrel in a package.
-\item prep - Clean up a PKGBUILD file's style and find errors.
-\item sitesync - Sync between a local copy of the package repo and a remote copy.
-\item size-hunt - Hunt for large packages.
-\item source-backup - Backup package source files.
+\item baaur - Yakında. Paketleri AUR'a yüklemek için kullanılacak.
+\item babuild - Paketleri derler.
+\item bachroot - Test için chroot'u yönetir.
+\item baclean - Eski .pkg.tar.xz dosyalarını paket deposundan temizler.
+\item baconflict - Yakında. \verb|scripts/conflicts|'leri düzeltecek.
+\item bad-files - Derlenmiş paketlerdeki hatalı dosyaları bulur.
+\item balock - Paket deposunu kilitler/açar.
+\item banotify - Paket değişiklerinden IRC'yi haberdar eder.
+\item barelease - Paketleri paket deposuna gönderir.
+\item baright - BlackArch copyright bilgisini bastırır.
+\item basign - Paketleri imzalar.
+\item basign-key - Anahtarları imzalar.
+\item blackman - Bir nevi pacman gibi davranır, fakat paketleri git'ten çeker.
+(nrz'nin Blackman'inden farklıdır.).
+\item check-groups - Grupları kontrol eder.
+\item checkpkgs - Paketlerdeki hataları kontrol eder.
+\item conflicts - Dosya çakışmalarını kontrol eder.
+\item dbmod - Paket veritabanını düzenler.
+\item depth-list - Bağımlılık(dependency) derinliğine göre liste oluşturur.
+\item deptree - Yalnızca blackarch tarafından sunulan paketleri listeleyerek
+    bağımlılık ağacını oluşturur.
+\item get-blackarch-deps - Bir paket için blackarch bağımlılıklarını listeler.
+\item get-official - Yayınlanacak resmi paketleri listeler.
+\item list-loose-packages - Herhangi bir grupta yer almayan veya diğer paketlerle
+    bağımlılığı olmayan paketleri listeler.
+\item list-needed - Eksik bağımlılıkları listeler.
+\item list-removed - Paket deposunda bulunan, git'te bulunmayan paketleri listeler.
+\item list-tools - Araçları listeler.
+\item outdated - Paket deposunda bulunan paketlerin versiyonlarının git deposuna göre
+    eski olanları bulur.
+\item pkgmod - Derlenmiş bir pakette değişiklik yapar.
+\item pkgrel - Bir paketteki pkgrel'i artırır.
+\item prep - PKGBUILD dosyalarını temizler ve hataları bulur.
+\item sitesync - Bir paketin paket deposundaki local kopyası ile uzak sunucudaki
+    kopyası arasında senkronizasyon sağlar.
+\item size-hunt - Büyük paketleri arar.
+\item source-backup - Paketlerin kaynak dosyalarını yedekler.
 \end{itemize}
 
 \section{Depoya katkıda bulunmak}
-This section shows you how to contribute to the BlackArch Linux project. We
-accept pull requests of all sizes, from tiny typo fixes to new packages.\\For
-help, suggestions, or questions feel free to contact us.
+Bu bölüm BlackArch Linux projesine nasıl katkıda bulunabileceğinizi anlatmaktadır.
+Küçük harf hatalası düzeltmelerinden yeni paketlere kadar her türlü pull request'ler
+kabul edilmektedir. \\Yardımcı olmak, öneride bulunmak veya soru sormak
+için bizimle iletişime geçebilirsiniz.
 \\\\
-Everyone is welcome to contribute. All contributions are appreciated.
+Herkes katkıda bulunabilir. Tüm destekler değerlendirilecektir.
 
 \subsection{Yardımcı kaynaklar}
-Please read the following tutorials before contributing:
+Lütfen katkıda bulunmadan önce aşağıdaki kısmı okuyunuz:
 \begin{itemize}
 \item
 \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
-Packaging Standards}
-\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Creating
-Packages}
+Paketleme Standartları}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Paket
+Oluşturma}
 \item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
 \end{itemize}
 
 \subsection{Katkı aşamaları}
-In order to submit your changes to the BlackArchLinux project, follow these
-steps:
+BlackArch Linux projesine değişikliklerinizi göndermek için aşağıdaki
+adımları takip edebilirsiniz:
 \begin{enumerate}
-\item Fork the repository from
+\item Depoyu
 \url{https://github.com/BlackArchLinux/blackarchlinux}
-\item Hack the necessary files, (e.g. PKGBUILD, .patch files, etc).
-\item Commit your changes.
-\item Push your changes.
-\item Ask us to merge in your changes, preferably through a pull request.
+adresinden forklayın.
+\item Gerekli dosyaları düzenleyin, (e.g. PKGBUILD, .patch dosyaları, vb).
+\item Değişikliklerinizi commitleyin.
+\item Değişikliklerinizi pushlayın.
+\item Tercihen pull request ile değişikliklerinizi birleştirmemizi isteyin.
 \end{enumerate}
 
 \subsection{Örnek}
-The following example demonstrates submitting a new package to the BlackArch
-project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
-(you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
-\textbf{nfsshell} from the \href{https://aur.archlinux.org/}{AUR} and adjust it
-according to our needs.
+Aşağıdaki örnek yeni bir paketi BlackArch projesine göndermeyi göstermektedir.
+\textbf{nfsshell} için önceden var olan PKGBUILD dosyasını almak için
+\href{https://wiki.archlinux.org/index.php/yaourt}{yaourt} kullanıyoruz (isterseniz
+pacaur'da kullanabilirsiniz.) ve ihtiyaçlarımıza göre ayarlıyoruz.
 
 \subsubsection{PKGBUILD elde etme}
-Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
+Yaourt veya pacaur kullanarak \textit{PKGBUILD} dosyasını alıyoruz:
 \begin{lstlisting}
   user@blackarchlinux $ yaourt -G nfsshell
   ==> Download nfsshell sources
@@ -632,7 +635,7 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
 \end{lstlisting}
 
 \subsubsection{PKGBUILD temizleme}
-Clean up the \textit{PKGBUILD} file and save some time:
+\textit{PKGBUILD} dosyasını temizleyerek biraz zaman kazanıyoruz:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
@@ -648,13 +651,13 @@ Clean up the \textit{PKGBUILD} file and save some time:
 \end{lstlisting}
 
 \subsubsection{PKGBUILD ayarlama}
-Adjust the \textit{PKGBUILD} file:
+\textit{PKGBUILD} dosyasını ayarlıyoruz:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ vi PKGBUILD
 \end{lstlisting}
 
 \subsubsection{Paket derleme}
-Build the package:
+Paketi derliyoruz:
 \begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
 ==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
 ==> Checking runtime dependencies...
@@ -673,7 +676,8 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 ==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
 \end{lstlisting}
 
-\subsubsection{Pakedin kurulumu ve test edilmesi}
+\subsubsection{Paketin kurulumu ve test edilmesi}
+Paketi kurup test ediyoruz:
 Install and test the package:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
@@ -681,20 +685,21 @@ Install and test the package:
 \end{lstlisting}
 
 \subsubsection{Git'e gönderme}
-Add, commit and push the package
+Paketi commitleyip git'e gönderiyoruz:
 \begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
 \subsubsection{İstek gönderme}
-Create a pull request on \href{https://github.com/}{github.com}
+\href{https://github.com/}{github.com} üzerinden pull request oluşturuyoruz:
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
 
 \subsubsection{Güncellemeleri takip etmek}
-A smart thing to do if you're working upstream and on a fork is to pull your own fork and add the main ba repo as a remote
+Eğer kendi forkladığınız depo üzerinde çalışıyorsanız ve ana ba deposunu uzak depo olarak belirlediyseniz
+güncellemeleri takip etmek için yapılacaklar:
 \begin{lstlisting}
   user@blackarchlinux ~/blackarchlinux $ git remote -v
   origin <the url of your fork> (fetch)
@@ -707,32 +712,32 @@ A smart thing to do if you're working upstream and on a fork is to pull your own
   upstream https://github.com/blackarch/blackarch (push)
 \end{lstlisting}
 
-By default, git should push straight to origin, but make sure your git config is
-configured correctly. This won't be an issue unless you have commit rights as
-you won't be able to push upstream without them.
+Git varsayılan olarak origin'e gönderir ama git config dosyanızın doğru ayarlandığından
+emin olmanız gerekir. Normal commitler sırasında bu problem olmaz fakat eğer
+uzak sunucuya göndermek isterseniz bu mümkün olmayacaktır.
 
-If you do have the ability to commit, you might have more success using
-\textit{git@github.com:blackarch/blackarch.git} but it's up to you.
+Eğer yapabiliyorsanız \textit{git@github.com:blackarch/blackarch.git}
+kullanarak commitlerinizi yapmanız daha başarılı olacaktır. Fakat bu
+konuda tercih size kalmış.
 
 \subsection{İstekler}
 \begin{enumerate}
-\item Don't add \textbf{Maintainer} or \textbf{Contributor} comments to
-\textit{PKGBUILD} files. Add maintainer and contributor names to the
-AUTHORS section of BlackArch guide.
-\item For the sake of consistency, please follow the general style of the other
-\textit{PKGBUILD} files in the repo and use two-space indentation.
+\item \textbf{Maintainer} ya da \textbf{Contributor} isimlerini yorum olarak \textit{PKGBUILD} 
+dosyalarına eklemeyin. Maintainer ve contributor isimlerini BlackArch rehberindeki AUTHORS
+bölümüne ekleyebilirsiniz.
+\item Tutarlılığa uyması adına depoda bulunan başka bir \textit{PKGBUILD} dosyasının genel stilini kullanınız.
+Ayrıca girintilerde iki boşluk kullanınız.
 \end{enumerate}
 
 \subsection{Genel ipuçları}
-\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
-errors.
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} ile paket hatalarını kontrol edebilirsiniz.
 
 %------------------%
 %  Chapter 4       %
 %------------------%
 
 \chapter{Araç Rehberi}
-Coming soon...
+Yakında...
 
 \section{Yakında}
 Yakında...
