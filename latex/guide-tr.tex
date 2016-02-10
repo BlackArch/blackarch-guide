@@ -1,0 +1,751 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% BlackArch Linux Guide                                                        %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, oneside, 11pt]{book}
+
+%%% INCLUDES %%%
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{array}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{html}
+\usepackage{hyperref}
+\usepackage{ifpdf}
+\usepackage{listings}
+\usepackage{pstricks}
+\usepackage{supertabular}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+
+%%% LOCALIZATION %%%
+\renewcommand{\contentsname}{İçindekiler}
+\renewcommand{\chaptername}{Bölüm}
+
+%%% LAYOUT %%%
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\geometry{left=2.5cm, textwidth=16cm, top=3cm, textheight=25cm, bottom=3cm}
+\widowpenalty=2000
+\clubpenalty=1000
+\frenchspacing
+\sloppy
+\pagecolor[HTML]{FFFFFF}
+\color[HTML]{333333}
+\setcounter{tocdepth}{10}
+\setcounter{secnumdepth}{10}
+
+\hypersetup{
+  pdftitle={BlackArch Linux, BlackArch Linux Rehberi},
+  pdfsubject={BlackArch Linux, BlackArch Linux Rehberi},
+  pdfauthor={BlackArch Linux, BlackArch Linux},
+  pdfkeywords={BlackArch Linux, Sızma Testi, Güvenlik, Hacking, Linux},
+  pdfcenterwindow=true,
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=red,
+  menucolor=red,
+  urlcolor=red
+}
+
+% syntax highlighting
+% all options should be set here document wide
+\lstset{
+backgroundcolor=\color[HTML]{EEEEEE},
+frame=single,
+basicstyle=\footnotesize\ttfamily,
+float,
+deletekeywords={return},
+otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
+pacman, blackman},
+keywordstyle=\color{orange},
+commentstyle=\color{blue},
+stringstyle=\color{red},
+language=bash,
+showspaces=false,
+showtabs=false,
+tabsize=2
+}
+
+%%% HEADER / FOOTER %%%
+\setlength{\headheight}{33pt}
+\setlength{\headsep}{33pt}
+\lhead{{\includegraphics[width=1cm,height=1cm]{images/logo.png}}}
+\rhead{The BlackArch Linux Rehberi}
+
+%%% CUSTOM MACROS %%%
+% for html links
+\ifpdf\else
+\def\href#1#2{\htmladdnormallink{#2}{#1}}
+\fi
+
+%------------------%
+%  TITLE PAGE      %
+%------------------%
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\begin{figure}[htbp]
+\centering
+\vspace{0.5cm}
+\includegraphics[width=8cm]{images/logo.png}
+\label{fig:logo}
+\end{figure}
+\vspace{0.5cm}
+\Huge{\textbf{BlackArch Linux Rehberi}}\\
+\vspace{1cm}
+\Large{\color{red}https://www.blackarch.org/}\\
+\vspace{0.5cm}
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+
+%------------------%
+%  Chapter 1       %
+%------------------%
+
+\chapter{Giriş}
+
+\section{Ön Bakış}
+Bu rehber 4 ana parçaya bölünmüştür:
+\begin{itemize}
+\item Giriş - Projeye genel bir bakış, giriş ve çeşitli yararlı ilk bilgiler
+\item Kullanıcı Rehberi - Normal bir kullanıcının BlackArch'ı verimli kullanması için gerekli bilgiler
+\item Geliştirici Rehberi - BlackArch'ın geliştirilmesine yardımcı veya destek olmak isteyenler için gerekli bilgiler
+\item Araç Rehberi - Kurulu araçların kullanım yöntemleri ve ipuçları
+\end{itemize}
+
+\section{BlackArch Linux Nedir?}
+BlackArch, siber güvenlik araştırmacıları ve sızma testi uzmanları için geliştirilmekte olan bir GNU/Linux dağıtımıdır. \href{https://www.archlinux.org/}{ArchLinux} işletim sistemini taban olarak kabul etmiştir ve kullanıcılara BlackArch paketlerini kurma imkanı sağlamaktadır. Kullanıcılar bu paketleri grup olarak yükleyebileceği gibi, doğrudan da yükleyebilir.
+
+Araçların yer aldığı paket deposu, Arch Linux işletim sisteminde olduğu gibi
+\href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{resmi olmayan kullanıcı deposu} olarak kullanılabilir. Doğal olarak hali hazırda kurulu olan Arch Linux işletim sistemine kurulum yapılabilir. Paket deposu eklemesi yapıldıktan sonra araçlar doğrudan veya gruplar halinde kurulabilir.
+
+Şu anda depo içerisinde \href{https://www.blackarch.org/tools.html}{1300} araç bulunmaktadır. Depo kalitesinin korunması için tüm araçlar eklenmeden önce test edilmektedir.
+
+% should quickly describe the testing methods/code review procedures etc
+
+\section{BlackArch Linux Rehberi}
+Yakında...
+
+\section{Supported platforms}
+Yakında...
+
+\section{Dahil Olun}
+BlackArch ekibi ile aşağıdaki yöntemlerden istediğiniz birisi ile iletişime geçebilirsiniz:
+
+Web sitesi: \url{https://www.blackarch.org/}
+
+E-Posta adresi: \href{mailto:blackarchlinux@gmail.com}{blackarchlinux@gmail.com}
+
+IRC: \url{irc://irc.freenode.net/blackarch}
+
+Twitter: \url{https://twitter.com/blackarchlinux}
+
+Github: \url{https://github.com/Blackarch/}
+
+%------------------%
+%  Chapter 2       %
+%------------------%
+
+
+\chapter{Kullanıcı Rehberi}
+
+\section{Kurulum}
+Bu kısım altında BlackArch deposunun nasıl sisteme dahil edileceği ve paketlerin nasıl kurulacağı yer almaktadır. BlackArch depolarda yer alan derlenmiş paketleri desteklediği gibi kaynak kod ile paket kurulumunu da desteklemektedir.
+
+BlackArch normal bir Arch Linux kurulumu ile uyumludur. Resmi olmayan kullanıcı deposu olarak düşünülebilir. Paket deposu yerine doğrudan ISO ile kurulum yapmak isterseniz \href{https://www.blackarch.org/downloads.html#iso}{Live ISO} kısmına bakabilirsiniz.
+
+
+\subsection{Var olan Arch Linux üzerine kurulum}
+\href{https://blackarch.org/strap.sh}{strap.sh} betiğini root yetkileri ile çalıştırınız ve aşağıdaki adımları takip ediniz. Hash değeri kontrolünü yapmayı unutmayınız.
+
+\begin{lstlisting}
+   curl -O https://blackarch.org/strap.sh
+   sha1sum strap.sh # bu degere esit olmali: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sudo ./strap.sh
+\end{lstlisting}
+
+Şimdi, ana paket listesinin güncellenmesi ve paketlerinizin senkron olması için aşağıdaki komutu kullanınız:
+\begin{lstlisting}
+  sudo pacman -Syyu
+\end{lstlisting}
+
+
+\subsection{Paket kurulumu}
+Araçları blackarch deposundan kurabilirsiniz.
+\begin{enumerate}
+\item Kurulabilir tüm araçları listelemek için:
+\begin{lstlisting}
+  pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+\end{lstlisting}
+
+\item Tüm araçları kurmak için:
+\begin{lstlisting}
+  pacman -S blackarch
+\end{lstlisting}
+
+\item Belirli bir kategoride yer alan araçları kurmak için:
+\begin{lstlisting}
+  pacman -S blackarch-<category>
+\end{lstlisting}
+
+\item Tüm blackarch kategorilerini görmek için:
+\begin{lstlisting}
+  pacman -Sg | grep blackarch
+\end{lstlisting}
+
+\end{enumerate}
+
+\subsection{Kaynak koddan paket kurulumu}
+Kurulumlara alternatif olarak BlackArch paketlerini doğrudan kaynak kod yardımı ile kurabilirsiniz. Bunun için PKGBUILD dosyalarına \href{https://github.com/BlackArch/blackarch/tree/master/packages}{paketler} dizini altından erişebilirsiniz. Tüm depoyu derlemek için \href{https://github.com/BlackArch/blackman}{Blackman} aracını kullanabilirsiniz.
+
+\begin{itemize}
+\item BlackArch paket deposu sisteminizde ekliyse doğrudan aşağıdaki komut yardımıyla Blackman aracını kurabilirsiniz.
+\begin{lstlisting}
+  pacman -S blackman
+\end{lstlisting}
+
+\item Blackman'i kaynak koddan kurmak için aşağıdaki adımları takip edebilirsiniz.
+\begin{lstlisting}
+  mkdir blackman
+  cd blackman
+  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # PKGBUILD dosyasinda herhangi bir sikinti olmadigini kontrol etmeyi unutmayiniz!
+  makepkg -s
+\end{lstlisting}
+
+\item Blackman'i AUR aracılığı ile de kurabilirsiniz.
+\begin{lstlisting}
+  <AUR yardimci araciniz> -S blackman
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{Temel BlackMan kullanımı}
+Blackman her ne kadar alıştığınız diğer paket yöneticilerinin parametrelerinden farklı bir yapı kullansa da, gayet kolay bir kullanıma sahiptir. En temel kullanımı aşağıda gösterilmiştir.
+
+\begin{itemize}
+\item Paketi indir, derle ve kur:
+\begin{lstlisting}
+  sudo blackman -i paket
+\end{lstlisting}
+
+\item Paket grubunu indir, derle ve içerisinde yer alan tüm paketleri kur:
+\begin{lstlisting}
+  sudo blackman -g grup
+\end{lstlisting}
+
+\item Tüm BlackArch araçlarını indir, derle ve kur:
+\begin{lstlisting}
+  sudo blackman -a
+\end{lstlisting}
+
+\item BlackArch kategorilerini listeleme:
+\begin{lstlisting}
+  blackman -l
+\end{lstlisting}
+
+\item Kategori içerisinde yer alan araçları listeleme:
+\begin{lstlisting}
+  blackman -p category
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{Doğrudan çalıştırılabilir ISO ile kurulum yapma}
+BlackArch'ı doğrudan çalıştırılabilir ISO aracılığı ile de kurabilirsiniz. Bunun için \url{https://www.blackarch.org/download.html#iso} sayfasından bulabileceğiniz imaj ile aşağıdaki adımları takip edebilirsiniz. Adımları takip edebilmek için bilgisayarınızı indirdiğiniz imaj ile boot etmeniz gerekmektedir.
+
+\begin{itemize}
+\item blackarch-install-scripts paketi kurulumu:
+\begin{lstlisting}
+  sudo pacman -S blackarch-install-scripts
+\end{lstlisting}
+
+\item Çalıştırma
+\begin{lstlisting}
+  sudo blackarch-install
+\end{lstlisting}
+
+\end{itemize}
+
+%------------------%
+%  Chapter 3       %
+%------------------%
+
+\chapter{Geliştirici Rehberi}
+
+\section{Arch Linux Paket Derleme ve Paket Depoları}
+
+PKGBUILD dosyaları derleme betikleridir. Bu betikler makepkg(1) uygulamasına paketin nasıl oluşturulacağı bilgisini sağlamaktadır. PKGBUILD dosyaları Bash betikleri olarak yazılmaktadır.
+
+Daha fazla bilgi için aşağıdaki kaynaklara bakabilirsiniz:
+
+\begin{itemize}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Paket Oluşturulması}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Paketleri Standartları}
+\end{itemize}
+
+\section{Blackarch PKGBUILD standartları}
+AUR deposundaki paketler ile benzerliği korumak için PKGBUILD dosyaları ufak farklar haricinde benzer şekilde oluşturulmaktadır. Her bir paket en az blackarch grubuna dahil olmalıdır. Benzer şekilde bir paket birden fazla gruba dahil olabileceği gibi bir grup içerisinde de birden fazla paket bulunabilir.
+
+\subsection{Gruplar}
+Kullanıcılar kolay ve hızlı bir şekilde benzer paketleri kurabilmesi için çeşitli gruplamalar yapılmıştır. Gruplamanın getirdiği avantaj sayesinde "pacman -S <grup\_adi>" şeklinde bir komut ile tüm paketler kurulabilir.
+
+\subsubsection{blackarch}
+"blackarch" grubu diğer tüm grupların dahil olmak zorunda olduğu temel gruptur. Bu, tüm kullanıcıların tüm paketleri rahatlıkla kurmasını sağlar.
+
+Bu grupta ne bulunabilir? Herşey.
+
+\subsubsection{blackarch-anti-forensic}
+Şifreleme, steganografi ve dosya özelliklerini düzenleme işlemlerini içeren adli bilişim işlemleri için kullanılan paketlerdir. 
+İçerdiği tüm araçların amacı sistemde bilgi gizlemek için değişiklik yapmaktır.
+
+Örnek: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+
+\subsubsection{blackarch-automation}
+Araçların veya iş akışının düzenlenmesi için kullanılan paketlerdir.
+
+Örnek: blueranger, tiger, wiffy
+
+\subsubsection{blackarch-backdoor}
+Zafiyetli sistemlerdeki açık backdoorlar veya exploitlerdir.
+
+Örnek: backdoor-factory, rrs, weevely
+
+\subsubsection{blackarch-binary}
+Bazı formlardaki binary dosya işlemleri için kullanılan paketlerdir.
+
+Örnek: binwally, packerid
+
+\subsubsection{blackarch-bluetooth}
+Bluetooth standardı(802.15.1) ile alakalı exploitlerdir.
+
+Örnek: ubertooth, tbear, redfang
+
+\subsubsection{blackarch-code-audit}
+Zafiyet analizi için kaynak kod denetimi yapan paketlerdir.
+
+Örnek: flawfinder, pscan
+
+\subsubsection{blackarch-cracker}
+Hash gibi kriptografik fonksiyonların cracklenmesinde kullanılan paketlerdir.
+
+Örnek: hashcat, john, crunch
+
+\subsubsection{blackarch-crypto}
+Crack işlemleri haricindeki kriptografik işlemlerde kullanılan paketlerdir.
+
+Örnek: ciphertest, xortool, sbd
+
+\subsubsection{blackarch-database}
+Herhangi bir seviyedeki veritabanı exploitlerini içeren palketlerdir.
+
+Örnek: metacoretex, blindsql
+
+\subsubsection{blackarch-debugger}
+Belirli bir programın realtime'da yaptığı işi incelemeye yarayan paketlerdir.
+
+Örnek: radare2, shellnoob
+
+\subsubsection{blackarch-decompiler}
+Derlenmiş programları kaynak koduna çevirmeye yarayan paketlerdir.
+
+Örnek: flasm, jd-gui
+
+\subsubsection{blackarch-defensive}
+Kullanıcıyı zararlı yazılımlardan ve saldırılardan koruyan paketlerdir.
+
+Örnek: arpon, chkrootkit, sniffjoke
+
+\subsubsection{blackarch-disassembler}
+Bu paketler blackarch-decompiler paketlerine benzer ve bir çok paket her iki grupta da bulunabilir. Bunların farkı ise binary dosyayı reverse ederek kaynak kodu yerine assembly çıktısı verirler.
+
+Örnek: inguma, radare2
+
+\subsubsection{blackarch-dos}
+DoS (Denial of Service) saldırıları için kullanılan paketlerdir.
+
+Örnek: 42zip, nkiller2
+
+\subsubsection{blackarch-drone}
+Fiziksel olarak drone'ları yönetmek için kullanılan paketlerdir.
+
+Örnek: meshdeck, skyjack
+
+\subsubsection{blackarch-exploitation}
+Diğer program ve servisleri exploit ederken avantaj sağlayan paketlerdir.
+
+Örnek: armitage, metasploit, zarp
+
+\subsubsection{blackarch-fingerprint}
+Parmak izi biyometrik okuyucuların exploit edilmesinde kullanılan paketlerdir.
+
+Örnek: dns-map, p0f, httprint
+
+\subsubsection{blackarch-firmware}
+Firmware'deki zafiyetlerin exploit edilmesinde kullanılan paketlerdir.
+
+Örnek: Henüz yok, en kısa sürede değiştirilecek.
+
+\subsubsection{blackarch-forensic}
+Fiziksel disk ve hafızadaki verilerin bulunmasında kullanılan paketlerdir.
+
+Örnek: aesfix, nfex, wyd
+
+\subsubsection{blackarch-fuzzer}
+Fuzzing işlemlerinde kullanılan paketlerdir. Örneğin bu paketlerle hedefe random değerler göndererek sonucunda ne olduğunu inceleyebilirsiniz.
+
+Örnek: msf, mdk3, wfuzz
+
+\subsubsection{blackarch-hardware}
+Fiziksel donanım ile yapılabilecek şeyleri yönetmek veya exploit etmek için kullanılan paketlerdir.
+
+Örnek: arduino, smali
+
+\subsubsection{blackarch-honeypot}
+"Honeypot" görevi gören araçlardır. Honeypot'lar saldırganları tuzağa düşürmek için kullanılan programlardır.
+
+Örnek: artillery, bluepot, wifi-honey
+
+\subsubsection{blackarch-keylogger}
+Bir sistemdeki klavye girdilerini saklayan paketlerdir.
+
+Örnek: Henüz yok, en kısa sürede değiştirilecek.
+
+\subsubsection{blackarch-malware}
+Malware'lerin veya zararlı olabilecek yazılımların tespitinde kullanılan paketlerdir.
+
+Örnek: malwaredetect, peepdf, yara
+
+\subsubsection{blackarch-misc}
+Başka herhangi bir gruba ait olmayan paketlerdir.
+
+Örnek: oh-my-zsh-git, winexe, stompy
+
+\subsubsection{blackarch-mobile}
+Mobil platformların manipüle edilmesinde kullanılan paketlerdir.
+
+Örnek: android-sdk-platform-tools, android-udev-rules
+
+\subsubsection{blackarch-networking}
+Network işlemlerinde kullanılan paketlerdir.
+
+Örnek: Hemen hemen herşey
+
+\subsubsection{blackarch-nfc}
+NFC (near-field communications) işlemlerinde kullanılan paketlerdir.
+
+Örnek: nfcutils
+
+\subsubsection{blackarch-packer}
+Packerları içeren paketlerdir.
+
+/textif{Packerlar diğer yazılımlara zararlı yazılım gömebilen paketlerdir.}
+
+Örnek: packerid
+
+\subsubsection{blackarch-proxy}
+Proxy görevi görevi gören uygulamalardır. Proxy'ler trafiği internetteki başka node'lar üzerinden geçiren yapılardır.
+
+Örnek: burpsuite, ratproxy, sslnuke
+
+\subsubsection{blackarch-recon}
+Aktif zafiyet taraması yapan paketlerdir. Daha çok benzer paketlerin bir araya toplandığı şemsiye görevi görür.
+
+Örnek: canri, dnsrecon, netmask
+
+\subsubsection{blackarch-reversing}
+Decompiler, disassembler gruplarının veya benzer programların bir araya toplandığı gruptur.
+
+Örnek: capstone, radare2, zerowine
+
+\subsubsection{blackarch-scanner}
+Hedef sistemde zafiyet taraması yapan paketlerdir.
+
+Örnek: scanssh, tiger, zmap
+
+\subsubsection{blackarch-sniffer}
+Ağ trafiğini analiz etmeye yarayan paketlerdir.
+
+Örnek: hexinject, pytactle, xspy
+
+\subsubsection{blackarch-social}
+Öncelikli olarak sosyal ağ sitelerine saldırmaya yarayan paketlerdir.
+
+Örnek: jigsaw, websploit
+
+\subsubsection{blackarch-spoof}
+Saldırganın kendisini gizleyerek kurbanı aldatma girişimlerinde kullandığı paketlerdir.
+
+Examples: arpoison, lans, netcommander
+
+\subsubsection{blackarch-threat-model}
+Belirli bir senaryoda verilen tehdit modelini kaydetmek/raporlamak için kullanılan araçlardır.
+
+Örnek: magictree
+
+\subsubsection{blackarch-tunnel}
+Verilen ağa tünnel ap trafiği oluşturmak için kullanılan paketlerdir.
+
+Örnek: ctunnel, iodine, ptunnel
+
+\subsubsection{blackarch-unpacker}
+Çalıştırılabilir dosyalara yerleştirilmiş zararlı yazılımları çıkarmak için kullanılan paketlerdir.
+
+Örnek: js-beautify
+
+\subsubsection{blackarch-voip}
+Voip programları ve protokolleri üzerinde işlem yapan paketlerdir.
+
+Örnek: iaxflood, rtp-flood, teardown
+
+\subsubsection{blackarch-webapp}
+İnternet arayüzü olan uygulamaların işlemlerinde kullanılan paketlerdir.
+
+Örnek: metoscan, whatweb, zaproxy
+
+\subsubsection{blackarch-windows}
+"wine" ile çalışan windows uygulamalarının bulunduğu paketlerdir.
+
+Örnek: 3proxy-win32, pwdump, winexe
+
+\subsubsection{blackarch-wireless}
+Kablosuz ağ işlemleri yapan paketlerdir.
+
+Örnek: airpwn, mdk3, wiffy
+
+\section{Repository structure}
+Ana BlackArch git deposuna buradan erişebilirsiniz:
+\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
+Bir kaç tane ikincil depoya da erişmek için aşağıdaki linki kullanabilirsiniz:
+\href{https://github.com/BlackArch}{https://github.com/BlackArch}.
+
+Ana git deposunda üç önemli klasör bulunmaktadır:
+
+\begin{itemize}
+\item docs - Dökümantasyon.
+\item packages - PKGBUILD dosyaları.
+\item scripts - Basit kullanışlı scriptler.
+\end{itemize}
+
+\subsection{Betikler}
+Aşağıda \verb|scripts/| klasöründe bulunan betikler için referanslar listelenmiştir:
+
+\begin{itemize}
+\item baaur - Yakında. Paketleri AUR'a yüklemek için kullanılacak.
+\item babuild - Paketleri derler.
+\item bachroot - Test için chroot'u yönetir.
+\item baclean - Eski .pkg.tar.xz dosyalarını paket deposundan temizler.
+\item baconflict - Yakında. \verb|scripts/conflicts|'leri düzeltecek.
+\item bad-files - Derlenmiş paketlerdeki hatalı dosyaları bulur.
+\item balock - Paket deposunu kilitler/açar.
+\item banotify - Paket değişiklerinden IRC'yi haberdar eder.
+\item barelease - Paketleri paket deposuna gönderir.
+\item baright - BlackArch copyright bilgisini bastırır.
+\item basign - Paketleri imzalar.
+\item basign-key - Anahtarları imzalar.
+\item blackman - Bir nevi pacman gibi davranır, fakat paketleri git'ten çeker.
+(nrz'nin Blackman'inden farklıdır.).
+\item check-groups - Grupları kontrol eder.
+\item checkpkgs - Paketlerdeki hataları kontrol eder.
+\item conflicts - Dosya çakışmalarını kontrol eder.
+\item dbmod - Paket veritabanını düzenler.
+\item depth-list - Bağımlılık(dependency) derinliğine göre liste oluşturur.
+\item deptree - Yalnızca blackarch tarafından sunulan paketleri listeleyerek
+    bağımlılık ağacını oluşturur.
+\item get-blackarch-deps - Bir paket için blackarch bağımlılıklarını listeler.
+\item get-official - Yayınlanacak resmi paketleri listeler.
+\item list-loose-packages - Herhangi bir grupta yer almayan veya diğer paketlerle
+    bağımlılığı olmayan paketleri listeler.
+\item list-needed - Eksik bağımlılıkları listeler.
+\item list-removed - Paket deposunda bulunan, git'te bulunmayan paketleri listeler.
+\item list-tools - Araçları listeler.
+\item outdated - Paket deposunda bulunan paketlerin versiyonlarının git deposuna göre
+    eski olanları bulur.
+\item pkgmod - Derlenmiş bir pakette değişiklik yapar.
+\item pkgrel - Bir paketteki pkgrel'i artırır.
+\item prep - PKGBUILD dosyalarını temizler ve hataları bulur.
+\item sitesync - Bir paketin paket deposundaki local kopyası ile uzak sunucudaki
+    kopyası arasında senkronizasyon sağlar.
+\item size-hunt - Büyük paketleri arar.
+\item source-backup - Paketlerin kaynak dosyalarını yedekler.
+\end{itemize}
+
+\section{Depoya katkıda bulunmak}
+Bu bölüm BlackArch Linux projesine nasıl katkıda bulunabileceğinizi anlatmaktadır.
+Küçük harf hatalası düzeltmelerinden yeni paketlere kadar her türlü pull request'ler
+kabul edilmektedir. \\Yardımcı olmak, öneride bulunmak veya soru sormak
+için bizimle iletişime geçebilirsiniz.
+\\\\
+Herkes katkıda bulunabilir. Tüm destekler değerlendirilecektir.
+
+\subsection{Yardımcı kaynaklar}
+Lütfen katkıda bulunmadan önce aşağıdaki kısmı okuyunuz:
+\begin{itemize}
+\item
+\href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
+Paketleme Standartları}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Paket
+Oluşturma}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
+\end{itemize}
+
+\subsection{Katkı aşamaları}
+BlackArch Linux projesine değişikliklerinizi göndermek için aşağıdaki
+adımları takip edebilirsiniz:
+\begin{enumerate}
+\item Depoyu
+\url{https://github.com/BlackArchLinux/blackarchlinux}
+adresinden forklayın.
+\item Gerekli dosyaları düzenleyin, (e.g. PKGBUILD, .patch dosyaları, vb).
+\item Değişikliklerinizi commitleyin.
+\item Değişikliklerinizi pushlayın.
+\item Tercihen pull request ile değişikliklerinizi birleştirmemizi isteyin.
+\end{enumerate}
+
+\subsection{Örnek}
+Aşağıdaki örnek yeni bir paketi BlackArch projesine göndermeyi göstermektedir.
+\textbf{nfsshell} için önceden var olan PKGBUILD dosyasını almak için
+\href{https://wiki.archlinux.org/index.php/yaourt}{yaourt} kullanıyoruz (isterseniz
+pacaur'da kullanabilirsiniz.) ve ihtiyaçlarımıza göre ayarlıyoruz.
+
+\subsubsection{PKGBUILD elde etme}
+Yaourt veya pacaur kullanarak \textit{PKGBUILD} dosyasını alıyoruz:
+\begin{lstlisting}
+  user@blackarchlinux $ yaourt -G nfsshell
+  ==> Download nfsshell sources
+  x LICENSE
+  x PKGBUILD
+  x gcc.patch
+  user@blackarchlinux $ cd nfsshell/
+\end{lstlisting}
+
+\subsubsection{PKGBUILD temizleme}
+\textit{PKGBUILD} dosyasını temizleyerek biraz zaman kazanıyoruz:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
+  cleaning 'PKGBUILD'...
+  expanding tabs...
+  removing vim modeline...
+  removing id comment...
+  removing contributor and maintainer comments...
+  squeezing extra blank lines...
+  removing '|| return'...
+  removing leading blank line...
+  removing $pkgname...
+  removing trailing whitespace...
+\end{lstlisting}
+
+\subsubsection{PKGBUILD ayarlama}
+\textit{PKGBUILD} dosyasını ayarlıyoruz:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ vi PKGBUILD
+\end{lstlisting}
+
+\subsubsection{Paket derleme}
+Paketi derliyoruz:
+\begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
+==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+-> Downloading nfsshell.tar.gz...
+% Total    % Received % Xferd  Average Speed   Time    Time     Time
+CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
+0  48150      0 --:--:-- --:--:-- --:--:-- 48206
+-> Found gcc.patch
+-> Found LICENSE
+...
+<lots of build process and compiler output here>
+...
+==> Leaving fakeroot environment.
+==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
+\end{lstlisting}
+
+\subsubsection{Paketin kurulumu ve test edilmesi}
+Paketi kurup test ediyoruz:
+Install and test the package:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
+  user@blackarchlinux nfsshell $ nfsshell # test it
+\end{lstlisting}
+
+\subsubsection{Git'e gönderme}
+Paketi commitleyip git'e gönderiyoruz:
+\begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
+user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
+user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
+\end{lstlisting}
+
+\subsubsection{İstek gönderme}
+\href{https://github.com/}{github.com} üzerinden pull request oluşturuyoruz:
+\begin{lstlisting}
+  firefox https://github.com/<contributor>/blackarchlinux
+\end{lstlisting}
+
+\subsubsection{Güncellemeleri takip etmek}
+Eğer kendi forkladığınız depo üzerinde çalışıyorsanız ve ana ba deposunu uzak depo olarak belirlediyseniz
+güncellemeleri takip etmek için yapılacaklar:
+\begin{lstlisting}
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  user@blackarchlinux ~/blackarchlinux $ git remote add upstream https://github.com/blackarch/blackarch
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  upstream https://github.com/blackarch/blackarch (fetch)
+  upstream https://github.com/blackarch/blackarch (push)
+\end{lstlisting}
+
+Git varsayılan olarak origin'e gönderir ama git config dosyanızın doğru ayarlandığından
+emin olmanız gerekir. Normal commitler sırasında bu problem olmaz fakat eğer
+uzak sunucuya göndermek isterseniz bu mümkün olmayacaktır.
+
+Eğer yapabiliyorsanız \textit{git@github.com:blackarch/blackarch.git}
+kullanarak commitlerinizi yapmanız daha başarılı olacaktır. Fakat bu
+konuda tercih size kalmış.
+
+\subsection{İstekler}
+\begin{enumerate}
+\item \textbf{Maintainer} ya da \textbf{Contributor} isimlerini yorum olarak \textit{PKGBUILD} 
+dosyalarına eklemeyin. Maintainer ve contributor isimlerini BlackArch rehberindeki AUTHORS
+bölümüne ekleyebilirsiniz.
+\item Tutarlılığa uyması adına depoda bulunan başka bir \textit{PKGBUILD} dosyasının genel stilini kullanınız.
+Ayrıca girintilerde iki boşluk kullanınız.
+\end{enumerate}
+
+\subsection{Genel ipuçları}
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} ile paket hatalarını kontrol edebilirsiniz.
+
+%------------------%
+%  Chapter 4       %
+%------------------%
+
+\chapter{Araç Rehberi}
+Yakında...
+
+\section{Yakında}
+Yakında...
+
+%%% APPENDIX %%%
+\appendix
+\include{appendix}
+
+\end{document}
+
+%%% EOF %%%
