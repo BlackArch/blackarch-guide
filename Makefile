@@ -49,5 +49,5 @@ lint:
 
 # generate a pdf using lualatex
 pdf:
-	@lualatex ${srcdir}/blackarch-guide-tr.tex 1>./build_log
-	@lualatex ${srcdir}/blackarch-guide-tr.tex 1>./build_log
+	@lualatex ${srcdir}/blackarch-guide-en.tex 1>./build_log
+	@lualatex ${srcdir}/blackarch-guide-en.tex 1>./build_log
