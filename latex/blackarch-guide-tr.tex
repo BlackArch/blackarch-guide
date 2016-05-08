@@ -267,9 +267,9 @@ Blackman her ne kadar alıştığınız diğer paket yöneticilerinin parametrel
 BlackArch'ı doğrudan çalıştırılabilir ISO aracılığı ile de kurabilirsiniz. Bunun için \url{https://www.blackarch.org/download.html#iso} sayfasından bulabileceğiniz imaj ile aşağıdaki adımları takip edebilirsiniz. Adımları takip edebilmek için bilgisayarınızı indirdiğiniz imaj ile boot etmeniz gerekmektedir.
 
 \begin{itemize}
-\item blackarch-install-scripts paketi kurulumu:
+\item blackarch-installer paketi kurulumu:
 \begin{lstlisting}
-  sudo pacman -S blackarch-install-scripts
+  sudo pacman -S blackarch-installer
 \end{lstlisting}
 
 \item Çalıştırma
@@ -310,7 +310,7 @@ Kullanıcılar kolay ve hızlı bir şekilde benzer paketleri kurabilmesi için 
 Bu grupta ne bulunabilir? Herşey.
 
 \subsubsection{blackarch-anti-forensic}
-Şifreleme, steganografi ve dosya özelliklerini düzenleme işlemlerini içeren adli bilişim işlemleri için kullanılan paketlerdir. 
+Şifreleme, steganografi ve dosya özelliklerini düzenleme işlemlerini içeren adli bilişim işlemleri için kullanılan paketlerdir.
 İçerdiği tüm araçların amacı sistemde bilgi gizlemek için değişiklik yapmaktır.
 
 Örnek: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
@@ -722,7 +722,7 @@ konuda tercih size kalmış.
 
 \subsection{İstekler}
 \begin{enumerate}
-\item \textbf{Maintainer} ya da \textbf{Contributor} isimlerini yorum olarak \textit{PKGBUILD} 
+\item \textbf{Maintainer} ya da \textbf{Contributor} isimlerini yorum olarak \textit{PKGBUILD}
 dosyalarına eklemeyin. Maintainer ve contributor isimlerini BlackArch rehberindeki AUTHORS
 bölümüne ekleyebilirsiniz.
 \item Tutarlılığa uyması adına depoda bulunan başka bir \textit{PKGBUILD} dosyasının genel stilini kullanınız.

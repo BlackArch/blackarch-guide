@@ -1,7 +1,7 @@
 #!/bin/sh
 
 site='blackarch.org'
-rdir='/home/nginx/var/www'
+rdir='/var/www'
 
 if [ $# -ne 1 ]
 then
