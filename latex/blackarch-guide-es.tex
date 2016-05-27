@@ -1,6 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% BlackArch Linux Guide                                                        %
+%                            BlackArch Linux Guide                             %
+%                                 Spanish version                              %
+%                                                   by Ubidragon               %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -96,6 +98,8 @@ tabsize=2
 \end{figure}
 \vspace{0.5cm}
 \Huge{\textbf{The BlackArch Linux Guide}}\\
+\vspace{0.5cm}
+\Large{\textbf{Spanish Version}}\\
 \vspace{1cm}
 \Large{\color{red}https://www.blackarch.org/}\\
 \vspace{0.5cm}
@@ -109,9 +113,9 @@ tabsize=2
 %  Chapter 1       %
 %------------------%
 
-\chapter{Introduction}
+\chapter{Introducci\'on}
 
-\section{Overview}
+\section{Resumen}
 The BlackArch Linux Guide se divide en varias partes:
 \begin{itemize}
 \item Introducci\'on - Proporciona una visi\'on genetal, introducci\'on, y una informaci\'on adicional sobre el proyecto
@@ -218,13 +222,13 @@ BlackArchpackages desde las fuentes. Usted deber\'a buscar los PKGBUILDs en
 el repositorio entero, usted debr\'a usar la herramienta
 \href{https://github.com/BlackArch/blackman}{Blackman}.
 \begin{itemize}
-\item First, you have to install Blackman. If the BlackArch package repository
-is setup on your machine, you can install Blackman:
+\item En primer lugar, usted tiene que instalar Blackman. Si el repositorio de paquetes de BlackArch
+est\'a configurado en su equipo, puede instalar Blackman:
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item You can build and install Blackman from source:
+\item Usted puede compilar e instalar desde las fuentes:
 \begin{lstlisting}
   mkdir blackman
   cd blackman
@@ -233,14 +237,14 @@ is setup on your machine, you can install Blackman:
   makepkg -s
 \end{lstlisting}
 
-\item Or you can install Blackman from the AUR:
+\item Tambi\'en puede instalar Blackman desde AUR:
 \begin{lstlisting}
   <whatever AUR helper you use> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
+\subsection{Uso b\'asico de Blackman} Blackman is very simple to use, though the flags are different from what you
 would typically expect from something like pacman. Basic usage has been outlined below.
 \begin{itemize}
 \item Download, compile and install packages:
