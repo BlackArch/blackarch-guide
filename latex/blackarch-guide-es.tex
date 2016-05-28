@@ -244,30 +244,31 @@ est\'a configurado en su equipo, puede instalar Blackman:
 
 \end{itemize}
 
-\subsection{Uso b\'asico de Blackman} Blackman is very simple to use, though the flags are different from what you
-would typically expect from something like pacman. Basic usage has been outlined below.
+\subsection{Uso b\'asico de Blackman} Blackman es muy f\'acil de usar, aunque los 
+comandos son diferentes de lo que normalmente se debe\'ia de esperar de algo parecido
+a pacman. El uso básico ser\'a delineado a continuaci\'on.
 \begin{itemize}
-\item Download, compile and install packages:
+\item Descargue, compile e instale paquetes:
 \begin{lstlisting}
   sudo blackman -i package
 \end{lstlisting}
 
-\item Download, compile and install whole category:
+\item Descargue, compile e instale alguna categor\'ia:
 \begin{lstlisting}
   sudo blackman -g group
 \end{lstlisting}
 
-\item Download, compile and install all of the BlackArch tools:
+\item Descargue, compile e instale todas las herramientas de BlackArch:
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
 
-\item To list the blackarch categories:
+\item Para ver una lista de las categor\'ias de blackarch:
 \begin{lstlisting}
   blackman -l
 \end{lstlisting}
 
-\item To list category tools:
+\item Para una lista de herramientas por categor\'ias:
 \begin{lstlisting}
   blackman -p category
 \end{lstlisting}
@@ -275,16 +276,16 @@ would typically expect from something like pacman. Basic usage has been outlined
 \end{itemize}
 
 \subsection{Instalando desde live-, netinstall- ISO o ArchLinux}
-You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
-\url{https://www.blackarch.org/download.html#iso}. The following steps are
-required after the ISO boot up.
+Usted puede instalar BlackArch Linux desde uno de nuestras live- o netinstall-ISOs.\\Mire
+\url{https://www.blackarch.org/download.html#iso}. Los pasos siguientes son necesarios
+tras el arranque de la ISO.
 \begin{itemize}
-\item Install blackarch-installer package:
+\item Instale el paquete blackarch-installer:
 \begin{lstlisting}
   sudo pacman -S blackarch-installer
 \end{lstlisting}
 
-\item Run
+\item Ejecute
 \begin{lstlisting}
   sudo blackarch-install
 \end{lstlisting}
