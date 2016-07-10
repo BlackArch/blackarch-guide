@@ -131,10 +131,10 @@ Todas as ferramentas são testadas depois da adição de algum codigo mantendo a
 % should quickly describe the testing methods/code review procedures etc
 
 \section{A historia do BlackArch Linux}
-Coming soon...
+Em breve...
 
 \section{Plataformas suportadas}
-Coming soon...
+Em breve...
 
 \section{Junte-se ao BlackArch}
 Você pode se comunicar com a equipe BlackArch através das formas abaixo:
@@ -165,7 +165,7 @@ O BlackArch é compatível como toda instalação do Arch.A instalação é feit
 Execute \href{https://blackarch.org/strap.sh}{strap.sh} como root e siga as instruções abaixo.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sha1sum strap.sh # Deve ser igual a: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
    sudo ./strap.sh
 \end{lstlisting}
 Agora baixe uma copia atualizada da lista de pacotes e os sincronize.
@@ -214,13 +214,13 @@ De maneira alternativa você pode criar os pacotes do BlackArch diretamente do c
   mkdir blackman
   cd blackman
   wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Make sure the PKGBUILD has not been maliciously tampered with.
+  # Tenha certeza que o PKGBUILD não possui codigo malicioso.
   makepkg -s
 \end{lstlisting}
 
 \item Ou você pode instalar o Blackman pelo AUR::
 \begin{lstlisting}
-  <whatever AUR helper you use> -S blackman
+  <quaquer ajudante do AUR > -S blackman
 \end{lstlisting} 
 
 \end{itemize}
@@ -229,12 +229,12 @@ De maneira alternativa você pode criar os pacotes do BlackArch diretamente do c
 \begin{itemize}
 \item Baixa, compila e instala o pacote:
 \begin{lstlisting}
-  sudo blackman -i package
+  sudo blackman -i pacote
 \end{lstlisting}
 
 \item Baixa, compila e instala toda uma categoria:
 \begin{lstlisting}
-  sudo blackman -g group
+  sudo blackman -g grupo
 \end{lstlisting}
 
 \item Baixa, compila e instala todas as ferramentas do BlackArch:
@@ -249,7 +249,7 @@ De maneira alternativa você pode criar os pacotes do BlackArch diretamente do c
 
 \item Lista uma categoria de ferramentas:
 \begin{lstlisting}
-  blackman -p categorytem 
+  blackman -p categoria 
 \end{lstlisting}
 
 \end{itemize}
@@ -416,12 +416,12 @@ Exemplo: None yet, amend asap.
 
 \subsubsection{blackarch-malware}
 Pacotes para qualquer tipo de software malicioso ou detecção de
-malware detectio.
+malware.
 
 Exemplo: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-Packages that don't particularly fit into any categories.
+Pacotes com nada em particular para encaixar em uma categoria.
 
 Exemplo: oh-my-zsh-git, winexe, stompy
 
@@ -473,119 +473,110 @@ Pacotes que envolvem analise de tráfego de rede.
 Exemplo: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
-Pacotes
-Packages that primarily attack social networking sites.
+Pacotes para ataque em redes sociais.
 
-Examples: jigsaw, websploit
+Exemplo: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-Packages that attempt to spoof the attacker such, in that
-the attacker doesn't show up as an attacker to the victim.
+Pacotes para falsificar um ataque, onde um ataque não é mostrado como uma ameaça a vitima.
 
-Examples: arpoison, lans, netcommander
+Exemplo: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-Packages that would be used for reporting/recording the
-threat model outlined in a particular scenario.
+Pacotes que são usados para reportar/gravar um modelo de ameaça em um cenário particular.
 
-Examples: magictree
+Exemplo: magictree
 
 \subsubsection{blackarch-tunnel}
-Packages that are used to tunnel network traffic on a given
-network.
+Pacotes que são usados para criar tuneis no tráfego de rede.
 
-Examples: ctunnel, iodine, ptunnel
+Exemplo: ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-Packages that are used to extract pre-packed malware from an
-executable.
+Pacotes que são usados para extrair um malware de um executável.
 
-Examples: js-beautify
+Exemplo: js-beautify
 
 \subsubsection{blackarch-voip}
-Packages that operate on voip programs and protocols.
+Pacotes que operam em programas e protocolos voip.
 
-Examples: iaxflood, rtp-flood, teardown
+Exemplo: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-Packages that operate on internet-facing applications.
+Pacotes que operam em aplicações na internet.
 
-Examples: metoscan, whatweb, zaproxy
+Exemplo: metoscan, whatweb, zaproxy
 
-\subsubsection{blackarch-windows}
-This group is for any native Windows package that runs via wine.
+\subsubsectiodo {blackarch-windows}
+Este grupo é para todo pacote nativo para windows que é executado através do wine.
 
-Examples: 3proxy-win32, pwdump, winexe
+Exemplo: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-Packages that operates on wireless networks on any level.
+Pacotes que operam em rede wireless em algum nível.
 
-Examples: airpwn, mdk3, wiffy
+Exemplo: airpwn, mdk3, wiffy
 
-\section{Repository structure}
-You can find the main BlackArch git repo here:
+\section{Estrutura do repositório}
+Você pode achar o repositório git BlackArch principal aqui:
 \href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
-There are also several secondary repos here:
+Temos também um secundário repositório aqui:
 \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
-Within the main git repo, there are three important directories:
+O repositório git principal, contém três diretórios importantes:
 
 \begin{itemize}
-\item docs - Documentation.
-\item packages - PKGBUILD files.
-\item scripts - Useful little scripts.
+\item docs - Documentação.
+\item packages - Arquivo PKGBUILD.
+\item scripts - Pequenos scripts.
 \end{itemize}
 
 \subsection{Scripts}
-Here is a reference for scripts in the \verb|scripts/| directory:
+Aqui há uma referencia para o diretório de \verb|scripts/| scripts:
 
 \begin{itemize}
-\item baaur - Soon, this will upload packages to the AUR.
-\item babuild - Build a package.
-\item bachroot - Manage a chroot for testing.
-\item baclean - Clean old .pkg.tar.xz files from the package repo.
-\item baconflict - Soon this will replace \verb|scripts/conflicts|.
-\item bad-files - Find bad files in built packages.
-\item balock - Obtain or release the package repo lock.
-\item banotify - Notify IRC about package pushes.
-\item barelease - Release packages to the package repo.
-\item baright - Print the BlackArch copyright info.
-\item basign - Sign packages.
-\item basign-key - Sign a key.
-\item blackman - This behaves sort of like pacman but builds from git (not to be
-    confused with nrz's Blackman).
-\item check-groups - Check groups.
-\item checkpkgs - Check packages for errors.
-\item conflicts - Check for file conflicts.
-\item dbmod - Modify a package database.
-\item depth-list - Create a list sorted by dependency depth.
-\item deptree - Create a dependency tree, listing only blackarch-provided packages.
-\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-\item get-official - Get official packages for release.
-\item list-loose-packages - List packages that are not in groups and are not
-    dependencies for other packages.
-\item list-needed - List missing dependencies.
-\item list-removed - List packages that are in the package repo but not in git.
-\item list-tools - List tools.
-\item outdated - Look for packages that are out-dated in the package repo
-    relative to the git repo.
-\item pkgmod - Modify a build package.
-\item pkgrel - Increment pkgrel in a package.
-\item prep - Clean up a PKGBUILD file's style and find errors.
-\item sitesync - Sync between a local copy of the package repo and a remote copy.
-\item size-hunt - Hunt for large packages.
-\item source-backup - Backup package source files.
+\item baaur - Brevemente, irá subir os pacotes para o AUR.
+\item babuild - Constrói os pacotes.
+\item bachroot - Manipula o chroot para testes.
+\item baclean - Limpa velhos arquivos .pkg.tar.xz do repositório.
+\item baconflict - Irá substiuir o \verb|scripts/conflicts|.
+\item bad-files - Acha arquivos ruins nos pacotes de construção.
+\item balock - Obtém ou atualiza pacotes travados.
+\item banotify - Notifica IRC sobre pushes de pacotes.
+\item barelease - Atualiza pacotes no repositórios de pacotes.
+\item baright - Imprime a informação de copyright do BlackArch.
+\item basign - Assina pacotes.
+\item basign-key - Assina as chaves.
+\item blackman - Funciona de forma análoga ao pacman builds construindo pacotes do git(não confundir com o Blackman).
+\item check-groups - Confere grupos.
+\item checkpkgs - Confere erro em pacotes.
+\item conflicts - Confere conflitos em pacotes.
+\item dbmod - Modifica o banco de dados de pacotes.
+\item depth-list - Cria uma lista de dependência.
+\item deptree - Cria uma lista de dependência, somente dos pacotes do BlackArch.
+\item get-blackarch-deps - Pega uma lista de dependências de pacotes do BlackArch.
+\item get-official - Pega atualizações oficiais do BlackArch.
+\item list-loose-packages - Lista os pacotes que estão ou não estão em um grupo que dependem de outros pacotes.
+\item list-needed - Lista dependências perdidas.
+\item list-removed - Lista os pacotes que estão no repositório mas não no git.
+\item list-tools - Lista as ferramentas.
+\item outdated - Olhar por pacotes desatualizados no repositório comparado ao git.
+\item pkgmod - Modifica pacotes de construção.
+\item pkgrel - Adiciona pkgrel em um pacote.
+\item prep - Limpa arquivos PKGBUILD e procura erros.
+\item sitesync - Sincroniza entre os pacotes locais e os pacotes no repositório.
+\item size-hunt - Procura pacotes pesados/grandes.
+\item source-backup - Realiza backup do codigo fonte dos arquivos.
 \end{itemize}
 
-\section{Contributing to repository}
-This section shows you how to contribute to the BlackArch Linux project. We
-accept pull requests of all sizes, from tiny typo fixes to new packages.\\For
-help, suggestions, or questions feel free to contact us.
-\\\\
-Everyone is welcome to contribute. All contributions are appreciated.
+\section{Contribuindo para o repositório}
+Essa seção mostra como você pode contribuir com o projeto BlackArch Linux.
+Nós aceitamos pull requests de todos os tamanhos, de pequenos consertos até novos pacotes.
+\\Para mais ajuda, sugestões ou questões sinta-se livre para nos contatar.\\\\
+Todo mundo que queira contribuir será bem vindo.Toda contribuição é bem vinda.
 
-\subsection{Required tutorials}
-Please read the following tutorials before contributing:
+\subsection{Tutorial de requerimento}
+Por favor leia este tutorial antes de contribuir:
 \begin{itemize}
 \item
 \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
@@ -596,27 +587,25 @@ Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
 \end{itemize}
 
-\subsection{Steps for contributing}
-In order to submit your changes to the BlackArchLinux project, follow these
-steps:
+\subsection{Passos para contribuir}
+Quando submeter suas mudanças para o projeto BlackArchLinux, siga estes passos:
 \begin{enumerate}
-\item Fork the repository from
+\item Fork o repositório em
 \url{https://github.com/BlackArch/blackarch}
-\item Hack the necessary files, (e.g. PKGBUILD, .patch files, etc).
-\item Commit your changes.
-\item Push your changes.
-\item Ask us to merge in your changes, preferably through a pull request.
+\item Hackei os arquivos necessários, (e.g. PKGBUILD, .patch files, etc).
+\item Commit as mudanças.
+\item Push suas mudanças.
+\item Nos peça para dar merge em suas mudanças, de preferencialmente um pull request.
 \end{enumerate}
 
-\subsection{Example}
-The following example demonstrates submitting a new package to the BlackArch
-project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
-(you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
-\textbf{nfsshell} from the \href{https://aur.archlinux.org/}{AUR} and adjust it
-according to our needs.
+\subsection{Exemplo}
+O exemplo a seguir demonstra como enviar um novo pacotes para o projeto BlackArch.
+Nós usamos \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
+(you can use pacaur as well) para buscar arquivos PKGBUILD de
+\textbf{nfsshell} para \href{https://aur.archlinux.org/}{AUR} e modificamos de acordo com a necessidade.
 
-\subsubsection{Fetch PKGBUILD}
-Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
+\subsubsection{Buscando PKGBUILD}
+Busque o arquivo \textit{PKGBUILD} usando o yaourt ou pacaur:
 \begin{lstlisting}
   user@blackarchlinux $ yaourt -G nfsshell
   ==> Download nfsshell sources
@@ -626,8 +615,8 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
   user@blackarchlinux $ cd nfsshell/
 \end{lstlisting}
 
-\subsubsection{Clean up PKGBUILD}
-Clean up the \textit{PKGBUILD} file and save some time:
+\subsubsection{Limpar o PKGBUILD}
+Limpe o arquivo \textit{PKGBUILD} e salve:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
@@ -642,14 +631,14 @@ Clean up the \textit{PKGBUILD} file and save some time:
   removing trailing whitespace...
 \end{lstlisting}
 
-\subsubsection{Adjust PKGBUILD}
-Adjust the \textit{PKGBUILD} file:
+\subsubsection{Modificações PKGBUILD}
+Modifique o arquivo \textit{PKGBUILD}:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ vi PKGBUILD
 \end{lstlisting}
 
-\subsubsection{Build the package}
-Build the package:
+\subsubsection{Construa o pacote}
+Construindo o pacote:
 \begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
 ==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
 ==> Checking runtime dependencies...
@@ -668,28 +657,27 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 ==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
 \end{lstlisting}
 
-\subsubsection{Install and test the package}
-Install and test the package:
+\subsubsection{Instalando e testando os pacotes}
+Intale e teste os pacotes:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
   user@blackarchlinux nfsshell $ nfsshell # test it
 \end{lstlisting}
 
-\subsubsection{Add, commit and push package}
-Add, commit and push the package
+\subsubsection{Adiciona, commit e push o pacote}
 \begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
-\subsubsection{Create a pull request}
+\subsubsection{Crie um pull request}
 Create a pull request on \href{https://github.com/}{github.com}
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
 
-\subsubsection{Adding a remote for upstream}
-A smart thing to do if you're working upstream and on a fork is to pull your own fork and add the main ba repo as a remote
+\subsubsection{Adicione remotamente}
+Se melhor a se fazer se você trabalha remotamente é realizar o fork e o seu pull request para adicionar no repositório principal.
 \begin{lstlisting}
   user@blackarchlinux ~/blackarchlinux $ git remote -v
   origin <the url of your fork> (fetch)
@@ -702,35 +690,34 @@ A smart thing to do if you're working upstream and on a fork is to pull your own
   upstream https://github.com/blackarch/blackarch (push)
 \end{lstlisting}
 
-By default, git should push straight to origin, but make sure your git config is
-configured correctly. This won't be an issue unless you have commit rights as
-you won't be able to push upstream without them.
+Por padrão o git deve realizar o push para a origem, mas tenha certeza que seu git
+está configurado corretamente.Isto não deve causar problemas ao menos que você tenhas
+alguns direitos de commit com não habilitar o push sem o mesmo.
 
-If you do have the ability to commit, you might have more success using
-\textit{git@github.com:blackarch/blackarch.git} but it's up to you.
+Se você tem a habilidade de commitar, é mais fácil usar o
+\textit{git@github.com:blackarch/blackarch.git} mas ai é com você.
 
-\subsection{Requests}
+\subsection{Requisitações}
 \begin{enumerate}
-\item Don't add \textbf{Maintainer} or \textbf{Contributor} comments to
-\textit{PKGBUILD} files. Add maintainer and contributor names to the
-AUTHORS section of BlackArch guide.
-\item For the sake of consistency, please follow the general style of the other
-\textit{PKGBUILD} files in the repo and use two-space indentation.
+\item Não adicione \textbf{Maintainer} ou \textbf{Contributor} comentarios nos arquivos
+\textit{PKGBUILD}. Adicione o nome do mantedor ou contribuinte na seção de
+AUTHORS do guia BlackArch.
+\item Procure ser consistente, por favor siga o estilo dos outros arquivos \textit{PKGBUILD}
+no repositório e use dois espaços para identação.
 \end{enumerate}
 
-\subsection{General tips}
-\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
-errors.
+\subsection{Dicas gerais}
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} para conferir os pacotes com erros.
 
 %------------------%
 %  Chapter 4       %
 %------------------%
 
-\chapter{Tools Guide}
-Coming soon...
+\chapter{Guia das ferramentas}
+Em breve...
 
-\section{Coming Soon}
-Coming soon...
+\section{Em breve}
+Em breve...
 
 %%% APPENDIX %%%
 \appendix
