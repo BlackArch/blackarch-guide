@@ -23,7 +23,10 @@
 \usepackage{pstricks}
 \usepackage{supertabular}
 \usepackage{tocloft}
+
+\usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -214,7 +217,7 @@ De maneira alternativa você pode criar os pacotes do BlackArch diretamente do c
   mkdir blackman
   cd blackman
   wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Tenha certeza que o PKGBUILD não possui codigo malicioso.
+  # Tenha certeza que o PKGBUILD nao possui codigo malicioso.
   makepkg -s
 \end{lstlisting}
 
@@ -295,7 +298,6 @@ Permite que os usuários instalem um específico tipo de pacote de forma rápida
 
 \subsubsection{blackarch}
 O grupo blackarch é a o grupo base onde todos os pacotes se encontram.Isto permite que o usuário instale todos os pacotes com facilidade.
-
 O que deve estar aqui: Tudo.
 
 \subsubsection{blackarch-anti-forensic}
@@ -507,7 +509,7 @@ Pacotes que operam em aplicações na internet.
 
 Exemplo: metoscan, whatweb, zaproxy
 
-\subsubsectiodo {blackarch-windows}
+\subsubsection{blackarch-windows}
 Este grupo é para todo pacote nativo para windows que é executado através do wine.
 
 Exemplo: 3proxy-win32, pwdump, winexe
