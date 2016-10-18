@@ -92,7 +92,7 @@ menucolor=red, pagecolor=red, urlcolor=red}
 \chapter{Introduction}
 
 \section{Qu'est-ce que BlackArch Linux?}
-\href{http://www.blackarch.org}{BlackArch Linux} est une légère expansion d'Arch
+\href{http://www.blackarch.org}{BlackArch Linux} est une légère extension d'Arch
 Linux destinée aux professionnels de la sécurité informatique.
 \\\\
 L'ensemble d'outils est distribué tel un
@@ -101,9 +101,9 @@ L'ensemble d'outils est distribué tel un
 BlackArch sur une installation d'Arch Linux existante. Les paquets peuvent y être
 installés individuellement ou par catégorie.
 \\\\
-Le dépot logiciel de Black Arch contient plus de 650 outils et ce nombre augmente
-sans cesse. Tous ces outils sont minutieusement testés avant d'être ajouté aux
-dépots, afin de garantir leurs bon fonctionnement.
+Le dépôt logiciel de BlackArch contient plus de 1500 outils et ce nombre augmente
+sans cesse. Tous ces outils sont minutieusement testés avant d'être ajoutés aux
+dépôts, afin de garantir leur bon fonctionnement.
 
 %\section{The story of BlackArch Linux}
 %foo bar
@@ -112,7 +112,7 @@ dépots, afin de garantir leurs bon fonctionnement.
 %foo bar
 
 \section{S'impliquer}
-Il est possible d'entrer en contact avec l'équipe Black Arch à l'aide de ces
+Il est possible d'entrer en contact avec l'équipe BlackArch à l'aide de ces
 informations:
 \\\\
 Web: \url{http://www.blackarch.org/}
@@ -126,8 +126,8 @@ IRC: \url{irc://irc.freenode.net/blackarch}
 \chapter{Guide d'utilisation}
 
 \section{Installation}
-La section suivante démontre comment configurer le dépôt de paquets de Black
-Arch ainsi que la procédure à suivre afin d'installer des logiciels à partir de
+La section suivante montre comment configurer le dépôt de paquets de BlackArch ainsi
+que la procédure à suivre afin d'installer des logiciels à partir de
 celle-ci. BlackArch supporte l'installation de fichiers binaires précompilés
 ainsi que l'installation à l'aide du code source original des paquets.
 \\\\
@@ -137,16 +137,15 @@ visitez la section \href{http://www.blackarch.org/download.html#iso}{Live ISO}.
 \\\\
 
 \subsection{Installer le dépôt}
-Il suffit de 6 étapes afin d'installer le dépot de BlackArch sur une installation
-existante de Arch Linux. Vous devez suivre la recette dans l'ordre.
-You must follow the instuctions in order. N'ajoutez pas \textbf{blackarch}
+Il suffit de 6 étapes afin d'installer le dépôt de BlackArch sur une installation
+existante de Arch Linux. Vous devez suivre les instructions dans l'ordre. N'ajoutez pas \textbf{blackarch}
 à votre fichier \textit{pacman.conf} sans avoir complété les étapes 0 à 2.
 \begin{enumerate} \itemsep4pt
 \item Si vous avez déjà installé BlackArch et qu'il y existe déjà une entrée
 \textbf{[blackarch]} dans \textit{/etc/pacman.conf}, vous devrez la supprimer ou
 la mettre en commentaire, et ensuite exécuter la commande \textit{pacman -Syy}.
 \item Exécutez les commandes suivantes en tant que root. Ces commande
-téléchargeront et installeront les clés nécessaire pour garantir l'authenticité
+téléchargeront et installeront les clés nécessaires pour garantir l'authenticité
 des paquets via une signature digitale.
 {\small
 \color{gray}
@@ -159,8 +158,8 @@ rm blackarch-keyring.pkg.tar.xz.sig
 pacman --noc -U blackarch-keyring.pkg.tar.xz
 \end{verbatim}
 }
-\item Si désiré, vérifiez l'authenticité des clés autant de sources que vous
-désirez afin de vous convaincre de leurs validités.
+\item (Facultatif) Vérifiez l'authenticité des clés d'autant de sources que vous
+désirez, afin de vous convaincre de leur validité.
 \item Ajoutez les lignes suivantes à votre fichier \textit{/etc/pacman.conf}:
 {\small
 \color{gray}
@@ -169,7 +168,7 @@ désirez afin de vous convaincre de leurs validités.
 Server = <site_miroir>/$repo/os/$arch
 \end{verbatim}
 }
-Replacez \textit{\textless site\_mirroir\textgreater} par le miroir officiel
+Remplacez \textit{\textless site\_mirroir\textgreater} par le miroir officiel
 de votre choix. La liste des miroirs est disponible sur
 \href{http://www.blackarch.org/}{notre site web}.
 
@@ -183,7 +182,7 @@ de votre choix. La liste des miroirs est disponible sur
 \end{enumerate}
 
 \subsection{Installation de paquets}
-Vous pouvez désormais installer des outils directement du dépôt de BlackArch
+Vous pouvez désormais installer des outils directement depuis le dépôt de BlackArch.
 \begin{enumerate}
 \item Afin d'obtenir la liste de tous les outils disponibles exécutez
 {\small
@@ -217,8 +216,7 @@ Vous pouvez désormais installer des outils directement du dépôt de BlackArch
 
 \subsection{Installation des paquets depuis le code source}
 Il existe une méthode alternative à l'installation de paquets sous forme binaire.
-BlackArch vous offre la possibilité d'obtenir le code source directement du
-dépôt officiel du paquet désiré, et BlackArch le compilera pour vous. Vous
+BlackArch vous offre la possibilité d'obtenir le code source directement depuis le dépôt officiel du paquet désiré, et BlackArch le compilera pour vous. Vous
 trouverez les fichiers PKGBUILD sur notre
 \href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. Afin
 d'obtenir le dépôt en entier, vous pourrez utiliser l'outil
@@ -226,15 +224,14 @@ d'obtenir le dépôt en entier, vous pourrez utiliser l'outil
 \begin{itemize} \itemsep10pt
 \item Vous devez premièrement installer blackman. Si vous avez déjà configuré
 le dépôt de paquets de BlackArch sur votre système, tel qu'indiqué au début de
-ce document, vous vous pouvez installer blackman à l'aide de pacman à l'aide de
-cette commande:
+ce document, vous pouvez installer blackman à l'aide de pacman:
 {\small
 \color{gray}
 \begin{verbatim}
 pacman -S blackman
 \end{verbatim}
 }
-\item Vous pouvez aussi installer blackman directement du code source:
+\item Vous pouvez aussi installer blackman directement depuis le code source:
 {\small
 \color{gray}
 \begin{verbatim}
@@ -276,7 +273,7 @@ $ blackman -l
 }
 \item Si vous voulez ensuite obtenir la liste de tous les paquets compris dans
 une catégorie particulière, vous pouvez obtenir la liste de ceux-ci ainsi qu'une
-courte description pour chaque paquets à l'aide de la commande suivante:
+courte description pour chaque paquet à l'aide de la commande suivante:
 {\small
 \color{gray}
 \begin{verbatim}
@@ -286,10 +283,10 @@ $ blackman -p <nom de la catégorie>
 \end{itemize}
 
 \subsection{Installation d'un LiveCD, netinstall, ou d'Arch Linux}
-Vous pouvez installer Black Arch d'un de nos images ISO, que ce soit un LiveCD
+Vous pouvez installer BlackArch d'une de nos images ISO, que ce soit un LiveCD
 ou un netcd. Vous les trouverez sur
 \href{http://www.blackarch.org/download.html#iso}{notre site}. Les étapes
-suivantes sont nécéssaire afin de créer une image bootable:
+suivantes sont nécéssaires afin de créer une image bootable:
 \begin{itemize}
 \item Installez le paquet blackarch-installer:
 {\small
@@ -315,11 +312,11 @@ $ sudo blackarch-install
 \section{Le Arch Build System et les dépôts de paquets}
 
 Les fichiers PKGBUILD sont de simples scripts permettant d'installer et de
-compiler et installer un programme sur plusieurs environnements différents.
+compiler un programme sur plusieurs environnements différents.
 Chaque PKGBUILD indique à la commande makepkg(1) comment créer un paquet valide
 qui pourra ensuite être installé. Les fichiers PKGBUILD sont écrits en bash.
 
-Pour plus d'information, il est suggéré de lire ces pages:
+Pour plus d'informations, il est suggéré de lire ces pages:
 \begin{itemize}
 \item \href{http://wiki.archlinux.fr/Standard_paquetage}{Arch Wiki FR:
 Standard paquetage}
@@ -329,7 +326,7 @@ Standard paquetage}
 
 \section{Le standard de paquetage de BlackArch}
 
-Afin de garde les choses simples, nos PKGBUILDs sont similaires avec ceux du
+Afin de garder les choses simples, nos PKGBUILDs sont similaires à ceux du
 Arch User Repository, à quelques différences près. Tous les paquets doivent
 être membre du groupe \textit{blackarch}. Il est possible qu'un paquet soit
 membre de plus d'un groupe.
@@ -345,12 +342,12 @@ permettent aux utilisateurs d'exécuter la commande
 \subsubsection{blackarch}
 
 En théorie, le groupe \textit{blackarch} doit contenir tous les paquets qu'offre
-BlackArch. La majorité des paquets devraient être membre de ce groupe.
+BlackArch. La majorité des paquets devrait être membre de ce groupe.
 
 \subsubsection{blackarch-anti-forensic}
 
 Groupe contenant les paquets utilisés pour contrer les tentatives
-d'investigation informatique de systèmes. Vous y trouverez des paquets offrants
+d'investigation informatique de systèmes. Vous y trouverez des paquets offrant
 des solutions de cryptage de données, stéganographie, modification d'attributs
 de fichiers, et tout autre type de logiciels permettant la modification d'un
 système de fichiers dans le but d'y masquer de l'information.
@@ -359,18 +356,17 @@ Exemples: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 
 \subsubsection{blackarch-automation}
 
-Groupe contenant les paquets utilisés pour l'automation de plusieurs tâches.
+Groupe contenant les paquets utilisés pour l'automatisation de plusieurs tâches.
 Puisque les paquets présents dans ce groupe varient énormément en
-fonctionnalités, il vous est suggéré d'y consulter directement les paquets
+fonctionnalité, il vous est suggéré de consulter directement les paquets
 afin de vous informer sur leurs capacités.
 
 Exemples: blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
 
-
-Groupe contenant les paquets reliés à l'exploitation ou à l'ouverture de
-backdoors sur de systèmes vulnérables.
+Groupe contenant les paquets liés à l'exploitation ou à l'ouverture de
+backdoors sur des systèmes vulnérables.
 
 Exemples: backdoor-factory, rrs, weevely
 
@@ -378,8 +374,7 @@ Exemples: backdoor-factory, rrs, weevely
 
 Groupe contenant les paquets reliés aux fichiers binaires. Vous y trouverez des
 paquets permettant l'extraction d'archives d'un firmware, des logiciels de
-rétro-ingénierie, logiciels aidant à l'exploitation de fichiers binaires, et
-autres.
+rétro-ingénierie, logiciels aidant à l'exploitation de fichiers binaires, etc.
 
 Exemples: binwally, packerid, hex2bin, binwalk
 
@@ -399,15 +394,15 @@ Exemples: flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
 
-Groupe contenant les paquets utilisés afin de tester la robustesses de multiples
+Groupe contenant les paquets utilisés afin de tester la robustesse de multiples
 fonctions cryptographiques.
 
 Exemples: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
 
-Groupe contenant tous types de paquets ayant rapport de proche ou de loin à la
-cryptographie, que ce soit de l'analyse de ou au craquage de hache.
+Groupe contenant tous types de paquets ayant rapport de près ou de loin à la
+cryptographie, que ce soit de l'analyse ou du craquage de hash.
 
 Exemples: ciphertest, xortool, sbd
 
@@ -441,16 +436,16 @@ Exemples: arpon, chkrootkit, sniffjoke
 \subsubsection{blackarch-disassembler}
 
 Ce groupe est fortement similaire à \textit{blackarch-decompiler} dans le sens
-que ces deux groupes tentent d'effectuer une rétro-ingénierie générique de
+où ces deux groupes tentent d'effectuer une rétro-ingénierie générique de
 fichiers exécutables, mais les paquets compris dans
-\textit{blackarch-disassembler} en extrairont le code assembleur à la place d'un
+\textit{blackarch-disassembler} en extrairont le code assembleur au lieu d'un
 pseudocode.
 
 Exemples: inguma, radare2
 
 \subsubsection{blackarch-dos}
 
-Groupe contenant les paquets aidant aux attaques de types \textit{déni de service}.
+Groupe contenant les paquets aidant aux attaques de type \textit{déni de service}.
 
 Exemples: 42zip, nkiller2
 
@@ -501,56 +496,54 @@ Exemples: arduino, smali
 \subsubsection{blackarch-honeypot}
 
 Groupe contenant les paquets agissant comme des \textit{honeypots}, c'est-à-dire
-des services sécuritaire, mais qui laissent croire à un usager malveillant
-autrement afin d'observer son comportement.
+des services sécuritaires apparaissant vulnérables, afin d'attirer les \textit{hackers} dans un piège.
 
 Exemples: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
 
-Groupe contenant les paquets utilisés lors d'installation de \textit{keylogging}
-, soit l'enregistrement de touches clavier sur un système qui pourrait être
-utilisé par un usager tiers afin d'en soutirer des informations confidentielles.
+Groupe contenant les paquets utilisés lors d'installation de \textit{keylogging}, 
+soit l'enregistrement de touches clavier sur un système, afin d'en soutirer des informations confidentielles.
 
 Exemples: klogger, logkeys, xspy
 
 \subsubsection{blackarch-malware}
 
 Groupe contenant tous types de paquets ayant un lien au \textit{malware}, que ce
-soit à l'utilisation de ceux-ci ou à leur détection.
+soit l'utilisation de ceux-ci ou leur détection.
 
 Exemples: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
 
-Groupe contenant les paquets ne semblant pas prendre part dans aucunes autres
-catégories.
+Groupe contenant les paquets semblant prendre part dans aucune autre
+catégorie.
 
 Exemples: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
 
-Groupe contenant les paquets aidant aux activités d'entretien et d'audits
-d'applications, de développement d'application, et de matériel mobile..
+Groupe contenant les paquets aidant aux activités d'entretien et d'audit
+d'application, de développement d'application et de matériel mobile.
 
 Exemples: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
 
-Groupe contenant les paquets aidant à multiples tâches reliés à la réseautique.
+Groupe contenant les paquets aidant à de multiples tâches liées à la réseautique.
 
 Exemples: Anything pretty much
 
 \subsubsection{blackarch-nfc}
 
-Groupe contenant les paquets utilisant la technologie \textit{NFC} (near-field
-communications).
+Groupe contenant les paquets utilisant la technologie \textit{NFC} (Near-Field
+Communications).
 
 Exemples: nfcutils
 
 \subsubsection{blackarch-packer}
 
-Groupe contenant les paquets utilisant de loin ou de près les \textit{packers},
+Groupe contenant les paquets utilisant de près ou de loin les \textit{packers},
 soit des logiciels qui créent des applications contenant un programme
 malveillant caché à l'intérieur.
 
@@ -565,28 +558,28 @@ Exemples: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
 
-Groupe contenant les paquets servant à la recherche de services exploitable dans
+Groupe contenant les paquets servant à la recherche de services exploitables dans
 le monde réel.
 
 Exemples: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
 
-Groupe contenant les paquets de décompilation, de désassemblage, et tout autres
-types de programmes ayant à voir avec la rétro-ingénierie.
+Groupe contenant les paquets de décompilation, de désassemblage, et tout autre
+type de programme ayant à voir avec la rétro-ingénierie.
 
 Exemples: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
 
-Groupe contenant les paquets utilisés afin de scanner multiples systèmes afin
-d'y déceler des vulnérabilités actives.
+Groupe contenant les paquets utilisés afin de scanner de multiples systèmes pour 
+y déceler des vulnérabilités actives.
 
 Exemples: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
 
-Groupes contenant les paquets aidant dans l'analyse de trafic réseau.
+Groupes contenant les paquets aidant à l'analyse de trafic réseau.
 
 Exemples: hexinject, pytactle, xspy
 
@@ -599,21 +592,21 @@ Exemples: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
 
-Groupe contenant les paquets qui tentent de dissimuler un attaquant, de tel que
+Groupe contenant les paquets qui tentent de dissimuler un attaquant, pour que 
 la victime ne puisse le percevoir comme un acteur malicieux.
 
 Exemples: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
 
-Groupe contenant les paquets utilisé pour enregistré et créer des rapports sur
+Groupe contenant les paquets utilisés pour enregistrer et créer des rapports sur
 plusieurs modèles de menaces pouvant se produire lors d'un scénario spécifique.
 
 Exemples: magictree
 
 \subsubsection{blackarch-tunnel}
 
-Groupe contenant les paquets utilisés afin d'encapsuler le contenu réseau via un
+Groupe contenant les paquets utilisés pour encapsuler le contenu réseau via un
 tiers parti, afin de dissimuler la provenance initiale de données.
 
 Exemples: ctunnel, iodine, ptunnel
@@ -621,21 +614,21 @@ Exemples: ctunnel, iodine, ptunnel
 \subsubsection{blackarch-unpacker}
 
 Groupe contenant les paquets utilisés lors de l'extraction de logiciel
-malveillants de possibles logiciels \textit{packés} ou obfuscé.
+malveillants à partir d'un éxécutable.
 
 Exemples: js-beautify
 
 \subsubsection{blackarch-voip}
 
-Groupe contenant les paquets utilisés afin d'effectuer des actions ou l'analyse
-de la téléphonie VoIP.
+Groupe contenant les paquets utilisés afin d'effectuer des actions ou de l'analyse
+de téléphonie VoIP.
 
 Exemples: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
 
 Groupe contenant les paquets effectuant des opérations de validation de sécurité
-sur des applications accessible via l'internet, afin d'en garantir leurs
+sur des applications accessibles via l'internet, afin d'en garantir leur
 robustesse.
 
 Exemples: metoscan, whatweb, zaproxy
@@ -655,18 +648,17 @@ Exemples: airpwn, mdk3, wiffy
 
 \section{Structure du dépôt}
 
-Vous pouvez trouver le dépot principal de BlackArch à
+Vous pouvez trouver le dépôt principal de BlackArch sur
 \href{https://github.com/BlackArch/blackarch}
-{https://github.com/BlackArch/blackarch}. Il existe aussi plusieurs dépots de
-code à \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
+{https://github.com/BlackArch/blackarch}. Il existe aussi plusieurs dépôts de
+code sur \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
-À l'intérieur du dépôt principal, vous trouverez les trois dossiers principaux,
-soit :
+À l'intérieur du dépôt principal, vous trouverez les trois dossiers principaux:
 
 \begin{itemize}
 \item docs - Contient la documentation du projet
 \item packages - Contient les fichiers PKGBUILD
-\item scripts - Contient multiples scripts d'automation
+\item scripts - Contient de multiples scripts d'automation
 \end{itemize}
 
 \subsection{Scripts}
@@ -675,11 +667,11 @@ Voici une référence des scripts que vous trouverez dans le dossier
 \verb|scripts/| :
 
 \begin{itemize}
-\item baaur - Éventuellement, ce script enverra nos paquets à la banque de donné
+\item baaur - Éventuellement, ce script enverra nos paquets à la banque de données
 du AUR.
 \item babuild - Construit un paquet.
 \item bachroot - Prépare un chroot afin d'effectuer des tests.
-\item baclean - Néttoie les enciens fichiers .pkg.tar.xz du dépôt.
+\item baclean - Nettoie les anciens fichiers .pkg.tar.xz du dépôt.
 \item baconflict - Éventuellement, ce script remplacera \verb|scripts/conflicts|.
 \item bad-files - Trouve des fichiers erronés dans les paquets construits.
 \item balock - Crée ou termine le lock sur le dépôt de paquets.
@@ -688,43 +680,43 @@ du AUR.
 \item baright - Affiche les informations de copyright de BlackArch.
 \item basign - Signe les paquets.
 \item basign-key - Signe une clé.
-\item blackman - Opère sensiblement comme pacman mais construits les paquets à
-partir de git. (à ne pas confondre avec le programme Blackman, écrit par nzr)
+\item blackman - Opère sensiblement comme pacman mais construit les paquets à
+partir de git. (à ne pas confondre avec le programme blackman, écrit par nzr)
 \item check-groups - Valide les groupes.
 \item checkpkgs - Valide les paquets.
 \item conflicts - Valide les paquets pour des conflits.
-\item dbmod - Modifie la base de donnée d'un paquet.
-\item depth-list - Crée une liste de dépendences ordonnée par profondeur.
-\item deptree - Crée une arbre de dépendance, ne listant que les paquets obtenu
+\item dbmod - Modifie la base de données d'un paquet.
+\item depth-list - Crée une liste de dépendances ordonnée par profondeur.
+\item deptree - Crée un arbre de dépendances, ne listant que les paquets obtenus
 via BlackArch.
-\item get-blackarch-deps - Affiche une liste des dépendances de paquets obtenu
+\item get-blackarch-deps - Affiche une liste des dépendances de paquets obtenues
 via BlackArch pour un paquet donné.
-\item get-official - Obtien les paquets officiels.
+\item get-official - Obtient les paquets officiels.
 \item list-loose-packages - Liste les paquets qui ne se trouvent dans aucun
-groupes et ne sont pas des dépendances pour d'autres paquets.
+groupe et ne sont pas des dépendances pour d'autres paquets.
 \item list-needed - Liste les dépendances manquantes.
 \item list-removed - Liste les paquets qui sont dans le dépôt mais pas dans le
 répertoire git.
 \item list-tools - Liste les outils.
 \item outdated - Cherche les paquets qui ne sont plus à jour lorsque comparés
 avec le répertoire git.
-\item pkgmod - Modifie un paquets de construction.
+\item pkgmod - Modifie un paquet de construction.
 \item pkgrel - Incrémente le pkgrel d'un paquet.
 \item prep - Nettoie un fichier PKGBUILD de ses erreurs de style et autre.
 \item sitesync - Synchronise entre une copie locale et sa version distante.
 \item size-hunt - Cherche de gros paquets.
-\item source-backup - Sauvegarde les fichiers sources d'un paquets.
+\item source-backup - Sauvegarde les fichiers source d'un paquet.
 \end{itemize}
 
 \section{Contribuer au dépôt}
 Cette section indique comment contribuer au projet BlackArch Linux. Nous
-acceptons les pull requests de toutes tailles, que ce soit de petites
+acceptons les pull requests de toute taille, que ce soit de petites
 modifications ou un ajout de paquet.\\Pour recevoir de l'aide, n'hésitez pas à
 nous contacter.
 \\\\
-Tout le monde est bienvenue à contrivuer. Toute contribution sera appréciée.
+Tout le monde est le bienvenu pour contribuer. Toute contribution sera appréciée.
 
-\subsection{Tutoriels requis.}
+\subsection{Tutoriels requis}
 Veuillez lire les documents suivants avant de contribuer:
 \begin{itemize}
 \item \href{http://wiki.archlinux.fr/Standard_paquetage}{Arch Wiki FR:
@@ -746,7 +738,7 @@ Afin de contribuer au projet BlackArch Linux, suivez ces étapes:
 \end{enumerate}
 
 \subsection{Exemple}
-L'exemple suivant démontre la soumissions d'un nouveau paquets au projet
+L'exemple suivant montre la soumission d'un nouveau paquet au projet
 BlackArch. Nous utilisons \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
 (vous pouvez aussi utiliser pacaur) afin d'obtenir le PKGBUILD existant de
 \textbf{nfsshell}, et nous pouvons ensuite l'éditer, au besoin.
@@ -829,7 +821,7 @@ user@blackarchlinux nfsshell $ nfsshell # test it
 }
 
 \subsubsection{Ajout, commit et push du paquet}
-Ajoute, commit et push du paquet:
+Ajout, commit et push du paquet:
 {\small
 \color{gray}
 \begin{verbatim}
@@ -851,7 +843,7 @@ firefox https://github.com/<contributor>/blackarchlinux
 
 \subsubsection{Ajout d'un remote pour l'upstream}
 Une fois votre modification faite, il serait une bonne idée d'ajouter le projet
-officiel comme remote, afin d'ajouter les modifications au projet à votre fork.
+officiel comme remote, afin d'ajouter les modifications du projet à votre fork.
 Cela vous permettra de synchroniser votre fork avec BlackArch.
 {\small
 \color{gray}
@@ -868,12 +860,12 @@ upstream https://github.com/blackarch/blackarch (push)
 \end{verbatim}
 }
 Par défaut, git devrait push directement à l'origine, mais assurez-vous que
-votre configuration git est correcte. Cela ne sera pas un problème à moins
-d'avoir les droits de commit puisque vou sne pourrez pas push upstream sans
+votre configuration git soit correcte. Cela ne sera pas un problème à moins
+d'avoir les droits de commit puisque vous ne pourrez pas push upstream sans
 cela.
 
 Si vous avez les droits de commit, vous aurez possiblement plus de succès en
-utilisant \textit{git@github.com:blackarch/blackarch.git}. Le choix est votre.
+utilisant \textit{git@github.com:blackarch/blackarch.git}. Le choix est vôtre.
 
 \subsection{Requêtes}
 \begin{enumerate}
@@ -881,13 +873,13 @@ utilisant \textit{git@github.com:blackarch/blackarch.git}. Le choix est votre.
 au fichiers \textit{PKGBUILD}. Ajoutez ces commentaires à la section
 \textbf{AUTHORS} du guide BlackArch.
 \item Afin de conserver la consistance du projet, veuillez suivre les règles
-générales de style des autres fichiers \textit{PKGBUILD} en utilisant un
+générales de style des autres fichiers \textit{PKGBUILD} en utilisant une
 indentation de deux espaces.
 \end{enumerate}
 
 \subsection{Conseils généraux}
 \href{http://wiki.archlinux.org/index.php/Namcap}{namcap} peut trouver des
-erreurs dans vos paquets. Il est recommendé de l'utiliser avant de soumettre vos
+erreurs dans vos paquets. Il est recommandé de l'utiliser avant de soumettre vos
 modifications.
 
 %%% APPENDIX %%%
