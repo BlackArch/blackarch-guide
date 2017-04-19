@@ -1,0 +1,775 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+% BlackArch Guide Linux%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ Documentclass [a4paper, oneside, 11pt] {pirtûka}
+
+%%% INCLUDES %%%
+\ Renewcommand {\ familydefault} {\ sfdefault}
+
+\ Usepackage {array}
+\ Usepackage {color}
+\ Usepackage {xaka}
+\ Usepackage {fancyhdr}
+\ Usepackage {fancyvrb}
+\ Usepackage {geometrî}
+\ Usepackage {graphicx}
+\ Usepackage {html}
+\ Usepackage {hyperref}
+\ Usepackage {ifpdf}
+\ Usepackage {veşêrim}
+\ Usepackage {pstricks}
+\ Usepackage {supertabular}
+\ Usepackage {tocloft}
+\ Usepackage [utf8] {inputenc}
+
+%%% LAYOUT %%%
+\ Setlength {\ parindent} {0em}
+\ Setlength {\ parskip} {1.5ex plus0.5ex minus0.5ex}
+\ Geometrî {çepê = 2.5cm, textwidth = 16cm, top = 3cm, textheight = 25cm, bottom = 3cm}
+\ Widowpenalty = 2000
+\ Clubpenalty = 1000
+\ frenchspacing
+\bêbal
+\ Pagecolor [HTML] {#FFFFFF}
+\ Color [HTML] {333333}
+\ Setcounter {tocdepth} {10}
+\ Setcounter {secnumdepth} {10}
+
+\ Hypersetup {
+  pdftitle = {BlackArch Linux, The BlackArch Guide Linux},
+  pdfsubject = {BlackArch Linux, The BlackArch Guide Linux},
+  pdfauthor = {BlackArch Linux, BlackArch Linux},
+  pdfkeywords = {BlackArch Linux, Testing êzgeha, Ewlekariya, Hacking, Linux},
+  pdfcenterwindow = true,
+  colorlinks = true,
+  breaklinks = true,
+  linkcolor = red,
+  menucolor = red,
+  urlcolor = red
+}
+
+% Syntax ronahîyê
+% Hemû options vir divê set belgekirina wide
+\ Lstset {
+backgroundcolor = \ color [HTML] {EEEEEE},
+frame = yek,
+basicstyle = \ footnotesize \ ttfamily,
+avbazîn,
+deletekeywords = {vegera},
+otherkeywords = {mkdir, curl, sudo, sha1sum, grep, cut, sort, Wget, makepkg,
+pacman, blackman},
+keywordstyle = \ color {orange},
+commentstyle = \ color {şîn},
+stringstyle = \ color {sor},
+zimanê = bash,
+showspaces = false,
+showtabs = false,
+tabsize = 2
+}
+
+%%% HEADER / footer %%%
+\ Setlength {\ headheight} {33pt}
+\ Setlength {\ headsep} {33pt}
+\ Lhead {{\ includegraphics [width = 1cm, height = 1cm] {images / logo.png tên}}}
+\ Rhead {The Guide BlackArch Linux}
+
+%%% macros CUSTOM %%%
+% Ji bo girêdan html
+\ Ifpdf \ din
+\ Def \ href # 1 # 2 {\ htmladdnormallink {# 2} {1}}
+\ fi
+
+% ------------------%
+% TITLE PAGE%
+% ------------------%
+\ Destpê {belge}
+\ Pagestyle {vala}
+\ Destpê {navenda}
+\ Destpê {hejmar} [htbp]
+\ bearing
+\ Vspace {0.5cm}
+\ Includegraphics [width = 8cm] {images / logo.png}
+\ Label {hêjîrê: logo}
+\ Dawiya {hejmar}
+\ Vspace {0.5cm}
+\ Huge {\ textbf {The BlackArch Guide Linux}} \\
+\ Vspace {1cm}
+\ Large {\ color {sor}} https://www.blackarch.org/ \\
+\ Vspace {0.5cm}
+\ Dawiya {navenda}
+\ newpage
+\ tableofcontents
+\ newpage
+\ Pagestyle {ketim}
+
+% ------------------%
+% Chapter 1%
+% ------------------%
+
+\ Beşa {DESTPÊK}
+
+\ Beşa {Overview}
+The rêberê BlackArch Linux nav çend beşan pêk tê:
+\ Destpê {itemize}
+\ Babete Pêşgotin - bidete wan nêrîneka berfireh, bi cî û din agahî projeya alîkar
+\ Guide babete User - Her tişt a user tîpîk divê bizanibe ku ji bo bi bandor bi kar tînin BlackArch
+\ Babete Guide Developer - How to dest get pêşxistina bo û beşdarbin BlackArch
+\ Babete Tool Guide - Li-kûr hûragahiyan li tool li mînak bi boçûnên (WIP)
+\ Dawiya {itemize}
+
+\ Beşa {çi BlackArch Linux e?}
+BlackArch dabeşkirina temam Linux ji bo kontrolkar û êzgeha û lêkolînerên ewlekariyê ye.
+Ev ji \ href {https://www.archlinux.org/} {ArchLinux} Navdêr û bikarhêner dikarin pêkhateyên BlackArch saz bike
+bi serê xwe yan li komên rasterast bi ser de jî.
+
+The toolset wek Linux Arch belavkirin
+\ Href {https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{Ensîklopediya user ne fermî} da tu BlackArch li ser sazkirinê
+installation Arch Linux heyî. Packages dibe ku bi serê xwe an jî bi sazkirin
+liq.
+
+Ensîklopediya her tim berfireh niha li ser \ href {https://www.blackarch.org/tools.html} {1300} Amûrên de.
+Hemû Amûrên bi tûmî, berî ku ew ji codebase added ji bo parastina bi kalîteya ensîklopediya ceribandin.
+% Divê zû salix rêbazên testkirina / prosedurên review code hwd.
+
+\ Beşa {History of BlackArch Linux}
+Ji nêzda...
+
+\ Beşa {piþtgiriyê platformên}
+Ji nêzda...
+
+\ Beşa {Tev lê bibin}
+Tu dikarî di têkiliyê de bi tîma BlackArch bikaranîna caddeyên li jêr bikin:
+
+Website: \ url {https://www.blackarch.org/}
+
+Mail: \ href {mailto: team@blackarch.org} {team@blackarch.org}
+
+IRC: \ url {irc: //irc.freenode.net/blackarch}
+
+Twitter: \ url {https://twitter.com/blackarchlinux}
+
+Github: \ url {https://github.com/Blackarch/}
+
+% ------------------%
+% Chapter 2%
+% ------------------%
+
+
+\ Beşa {User Guide}
+
+\ Beşa {Installation}
+The beşên li jêr wê hûn çawa setup ensîklopediya BlackArch nîşan û
+sazkirina paketên. BlackArch piştgiriya herdu, bernameya ji ensîklopediya bikaranîna
+pakêtên binary herweha komkirin û sazkirin ji çavkaniyên.
+
+BlackArch lihevhatî bi makîneyên Arch normal e. Ev wekî gayrî fermî tevbigere
+ensîklopediya user. Heke tu dixwazî ​​an ISO li şûna, dîtina
+\ Href {https://www.blackarch.org/downloads.html#iso} {Live ISO} beşa.
+
+\ Bêgor {Damezrîna li ser ArchLinux}
+Run \ href {https://blackarch.org/strap.sh} {strap.sh} wekî root û li pey
+talîmatên. ji mînaka li jêr bibînin.
+\ Destpê {lstlisting}
+   curl -O https://blackarch.org/strap.sh
+   sha1sum strap.sh # divê nagirin: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sudo ./strap.sh
+\ Dawiya {lstlisting}
+
+Now a copy nû ya di lîsteyê de pakêta master download û cîhavên pakêtên:
+\ Destpê {lstlisting}
+  sudo pacman -Syyu
+\ Dawiya {lstlisting}
+
+
+\ Bêgor {pakêtên Sazkirin}
+Tu niha dikarî xwe Amûrên ji ensîklopediya blackarch saz bike.
+\ Destpê {xaka}
+\ Babete To lîsteya hemû amûrên, run
+\ Destpê {lstlisting}
+  pacman -Sgg | grep blackarch | birrîn -d '' -f2 | sort genetîv
+\ Dawiya {lstlisting}
+
+\ Babete bo sazkirin û hemû amûrên, run
+\ Destpê {lstlisting}
+  blackarch pacman -S
+\ Dawiya {lstlisting}
+
+\ Babete bo sazkirin kategoriyê de ji amûrên, run
+\ Destpê {lstlisting}
+  pacman -S blackarch- <kategoriyê>
+\ Dawiya {lstlisting}
+
+\ Babete Bo bînînî kategoriyan blackarch, run
+\ Destpê {lstlisting}
+  pacman -Sg | blackarch grep
+\ Dawiya {lstlisting}
+
+\ Dawiya {xaka}
+
+\ Bêgor {Sazkirina pakêtên ku ji source}
+Wekî beşek ji rêbaza ku alternatîf yên damezrînê, tu dikarî BlackArch ava
+pakêtên ku ji source. Hûn dikarin ji PKGBUILDs li bibînin
+\ Href {https://github.com/BlackArch/blackarch/tree/master/packages} {github}. Ber
+ava tevahiya repo, tu dikarî bikar bîne
+\ Href {https://github.com/BlackArch/blackman} {Blackman} tool.
+\ Destpê {itemize}
+\ Babete First, we hene ji bo sazkirina Blackman. Ger ensîklopediya pakêta BlackArch
+setup li gor xwe ye, tu dikarî sazkirina Blackman:
+\ Destpê {lstlisting}
+  pacman -S blackman
+\ Dawiya {lstlisting}
+
+\ Babete Tu dikarî avakirina û sazkirina Blackman ji source:
+\ Destpê {lstlisting}
+  blackman mkdir
+  blackman cd
+  Wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # Piştrast bike ku PKGBUILD hatiye dîtin maliciously bi ramaneke ne.
+  makepkg -s
+\ Dawiya {lstlisting}
+
+\ Babete An jî tu Blackman ji Aur saz bike:
+\ Destpê {lstlisting}
+  <Çi alîkarê Aur hûn bi kar> -S blackman
+\ Dawiya {lstlisting}
+
+\ Dawiya {itemize}
+
+\ Bêgor {Bikaranîna Basic Blackman} Blackman pir hêsan de bi kar e, tevî ku alên cuda ji tu çi yî
+dê tîpîk ji tiştekî wek pacman hêvî. Bikaranîna bingehîn hatiye li jêr de hatîye dîtin.
+\ Destpê {itemize}
+\ Babete Download, kom kirin û sazkirina paketên:
+\ Destpê {lstlisting}
+  sudo blackman pakêta -i
+\ Dawiya {lstlisting}
+
+\ Babete Download, raporekê û saz hemû category:
+\ Destpê {lstlisting}
+  sudo blackman -G koma
+\ Dawiya {lstlisting}
+
+\ Babete Download, raporekê û saz hemû amûrên BlackArch:
+\ Destpê {lstlisting}
+  sudo blackman -a
+\ Dawiya {lstlisting}
+
+\ Babete To lîsteya kategoriyan blackarch:
+\ Destpê {lstlisting}
+  blackman -l
+\ Dawiya {lstlisting}
+
+\ Babete To lîsteya Amûrên category:
+\ Destpê {lstlisting}
+  category blackman -p
+\ Dawiya {lstlisting}
+
+\ Dawiya {itemize}
+
+\ Bêgor {sazkirin ji live-, ISO netinstall- an ArchLinux}
+Tu dikarî BlackArch Linux ji yek ji cînayetên me an netinstall-ISOs saz bike. \\ Binêre
+\ Url {https://www.blackarch.org/download.html#iso}. Ev gavên ku li jêr in
+pêwîst piştî ISO boot xwe.
+\ Destpê {itemize}
+\ Babete sazkirinê pakêt blackarch-installer:
+\ Destpê {lstlisting}
+  sudo pacman -S blackarch-installer
+\ Dawiya {lstlisting}
+
+\ Babete Run
+\ Destpê {lstlisting}
+  sudo blackarch-saz bike
+\ Dawiya {lstlisting}
+
+\ Dawiya {itemize}
+
+% ------------------%
+% Chapter 3%
+% ------------------%
+
+\ Beşa {Guide Developer}
+
+\ Beşa {System Build Arch û Repositories}
+
+files PKGBUILD ne ava Skrîpta. Her yek makepkg (1) çawa biafirîne dibêje
+pakêt. files PKGBUILD bi li Bash nivîsîn.
+
+Ji bo agahiyên zêdetir, xwendin (an jî vê gotarê di riya) li jêr e:
+\ Destpê {itemize}
+\ Babete \ href {https://wiki.archlinux.org/index.php/Creating_Packages} {DEVICE Wiki: Packages Afrandina}
+\ Babete \ href {https://wiki.archlinux.org/index.php/Makepkg} {DEVICE Wiki: makepkg}
+\ Babete \ href {https://wiki.archlinux.org/index.php/PKGBUILD} {DEVICE Wiki: PKGBUILD}
+\ Babete \ href {https://wiki.archlinux.org/index.php/Arch_Packaging_Standards} {DEVICE Wiki: Arch Packaging Standardî}
+\ Dawiya {itemize}
+
+\ Beşa {standardên Blackarch PKGBUILD}
+Ji bo xatirê yên sadebûn, PKGBUILDs me mîna ku ji kesên ku Aur in,
+bi çend cudahiyên biçûk ristê. Her pakêta divê
+endamên blackarch li kêmtirîn, li wir jî dê gelek strukturan de bi be
+pakêtên multiple ku mensûbê koman.
+
+\ Bêgor {Groups}
+To rê bikarhênerên bo sazkirina pakêteke taybet pakêtên ku zû û bi hêsanî,
+pakêtên ku ji nav komên ji hev cuda kirin. Groups formę, bikarhęner dikarin bi asanî
+go "pacman -s <name koma>" Ji bo vekêşana gelek pakêtên.
+
+\ Subsubsection {blackarch}
+Koma blackarch koma bingehîn ku hemû pakêtên ku divê jî girêdayî ye. Ev rê dide
+users ji bo sazkirina her pakêta bi rihetî.
+
+Her tişt divê çi li vir bin.
+
+\ Subsubsection {blackarch-anti-tipa}
+Pakêtên bi ku ji bo pêşî li çalakiyên tipa edlî tê bikaranîn,
+di nav de şîfrekirinê, steganography, û tiştekî ku modifies files / file hildide.
+Ev hemû tê de amûrên ji bo kar bi tiştekî giştî ku jî guhertinên di sîstema
+ji bo armancên xwe vedişêrin, agahiyên.
+
+Nimûne: Luks, TrueCrypt, Timestomp, dd, ropeadope, ewle-delete
+
+\ Subsubsection {blackarch-automation}
+Pakêtên bi ku ji bo tool an automation workflow bikaranîn.
+
+Nimûne: blueranger, tiger, wiffy
+
+\ Subsubsection {blackarch-Backdoor}
+Pakêtên ku biçêrin an backdoors vekirî li ser heşaş Sîstemên berê.
+
+Nimûne: Backdoor-factory, rrs, weevely
+
+\ Subsubsection {blackarch-binary}
+Pakêtên ku li ser pelên binary li hin form kar.
+
+Nimûne: binwally, packerid
+
+\ Subsubsection {blackarch-bluetooth}
+Pakêtên ku biçêrin tiştekî li ser standard Bluetooth (802.15.1).
+
+Nimûne: ubertooth, tbear, redfang
+
+\ Subsubsection {blackarch-code-(Riksrevisionen)}
+Pakêtên ku source code audit heyî ji bo analîza doh.
+
+Nimûne: flawfinder, pscan
+
+\ Subsubsection {blackarch-cracker}
+Pakêtên ji bo cracking fonksiyonên Cryptographic, ango hashes.
+
+Nimûne: hashcat, john, bidaya
+
+\ Subsubsection {blackarch-crypto}
+Pakêtên ku bi cryptography kar, ji bilî cracking.
+
+Nimûne: ciphertest, xortool, SBD
+
+\ Subsubsection {blackarch-da heye}
+Pakêtên ku hilperike standina heye li ser hemû astê.
+
+Nimûne: metacoretex, blindsql
+
+\ Subsubsection {blackarch-Debuggera bi}
+Pakêtên ku rê ji user ji bo dîtina çi bernameyeke taybetî "çi" li hevdem.
+
+Nimûne: radare2, shellnoob
+
+\ Subsubsection {blackarch-Decompiler}
+Pakêtên ku hewl ji bo berevajîkirina a bernameya berhev nav kodê çavkanîyê.
+
+Nimûne: flasm, jd-gui
+
+\ Subsubsection {blackarch-xweparêz}
+Pakêtên bi ku ji bo parastina a user ji avabûnên bikaranîn \ & êrîşên ji bikarhênerên din ra.
+
+Nimûne: arpon, chkrootkit, sniffjoke
+
+\ Subsubsection {blackarch-disassembler}
+Ev dişibe e ji bo blackarch-Decompiler, û li wir dibe gelek dê bibe
+ji bernameyên ku nav herdu jî wê bikevin, lê belê van pakêtan berhemên encam civînê
+bêtir ji source code raw.
+
+Nimûne: inguma, radare2
+
+\ Subsubsection {blackarch-dos}
+Pakêtên ku bi kar tînin dos (Înkarkirina Service) êrîşan.
+
+Nimûne: 42zip, nkiller2
+
+\ Subsubsection {blackarch-bêpîlot}
+Pakêtên bi ku ji bo birêvebirina fîzîkî mihendisiya bikaranîn
+bêmirov.
+
+Nimûne: meshdeck, skyjack
+
+\ Subsubsection {blackarch-kedxwariyê}
+Pakêtên ku digire û însiyatîfa serketinên di bernameyên din an xizmetên.
+
+Nimûne: Armitage, metasploit, zarp
+
+\ Subsubsection {blackarch-iface}
+Pakêtên ku biçêrin alavên biyometrîk tilîka.
+
+Nimûne: dns-map, p0f, httprint
+
+\ Subsubsection {blackarch-firmware}
+Pakêtên ji kuştiyan li firmware biçêrin
+
+Nimûne: None yet, sîxor asap.
+
+\ Subsubsection {blackarch-tipa}
+Pakêtên ku bi bikaranîn û ji bo dîtina welat li ser dîskên fizîkî yan jî bîra bicîbûyî de.
+
+Nimûne: aesfix, nfex, karkuki
+
+\ Subsubsection {blackarch-fuzzer}
+Pakêtên ku bikaranîna prensîba testkirina Fuzz, ango
+"Kevir" qurs random li mijarê ji bo dîtina ka çi diqewime.
+
+Nimûne: MSF, mdk3, wfuzz
+
+\ Subsubsection {blackarch-hardware}
+Pakêtên ku biçêrin an bi rê ve tiştekî ji bo ku ez bi
+hardware fîzîkî.
+
+Nimûne: arduino, smali
+
+\ Subsubsection {blackarch-honeypot}
+Pakêtên ku wekî "honeypots" tevbigerin, ango bernameyên ku ji bo xuya
+be xizmetên nazik bikaranîn ku bala hackers nav xefik.
+
+Nimûne: topan, bluepot, wifi-honey
+
+\ Subsubsection {blackarch-keylogger}
+Pakêtên ku record û nebihûrin tikandî li ser sîstema din.
+
+Nimûne: None yet, sîxor asap.
+
+\ Subsubsection {blackarch-Pêşeka}
+Pakêtên ku weke cûre yên nivîsbariyê mailên an count
+detection Pêşeka.
+
+Nimûne: malwaredetect, peepdf, yara
+
+\ Subsubsection {blackarch-misc}
+Pakêtên ku bi taybetî jî di nav ti categories ne bi kêr in.
+
+Nimûne: oh-min-zsh-git, winexe, stompy
+
+\ Subsubsection {blackarch-mobile}
+Pakêtên ku destwerdanê di platformên mobile.
+
+Nimûne: android-SDK-platform-Amûrên, android-udev-qaîdeyên
+
+\ Subsubsection {blackarch-tora}
+Pakêta ku hilperike tora IP.
+
+Nimûne: Anything hema
+
+\ Subsubsection {blackarch-NFC}
+Pakêtên ku bi kar tînin NFC (bi beratên nêzîk-zeviyê).
+
+Nimûne: nfcutils
+
+\ Subsubsection {blackarch-packer}
+Pakêtên ku li ser an Packers invlove kar.
+
+\ Textit {Packers bernameyên ku embed avabûnên di nava din xebitandinê in.}
+
+Nimûne: packerid
+
+\ Subsubsection {blackarch-proxy}
+Pakêtên ku wek qasid tevdigere, ango beralîkirin trafîkê
+bi saya node din li ser înternetê.
+
+Nimûne: burpsuite, ratproxy, sslnuke
+
+\ Subsubsection {blackarch-rayven}
+Pakêtên ku çalak digere dimije nazik di
+bejî. More komeke sîwana bo pakêtên similar.
+
+Nimûne: canri, dnsrecon, rûpoşa
+
+\ Subsubsection {blackarch-çêv}
+Ev komeke sîwana bo tu Decompiler e,
+disassembler an tu bernameya similar.
+
+Nimûne: capstone, radare2, zerowine
+
+\ Subsubsection {blackarch-scanner}
+Pakêtên ku bê dahûrandin sîstemên helbijartî ji bo kuştiyan.
+
+Examples: scanssh, tiger, zmap
+
+\subsubsection{blackarch-sniffer}
+Packages that involve analyzing network traffic.
+
+Examples: hexinject, pytactle, xspy
+
+\subsubsection{blackarch-social}
+Packages that primarily attack social networking sites.
+
+Examples: jigsaw, websploit
+
+\subsubsection{blackarch-spoof}
+Packages that attempt to spoof the attacker such, in that
+the attacker doesn't show up as an attacker to the victim.
+
+Examples: arpoison, lans, netcommander
+
+\subsubsection{blackarch-threat-model}
+Packages that would be used for reporting/recording the
+threat model outlined in a particular scenario.
+
+Examples: magictree
+
+\subsubsection{blackarch-tunnel}
+Packages that are used to tunnel network traffic on a given
+network.
+
+Examples: ctunnel, iodine, ptunnel
+
+\subsubsection{blackarch-unpacker}
+Packages that are used to extract pre-packed malware from an
+executable.
+
+Examples: js-beautify
+
+\subsubsection{blackarch-voip}
+Packages that operate on voip programs and protocols.
+
+Examples: iaxflood, rtp-flood, teardown
+
+\subsubsection{blackarch-webapp}
+Packages that operate on internet-facing applications.
+
+Examples: metoscan, whatweb, zaproxy
+
+\subsubsection{blackarch-windows}
+This group is for any native Windows package that runs via wine.
+
+Examples: 3proxy-win32, pwdump, winexe
+
+\subsubsection{blackarch-wireless}
+Packages that operates on wireless networks on any level.
+
+Examples: airpwn, mdk3, wiffy
+
+\section{Repository structure}
+You can find the main BlackArch git repo here:
+\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
+There are also several secondary repos here:
+\href{https://github.com/BlackArch}{https://github.com/BlackArch}.
+
+Within the main git repo, there are three important directories:
+
+\begin{itemize}
+\item docs - Documentation.
+\item packages - PKGBUILD files.
+\item scripts - Useful little scripts.
+\end{itemize}
+
+\subsection{Scripts}
+Here is a reference for scripts in the \verb|scripts/| directory:
+
+\begin{itemize}
+\item baaur - Soon, this will upload packages to the AUR.
+\item babuild - Build a package.
+\item bachroot - Manage a chroot for testing.
+\item baclean - Clean old .pkg.tar.xz files from the package repo.
+\item baconflict - Soon this will replace \verb|scripts/conflicts|.
+\item bad-files - Find bad files in built packages.
+\item balock - Obtain or release the package repo lock.
+\item banotify - Notify IRC about package pushes.
+\item barelease - Release packages to the package repo.
+\item baright - Print the BlackArch copyright info.
+\item basign - Sign packages.
+\item basign-key - Sign a key.
+\item blackman - This behaves sort of like pacman but builds from git (not to be
+    confused with nrz's Blackman).
+\item check-groups - Check groups.
+\item checkpkgs - Check packages for errors.
+\item conflicts - Check for file conflicts.
+\item dbmod - Modify a package database.
+\item depth-list - Create a list sorted by dependency depth.
+\item deptree - Create a dependency tree, listing only blackarch-provided packages.
+\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
+\item get-official - Get official packages for release.
+\item list-loose-packages - List packages that are not in groups and are not
+    dependencies for other packages.
+\item list-needed - List missing dependencies.
+\item list-removed - List packages that are in the package repo but not in git.
+\item list-tools - List tools.
+\item outdated - Look for packages that are out-dated in the package repo
+    relative to the git repo.
+\item pkgmod - Modify a build package.
+\item pkgrel - Increment pkgrel in a package.
+\item prep - Clean up a PKGBUILD file's style and find errors.
+\item sitesync - Sync between a local copy of the package repo and a remote copy.
+\item size-hunt - Hunt for large packages.
+\item source-backup - Backup package source files.
+\end{itemize}
+
+\section{Contributing to repository}
+This section shows you how to contribute to the BlackArch Linux project. We
+accept pull requests of all sizes, from tiny typo fixes to new packages.\\For
+help, suggestions, or questions feel free to contact us.
+\\\\
+Everyone is welcome to contribute. All contributions are appreciated.
+
+\subsection{Required tutorials}
+Please read the following tutorials before contributing:
+\begin{itemize}
+\item
+\href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
+Packaging Standards}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Creating
+Packages}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
+\end{itemize}
+
+\ Bêgor {Steps ji bo beşdariya}
+Ji bo submit guhertinên ku we ji bo vê projeyê BlackArchLinux, li pey van
+gavên:
+\ Destpê {xaka}
+\ Babete Fork ensîklopediya ji
+\ Url {https://github.com/BlackArch/blackarch}
+\ Babete Hack pelên pêwîst, (raxîne. PKGBUILD, files .patch, û hwd.).
+\ Babete Commit Guherandinên xwe.
+\ Babete Push Guherandinên xwe.
+\ Babete ji me bipirse merge li Guherandinên te, û germahıya bi daxwaza vekêşana.
+\ Dawiya {xaka}
+
+\ Bêgor {mînak}
+Mînaka jêrîn nîşan dide radest a pakêta nû ji bo BlackArch
+rêvename. Em \ href bi kar {https://wiki.archlinux.org/index.php/yaourt} {yaourt}
+(Tu baş bi kar pacaur) xeberdanê a file PKGBUILD pre-heyî ji bo
+\ Textbf {nfsshell} ji \ href {https://aur.archlinux.org/} {Aur} û eyar ew
+li gor hewcedariyên me.
+
+\ Subsubsection {Fetch PKGBUILD}
+Pędivî bi \ textit {PKGBUILD} pelê bi kar yaourt an pacaur:
+\ Destpê {lstlisting}
+  user @ blackarchlinux $ yaourt -G nfsshell
+  ==> çavkaniyên Download nfsshell
+  x LICENSE
+  x PKGBUILD
+  x gcc.patch
+  user @ blackarchlinux $ cd nfsshell /
+\ Dawiya {lstlisting}
+
+\ Subsubsection {paqij bikin PKGBUILD}
+Paqij bikin û bi \ textit {PKGBUILD} file û rizgarkirina hin dem:
+\ Destpê {lstlisting}
+  user @ blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
+  paqijkirina 'PKGBUILD' ...
+  berfireh hilpekînên ...
+  raneke modeline vim ...
+  raneke Rayi id ...
+  raneke, tenya û Pêşdebir comments ...
+  ditepisînin xetên zêde vala ...
+  raneke '|| vegerr'...
+  raneke sereke line vala ...
+  raneke $ pkgname ...
+  şop û dirêj whitespace ...
+\ Dawiya {lstlisting}
+
+\ Subsubsection {Adjust PKGBUILD}
+Eyar \ textit li {PKGBUILD} file:
+\ Destpê {lstlisting}
+  user @ blackarchlinux nfsshell $ vi PKGBUILD
+\ Dawiya {lstlisting}
+
+\ Subsubsection {Build pakêta}
+Avakirina vê pakêtê de:
+\ Destpê {lstlisting} user @ blackarchlinux nfsshell $ makepkg -sf
+==> Making pakêta: nfsshell 19980519-1 (Mon Dec 2 17:23:51 CET 2013)
+==> girêdanên Kontrol runtime ...
+==> girêdanên Kontrol buildtime ...
+==> Retrieving çavkaniyên ...
+-> Daxistina nfsshell.tar.gz ...
+% Total% pêşwazî% Xferd Average Speed ​​Time Time Time
+CurrentDload Upload Total Spent Çep Speed100 29213 100 29213 0
+0 48150 0 -: -: -: -: -: -: -: -: - 48206
+-> gcc.patch hatin
+-> LICENSE hatin
+...
+<Gelek pêvajoya build û encam berhevkar here>
+...
+==> Leaving jîngehê fakeroot.
+==> çêkirina Dawî: nfsshell 19980519-1 (Mon Dec 2 17:23:53 CET 2013)
+\ Dawiya {lstlisting}
+
+\ Subsubsection {Install û test pakêta}
+Install û ceribandina vê pakêtê de:
+\ Destpê {lstlisting}
+  user @ blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
+  user @ blackarchlinux nfsshell $ nfsshell # biceribîne
+\ Dawiya {lstlisting}
+
+\ Subsubsection {lê zêde bike, commit û pakêta push}
+Lê zêde bike, commit û konaxa package
+\ Destpê {lstlisting} user @ blackarchlinux nfsshell $ cd / blackarchlinux / pakêtên
+user @ blackarchlinux ~ / blackarchlinux / pakêtên $ mv ~ / nfsshell.
+user @ blackarchlinux ~ / blackarchlinux / pakêtên $ git commit nfsshell ere && push git
+\ Dawiya {lstlisting}
+
+\ Subsubsection {Create a bi daxwaza vekêşana}
+Create daxwaza vekêşana li ser \ href {https://github.com/} {github.com}
+\ Destpê {lstlisting}
+  firefox https://github.com/<contributor>/blackarchlinux
+\ Dawiya {lstlisting}
+
+\ Subsubsection {zêdekirin a ji dûr ve ji bo diherikî}
+A tiştê smart to do, eger hûn dixebitin diherikî û li ser duryanekê ye ji bo vekêşana fork xwe bi xwe û lê zêde bike ji repo ba sereke wek dûr
+\ Destpê {lstlisting}
+  user @ blackarchlinux ~ / blackarchlinux $ git -yê dûr
+  eslê <url of fork xwe> (xeberdanê)
+  eslê <url of fork xwe> (push)
+  user @ blackarchlinux ~ / blackarchlinux $ git ji dûr ve lê zêde bike diherikî https://github.com/blackarch/blackarch
+  user @ blackarchlinux ~ / blackarchlinux $ git -yê dûr
+  eslê <url of fork xwe> (xeberdanê)
+  eslê <url of fork xwe> (push)
+  https://github.com/blackarch/blackarch upstream (xeberdanê)
+  https://github.com/blackarch/blackarch upstream (push)
+\ Dawiya {lstlisting}
+
+Wekî standard, git, divê rasterast ji eslê xwe inkar bike, lê belê bila config git te ye
+kardike avakirin. Ev wê ne pirseke heta tu tewanê maf wekî
+hûn ne wê bikaribin push herikî bê wan.
+
+Eger hûn xwedî şiyana ku qetilirin, hûn serkeftina zêdetir bikaranîna hene
+\ Textit {git@github.com: blackarch / blackarch.git} lê belê ev ji bo we.
+
+\ Bêgor {Requests}
+\ Destpê {xaka}
+\ Babete Ma \ textbf {Miqate yê} an jî \ textbf {Contributor} comments to zêde ne
+\ Textit {PKGBUILD} files. Lê zêde bike maintainer û tenya navên bi
+Nivîs- beşa rêber BlackArch.
+\ Babete ji bo xatirê yên hevgirtî, ji kerema xwe ve li pey style giştî ya din
+\ Textit {PKGBUILD} files di repo û bikaranîna indentation du-space.
+\ Dawiya {xaka}
+
+\ Bêgor {tips General}
+\ Href {http://wiki.archlinux.org/index.php/Namcap} {namcap} dikarin pakêtên ku ji bo kontrol
+de çewtî.
+
+% ------------------%
+% Chapter 4%
+% ------------------%
+
+\ {Guide Tools} beş
+Ji nêzda...
+
+\ Beşa {Coming Soon}
+Ji nêzda...
+
+%%% PAŞKOYA %%%
+\revîyê kor
+\ Di nav {hevpêçekî}
+
+\ Dawiya {belge}
+
+%%% EOF %%%
