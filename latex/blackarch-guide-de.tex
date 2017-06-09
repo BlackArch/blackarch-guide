@@ -206,30 +206,25 @@ Jetzt können Tools aus dem BlackArch Repository installiert werden.
 \end{enumerate}
 
 \subsection{Paketinstallation auf Quellcodebasis}
-As part of an alternative method of installation, you can build the BlackArch
-packages from source. You can find the PKGBUILDs on
-\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
-build the entire repo, you can use the
-\href{https://github.com/BlackArch/blackman}{Blackman} tool.
+Alternativ können BlackArch-Pakete auch aus Quellcode gebaut werden. Die PKGBUILDS können auf \href{https://github.com/BlackArch/blackarch/tree/master/packages}{github} gefunden werden. Um das gesamte Repository zu bauene, kann das \href{https://github.com/BlackArch/blackman}{Blackman} tool genutzt werden.
 \begin{itemize}
-\item First, you have to install Blackman. If the BlackArch package repository
-is setup on your machine, you can install Blackman:
+\item Als erste muss Blackman installiert werden. Wenn das BlackArch Reposity auf ihrer Maschine eingerichtet ist, kann Blackman installiert werden:
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item You can build and install Blackman from source:
+\item Blackman kann von Quellcode gebaut und installiert werden: 
 \begin{lstlisting}
   mkdir blackman
   cd blackman
   wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Make sure the PKGBUILD has not been maliciously tampered with.
+  # Sicherstellen dass die PKGBUILD nicht bösartig verändert worden sind.
   makepkg -s
 \end{lstlisting}
 
-\item Or you can install Blackman from the AUR:
+\item Blackman kann auch aus dem AUR installiert werden:
 \begin{lstlisting}
-  <whatever AUR helper you use> -S blackman
+  <beliebiger AUR helper der benutzt wird> -S blackman
 \end{lstlisting}
 
 \end{itemize}
