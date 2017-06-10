@@ -158,14 +158,14 @@ Github: \url{https://github.com/Blackarch/}
 \chapter{Benutzerhandbuch}
 
 \section{Installation}
-Der folgende Abschnitt zeigt, wie man das BlackArch Repositorz einrichtet und Pakete installiert. BlackArch unterstützt sowohl die Installation von Binärpaketen als auch die Installation über selbstkompilierten Quellcode. 
+Der folgende Abschnitt zeigt, wie man das BlackArch Repository einrichtet und Pakete installiert. BlackArch unterstützt sowohl die Installation von Binärpaketen als auch die Installation über selbstkompilierten Quellcode. 
 
 BlackArch ist kompatibel mit regulären Arch installationen. Es verhält sich wie ein inoffizelles Nutzerreporisotrz.
 Wenn stattdessen ein ISO benötigt wird, siehe den Abschnitt
 \href{https://www.blackarch.org/downloads.html#iso}{Live ISO}.
 
 \subsection{Installation basierend auf einer vorhandenen ArchLinux Installation}
-Führe \href{https://blackarch.org/strap.sh}{strap.sh} als root und folge den Anweisungen. 
+Führe \href{https://blackarch.org/strap.sh}{strap.sh} als root aus und folge den Anweisungen. 
 
 Hier ein Beispiel.
 \begin{lstlisting}
@@ -224,35 +224,35 @@ Alternativ können BlackArch-Pakete auch aus Quellcode gebaut werden. Die PKGBUI
 
 \item Blackman kann auch aus dem AUR installiert werden:
 \begin{lstlisting}
-  <beliebiger AUR helper der benutzt wird> -S blackman
+  <Verwendeter AUR Helfer> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
-would typically expect from something like pacman. Basic usage has been outlined below.
+\subsection{Grundlegende Verwendung von Blackman} Blackman ist sehr einfach zu nutzen, auch wenn sich die flags von dem unterscheiden, was man typischerweise von pacman erwarten wuerde. 
+Die Grundlegende Benutzung wird im folgenden gezeigt.
 \begin{itemize}
-\item Download, compile and install packages:
+\item Herunterladen, kompilieren and installieren von Paketen:
 \begin{lstlisting}
   sudo blackman -i package
 \end{lstlisting}
 
-\item Download, compile and install whole category:
+\item Herunterladen, kompilieren und installieren einer ganzen Kategorie:
 \begin{lstlisting}
   sudo blackman -g group
 \end{lstlisting}
 
-\item Download, compile and install all of the BlackArch tools:
+\item Herunterladen, kompilieren und installieren von allen BlackArch tools:
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
 
-\item To list the blackarch categories:
+\item Auflistung aller BlackArch Kategorien:
 \begin{lstlisting}
   blackman -l
 \end{lstlisting}
 
-\item To list category tools:
+\item Auflistung der tools einer Kategorie:
 \begin{lstlisting}
   blackman -p category
 \end{lstlisting}
