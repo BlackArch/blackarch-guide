@@ -281,29 +281,26 @@ BlackArch Linux kann von unseren live- oder netinstall-ISOs intalliert werden. \
 
 \chapter{Entwicklerhandbuch}
 
-\section{Arch's Build System and Repositories}
+\section{Arch's Build System und Repositories}
 
-PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
-package. PKGBUILD files are written in Bash.
+PKGBUILD Dateien sind build skripte. Jedes beschreibt makepkg(1) wie ein Paket gebaut wird. PKGBUILD Dateien werden in Bash geschrieben.
 
-For more information, read (or skim through) the following:
+Fuer weitere Informationen, lese (oder ueberfliege) folgende Seiten:
 \begin{itemize}
-\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Erzeuge Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
 \item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
 \item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
 \end{itemize}
 
-\section{Blackarch PKGBUILD standards}
-For the sake of simplicity, our PKGBUILDs are similar to that of the AUR ones,
-with a few small differences outlined below. Every package must
-belong to blackarch at the minimum, there will also be a lot of crossover with
-multiple packages belonging to multiple groups.
+\section{Blackarch PKGBUILD Standards}
+Der Einfachkeit halber sind unsere PKGBUILDs dem des AUR sehr aehnlich, die kleinen Unterschiede werden im weiteren Text beschrieben. 
+Jedes Paket muss mindestens zu blackarch gehoeren, es wird aber auch viele beziehungen ueber mehrere pakete die zu mehreren Gruppen gehoeren geben.
 
-\subsection{Groups}
-To allow users to install a specific range of packages quickly and easily,
-packages have been separated into groups. Groups allow users to simply
-go "pacman -S <group name>" in order to pull a lot of packages.
+\subsection{Gruppen}
+Um es Nutzern zu ermoeglichen eine ganze Reihe von Paketen schnell und einfach zu installieren,
+wurden Pakete in Gruppen aufgeteilt.
+Gruppen ermoeglichen es den benutzern mit einem einfachen "pacman -S <group name>" eine Menge von Paketen zu bekommen.
 
 \subsubsection{blackarch}
 The blackarch group is the base group that all packages must belong too. This allows
