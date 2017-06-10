@@ -183,7 +183,7 @@ Jetzt lade eine frische Kopie der Master Paket Liste und synchronisiere die Pake
 \subsection{Paketinstallattion}
 Jetzt können Tools aus dem BlackArch Repository installiert werden.
 \begin{enumerate}
-\item Um alle verfügbaren Tools aufzulistenÖ
+\item Um alle verfügbaren Tools aufzulisten:
 \begin{lstlisting}
   pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 \end{lstlisting}
@@ -242,7 +242,7 @@ Die Grundlegende Benutzung wird im folgenden gezeigt.
   sudo blackman -g group
 \end{lstlisting}
 
-\item Herunterladen, kompilieren und installieren von allen BlackArch tools:
+\item Herunterladen, kompilieren und installieren aller BlackArch Tools:
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
@@ -252,7 +252,7 @@ Die Grundlegende Benutzung wird im folgenden gezeigt.
   blackman -l
 \end{lstlisting}
 
-\item Auflistung der tools einer Kategorie:
+\item Auflistung der Tools einer Kategorie:
 \begin{lstlisting}
   blackman -p category
 \end{lstlisting}
@@ -260,11 +260,10 @@ Die Grundlegende Benutzung wird im folgenden gezeigt.
 \end{itemize}
 
 \subsection{Installing from live-, netinstall- ISO or ArchLinux}
-You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
-\url{https://www.blackarch.org/download.html#iso}. The following steps are
-required after the ISO boot up.
+BlackArch Linux kann von unseren live- oder netinstall-ISOs intalliert werden. \\Siehe
+\url{https://www.blackarch.org/download.html#iso}. Die folgenden Schritte sind noetig wenn die ISO gebootet ist.
 \begin{itemize}
-\item Install blackarch-installer package:
+\item Installieren des blackarch-installer Pakets:
 \begin{lstlisting}
   sudo pacman -S blackarch-installer
 \end{lstlisting}
@@ -277,10 +276,10 @@ required after the ISO boot up.
 \end{itemize}
 
 %------------------%
-%  Chapter 3       %
+%  Kapitel 3       %
 %------------------%
 
-\chapter{Developer Guide}
+\chapter{Entwicklerhandbuch}
 
 \section{Arch's Build System and Repositories}
 
