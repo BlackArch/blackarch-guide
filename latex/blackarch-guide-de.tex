@@ -628,14 +628,15 @@ steps:
 \end{enumerate}
 
 \subsection{Beispiel}
-The following example demonstrates submitting a new package to the BlackArch
-project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
-(you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
-\textbf{nfsshell} from the \href{https://aur.archlinux.org/}{AUR} and adjust it
-according to our needs.
+Das folgende Beispiel zeigt, wie ein neues Paket zum BlackArch Projekt
+submitted wird.
+Wir benutzen \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
+(pacaur kann auch benutzt werden) um eine bereits existierende PKGBUILD Datei fuer
+\textbf{nfsshell} aus dem \href{https://aur.archlinux.org/}{AUR} herunter zu laden und nach unseren
+Beduerfnissen anzupassen.
 
 \subsubsection{Fetch PKGBUILD}
-Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
+Die \textit{PKGBUILD} Datei mit yaourt oder pacaur holen:
 \begin{lstlisting}
   user@blackarchlinux $ yaourt -G nfsshell
   ==> Download nfsshell sources
@@ -645,8 +646,8 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
   user@blackarchlinux $ cd nfsshell/
 \end{lstlisting}
 
-\subsubsection{Clean up PKGBUILD}
-Clean up the \textit{PKGBUILD} file and save some time:
+\subsubsection{Aufraeumen der PKGBUILD}
+Aufraeumen der \textit{PKGBUILD} Datei und ein bisschen Zeit sparen:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
@@ -661,14 +662,14 @@ Clean up the \textit{PKGBUILD} file and save some time:
   removing trailing whitespace...
 \end{lstlisting}
 
-\subsubsection{Adjust PKGBUILD}
-Adjust the \textit{PKGBUILD} file:
+\subsubsection{PKGBUILD anpassen}
+Anpassen der \textit{PKGBUILD} Datei:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ vi PKGBUILD
 \end{lstlisting}
 
-\subsubsection{Build the package}
-Build the package:
+\subsubsection{Das Paket bauen}
+Bau das Paket:
 \begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
 ==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
 ==> Checking runtime dependencies...
@@ -687,28 +688,29 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 ==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
 \end{lstlisting}
 
-\subsubsection{Install and test the package}
-Install and test the package:
+\subsubsection{Installieren und testen des Pakets}
+Installiere und teste das Paket:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
   user@blackarchlinux nfsshell $ nfsshell # test it
 \end{lstlisting}
 
-\subsubsection{Add, commit and push package}
-Add, commit and push the package
+\subsubsection{Adde, commite and pushe das Paket}
+Fuege das Paket hinzu, mach den Commit und Pushe.
 \begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
-\subsubsection{Erzeugt a pull request}
-Erzeugt a pull request on \href{https://github.com/}{github.com}
+\subsubsection{Erzeuge einen Pull Request}
+Erzeuge einen Pull Request auf \href{https://github.com/}{github.com}
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
 
-\subsubsection{Adding a remote for upstream}
-A smart thing to do if you're working upstream and on a fork is to pull your own fork and add the main ba repo as a remote
+\subsubsection{Fuege eine upstream remote hinzu.}
+Es ist eine gute Idee wenn man upstream auf einem Fork arbeitet, den eigenen Fork zu pullen und das Haupt-BlackArch repository 
+als eine Remote hinzuzufuegen.
 \begin{lstlisting}
   user@blackarchlinux ~/blackarchlinux $ git remote -v
   origin <the url of your fork> (fetch)
