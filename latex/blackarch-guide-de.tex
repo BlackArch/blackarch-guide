@@ -40,7 +40,7 @@
 
 \hypersetup{
   pdftitle={BlackArch Linux, Das BlackArch Linux Handbuch},
-  pdfsubject={BlackArch Linux, Der BlackArch Linux Handbuch},
+  pdfsubject={BlackArch Linux, Das BlackArch Linux Handbuch},
   pdfauthor={BlackArch Linux, BlackArch Linux},
   pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
   pdfcenterwindow=true,
@@ -106,15 +106,15 @@ tabsize=2
 \pagestyle{fancy}
 
 %------------------%
-%  Kapitel 1       %
+%  Chapter 1       %
 %------------------%
 
 \chapter{Einführung}
 
 \section{Übersicht}
-Der BlackArch Linux guide ist in verschiedene Teile aufgeteilt:
+Das BlackArch Linux Handbuch ist in verschiedene Teile aufgeteilt:
 \begin{itemize}
-\item Einführung - Gibt einen breiten Überblick, eine Einführung, und weitere Hilfreiche Projektinformationen
+\item Einführung - Gibt einen breiten Überblick, eine Einführung, und weitere hilfreiche Projektinformationen
 \item Nutzerhandbuch - Alles was ein typischer Nutzer wissen muss um BlackArch zu benutzen
 \item Entwicklerhandbuch - Wie kann man zu BlackArch beitragen und entwickeln
 \item Tool Guide - Tiefgehende Details zu Tools und Beispiele zur Benutzung (WIP)
@@ -124,9 +124,9 @@ Der BlackArch Linux guide ist in verschiedene Teile aufgeteilt:
 BlackArch ist eine vollwertige Linux Distribution für Penetration Tester und Security Researcher.
 Es basiert auf \href{https://www.archlinux.org/}{ArchLinux} und Nutzer können BlackArch Komponenten einzeln oder in Gruppen installieren.
 
-Das Toolset wird mittel eines inoffiziellem Benutzer Repositories verteilt, so dass man BlackArch auf einer existierenden Arch Linux Installation installieren kann. Pakete können individuell oder mittels einer Kategorie installiert werden.
+Das Toolset wird mittel eines inoffiziellem Benutzer Repositories verteilt, so dass man BlackArch auf einer existierenden Arch Linux Installation installieren kann. Pakete können individuell oder ueber Kategorien installiert werden.
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
-{unofficial user repository}
+{Inoffizielles Nutzerrepository}
 
 Das konstant wachsende Repository beinhaltet aktuell über \href{https://www.blackarch.org/tools.html}{1300} tools.
 Alle tools werden intensiv getestet bevor sie zur Codebasis hinzugefügt werden, um die Qualität des Repositories zu gewährleisten.
@@ -135,10 +135,10 @@ Alle tools werden intensiv getestet bevor sie zur Codebasis hinzugefügt werden,
 \section{Geschichte von BlackArch Linux}
 Coming soon...
 
-\section{Supported platforms}
+\section{Unterstuetzte Plattformen}
 Coming soon...
 
-\section{Get involved}
+\section{Mitmachen}
 Man kann über folgende Wege mit dem BlackArch Team in Kontakt treten:
 Website: \url{https://www.blackarch.org/}
 
@@ -276,21 +276,21 @@ BlackArch Linux kann von unseren live- oder netinstall-ISOs intalliert werden. \
 \end{itemize}
 
 %------------------%
-%  Kapitel 3       %
+%  Chapter 3       %
 %------------------%
 
 \chapter{Entwicklerhandbuch}
 
-\section{Arch's Build System und Repositories}
+\section{Das Arch Build System und Repositories}
 
-PKGBUILD Dateien sind build skripte. Jedes beschreibt makepkg(1) wie ein Paket gebaut wird. PKGBUILD Dateien werden in Bash geschrieben.
+PKGBUILD Dateien sind Build Skripte. Jedes beschreibt makepkg(1) wie ein Paket gebaut wird. PKGBUILD Dateien werden in Bash geschrieben.
 
 Fuer weitere Informationen, lese (oder ueberfliege) folgende Seiten:
 \begin{itemize}
 \item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Erzeuge Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
 \item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
-\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packetierungs Standards}
 \end{itemize}
 
 \section{Blackarch PKGBUILD Standards}
@@ -299,7 +299,7 @@ Jedes Paket muss mindestens zu blackarch gehoeren, es wird aber auch viele bezie
 
 \subsection{Gruppen}
 Um es Nutzern zu ermoeglichen eine ganze Reihe von Paketen schnell und einfach zu installieren,
-wurden Pakete in Gruppen aufgeteilt.
+wurden Pakete in Gruppen eingeteilt.
 Gruppen ermoeglichen es den benutzern mit einem einfachen "pacman -S <group name>" eine Menge von Paketen zu bekommen.
 
 \subsubsection{blackarch}
@@ -422,8 +422,8 @@ physischer Hardware zu tun hat.
 Beispiele: arduino, smali
 
 \subsubsection{blackarch-honeypot}
-Pakete die als "honeypots" fungieren, zum Beispiel Programme
-die sich als verwundbare Dienste ausgeben und hacker in eine Falle locken
+Pakete die als "honeypots" fungieren. Zum Beispiel Programme
+die sich als verwundbare Dienste ausgeben und Hacker in eine Falle locken
 sollen.
 
 Beispiele: artillery, bluepot, wifi-honey
@@ -444,7 +444,7 @@ Pakete die nicht unbedingt in eine spezielle Kategorie passen.
 Beispiele: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-Pakete die mobile Plattformen manipulieren.
+Pakete die Mobile Plattformen manipulieren.
 
 Beispiele: android-sdk-platform-tools, android-udev-rules
 
@@ -500,7 +500,7 @@ Pakete die hauptsaechlich soziale netzwerke angreifen.
 Beispiele: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-Pakete die versuchen den angreifer zu spoofen, 
+Pakete die versuchen den Angreifer zu spoofen, 
 sodass der Angreifer nicht als Angreifer fure das Opfer zu 
 erkennen ist.
 
@@ -535,7 +535,7 @@ Pakete die auf internet-zugewandten Anwendungen arbeiten.
 Beispiele: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-Diese Gruppe ist fuer native Windows Pakete die via wine laufen.
+Diese Gruppe ist fuer native Windows Pakete die unter wine laufen.
 
 Beispiele: 3proxy-win32, pwdump, winexe
 
@@ -544,7 +544,7 @@ Pakete die auf drahtlosen Netzwerken arbeiten.
 
 Beispiele: airpwn, mdk3, wiffy
 
-\section{Repository structure}
+\section{Repository Struktur}
 Das primaere git repo fuer BlackArch befindet sich hier:
 \href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
 Es gibt ausserdem verschiedene Sekundare Repositories hier:
