@@ -553,84 +553,81 @@ Es gibt ausserdem verschiedene Sekundare Repositories hier:
 Innerhalb des Hauptrepos gibt es drei wichtige Verzeichnisse:
 
 \begin{itemize}
-\item docs - Documentation.
-\item packages - PKGBUILD files.
-\item scripts - Useful little scripts.
+\item docs - Dokumentation.
+\item packages - PKGBUILD Dateien.
+\item scripts - Nuetzliche kleine Skripte.
 \end{itemize}
 
 \subsection{Scripts}
-Here is a reference for scripts in the \verb|scripts/| directory:
+Hier eine Referenz fuer Skripte im \verb|scripts/| Verzeichnis:
 
 \begin{itemize}
-\item baaur - Soon, this will upload packages to the AUR.
-\item babuild - Build a package.
-\item bachroot - Manage a chroot for testing.
-\item baclean - Clean old .pkg.tar.xz files from the package repo.
-\item baconflict - Soon this will replace \verb|scripts/conflicts|.
-\item bad-files - Find bad files in built packages.
-\item balock - Obtain or release the package repo lock.
-\item banotify - Notify IRC about package pushes.
-\item barelease - Release packages to the package repo.
-\item baright - Print the BlackArch copyright info.
-\item basign - Sign packages.
-\item basign-key - Sign a key.
-\item blackman - This behaves sort of like pacman but builds from git (not to be
-    confused with nrz's Blackman).
-\item check-groups - Check groups.
-\item checkpkgs - Check packages for errors.
-\item conflicts - Check for file conflicts.
-\item dbmod - Modify a package database.
-\item depth-list - Create a list sorted by dependency depth.
-\item deptree - Create a dependency tree, listing only blackarch-provided packages.
-\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-\item get-official - Get official packages for release.
-\item list-loose-packages - List packages that are not in groups and are not
-    dependencies for other packages.
-\item list-needed - List missing dependencies.
-\item list-removed - List packages that are in the package repo but not in git.
-\item list-tools - List tools.
-\item outdated - Look for packages that are out-dated in the package repo
-    relative to the git repo.
-\item pkgmod - Modify a build package.
-\item pkgrel - Increment pkgrel in a package.
-\item prep - Clean up a PKGBUILD file's style and find errors.
-\item sitesync - Sync between a local copy of the package repo and a remote copy.
-\item size-hunt - Hunt for large packages.
-\item source-backup - Backup package source files.
+\item baaur - Coming soon: Wird Pakete in das AUR hochladen.
+\item babuild - Baut ein Paket.
+\item bachroot - Managen eines chroot zum testen.
+\item baclean - Raeumt alte .pkg.tar.xz Dateien aus dem Paket Repository.
+\item baconflict - Wird bald \verb|scripts/conflicts| ersetzen.
+\item bad-files - Findet schlechte Dateien in gebauten Paketen.
+\item balock - Anlegen oder loesen des Repository locks.
+\item banotify - IRC benachrichtigen ueber Paket pushes.
+\item barelease - Veroeffentlicht Pakete in das Repository.
+\item baright - Gibt die BlackArch Copyright Informationen aus.
+\item basign - Signiert Packete.
+\item basign-key - Signiert einen Schluessel.
+\item blackman - Verhaelt sich aehnlich wie pacman, baut aber aus git. 
+	(Nicht zu verwechseln mit nrz's Blackman)
+\item check-groups - Ueberprueft groups.
+\item checkpkgs - Ueberprueft Pakete auf Fehler.
+\item conflicts - Sucht nach Dateikonflikten.
+\item dbmod - Modifiziert eine Paketdatenbank.
+\item depth-list - Erzeugt eine Liste sortiert nach Abhaengigkeitspfad.
+\item deptree - Erzeugt einen Abhaengigkeitsbaum, der nur blackarch Pakete enthaelt.
+\item get-blackarch-deps - Liefert eine List von blackarch Abhaengigkeiten fuer ein Paket.
+\item get-official - Liefert offizielle Pakete zum Release.
+\item list-loose-packages - Listet Pakete die weder in Gruppen noch Abhaengigkeiten anderer Pakete sind.
+\item list-needed - Liste fehlender Abhaengigkeiten.
+\item list-removed - Liste von Pakete die im Paketrepository sind aber nicht im git.
+\item list-tools - Liste der Tools.
+\item outdated - Sucht nach veralteten Paketen im Repository im Vergleich zum git Repository.
+\item pkgmod - Modifiziert ein Buildpaket.
+\item pkgrel - Zaehlt die pkgrel in einem Paket hoch.
+\item prep - Aufraeumen des PKGBUILD Datei-Styles und Fehlersuche.
+\item sitesync - Synchronisiert zwischein einer lokalen Kopie des Paketrepositories und der Remote.
+\item size-hunt - Sucht nach grossen Paketen.
+\item source-backup - Backup von package source Dateien.
 \end{itemize}
 
-\section{Contributing to repository}
-This section shows you how to contribute to the BlackArch Linux project. We
-accept pull requests of all sizes, from tiny typo fixes to new packages.\\For
-help, suggestions, or questions feel free to contact us.
+\section{Beitragen zum BlackArch Repository}
+Dieser Abschnitt zeigt, wie Beitraege im BlackArch Linux Projekt gemacht werden.
+wir akzeptieren Pull Requests jeglicher Groesse, von kleinen Tippfehler-Korrekturen 
+bis zu neuen Paketen. \\Fuer Hilfe, Vorschlage oder Fragen Kontaktiere uns. 
 \\\\
-Everyone is welcome to contribute. All contributions are appreciated.
+Jeder ist willkommen. Alle Beitraege werden geschaetzt.
 
-\subsection{Required tutorials}
-Please read the following tutorials before contributing:
+\subsection{Benoetigte Tutorials}
+Bitte lies folgende Tutorials bevor du mitmachst:
 \begin{itemize}
 \item
 \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
 Packaging Standards}
-\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Creating
-Packages}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Paketerzeugung}
 \item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
 \end{itemize}
 
-\subsection{Steps for contributing}
-In order to submit your changes to the BlackArchLinux project, follow these
+\subsection{Schritte zum Mitmachen}
+Um Aenderungen zum BlackArchLinux Projekt zu submitten, folge diesen Schritten:
 steps:
 \begin{enumerate}
-\item Fork the repository from
+\item Fork das Repository von
 \url{https://github.com/BlackArch/blackarch}
-\item Hack the necessary files, (e.g. PKGBUILD, .patch files, etc).
-\item Commit your changes.
-\item Push your changes.
-\item Ask us to merge in your changes, preferably through a pull request.
+\item Hacke die benoetigten Dateien (z.B. PKGBUILD, .patch files, usw).
+\item Committe deine Aenderungen.
+\item Pushe deine Aenderungen.
+\item Bitte uns darum deine changes zu mergen, am liebsten durch einen Pull Request.
 \end{enumerate}
 
-\subsection{Example}
+\subsection{Beispiel}
 The following example demonstrates submitting a new package to the BlackArch
 project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
 (you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
@@ -704,8 +701,8 @@ user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
-\subsubsection{Create a pull request}
-Create a pull request on \href{https://github.com/}{github.com}
+\subsubsection{Erzeugt a pull request}
+Erzeugt a pull request on \href{https://github.com/}{github.com}
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
