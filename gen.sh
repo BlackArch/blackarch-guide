@@ -1,11 +1,12 @@
 #!/bin/sh
 
-TEXFILE="latex/guide.tex"
+TEXFILE="${1}"
+TARGET="${2}"
 HTMLFILE="`echo ${TEXFILE} | cut -d '/' -f 2 | cut -d '.' -f 1`.html"
 
-if [ ${#} -ne 1 ]
+if [ ${#} -ne 2 ]
 then
-    echo "${0} <target>"
+    echo "${0} <file> <target>"
     echo "targets:"
     echo "  html    - create one html document"
     echo "  pdf     - create pdf document"
@@ -28,10 +29,10 @@ make_final_html()
     cat html/footer.html >> ${HTMLFILE}
 }
 
-if [ "${1}" = "pdf" ]
+if [ "${TARGET}" = "pdf" ]
 then
     lualatex "${TEXFILE}"
-elif [ "${1}" = "html" ]
+elif [ "${TARGET}" = "html" ]
 then
     echo "not implemented"
     exit 1
@@ -39,9 +40,9 @@ then
     #    -split 0 -toc_depth 10 -lcase_tags -address "BlackArch Linux" \
     #    -show_section_numbers -html_version "4.0" -info 0 "${TEXFILE}"
     #make_final_html
-elif [ "${1}" = "clean" ]
+elif [ "${TARGET}" = "clean" ]
 then
-    rm -rf *.pdf *.toc *.log *.aux *.out *.exs ${HTMLFILE} latex/guide guide.pdf
+    rm -rf *.toc *.log *.aux *.out *.exs ${HTMLFILE}
 else
     echo "mount /dev/brain"
     exit 1337
