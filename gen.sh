@@ -31,7 +31,12 @@ make_final_html()
 
 if [ "${TARGET}" = "pdf" ]
 then
-    lualatex "${TEXFILE}"
+    if [[ "${TEXFILE}" =~ "ru" ]]
+    then
+        pdflatex "${TEXFILE}"
+    else
+        lualatex "${TEXFILE}"
+    fi
 elif [ "${TARGET}" = "html" ]
 then
     echo "not implemented"
