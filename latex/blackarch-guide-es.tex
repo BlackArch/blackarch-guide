@@ -190,7 +190,7 @@ Ejecuta \href{https://blackarch.org/strap.sh}{strap.sh} como administrador y sig
 las instrucciones. Mira el ejemplo siguiente.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
    sudo ./strap.sh
 \end{lstlisting}
 Ahora descarga una copia nueva de la lista principal de paquetes y paquetes
@@ -491,7 +491,7 @@ Ejemplos: nfcutils
 \subsubsection{blackarch-packer}
 Packages that operate on or invlove packers.
 
-/textif{packers are programs that embed malware within other executables.}
+\textif{packers are programs that embed malware within other executables.}
 
 Ejemplos: packerid
 
@@ -679,7 +679,7 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
 \subsubsection{Clean up PKGBUILD}
 Clean up the \textit{PKGBUILD} file and save some time:
 \begin{lstlisting}
-  user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
+  user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
   expanding tabs...
   removing vim modeline...
