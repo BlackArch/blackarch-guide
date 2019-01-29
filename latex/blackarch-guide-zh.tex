@@ -25,6 +25,10 @@
 \usepackage{tocloft}
 \usepackage[utf8]{inputenc}
 
+%%% CHINESE %%%
+\usepackage{ctex}
+\renewcommand{\chaptername}{章节}
+
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
@@ -39,8 +43,8 @@
 \setcounter{secnumdepth}{10}
 
 \hypersetup{
-  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
-  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdftitle={BlackArch Linux, BlackArch Linux 指南},
+  pdfsubject={BlackArch Linux, BlackArch Linux 指南},
   pdfauthor={BlackArch Linux, BlackArch Linux},
   pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
   pdfcenterwindow=true,
@@ -74,7 +78,7 @@ tabsize=2
 \setlength{\headheight}{33pt}
 \setlength{\headsep}{33pt}
 \lhead{{\includegraphics[width=1cm,height=1cm]{images/logo.png}}}
-\rhead{The BlackArch Linux Guide}
+\rhead{BlackArch Linux 指南}
 
 %%% CUSTOM MACROS %%%
 % for html links
@@ -95,7 +99,7 @@ tabsize=2
 \label{fig:logo}
 \end{figure}
 \vspace{0.5cm}
-\Huge{\textbf{BlackArch指南}}\\
+\Huge{\textbf{BlackArch Linux 指南}}\\
 \vspace{1cm}
 \Large{\color{red}https://www.blackarch.org/}\\
 \vspace{0.5cm}
@@ -112,35 +116,38 @@ tabsize=2
 \chapter{引言}
 
 \section{概览}
-BlackArch Linux指南分为以下几部分
+BlackArch Linux 指南分为以下几个部分：
 \begin{itemize}
-\item 引言 - 提供概述，简介和其他有帮助项目的信息
-\item 用户指南 - 一个典型用户高效的使用BlackArch所需要知道的一切
-\item 开发者指南 - 怎样加入我们，为BlackArch开发和贡献
-\item 工具指南 - 工具的详细信息和使用示例
+\item 引言 - 提供概述，简介，以及一些有用项目的信息
+\item 用户指南 - 一个标准用户高效使用BlackArch需要了解的
+\item 开发者指南 - 如何参与BlackArch的开发以及如何贡献代码
+\item 工具指南 - 用样例深度详细的介绍工具的使用(WIP)
 \end{itemize}
 
-\section{什么是BlackArch Linux}
-BlackArch是一个为渗透测试工作者和安全研究人员设计的Linux发行版
-BlackArch是 \href{https://www.archlinux.org/}{ArchLinux}的一个衍生版，用户可以单独或者成组的安装BlackArch的组件到 \href{https://www.archlinux.org/}{ArchLinux}中
-工具集也被发布为一个Arch Linux \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
-{unofficial user repository} 这样你可以在一个已经安装好的Arch Linux上面安装BlackArch。 软件包可以独立安装也可以按类别安装。
+\section{什么是BlackArch Linux？}
+BlackArch 是一个提供给渗透测试以及安全人员的完整的Linux发行版。
+它是 \href{https://www.archlinux.org/}{ArchLinux} 的一个分支，用户可以在ArchLinux上安装单个或一组BlackArch组件。
 
+工具集也被打包成 Arch Linux
+\href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{非官方用户仓库(AUR)}，所以你可以在一个已有的Arch Linux系统上安装。可以单独安装某个工具或按分类批量安装。
+
+仓库目前包括超过 \href{https://www.blackarch.org/tools.html}{1300} 个工具，仍在不断扩充。
+为了保证仓库的质量，所有的工具在添加到代码库之前都经过测试。
 % should quickly describe the testing methods/code review procedures etc
-仓库目前包括超过 \href{https://www.blackarch.org/tools.html}{1300} 种工具，并且工具数目在不断增长。
-所以工具在添加到代码库之前都经过仔细的检查以保证仓库的质量。
-\section{BlackArch Linux的历史}
+
+\section{BlackArch Linux 的历史}
 敬请期待
 
 \section{支持的平台}
 敬请期待
 
-\section{参与贡献}
-You can get in touch with the BlackArch team using the following avenues:
-你可以通过以下几种途径与BlackArch team取得联系
-Website: \url{https://www.blackarch.org/}
+\section{参与进来}
+你可以通过以下几个途径联系到BlackArch 团队：
 
-Mail: \href{mailto:team@blackarch.org}{team@blackarch.org}
+网站: \url{https://www.blackarch.org/}
+
+邮箱: \href{mailto:team@blackarch.org}{team@blackarch.org}
 
 IRC: \url{irc://irc.freenode.net/blackarch}
 
@@ -156,61 +163,65 @@ Github: \url{https://github.com/Blackarch/}
 \chapter{用户指南}
 
 \section{安装}
+接下来的几个小节会告诉你如何配置BlackArch仓库以及如何安装包。
+BlackArch支持用二进制安装包安装或是从代码安装。
 
-以下章节将会告诉你如何配置BlackArch仓库和安装软件。
-BlackArch支持通过二进制包安装也支持从源码编译安装。
-BlackArch与普通Arch兼容，其作为一个非官方用户仓库，如果你想要ISO文件，请前往\href{https://www.blackarch.org/downloads.html#iso}{Live ISO}
+BlackArch 兼容 Arch Linux 常用的安装方式，比如说非官方用户仓库(AUR)。
+如果你想使用ISO，参考
+\href{https://www.blackarch.org/downloads.html#iso}{Live ISO}。
 
-\subsection{在Arch Linux基础上安装}
-
-用root权限运行 \href{https://blackarch.org/strap.sh}{strap.sh}，跟从指示。示例：
+\subsection{在ArchLinux上安装}
+用root权限运行脚本 \href{https://blackarch.org/strap.sh}{strap.sh}，并跟随提示，看下面的例子：
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
    sudo ./strap.sh
 \end{lstlisting}
 
-现在下载最新的软件包列表并且同步软件包:
+现在更新软件包并同步软件包列表：
 \begin{lstlisting}
   sudo pacman -Syyu
 \end{lstlisting}
 
 
 \subsection{安装软件包}
-你现在可以从blackarch仓库安装工具了
+你现在可以安装blackarch 仓库的软件了。
 \begin{enumerate}
-\item 列出所有可用工具，运行
+\item 列出所有可用的工具：
 \begin{lstlisting}
   pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 \end{lstlisting}
 
-\item 安装全部工具，运行:
+\item 安装所有的工具：
 \begin{lstlisting}
   pacman -S blackarch
 \end{lstlisting}
 
-\item 安装一类工具，运行
+\item 按照分类批量安装工具：
 \begin{lstlisting}
   pacman -S blackarch-<category>
 \end{lstlisting}
 
-\item 查看blackarch的目录，运行
+\item 列出 blackarch的所有分类：
 \begin{lstlisting}
   pacman -Sg | grep blackarch
 \end{lstlisting}
 
 \end{enumerate}
 
-\subsection{从源码安装软件包}
-作为一种可选的安装方式，你可以从源码编译安装BlackArch软件包，你可以在\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}上找到需要的PKGBUILD。
-编译整个仓库，可以使用 \href{https://github.com/BlackArch/blackman}{Blackman} 工具。
+\subsection{从源代码安装软件包}
+作为一种替代的安装方式，你可以从源代码构建BlackArch的安装包。
+所需的PKGBUILD文件在
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}。要编译整个仓库, 可以使用
+\href{https://github.com/BlackArch/blackman}{Blackman} 工具。
 \begin{itemize}
-\item 首先，你需要安装Blackman。如果你的机器上已经配置好了BlackArch包仓库，你可以通过下面的命令安装Blackman:
+\item 首先，你需要安装Blackman，如果你已经按照前面的步骤配置好了BlackArch软件包仓库，
+可以通过下面的命令安装Blackman：
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item 你也可以从源码编译安装Blackman:
+\item 你也可以从源码安装Blackman：
 \begin{lstlisting}
   mkdir blackman
   cd blackman
@@ -219,53 +230,53 @@ BlackArch与普通Arch兼容，其作为一个非官方用户仓库，如果你�
   makepkg -s
 \end{lstlisting}
 
-\item 或者从Aur安装blackman:
+\item 或者从AUR安装Blackman：
 \begin{lstlisting}
   <whatever AUR helper you use> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Blackman基本用法} 
-尽管用法与pacman不大一样，但是Blackman仍然非常易于使用。下面列出了一些基本用法。
+\subsection{基础的 Blackman 用法} Blackman非常易于使用，虽然参数和一些pacman之类的标准包管理器不同。
+以下是一些基本的用法。
 \begin{itemize}
-\item 下载，编译安装软件包:
+\item 下载，编译并安装软件包：
 \begin{lstlisting}
   sudo blackman -i package
 \end{lstlisting}
 
-\item 下载，编译安装整个类别:
+\item 下载，编译并安装整个分类的软件包：
 \begin{lstlisting}
   sudo blackman -g group
 \end{lstlisting}
 
-\item 下载，编译安装所有BlackArch工具:
+\item 下载，编译并安装所有的BlackArch工具：
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
 
-\item 列出BlackArch的类别:
+\item 列出所有的BlackArch软件包分类：
 \begin{lstlisting}
   blackman -l
 \end{lstlisting}
 
-\item 列出一个类别中的工具:
+\item 列出某个分类包含的软件：
 \begin{lstlisting}
   blackman -p category
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{从live-ISO，netinstall-ISO或者ArchLinux安装}
-
-你可以从live-ISO或者netinstall-ISO中安装BlackArch 查看 \url{https://www.blackarch.org/download.html#iso}。从ISO启动后执行下面的步骤。
+\subsection{从live-ISO, netinstall-ISO 或 ArchLinux安装}
+你可以从 live-ISO 或 netinstall-ISO 安装BlackArch Linux\\查看
+\url{https://www.blackarch.org/download.html#iso}。从ISO 启动后执行下面几个步骤：
 \begin{itemize}
-\item 安装blackarch-installer:
+\item 安装 blackarch-installer：
 \begin{lstlisting}
   sudo pacman -S blackarch-installer
 \end{lstlisting}
 
-\item 执行
+\item 然后运行：
 \begin{lstlisting}
   sudo blackarch-install
 \end{lstlisting}
@@ -280,11 +291,10 @@ BlackArch与普通Arch兼容，其作为一个非官方用户仓库，如果你�
 
 \section{Arch的构建系统和仓库}
 
-PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
-package. PKGBUILD files are written in Bash.
-PKGBUILD文件是一种构建脚本。PKGBUILD文件告诉makepkg(1)怎么样去构建一个软件包。PKGBUILD文件是用Bash写的。
-For more information, read (or skim through) the following:
-想获取更多信息，阅读以下内容：
+PKGBUILD 文件是构建脚本，它告诉 makepkg(1) 如何创建一个安装包，
+PKGBUILD 文件用Bash脚本编写。
+
+要获取更多信息，可以参阅以下内容：
 \begin{itemize}
 \item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
@@ -292,297 +302,296 @@ For more information, read (or skim through) the following:
 \item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
 \end{itemize}
 
-\section{Blackarch PKGBUILD 标准}
-出于简单，我们的PKGBUILD文件跟AUR的非常相似，下面列出了不同之处。每个软件包至少要属于blackarch，也会有很多软件包属于多个group。
-\subsection{Groups}
-为了让用户能快速便捷的安装特定需求的一系列软件包，软件包被分为不同的群。群让用户能够简单的通过 "pacman -S <group name>" 来获取一系列软件。
+\section{Blackarch 的 PKGBUILD 规范}
+为了简单起见，我们的PKGBUILD文件和AUR的非常相似，下面列出了不同的一些地方。
+每个软件包必须至少属于blackarch，也会有许多软件包同时属于多个组。
+
+\subsection{组}
+为了让用户快速方便的安装一系列软件包，软件包被分成一些组。
+组让用户能够简单的通过 "pacman -S <group name>" 来安装一系列软件。
+
 \subsubsection{blackarch}
-blackarch群是所有软件包必须属于的基本群。这让用户可以轻而易举的安装所以软件包。
-所有软件包都应该属于blackarch。
+blackarch 组是所有软件包必须属于的基本组，这让用户可以轻松的安装所有软件包。
+
+所有的软件包都应当属于这个组。
 
 \subsubsection{blackarch-anti-forensic}
-此群中包含用于反取证的软件包，包括加密、隐写，和修改文件属性的软件。包含基本所有以隐藏信息为目的修改系统的软件。
+用于反取证的软件包，包括加密，隐写和修改文件属性的工具。
+包括的所有工具都用于修改系统来隐藏信息。
 
-例如: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+例如：luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+
 \subsubsection{blackarch-automation}
-用于工具或工作流自动化的软件包。
+用于工具或工作流自动化的软件。
 
-例如: blueranger, tiger, wiffy
+例如：blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
-用于利用或打开漏洞系统上后门的软件包。
+利用或打开已被安装后门的系统上的后门的软件。
 
-例如: backdoor-factory, rrs, weevely
+例如：backdoor-factory, rrs, weevely
 
 \subsubsection{blackarch-binary}
-用于操作二进制文件的软件包。
+操作一些格式的二进制文件的软件。
 
-例如: binwally, packerid
+例如：binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
-用于攻击蓝牙标准(802.15.1)的软件包。
+利用任何有关蓝牙标准(802.15.1)的软件包。
 
-例如: ubertooth, tbear, redfang
+例如：ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
-Packages that audit existing source code for vulnerability analysis.
-用于代码审计的软件包。
+通过代码审计来进行漏洞检测的软件包。
 
-例如: flawfinder, pscan
+例如：flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
-用于破解密码学函数(比如哈希函数)的软件包。
+用于破解加密算法，如 哈希 的软件包。
 
-例如: hashcat, john, crunch
+例如：hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
-除了破解之外的密码学软件包。
+和加密有关的非破解类软件包。
 
-例如: ciphertest, xortool, sbd
+例如：ciphertest, xortool, sbd
 
 \subsubsection{blackarch-database}
-用于数据库攻击的软件包。
+用于攻击各种等级数据库的软件包。
 
-例如: metacoretex, blindsql
+例如：metacoretex, blindsql
 
 \subsubsection{blackarch-debugger}
-用于调试程序的软件包。
+用于帮助用户实时查看特定程序正在执行的操作（调试）。
 
-例如: radare2, shellnoob
+例如：radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
-用于将编译好的程序逆向转换为源代码的软件包。
+用于将程序反编译成源码。
 
-例如: flasm, jd-gui
+例如：flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
-用于阻止恶意软件或其他用户攻击的软件包。
+用于保护用户防止恶意软件或被其他用户入侵。
 
-例如: arpon, chkrootkit, sniffjoke
+例如：arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
-This is similar to blackarch-decompiler, and there will probably be a lot
-of programs that fall into both, however these packages produce assembly output
-rather than the raw source code.
-与blackarch-decompiler相似，有许多程序会在两组中同时出现。blackarch-disassembler中的软件会生成汇编代码而不是源代码。
+类似于blackarch-decompiler，可能有许多软件同时属于这两个组，但这个组里的软件包生成的是汇编代码而不是源代码。
 
-例如: inguma, radare2
+例如：inguma, radare2
 
 \subsubsection{blackarch-dos}
-用于Dos(拒绝服务)攻击的软件包。
+用于Dos (拒绝服务) 攻击的软件包。
 
-例如: 42zip, nkiller2
+例如：42zip, nkiller2
 
 \subsubsection{blackarch-drone}
-用于管理无人机的软件包。
+用于破解，控制无线控制无人机的软件包。
 
-例如: meshdeck, skyjack
+例如：meshdeck, skyjack
 
 \subsubsection{blackarch-exploitation}
-Packages that takes advantages of exploits in other programs or services.
-用于利用其他程序或服务漏洞的软件包。
+利用其他程序或服务的漏洞的软件包。
 
-例如: armitage, metasploit, zarp
+例如：armitage, metasploit, zarp
 
 \subsubsection{blackarch-fingerprint}
-用于指纹识别的软件包。
+利用生物指纹识别设备的软件包。
 
-例如: dns-map, p0f, httprint
+例如：dns-map, p0f, httprint
 
 \subsubsection{blackarch-firmware}
-用于利用固件漏洞的软件包。
+利用固件漏洞的软件包。
 
-例如: 暂无.
+例如：None yet, amend asap.
 
 \subsubsection{blackarch-forensic}
-用于从物理磁盘或者内存中寻找数据的软件包。
+用于在磁盘或内存中寻找数据的软件包。
 
-例如: aesfix, nfex, wyd
+例如：aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
-用于进行fuzz检测(例如对目标进行随机输入,观察结果)的软件包。
+用于进行fuzz测试，即 向目标进行随机输入并查看结果的软件包。
 
-例如: msf, mdk3, wfuzz
+例如：msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
 用于攻击或管理物理硬件的软件包。
 
-例如: arduino, smali
+例如：arduino, smali
 
 \subsubsection{blackarch-honeypot}
-用于搭建蜜罐的软件包。
+用于搭建“蜜罐”（看起来是容易被入侵的服务，吸引黑客入侵）的软件包。
 
-例如: artillery, bluepot, wifi-honey
+例如：artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
-用于记录键盘的软件包。
+用于在别的系统上记录和保存按键的软件包。
 
-例如: 暂无.
+例如：None yet, amend asap.
 
 \subsubsection{blackarch-malware}
-恶意软件以及检测恶意软件的软件包。
+恶意软件或检测恶意软件的软件包。
 
-例如: malwaredetect, peepdf, yara
+例如：malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-不属于其他分类的软件包。
 
-例如: oh-my-zsh-git, winexe, stompy
+不属于其他类型的软件包(杂项)。
+
+例如：oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-用于操纵移动平台的软件包。
+用于操控移动平台的软件包。
 
-例如: android-sdk-platform-tools, android-udev-rules
+例如：android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
 关于IP网络的软件包。
 
-例如: 基本所有
+例如：Anything pretty much
 
 \subsubsection{blackarch-nfc}
-用于nfc(近场通讯)的软件包。
+使用nfc(近场通信)的软件包。
 
-例如: nfcutils
+例如：nfcutils
 
 \subsubsection{blackarch-packer}
-有关捆绑者的软件包。
-\textit{捆绑者是将恶意软件嵌入其他可执行程序中的程序。}
+用于捆绑软件或有关捆绑的软件包。
 
-例如: packerid
+\textit{捆绑程序是将恶意软件嵌入其他可执行程序的程序。}
+
+例如：packerid
 
 \subsubsection{blackarch-proxy}
-有代理行为的软件包。
+用于搭建代理，即将流量通过另一个节点转发到互联网的软件包。
 
-例如: burpsuite, ratproxy, sslnuke
+例如：burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-用于主动探测的工具集合。
+用于主动探测目标漏洞的软件包，是由大多相似的包组成的伞式集合。
 
-例如: canri, dnsrecon, netmask
+例如：canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
-反编译器，反汇编器和类似程序的集合。
+反编译器，反汇编器或类似的软件包。
 
-例如: capstone, radare2, zerowine
+例如：capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
-用于扫描选定系统漏洞的软件包。
+用于扫描目标系统漏洞的软件包。
 
-Examples: scanssh, tiger, zmap
+例如：scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
 有关网络流量分析的软件包。
 
-例如: hexinject, pytactle, xspy
+例如：hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
 主要攻击社交网站的软件包。
 
-例如: jigsaw, websploit
+例如：jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-用于进行欺骗攻击的软件包。
+用于欺骗攻击，即让受害者不会发现攻击者的软件包。
 
-例如: arpoison, lans, netcommander
+例如：arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-用于在特定场景报告或记录威胁模型的软件包。
+用于在特定场合报告或记录威胁模型的软件包。
 
-例如: magictree
+例如：magictree
 
 \subsubsection{blackarch-tunnel}
-用于在给定网络建立隧道的软件包。
+用于在给定网络上进行隧道传输的软件包。
 
-例如: ctunnel, iodine, ptunnel
+例如：ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-用于从可执行程序中提取恶意软件的软件包。
+用于从可执行文件中提取预打包的恶意软件。
 
-例如: js-beautify
+例如：js-beautify
 
 \subsubsection{blackarch-voip}
-用于操作voip程序和协议的软件包。
+操作voip程序和相关协议的软件包。
 
-例如: iaxflood, rtp-flood, teardown
+例如：iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-用于操作面向互联网的程序的软件包。
+操作互联网应用程序的软件包。
 
-例如: metoscan, whatweb, zaproxy
+例如：metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-This group is for any native Windows package that runs via wine.
-此群包含所有通过wine运行的Windows程序。
+一些借助wine运行的原生windows程序。
 
-例如: 3proxy-win32, pwdump, winexe
+例如：3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-用于操作无线网络的软件包。
+用于操作各种级别的无线网络的软件包。
 
-例如: airpwn, mdk3, wiffy
+例如：airpwn, mdk3, wiffy
 
-\section{Repository structure}
-你可以在这里找到Blackarch的主要仓库:
+\section{仓库结构}
+BlackArch的主git仓库：
 \href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
-其余次要仓库:
+其余仓库：
 \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
-在主git repo中,有三个重要目录:
+在主git仓库里有三个重要的目录：
 
 \begin{itemize}
-\item docs - 文档.
-\item packages - PKGBUILD 文件.
-\item scripts - 有用的小脚本.
+\item docs - 文档。
+\item packages - PKGBUILD 文件。
+\item scripts - 有用的小脚本。
 \end{itemize}
 
-\subsection{Scripts}
-下面是 \verb|scripts/| 目录中的脚本:
+\subsection{脚本}
+这里是\verb|scripts/|目录里脚本的介绍：
 
 \begin{itemize}
-\item baaur - Soon, this will upload packages to the AUR.
-\item babuild - Build a package.
-\item bachroot - Manage a chroot for testing.
-\item baclean - Clean old .pkg.tar.xz files from the package repo.
-\item baconflict - Soon this will replace \verb|scripts/conflicts|.
-\item bad-files - Find bad files in built packages.
-\item balock - Obtain or release the package repo lock.
-\item banotify - Notify IRC about package pushes.
-\item barelease - Release packages to the package repo.
-\item baright - Print the BlackArch copyright info.
-\item basign - Sign packages.
-\item basign-key - Sign a key.
-\item blackman - This behaves sort of like pacman but builds from git (not to be
-    confused with nrz's Blackman).
-\item check-groups - Check groups.
-\item checkpkgs - Check packages for errors.
-\item conflicts - Check for file conflicts.
-\item dbmod - Modify a package database.
-\item depth-list - Create a list sorted by dependency depth.
-\item deptree - Create a dependency tree, listing only blackarch-provided packages.
-\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-\item get-official - Get official packages for release.
-\item list-loose-packages - List packages that are not in groups and are not
-    dependencies for other packages.
-\item list-needed - List missing dependencies.
-\item list-removed - List packages that are in the package repo but not in git.
-\item list-tools - List tools.
-\item outdated - Look for packages that are out-dated in the package repo
-    relative to the git repo.
-\item pkgmod - Modify a build package.
-\item pkgrel - Increment pkgrel in a package.
-\item prep - Clean up a PKGBUILD file's style and find errors.
-\item sitesync - Sync between a local copy of the package repo and a remote copy.
-\item size-hunt - Hunt for large packages.
-\item source-backup - Backup package source files.
+\item baaur - 不久将用于上传软件包到AUR。
+\item babuild - 构建一个软件包。
+\item bachroot - 管理一个用于测试的chroot环境。
+\item baclean - 清理软件包目录里的旧.pkg.tar.xz文件。
+\item baconflict - 不久将替代脚本\verb|scripts/conflicts|。
+\item bad-files - 查找已构建的软件包中损坏的文件。
+\item balock - 申请或释放软件包仓库锁。
+\item banotify - 向IRC通知推送的软件包。
+\item barelease - 发布软件包到软件包仓库。
+\item baright - 打印BlackArch的版权信息。
+\item basign - 给软件包签名。
+\item basign-key - 给钥匙签名。
+\item blackman - 像是pacman，但是是从git构建(不要和nrz的Blackman混淆)。
+\item check-groups - 检查组。
+\item checkpkgs - 检查软件包是否有错误。
+\item conflicts - 检查文件冲突。
+\item dbmod - 修改一个软件包数据库。
+\item depth-list - 创建按依赖关系深度排序的列表。
+\item deptree - 创建依赖关系树，仅列出blackarch提供的包。
+\item get-blackarch-deps - 得到某个包依赖的blackarch包的列表。
+\item get-official - 获取官方发布的软件包。
+\item list-loose-packages - 列出不属于组且不依赖其他包的软件包。
+\item list-needed - 列出丢失的依赖项。
+\item list-removed - 列出在软件包仓库但不在git管理中的软件包。
+\item outdated - 查找相对与git仓库已经过时的包。
+\item pkgmod - 修改一个构建包。
+\item pkgrel - 在一个软件包中添加pkgrel。
+\item prep - 格式化PKGBUILD 文件并查找错误。
+\item sitesync - 在本地的软件包仓库和远程的软件包仓库间进行同步。
+\item source-backup - 备份软件包源码文件。
 \end{itemize}
 
-\section{Contributing to repository}
-此章告诉你如何为BlackArch Linux项目做贡献。我们接收各种PR,从小的语法修改到新的软件包。\\如果需要建议或帮助，请随时联系我们。
+\section{贡献代码}
+本节介绍如何向BlackArch Linux项目贡献源码，我们接受任何大小的合并请求(pull requests)，
+从微小的错别字修改到提交一个新的软件包。\\如果需要帮助，建议或有疑问，请随时和我们联系。
 \\\\
-欢迎所有人来贡献代码。我们感激一切贡献。
+欢迎任何人的贡献，感谢所有的贡献。
 
-\subsection{Required tutorials}
-在贡献代码之前请阅读以下内容:
+\subsection{必要的教程}
+在贡献前请阅读下面的教程。
 \begin{itemize}
 \item
 \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
@@ -593,26 +602,23 @@ Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
 \end{itemize}
 
-\subsection{Steps for contributing}
-为了提交你的更改，请按照下列步骤进行:
+\subsection{提交贡献的步骤}
+为了提交你的修改到BlackArch Linux项目，请遵循下面几步：
 \begin{enumerate}
-\item Fork the repository from
+\item Fork仓库
 \url{https://github.com/BlackArch/blackarch}
-\item Hack the necessary files, (e.g. PKGBUILD, .patch files, etc).
-\item Commit your changes.
-\item Push your changes.
-\item Ask us to merge in your changes, preferably through a pull request.
+\item 修改必要的文件，(例如，PKGBUILD, .patch文件等).
+\item 提交(commit)你的修改。
+\item 推送(push)你的修改。
+\item 要求我们合并你的修改，最好是通过合并请求(pull requests)。
 \end{enumerate}
 
-\subsection{Example}
-The following example demonstrates submitting a new package to the BlackArch
-project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
-(you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
-\textbf{nfsshell} from the \href{https://aur.archlinux.org/}{AUR} and adjust it
-according to our needs.
+\subsection{示例}
+下面的示例演示如何向BlackArch项目提交一个新包。我们使用 \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
+(你也可以使用pacaur) 为\textbf{nfsshell}从\href{https://aur.archlinux.org/}{AUR}获取一个已经存在的PKGBUILD文件，并根据我们的需要来调整它。
 
-\subsubsection{Fetch PKGBUILD}
-Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
+\subsubsection{获取PKGBUILD}
+使用yaourt或pacaur获取 \textit{PKGBUILD}文件：
 \begin{lstlisting}
   user@blackarchlinux $ yaourt -G nfsshell
   ==> Download nfsshell sources
@@ -622,10 +628,10 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
   user@blackarchlinux $ cd nfsshell/
 \end{lstlisting}
 
-\subsubsection{Clean up PKGBUILD}
-Clean up the \textit{PKGBUILD} file and save some time:
+\subsubsection{格式化PKGBUILD}
+格式化\textit{PKGBUILD}文件并缩短执行时间：
 \begin{lstlisting}
-  user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
+  user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
   expanding tabs...
   removing vim modeline...
@@ -638,14 +644,14 @@ Clean up the \textit{PKGBUILD} file and save some time:
   removing trailing whitespace...
 \end{lstlisting}
 
-\subsubsection{Adjust PKGBUILD}
-Adjust the \textit{PKGBUILD} file:
+\subsubsection{调整PKGBUILD}
+调整\textit{PKGBUILD}文件：
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ vi PKGBUILD
 \end{lstlisting}
 
-\subsubsection{Build the package}
-Build the package:
+\subsubsection{构建一个软件包}
+构建软件包：
 \begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
 ==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
 ==> Checking runtime dependencies...
@@ -664,28 +670,28 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 ==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
 \end{lstlisting}
 
-\subsubsection{Install and test the package}
-Install and test the package:
+\subsubsection{安装并测试软件包}
+安装并测试软件包：
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
   user@blackarchlinux nfsshell $ nfsshell # test it
 \end{lstlisting}
 
-\subsubsection{Add, commit and push package}
-Add, commit and push the package
+\subsubsection{添加，提交并推送软件包}
+添加，提交并推送软件包：
 \begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
-\subsubsection{Create a pull request}
-Create a pull request on \href{https://github.com/}{github.com}
+\subsubsection{创建一个合并请求(pull requests)}
+在\href{https://github.com/}{github.com}上创建一个合并请求(pull requests)。
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
 
-\subsubsection{Adding a remote for upstream}
-A smart thing to do if you're working upstream and on a fork is to pull your own fork and add the main ba repo as a remote
+\subsubsection{添加要提交的远程仓库}
+如果你拉取(pull)的是自己fork主仓库的仓库，一个聪明的做法是是把主仓库作为远程仓库：
 \begin{lstlisting}
   user@blackarchlinux ~/blackarchlinux $ git remote -v
   origin <the url of your fork> (fetch)
@@ -698,35 +704,32 @@ A smart thing to do if you're working upstream and on a fork is to pull your own
   upstream https://github.com/blackarch/blackarch (push)
 \end{lstlisting}
 
-By default, git should push straight to origin, but make sure your git config is
-configured correctly. This won't be an issue unless you have commit rights as
-you won't be able to push upstream without them.
+默认情况下，git将直接推送到远程仓库origin，但确保你的git配置正确，如果你有提交权限，这就不是问题，
+但如果你没有提交权限，就不能向上游推送。
 
-If you do have the ability to commit, you might have more success using
-\textit{git@github.com:blackarch/blackarch.git} but it's up to you.
+如果你有提交能力，也许你会使用
+\textit{git@github.com:blackarch/blackarch.git}，这取决于你。
 
-\subsection{Requests}
+\subsection{要求}
 \begin{enumerate}
-\item Don't add \textbf{Maintainer} or \textbf{Contributor} comments to
-\textit{PKGBUILD} files. Add maintainer and contributor names to the
-AUTHORS section of BlackArch guide.
-\item For the sake of consistency, please follow the general style of the other
-\textit{PKGBUILD} files in the repo and use two-space indentation.
+\item 不要添加 \textbf{Maintainer} 或 \textbf{Contributor} 注释到
+\textit{PKGBUILD} 文件，添加维护者和贡献者的名字到BlackArch指南的AUTHORS章节。
+\item 为了保持一致性，请遵循仓库中其他
+\textit{PKGBUILD} 文件的通用风格并使用双空格缩进。
 \end{enumerate}
 
-\subsection{General tips}
-\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
-errors.
+\subsection{一般提示}
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} 可以检查软件包的错误。
 
 %------------------%
 %  Chapter 4       %
 %------------------%
 
-\chapter{Tools Guide}
-敬请期待...
+\chapter{工具指南}
+敬请期待
 
-\section{Coming Soon}
-敬请期待...
+\section{敬请期待}
+敬请期待
 
 %%% APPENDIX %%%
 \appendix
