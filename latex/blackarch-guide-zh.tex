@@ -95,7 +95,7 @@ tabsize=2
 \label{fig:logo}
 \end{figure}
 \vspace{0.5cm}
-\Huge{\textbf{The BlackArch Linux Guide}}\\
+\Huge{\textbf{BlackArch指南}}\\
 \vspace{1cm}
 \Large{\color{red}https://www.blackarch.org/}\\
 \vspace{0.5cm}
@@ -109,41 +109,35 @@ tabsize=2
 %  Chapter 1       %
 %------------------%
 
-\chapter{Introduction}
+\chapter{引言}
 
-\section{Overview}
-The BlackArch Linux guide is divided into several parts:
+\section{概览}
+BlackArch Linux指南分为以下几部分
 \begin{itemize}
-\item Introduction - Provides a broad overview, introduction, and additional helpful project information
-\item User Guide - Everything a typical user needs to know to effectively use BlackArch
-\item Developer Guide - How to get started developing for and contributing to BlackArch
-\item Tool Guide - In-depth tool details along example usages (WIP)
+\item 引言 - 提供概述，简介和其他有帮助项目的信息
+\item 用户指南 - 一个典型用户高效的使用BlackArch所需要知道的一切
+\item 开发者指南 - 怎样加入我们，为BlackArch开发和贡献
+\item 工具指南 - 工具的详细信息和使用示例
 \end{itemize}
 
-\section{What is BlackArch Linux?}
-BlackArch is a complete Linux distribution for penetration testers and security researchers.
-It is derived from \href{https://www.archlinux.org/}{ArchLinux} and users can install BlackArch components
-individually or in groups directly on top of it.
+\section{什么是BlackArch Linux}
+BlackArch是一个为渗透测试工作者和安全研究人员设计的Linux发行版
+BlackArch是 \href{https://www.archlinux.org/}{ArchLinux}的一个衍生版，用户可以单独或者成组的安装BlackArch的组件到 \href{https://www.archlinux.org/}{ArchLinux}中
+工具集也被发布为一个Arch Linux \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{unofficial user repository} 这样你可以在一个已经安装好的Arch Linux上面安装BlackArch。 软件包可以独立安装也可以按类别安装。
 
-The toolset is distributed as an Arch Linux
-\href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
-{unofficial user repository} so you can install BlackArch on top of an
-existing Arch Linux installation. Packages may be installed individually or by
-category.
-
-The constantly expanding repository currently includes over \href{https://www.blackarch.org/tools.html}{1300} tools.
-All tools are thoroughly tested before being added to the codebase to maintain the quality of the repository.
 % should quickly describe the testing methods/code review procedures etc
+仓库目前包括超过 \href{https://www.blackarch.org/tools.html}{1300} 种工具，并且工具数目在不断增长。
+所以工具在添加到代码库之前都经过仔细的检查以保证仓库的质量。
+\section{BlackArch Linux的历史}
+敬请期待
 
-\section{History of BlackArch Linux}
-Coming soon...
+\section{支持的平台}
+敬请期待
 
-\section{Supported platforms}
-Coming soon...
-
-\section{Get involved}
+\section{参与贡献}
 You can get in touch with the BlackArch team using the following avenues:
-
+你可以通过以下几种途径与BlackArch team取得联系
 Website: \url{https://www.blackarch.org/}
 
 Mail: \href{mailto:team@blackarch.org}{team@blackarch.org}
@@ -159,71 +153,64 @@ Github: \url{https://github.com/Blackarch/}
 %------------------%
 
 
-\chapter{User Guide}
+\chapter{用户指南}
 
-\section{Installation}
-The following sections will show you how to setup the BlackArch repository and
-install packages. BlackArch supports both, installing from the repository using
-binary packages as well as compiling and installing from sources.
+\section{安装}
 
-BlackArch is compatible with normal Arch installations. It acts as an unofficial
-user repository. If you want an ISO instead, see the
-\href{https://www.blackarch.org/downloads.html#iso}{Live ISO} section.
+以下章节将会告诉你如何配置BlackArch仓库和安装软件。
+BlackArch支持通过二进制包安装也支持从源码编译安装。
+BlackArch与普通Arch兼容，其作为一个非官方用户仓库，如果你想要ISO文件，请前往\href{https://www.blackarch.org/downloads.html#iso}{Live ISO}
 
-\subsection{Installing on top of ArchLinux}
-Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
-instructions. See the following example.
+\subsection{在Arch Linux基础上安装}
+
+用root权限运行 \href{https://blackarch.org/strap.sh}{strap.sh}，跟从指示。示例：
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
    sudo ./strap.sh
 \end{lstlisting}
 
-Now download a fresh copy of the master package list and synchronize packages:
+现在下载最新的软件包列表并且同步软件包:
 \begin{lstlisting}
   sudo pacman -Syyu
 \end{lstlisting}
 
 
-\subsection{Installing packages}
-You may now install tools from the blackarch repository.
+\subsection{安装软件包}
+你现在可以从blackarch仓库安装工具了
 \begin{enumerate}
-\item To list all of the available tools, run
+\item 列出所有可用工具，运行
 \begin{lstlisting}
   pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 \end{lstlisting}
 
-\item To install all of the tools, run
+\item 安装全部工具，运行:
 \begin{lstlisting}
   pacman -S blackarch
 \end{lstlisting}
 
-\item To install a category of tools, run
+\item 安装一类工具，运行
 \begin{lstlisting}
   pacman -S blackarch-<category>
 \end{lstlisting}
 
-\item To see the blackarch categories, run
+\item 查看blackarch的目录，运行
 \begin{lstlisting}
   pacman -Sg | grep blackarch
 \end{lstlisting}
 
 \end{enumerate}
 
-\subsection{Installing packages from source}
-As part of an alternative method of installation, you can build the BlackArch
-packages from source. You can find the PKGBUILDs on
-\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
-build the entire repo, you can use the
-\href{https://github.com/BlackArch/blackman}{Blackman} tool.
+\subsection{从源码安装软件包}
+作为一种可选的安装方式，你可以从源码编译安装BlackArch软件包，你可以在\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}上找到需要的PKGBUILD。
+编译整个仓库，可以使用 \href{https://github.com/BlackArch/blackman}{Blackman} 工具。
 \begin{itemize}
-\item First, you have to install Blackman. If the BlackArch package repository
-is setup on your machine, you can install Blackman:
+\item 首先，你需要安装Blackman。如果你的机器上已经配置好了BlackArch包仓库，你可以通过下面的命令安装Blackman:
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item You can build and install Blackman from source:
+\item 你也可以从源码编译安装Blackman:
 \begin{lstlisting}
   mkdir blackman
   cd blackman
@@ -232,54 +219,53 @@ is setup on your machine, you can install Blackman:
   makepkg -s
 \end{lstlisting}
 
-\item Or you can install Blackman from the AUR:
+\item 或者从Aur安装blackman:
 \begin{lstlisting}
   <whatever AUR helper you use> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
-would typically expect from something like pacman. Basic usage has been outlined below.
+\subsection{Blackman基本用法} 
+尽管用法与pacman不大一样，但是Blackman仍然非常易于使用。下面列出了一些基本用法。
 \begin{itemize}
-\item Download, compile and install packages:
+\item 下载，编译安装软件包:
 \begin{lstlisting}
   sudo blackman -i package
 \end{lstlisting}
 
-\item Download, compile and install whole category:
+\item 下载，编译安装整个类别:
 \begin{lstlisting}
   sudo blackman -g group
 \end{lstlisting}
 
-\item Download, compile and install all of the BlackArch tools:
+\item 下载，编译安装所有BlackArch工具:
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
 
-\item To list the blackarch categories:
+\item 列出BlackArch的类别:
 \begin{lstlisting}
   blackman -l
 \end{lstlisting}
 
-\item To list category tools:
+\item 列出一个类别中的工具:
 \begin{lstlisting}
   blackman -p category
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Installing from live-, netinstall- ISO or ArchLinux}
-You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
-\url{https://www.blackarch.org/download.html#iso}. The following steps are
-required after the ISO boot up.
+\subsection{从live-ISO，netinstall-ISO或者ArchLinux安装}
+
+你可以从live-ISO或者netinstall-ISO中安装BlackArch 查看 \url{https://www.blackarch.org/download.html#iso}。从ISO启动后执行下面的步骤。
 \begin{itemize}
-\item Install blackarch-installer package:
+\item 安装blackarch-installer:
 \begin{lstlisting}
   sudo pacman -S blackarch-installer
 \end{lstlisting}
 
-\item Run
+\item 执行
 \begin{lstlisting}
   sudo blackarch-install
 \end{lstlisting}
@@ -290,14 +276,15 @@ required after the ISO boot up.
 %  Chapter 3       %
 %------------------%
 
-\chapter{Developer Guide}
+\chapter{开发者指南}
 
-\section{Arch's Build System and Repositories}
+\section{Arch的构建系统和仓库}
 
 PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
 package. PKGBUILD files are written in Bash.
-
+PKGBUILD文件是一种构建脚本。PKGBUILD文件告诉makepkg(1)怎么样去构建一个软件包。PKGBUILD文件是用Bash写的。
 For more information, read (or skim through) the following:
+想获取更多信息，阅读以下内容：
 \begin{itemize}
 \item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
@@ -305,273 +292,251 @@ For more information, read (or skim through) the following:
 \item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
 \end{itemize}
 
-\section{Blackarch PKGBUILD standards}
-For the sake of simplicity, our PKGBUILDs are similar to that of the AUR ones,
-with a few small differences outlined below. Every package must
-belong to blackarch at the minimum, there will also be a lot of crossover with
-multiple packages belonging to multiple groups.
-
+\section{Blackarch PKGBUILD 标准}
+出于简单，我们的PKGBUILD文件跟AUR的非常相似，下面列出了不同之处。每个软件包至少要属于blackarch，也会有很多软件包属于多个group。
 \subsection{Groups}
-To allow users to install a specific range of packages quickly and easily,
-packages have been separated into groups. Groups allow users to simply
-go "pacman -S <group name>" in order to pull a lot of packages.
-
+为了让用户能快速便捷的安装特定需求的一系列软件包，软件包被分为不同的群。群让用户能够简单的通过 "pacman -S <group name>" 来获取一系列软件。
 \subsubsection{blackarch}
-The blackarch group is the base group that all packages must belong too. This allows
-users to install every package with ease.
-
-What should be in here: Everything.
+blackarch群是所有软件包必须属于的基本群。这让用户可以轻而易举的安装所以软件包。
+所有软件包都应该属于blackarch。
 
 \subsubsection{blackarch-anti-forensic}
-Packages that are used for countering forensic activities,
-including encryption, steganography, and anything that modifies files/file attributes.
-This all includes tools to work with anything in general that makes changes to a system
-for the purposes of hiding information.
+此群中包含用于反取证的软件包，包括加密、隐写，和修改文件属性的软件。包含基本所有以隐藏信息为目的修改系统的软件。
 
-Examples: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
-
+例如: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 \subsubsection{blackarch-automation}
-Packages that are used for tool or workflow automation.
+用于工具或工作流自动化的软件包。
 
-Examples: blueranger, tiger, wiffy
+例如: blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
-Packages that exploit or open backdoors on already vulnerable systems.
+用于利用或打开漏洞系统上后门的软件包。
 
-Examples: backdoor-factory, rrs, weevely
+例如: backdoor-factory, rrs, weevely
 
 \subsubsection{blackarch-binary}
-Packages that operate on binary files in some form.
+用于操作二进制文件的软件包。
 
-Examples: binwally, packerid
+例如: binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
-Packages that exploit anything concerning the Bluetooth standard (802.15.1).
+用于攻击蓝牙标准(802.15.1)的软件包。
 
-Examples: ubertooth, tbear, redfang
+例如: ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
 Packages that audit existing source code for vulnerability analysis.
+用于代码审计的软件包。
 
-Examples: flawfinder, pscan
+例如: flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
-Packages used for cracking cryptographic functions, ie hashes.
+用于破解密码学函数(比如哈希函数)的软件包。
 
-Examples: hashcat, john, crunch
+例如: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
-Packages that work with cryptography, with the exception of cracking.
+除了破解之外的密码学软件包。
 
-Examples: ciphertest, xortool, sbd
+例如: ciphertest, xortool, sbd
 
 \subsubsection{blackarch-database}
-Packages that involve database exploitations on any level.
+用于数据库攻击的软件包。
 
-Examples: metacoretex, blindsql
+例如: metacoretex, blindsql
 
 \subsubsection{blackarch-debugger}
-Packages that allow the user to view what a particular program is "doing" in realtime.
+用于调试程序的软件包。
 
-Examples: radare2, shellnoob
+例如: radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
-Packages that attempt to reverse a compiled program into source code.
+用于将编译好的程序逆向转换为源代码的软件包。
 
-Examples: flasm, jd-gui
+例如: flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
-Packages that are used to protect a user from malware \& attacks from other users.
+用于阻止恶意软件或其他用户攻击的软件包。
 
-Examples: arpon, chkrootkit, sniffjoke
+例如: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
 This is similar to blackarch-decompiler, and there will probably be a lot
 of programs that fall into both, however these packages produce assembly output
 rather than the raw source code.
+与blackarch-decompiler相似，有许多程序会在两组中同时出现。blackarch-disassembler中的软件会生成汇编代码而不是源代码。
 
-Examples: inguma, radare2
+例如: inguma, radare2
 
 \subsubsection{blackarch-dos}
-Packages that use DoS (Denial of Service) attacks.
+用于Dos(拒绝服务)攻击的软件包。
 
-Examples: 42zip, nkiller2
+例如: 42zip, nkiller2
 
 \subsubsection{blackarch-drone}
-Packages that are used for managing physically engineered
-drones.
+用于管理无人机的软件包。
 
-Examples: meshdeck, skyjack
+例如: meshdeck, skyjack
 
 \subsubsection{blackarch-exploitation}
 Packages that takes advantages of exploits in other programs or services.
+用于利用其他程序或服务漏洞的软件包。
 
-Examples: armitage, metasploit, zarp
+例如: armitage, metasploit, zarp
 
 \subsubsection{blackarch-fingerprint}
-Packages that exploit fingerprint biometric equipment.
+用于指纹识别的软件包。
 
-Examples: dns-map, p0f, httprint
+例如: dns-map, p0f, httprint
 
 \subsubsection{blackarch-firmware}
-Packages that exploit vulnerabilities in firmware
+用于利用固件漏洞的软件包。
 
-Examples: None yet, amend asap.
+例如: 暂无.
 
 \subsubsection{blackarch-forensic}
-Packages that are used to find data on physical disks or embedded memory.
+用于从物理磁盘或者内存中寻找数据的软件包。
 
-Examples: aesfix, nfex, wyd
+例如: aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
-Packages that use the fuzz testing principle, ie
-"throwing" random inputs at the subject to see what happens.
+用于进行fuzz检测(例如对目标进行随机输入,观察结果)的软件包。
 
-Examples: msf, mdk3, wfuzz
+例如: msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
-Packages that exploit or manage anything to do with
-physical hardware.
+用于攻击或管理物理硬件的软件包。
 
-Examples: arduino, smali
+例如: arduino, smali
 
 \subsubsection{blackarch-honeypot}
-Packages that act as "honeypots", ie programs that appear to
-be vulnerable services used to attract hackers into a trap.
+用于搭建蜜罐的软件包。
 
-Examples: artillery, bluepot, wifi-honey
+例如: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
-Packages that record and retain keystrokes on another system.
+用于记录键盘的软件包。
 
-Examples: None yet, amend asap.
+例如: 暂无.
 
 \subsubsection{blackarch-malware}
-Packages that count as any type of malicious software or
-malware detection.
+恶意软件以及检测恶意软件的软件包。
 
-Examples: malwaredetect, peepdf, yara
+例如: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-Packages that don't particularly fit into any categories.
+不属于其他分类的软件包。
 
-Examples: oh-my-zsh-git, winexe, stompy
+例如: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-Packages that manipulate mobile platforms.
+用于操纵移动平台的软件包。
 
-Examples: android-sdk-platform-tools, android-udev-rules
+例如: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
-Package that involve IP networking.
+关于IP网络的软件包。
 
-Examples: Anything pretty much
+例如: 基本所有
 
 \subsubsection{blackarch-nfc}
-Packages that use nfc (near-field communications).
+用于nfc(近场通讯)的软件包。
 
-Examples: nfcutils
+例如: nfcutils
 
 \subsubsection{blackarch-packer}
-Packages that operate on or invlove packers.
+有关捆绑者的软件包。
+\textit{捆绑者是将恶意软件嵌入其他可执行程序中的程序。}
 
-\textit{packers are programs that embed malware within other executables.}
-
-Examples: packerid
+例如: packerid
 
 \subsubsection{blackarch-proxy}
-Packages that acts as a proxy, ie redirecting traffic
-through another node on the internet.
+有代理行为的软件包。
 
-Examples: burpsuite, ratproxy, sslnuke
+例如: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-Packages that actively seeks vulnerable exploits in the
-wild. More of an umbrella group for similar packages.
+用于主动探测的工具集合。
 
-Examples: canri, dnsrecon, netmask
+例如: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
-This is an umbrella group for any decompiler,
-disassembler or any similar program.
+反编译器，反汇编器和类似程序的集合。
 
-Examples: capstone, radare2, zerowine
+例如: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
-Packages that scan selected systems for vulnerabilities.
+用于扫描选定系统漏洞的软件包。
 
 Examples: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
-Packages that involve analyzing network traffic.
+有关网络流量分析的软件包。
 
-Examples: hexinject, pytactle, xspy
+例如: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
-Packages that primarily attack social networking sites.
+主要攻击社交网站的软件包。
 
-Examples: jigsaw, websploit
+例如: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-Packages that attempt to spoof the attacker such, in that
-the attacker doesn't show up as an attacker to the victim.
+用于进行欺骗攻击的软件包。
 
-Examples: arpoison, lans, netcommander
+例如: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-Packages that would be used for reporting/recording the
-threat model outlined in a particular scenario.
+用于在特定场景报告或记录威胁模型的软件包。
 
-Examples: magictree
+例如: magictree
 
 \subsubsection{blackarch-tunnel}
-Packages that are used to tunnel network traffic on a given
-network.
+用于在给定网络建立隧道的软件包。
 
-Examples: ctunnel, iodine, ptunnel
+例如: ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-Packages that are used to extract pre-packed malware from an
-executable.
+用于从可执行程序中提取恶意软件的软件包。
 
-Examples: js-beautify
+例如: js-beautify
 
 \subsubsection{blackarch-voip}
-Packages that operate on voip programs and protocols.
+用于操作voip程序和协议的软件包。
 
-Examples: iaxflood, rtp-flood, teardown
+例如: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-Packages that operate on internet-facing applications.
+用于操作面向互联网的程序的软件包。
 
-Examples: metoscan, whatweb, zaproxy
+例如: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
 This group is for any native Windows package that runs via wine.
+此群包含所有通过wine运行的Windows程序。
 
-Examples: 3proxy-win32, pwdump, winexe
+例如: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-Packages that operates on wireless networks on any level.
+用于操作无线网络的软件包。
 
-Examples: airpwn, mdk3, wiffy
+例如: airpwn, mdk3, wiffy
 
 \section{Repository structure}
-You can find the main BlackArch git repo here:
+你可以在这里找到Blackarch的主要仓库:
 \href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
-There are also several secondary repos here:
+其余次要仓库:
 \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
-Within the main git repo, there are three important directories:
+在主git repo中,有三个重要目录:
 
 \begin{itemize}
-\item docs - Documentation.
-\item packages - PKGBUILD files.
-\item scripts - Useful little scripts.
+\item docs - 文档.
+\item packages - PKGBUILD 文件.
+\item scripts - 有用的小脚本.
 \end{itemize}
 
 \subsection{Scripts}
-Here is a reference for scripts in the \verb|scripts/| directory:
+下面是 \verb|scripts/| 目录中的脚本:
 
 \begin{itemize}
 \item baaur - Soon, this will upload packages to the AUR.
@@ -612,14 +577,12 @@ Here is a reference for scripts in the \verb|scripts/| directory:
 \end{itemize}
 
 \section{Contributing to repository}
-This section shows you how to contribute to the BlackArch Linux project. We
-accept pull requests of all sizes, from tiny typo fixes to new packages.\\For
-help, suggestions, or questions feel free to contact us.
+此章告诉你如何为BlackArch Linux项目做贡献。我们接收各种PR,从小的语法修改到新的软件包。\\如果需要建议或帮助，请随时联系我们。
 \\\\
-Everyone is welcome to contribute. All contributions are appreciated.
+欢迎所有人来贡献代码。我们感激一切贡献。
 
 \subsection{Required tutorials}
-Please read the following tutorials before contributing:
+在贡献代码之前请阅读以下内容:
 \begin{itemize}
 \item
 \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
@@ -631,8 +594,7 @@ Packages}
 \end{itemize}
 
 \subsection{Steps for contributing}
-In order to submit your changes to the BlackArchLinux project, follow these
-steps:
+为了提交你的更改，请按照下列步骤进行:
 \begin{enumerate}
 \item Fork the repository from
 \url{https://github.com/BlackArch/blackarch}
@@ -663,7 +625,7 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
 \subsubsection{Clean up PKGBUILD}
 Clean up the \textit{PKGBUILD} file and save some time:
 \begin{lstlisting}
-  user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
+  user@blackarchlinux nfsshell $ ./blarckarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
   expanding tabs...
   removing vim modeline...
@@ -761,10 +723,10 @@ errors.
 %------------------%
 
 \chapter{Tools Guide}
-Coming soon...
+敬请期待...
 
 \section{Coming Soon}
-Coming soon...
+敬请期待...
 
 %%% APPENDIX %%%
 \appendix
