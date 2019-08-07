@@ -16,7 +16,6 @@
 \usepackage{fancyvrb}
 \usepackage{geometry}
 \usepackage{graphicx}
-%\usepackage{html}
 \usepackage{hyperref}
 \usepackage{ifpdf}
 \usepackage{listings}
@@ -26,9 +25,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fullpage}
-\usepackage[ngerman]{babel} % deutsches Sprachpaket
-\usepackage{graphicx} %Abbildungen einfügen
-% Hurenkinder und Schusterjungen verhindern
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
 \clubpenalty10000
 \widowpenalty10000
 \displaywidowpenalty=10000
@@ -75,7 +73,8 @@ stringstyle=\color{red},
 language=bash,
 showspaces=false,
 showtabs=false,
-tabsize=2
+tabsize=2,
+texcl=true
 }
 
 %%% HEADER / FOOTER %%%
@@ -223,12 +222,11 @@ Alternativ können BlackArch-Pakete auch aus Quellcode gebaut werden. Die PKGBUI
 \end{lstlisting}
 
 \item Blackman kann von Quellcode gebaut und installiert werden: 
-%Hier funktioniert wohl UTF8 nicht
 \begin{lstlisting}
   mkdir blackman
   cd blackman
   wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
- # Sicherstellen, dass die PKGBUILD nicht boesartig veraendert worden sind.
+ # Sicherstellen, dass die PKGBUILD nicht bösartig verändert worden sind.
   makepkg -s
 \end{lstlisting}
 
