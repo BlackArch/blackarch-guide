@@ -13,7 +13,7 @@ endif
 
 default: all
 
-all: lint build sync
+all: lint build
 
 # build everything supported
 build: pdf html
@@ -26,7 +26,7 @@ clean:
 
 # update all deps to the latest versions available
 deps:
-	@tput setaf 3; @echo "Currently this works on Ubuntu only"
+	@tput setaf 3; echo "Currently this works on Ubuntu only"
 	@tput setaf 10
 	sudo apt-get update
 	sudo apt-get install make
@@ -49,5 +49,23 @@ lint:
 
 # generate a pdf using lualatex
 pdf:
-	@lualatex ${srcdir}/blackarch-guide-en.tex 1>./build_log
-	@lualatex ${srcdir}/blackarch-guide-en.tex 1>./build_log
+	@lualatex ${srcdir}/blackarch-guide-de.tex 1>./build_log
+	@lualatex ${srcdir}/blackarch-guide-de.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-el.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-el.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-en.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-en.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-es.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-es.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-fr.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-fr.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-it.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-it.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-pt-br.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-pt-br.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-ru.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-ru.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-tr.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-tr.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-zh.tex 1>>./build_log
+	@lualatex ${srcdir}/blackarch-guide-zh.tex 1>>./build_log
