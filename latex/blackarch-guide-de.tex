@@ -16,7 +16,6 @@
 \usepackage{fancyvrb}
 \usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{html}
 \usepackage{hyperref}
 \usepackage{ifpdf}
 \usepackage{listings}
@@ -24,6 +23,15 @@
 \usepackage{supertabular}
 \usepackage{tocloft}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fullpage}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
+\usepackage{ltablex}
+\keepXColumns
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -67,7 +75,9 @@ stringstyle=\color{red},
 language=bash,
 showspaces=false,
 showtabs=false,
-tabsize=2
+tabsize=2,
+texcl=true
+breaklines=true
 }
 
 %%% HEADER / FOOTER %%%
@@ -111,7 +121,7 @@ tabsize=2
 
 \chapter{Einführung}
 
-\section{übersicht}
+\section{Übersicht}
 Das BlackArch Linux Handbuch ist in verschiedene Teile aufgeteilt:
 \begin{itemize}
 \item Einführung - Gibt einen breiten Überblick, eine Einführung, und weitere hilfreiche Projektinformationen
@@ -140,6 +150,7 @@ Coming soon...
 
 \section{Mitmachen}
 Man kann über folgende Wege mit dem BlackArch Team in Kontakt treten:
+
 Website: \url{https://www.blackarch.org/}
 
 Mail: \href{mailto:team@blackarch.org}{team@blackarch.org}
@@ -218,7 +229,7 @@ Alternativ können BlackArch-Pakete auch aus Quellcode gebaut werden. Die PKGBUI
   mkdir blackman
   cd blackman
   wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Sicherstellen dass die PKGBUILD nicht bösartig verändert worden sind.
+ # Sicherstellen, dass die PKGBUILD nicht bösartig verändert worden sind.
   makepkg -s
 \end{lstlisting}
 
@@ -333,7 +344,7 @@ Pakete die auf irgendwelchen Binärdateien arbeiten.
 Beispiele: binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
-Pakete die alles exploiten was mit dem Bluetooth Standard(802.15.1) zu tun hat.
+Pakete die alles exploiten was mit dem Bluetooth Standard (802.15.1) zu tun hat.
 
 Beispiele: ubertooth, tbear, redfang
 
@@ -373,7 +384,7 @@ Pakete die Versuchen den Nutzer vor Malware und Attacken anderer Nutzer zu schü
 Beispiele: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
-Ähnlich zu blackarch-decompiler> Hier gibt es vermutlich einige Programme die
+Ähnlich zu blackarch-decompiler; Hier gibt es vermutlich einige Programme die
 in beide Kategorien fallen, mit dem Unterschied das diese Pakete Assembler ausgeben
 statt den puren Quellcode.
 
@@ -723,11 +734,11 @@ als eine Remote hinzuzufügen.
   upstream https://github.com/blackarch/blackarch (push)
 \end{lstlisting}
 
-Standardmässig sollte git direkt auf origin pushen, aber stelle sicher das deine git konfiguration
+Standardmäßig sollte git direkt auf origin pushen, aber stelle sicher das deine git konfiguration
 richtig konfiguriert ist. Das sollte kein Problem sein, solange du commit rechte hast, da du ohne diese
 nicht upstream pushen kannst.
 
-Wenn du nicht committen kannst, könntest du mehr erfolg mit
+Wenn du nicht committen kannst, könntest du mehr Erfolg mit
 \textit{git@github.com:blackarch/blackarch.git} haben.
 
 \subsection{Requests}
@@ -754,7 +765,7 @@ Coming soon...
 
 %%% APPENDIX %%%
 \appendix
-\include{appendix}
+\include{appendix-de}
 
 \end{document}
 
