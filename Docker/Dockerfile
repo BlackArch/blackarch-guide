@@ -9,8 +9,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
     apt install -y make texlive-full latex2html 
 
-ADD . /build/
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID -o developer
+RUN useradd -m -u $UID -g $GID -s /bin/bash developer
 
-WORKDIR /build
+WORKDIR /home/developer
+USER developer
 
-CMD ["bash"]
+
