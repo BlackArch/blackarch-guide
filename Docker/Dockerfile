@@ -7,7 +7,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 
 RUN apt update && \
-    apt install -y make texlive-full latex2html texlive-latex-extra texlive-pstricks texlive-lang-* texlive-xetex
+    apt install -y make texlive-full latex2html 
 
 ADD . /build/
 
