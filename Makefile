@@ -1,5 +1,5 @@
 SHELL = /bin/sh
-.PHONY: all build clean deps html install lint 
+.PHONY: all build clean deps html install
 VERSION?=1.1
 
 # We only care about tex files at the moment so clear and explictly denote that
@@ -30,28 +30,156 @@ build: pdf html
 clean:
 	@rm *.aux *.log *.out *.toc ./build_log*
 
-# update all deps to the latest versions available
-deps:
-	@tput setaf 3; echo "Currently this works on Ubuntu only"
-	@tput setaf 10
-	sudo apt-get update
-	sudo apt-get install make
-	sudo apt-get install -y texlive
-	sudo apt-get install -y latex2html
-	sudo apt-get install -y texlive-latex-extra
-
 # make html files
 html:
 	@tput setaf 3; echo "this needs to be implemented"
 	@tput setaf 10
 
-# sync the files to the remote server
-install:
+
+PHONY: lint-de
+lint-de:
+	@echo "==========================================="
+	@echo "= linting German Guide                    ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-de.tex; exit 0"
+
+PHONY: lint-el
+lint-el:
+	@echo "==========================================="
+	@echo "= linting Greek Guide                     ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-el.tex; exit 0"
+
+
+PHONY: lint-en
+lint-en:
+	@echo "==========================================="
+	@echo "= linting English Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-en.tex; exit 0" \
+
+PHONY: lint-es
+lint-es:
+	@echo "==========================================="
+	@echo "= linting Spanish Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-es.tex; exit 0"
+
+PHONY: lint-fr
+lint-fr:
+	@echo "==========================================="
+	@echo "= linting French Guide                    ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-fr.tex; exit 0"
+
+PHONY: lint-it
+lint-it:
+	@echo "==========================================="
+	@echo "= linting Italian Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-it.tex; exit 0"
+
+PHONY: lint-pt-br
+lint-pt-br:
+	@echo "==========================================="
+	@echo "= linting Brazilian Guide                 ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-pt-br.tex; exit 0"
+
+PHONY: lint-ru
+lint-ru:
+	@echo "==========================================="
+	@echo "= linting Russian Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-ru.tex; exit 0"
+
+PHONY: lint-tr
+lint-tr:
+	@echo "==========================================="
+	@echo "= linting Turkish Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-tr.tex; exit 0"
+
+PHONY: lint-zh
+lint-zh:
+	@echo "==========================================="
+	@echo "= linting Chinese Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-zh.tex; exit 0"
 
 # run the latex linting tool
-lint:
-	@tput setaf 3; echo "this needs to be implemented"
-	@tput setaf 10
+.PHONY: lint
+lint: lint-de lint-el lint-en lint-es lint-fr lint-it lint-pt-br lint-ru lint-tr lint-zh
 
 # generate pdf per language
 .PHONY: pdf-de
