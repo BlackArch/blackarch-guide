@@ -422,184 +422,173 @@ Pachete ce au legatura cu "honeypots", ie , programe ce au tendinta sa para vuln
 Exemple: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
-Packages that record and retain keystrokes on another system.
+Pachetele ce tin cont de functionalitatea sistemului tau .
 
-Examples: None yet, amend asap.
+Exemple: None yet, amend asap.
 
 \subsubsection{blackarch-malware}
-Packages that count as any type of malicious software or
-malware detection.
+Pachete ce tin cont de malware .
 
-Examples: malwaredetect, peepdf, yara
+Exemple: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
-Packages that don't particularly fit into any categories.
+Pachte ce nu se incadreaza in vreo categorie.
 
-Examples: oh-my-zsh-git, winexe, stompy
+Exemple: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-Packages that manipulate mobile platforms.
+Pachete ce manipuleaza platforme mobile.
 
-Examples: android-sdk-platform-tools, android-udev-rules
+Exemple: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
-Package that involve IP networking.
+Pachetel ce au legatura cu ip-ul.
 
-Examples: Anything pretty much
+Exemple: Cam toate :))
 
 \subsubsection{blackarch-nfc}
-Packages that use nfc (near-field communications).
+Pachete  ce se folosesc ce nfc(near-field communications).
 
-Examples: nfcutils
+Exemple: nfcutils
 
 \subsubsection{blackarch-packer}
-Packages that operate on or invlove packers.
+Pachete ce se folesesc de alte pachete.
 
-\textit{packers are programs that embed malware within other executables.}
+\textit{packers sunt programe ce contin malware .}
 
-Examples: packerid
+Exemple: packerid
 
 \subsubsection{blackarch-proxy}
-Packages that acts as a proxy, ie redirecting traffic
-through another node on the internet.
+Pachete ce sunt considerate ca proxy, ie redirectionand date /trafic
+print internet.
 
-Examples: burpsuite, ratproxy, sslnuke
+Exemple: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-Packages that actively seeks vulnerable exploits in the
-wild. More of an umbrella group for similar packages.
+Pachete ce cauta vulnerabilitati. Mai mult o adunare decat un grup.
 
-Examples: canri, dnsrecon, netmask
+Exemple: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
-This is an umbrella group for any decompiler,
-disassembler or any similar program.
+O adunare pentru dezasamblare
 
-Examples: capstone, radare2, zerowine
+Exemple: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
-Packages that scan selected systems for vulnerabilities.
+Pachete ce cauta vulnerabilitati in sisteme specifice .
 
-Examples: scanssh, tiger, zmap
+Exemple: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
-Packages that involve analyzing network traffic.
+Pachete ce se concentreaza pe analizat traficul de date.
 
-Examples: hexinject, pytactle, xspy
+Exemple: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
-Packages that primarily attack social networking sites.
+Pachete pentru social networking sites.
 
-Examples: jigsaw, websploit
+Exemple: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-Packages that attempt to spoof the attacker such, in that
-the attacker doesn't show up as an attacker to the victim.
+Pachete ce incearca sa faca spoof atacatorul, unde atacatorul devine o victima
 
-Examples: arpoison, lans, netcommander
+Exemple: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
-Packages that would be used for reporting/recording the
-threat model outlined in a particular scenario.
+Pachete  ce se folosesc pentru reporting/recording o amenintare.
 
-Examples: magictree
+Exemple: magictree
 
 \subsubsection{blackarch-tunnel}
-Packages that are used to tunnel network traffic on a given
-network.
+Pachete ce sunt folosite pentru a directiona network traffic la un anumit network.
 
-Examples: ctunnel, iodine, ptunnel
+Exemple : ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
-Packages that are used to extract pre-packed malware from an
-executable.
+Pachete ce sunt  folosite pentru a extracta pre-facut malware din un
+executabil.
 
-Examples: js-beautify
+Exemple: js-beautify
 
 \subsubsection{blackarch-voip}
-Packages that operate on voip programs and protocols.
+Programe ce opereaza pe voip programs si protocoale.
 
-Examples: iaxflood, rtp-flood, teardown
+Exemple: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
-Packages that operate on internet-facing applications.
+Programe ce opereaza pe internet-facing applications.
 
-Examples: metoscan, whatweb, zaproxy
+Exemple: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-This group is for any native Windows package that runs via wine.
+Aceasta categorie este alcatuita de programe ce ruleaza nativ pe windows ,  iar noi folosim wine pentru a le folosi pe BlackArch.
 
-Examples: 3proxy-win32, pwdump, winexe
+Exemple: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
-Packages that operates on wireless networks on any level.
+Programe ce opereaza pe wireless networks la orice nivel.
 
-Examples: airpwn, mdk3, wiffy
+Exemple: airpwn, mdk3, wiffy
 
 \section{Repository structure}
-You can find the main BlackArch git repo here:
+Poti gasi intregul BlackArch repo aici:
 \href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
-There are also several secondary repos here:
+Avem is cateva repos secundare aici:
 \href{https://github.com/BlackArch}{https://github.com/BlackArch}.
 
-Within the main git repo, there are three important directories:
+In repo-ul principal de pe git , exista trei categorii imprtante:
 
 \begin{itemize}
-\item docs - Documentation.
-\item packages - PKGBUILD files.
-\item scripts - Useful little scripts.
+\item docs - Documentatie.
+\item packages - fisiere PKGBUILD .
+\item scripts - Scripturi folositoare.
 \end{itemize}
 
 \subsection{Scripts}
-Here is a reference for scripts in the \verb|scripts/| directory:
+O referinta pentru scripturi se gaseste aici  \verb|scripts/| directory:
 
 \begin{itemize}
-\item baaur - Soon, this will upload packages to the AUR.
-\item babuild - Build a package.
-\item bachroot - Manage a chroot for testing.
-\item baclean - Clean old .pkg.tar.xz files from the package repo.
-\item baconflict - Soon this will replace \verb|scripts/conflicts|.
-\item bad-files - Find bad files in built packages.
-\item balock - Obtain or release the package repo lock.
-\item banotify - Notify IRC about package pushes.
-\item barelease - Release packages to the package repo.
-\item baright - Print the BlackArch copyright info.
-\item basign - Sign packages.
-\item basign-key - Sign a key.
-\item blackman - This behaves sort of like pacman but builds from git (not to be
-    confused with nrz's Blackman).
-\item check-groups - Check groups.
-\item checkpkgs - Check packages for errors.
-\item conflicts - Check for file conflicts.
-\item dbmod - Modify a package database.
-\item depth-list - Create a list sorted by dependency depth.
-\item deptree - Create a dependency tree, listing only blackarch-provided packages.
-\item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-\item get-official - Get official packages for release.
-\item list-loose-packages - List packages that are not in groups and are not
-    dependencies for other packages.
-\item list-needed - List missing dependencies.
-\item list-removed - List packages that are in the package repo but not in git.
-\item list-tools - List tools.
-\item outdated - Look for packages that are out-dated in the package repo
-    relative to the git repo.
-\item pkgmod - Modify a build package.
-\item pkgrel - Increment pkgrel in a package.
-\item prep - Clean up a PKGBUILD file's style and find errors.
-\item sitesync - Sync between a local copy of the package repo and a remote copy.
-\item size-hunt - Hunt for large packages.
-\item source-backup - Backup package source files.
+\item baaur - Incurand, acesta va uploada fisiere pe  AUR.
+\item babuild - Va construi un pachet.
+\item bachroot - Va alege un chroot pentru folosire.
+\item baclean - Va curata pachete vechi ca .pkg.tar.xz din  repo.
+\item baconflict - Incurand va inlocui \verb|scripts/conflicts|.
+\item bad-files - Va gasi fisiere corupte.
+\item balock - Va detine sau dona pachete.
+\item banotify - Va notifica IRC despre package pushes.
+\item barelease - Va da pachete pe repo.
+\item baright - Ofera  BlackArch copyright info.
+\item basign - Pachete de logare.
+\item basign-key - Va asocia o cheie.
+\item blackman - Are acelasi principiu ca pacman dar pentru git(a nu se confunda cu nrz's Blackman).
+\item check-groups - Verifica grupurile.
+\item checkpkgs - Verifica pachete pentru erori .
+\item conflicts - Verifica pentru conflicturi de pachete.
+\item dbmod - Modifica baza de date pentru pachete.
+\item depth-list - Creaza o lista pentru dependency depth.
+\item deptree - Creeaza un dependency tree,listeaza doar pachete blackarch.
+\item get-blackarch-deps - Ia o lista pentru blackarch dependencies pentru un pachet.
+\item get-official - Ia pachete oficiale .
+\item list-loose-packages - Listeaza pachete ce nu sunt in grupurisi nu au dependente de alte pachete.
+\item list-needed - Listeaza dependente lipsa.
+\item list-removed - Listeaza pachete ce sunt in  repo dar nu in git.
+\item list-tools - Listeaza  unelte.
+\item outdated - Verifica pachete out-dated in pachetul repo ca cel de pe git.
+\item pkgmod - Modifica un pachet creat.
+\item pkgrel - Include pkgrel intr-un pachet.
+\item prep - Curata un PKGBUILD al unui fisier si gaseste erori .
+\item sitesync - Sync o copie locala a unui pachet repo si o copie remote .
+\item size-hunt - Cauta pachete mari.
+\item source-backup - Face backup la pachete.
 \end{itemize}
 
 \section{Contributing to repository}
-This section shows you how to contribute to the BlackArch Linux project. We
-accept pull requests of all sizes, from tiny typo fixes to new packages.\\For
-help, suggestions, or questions feel free to contact us.
+In aceasta sectiune va fi prezentat cum sa participi la proiectul BlackArch Linux. Aceptam cereri pull de toate dimensiunile, de la unele minore la pachete intregi.\\Pentru ajutor sau intrebari ne puteti contacta .
 \\\\
-Everyone is welcome to contribute. All contributions are appreciated.
+Toate lumea poate participa. Orice contributie e aceptata.
 
 \subsection{Required tutorials}
-Please read the following tutorials before contributing:
+Va rugam sa cititi urmatoarele inainte de a ne ajuta:
 \begin{itemize}
 \item
 \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
@@ -611,26 +600,22 @@ Packages}
 \end{itemize}
 
 \subsection{Steps for contributing}
-In order to submit your changes to the BlackArchLinux project, follow these
-steps:
+ Pentru a ne trimite schimbariile pentru proiectul BlackArchLinux , urmati urmatorii pasi :
 \begin{enumerate}
 \item Fork the repository from
 \url{https://github.com/BlackArch/blackarch}
-\item Hack the necessary files, (e.g. PKGBUILD, .patch files, etc).
-\item Commit your changes.
-\item Push your changes.
-\item Ask us to merge in your changes, preferably through a pull request.
+\item Modificati fisierele de care aveti nevoie, (e.g. PKGBUILD, .patch files, etc).
+\item Pregatiti schimbariile.
+\item Da-ti push la schimbari.
+\item Spuneti-ne sa va aceptam schimbarile, preferabil printr-un pull .
 \end{enumerate}
 
 \subsection{Example}
-The following example demonstrates submitting a new package to the BlackArch
-project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
-(you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
-\textbf{nfsshell} from the \href{https://aur.archlinux.org/}{AUR} and adjust it
-according to our needs.
+Urmatorul exemplu demonstreaza cum se va trimite un nou pachet catre BlackArch. Folosim \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
+(poti folosi pacaur deasemenea) pentru a lua un pachet pre-existent fisierul PKGBUILD pentru \textbf{nfsshell} din \href{https://aur.archlinux.org/}{AUR} si modifical cum vrei
 
 \subsubsection{Fetch PKGBUILD}
-Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
+Ia \textit{PKGBUILD} fisierul folosind yaourt sau pacaur:
 \begin{lstlisting}
   user@blackarchlinux $ yaourt -G nfsshell
   ==> Download nfsshell sources
@@ -641,7 +626,7 @@ Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
 \end{lstlisting}
 
 \subsubsection{Clean up PKGBUILD}
-Clean up the \textit{PKGBUILD} file and save some time:
+Curata \textit{PKGBUILD} fisierul si salveaza:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
   cleaning 'PKGBUILD'...
@@ -657,13 +642,13 @@ Clean up the \textit{PKGBUILD} file and save some time:
 \end{lstlisting}
 
 \subsubsection{Adjust PKGBUILD}
-Adjust the \textit{PKGBUILD} file:
+Ajunstaza \textit{PKGBUILD} fisierul:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ vi PKGBUILD
 \end{lstlisting}
 
 \subsubsection{Build the package}
-Build the package:
+Construieste pachetul:
 \begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
 ==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
 ==> Checking runtime dependencies...
@@ -683,27 +668,27 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 \end{lstlisting}
 
 \subsubsection{Install and test the package}
-Install and test the package:
+Instaleaza si testeaza pachetul:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
   user@blackarchlinux nfsshell $ nfsshell # test it
 \end{lstlisting}
 
 \subsubsection{Add, commit and push package}
-Add, commit and push the package
+Adauga, confirma si trimite pachetul
 \begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
 \subsubsection{Create a pull request}
-Create a pull request on \href{https://github.com/}{github.com}
+Creeaza o cerere pe \href{https://github.com/}{github.com}
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
 
 \subsubsection{Adding a remote for upstream}
-A smart thing to do if you're working upstream and on a fork is to pull your own fork and add the main ba repo as a remote
+Un lucru istet de facut este sa dai fork si sa lucrezi remote .
 \begin{lstlisting}
   user@blackarchlinux ~/blackarchlinux $ git remote -v
   origin <the url of your fork> (fetch)
@@ -716,35 +701,31 @@ A smart thing to do if you're working upstream and on a fork is to pull your own
   upstream https://github.com/blackarch/blackarch (push)
 \end{lstlisting}
 
-By default, git should push straight to origin, but make sure your git config is
-configured correctly. This won't be an issue unless you have commit rights as
-you won't be able to push upstream without them.
+In mod implicit, git ar trebui sa trimita direct la origine, dar ca sa te asiguri ca git config este configurat corect .Acest lucru nu ar trebui sa fie o problema decat daca trebuie sa trimiti drepturi si nu poti trimite upstream fara ele
 
-If you do have the ability to commit, you might have more success using
-\textit{git@github.com:blackarch/blackarch.git} but it's up to you.
+Daca poti trimite, ai putea aveam mai mult success cu
+\textit{git@github.com:blackarch/blackarch.git} dar e alegerea ta.
 
 \subsection{Requests}
 \begin{enumerate}
-\item Don't add \textbf{Maintainer} or \textbf{Contributor} comments to
-\textit{PKGBUILD} files. Add maintainer and contributor names to the
-AUTHORS section of BlackArch guide.
-\item For the sake of consistency, please follow the general style of the other
-\textit{PKGBUILD} files in the repo and use two-space indentation.
+\item Nu adauga \textbf{Maintainer} sau \textbf{Contributor} comentari pentru fisierele
+\textit{PKGBUILD} . Adauga utilizator pentru sectiune AUTHORS  BlackArch guide.
+\item Pentru o mai buna intelegere, va rugam sa respectati  stilul tuturor
+\textit{PKGBUILD} fisierelor din repo.
 \end{enumerate}
 
 \subsection{General tips}
-\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
-errors.
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} poate verifica pentru erori.
 
 %------------------%
 %  Chapter 4       %
 %------------------%
 
 \chapter{Tools Guide}
-Coming soon...
+In curand...
 
 \section{Coming Soon}
-Coming soon...
+In curand...
 
 %%% APPENDIX %%%
 \appendix
