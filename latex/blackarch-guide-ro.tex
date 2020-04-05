@@ -109,7 +109,7 @@ tabsize=2
 %  Chapter 1       %
 %------------------%
 
-\chapter{Introduction}
+\chapter{Introducere}
 
 \section{Overview}
 Manualul pentru BlackArch Linux este impartit in cateva parti :
@@ -120,7 +120,7 @@ Manualul pentru BlackArch Linux este impartit in cateva parti :
 \Manualul pentru ustensile  - Explicatii clare si precise despre folosirea lor (WIP)
 \end{itemize}
 
-\section{What is BlackArch Linux?}
+\section{Ce este BlackArch Linux?}
 BlackArch este o distributie Linux completa pentru securitate cibernetica 
 Este derivata de la  \href{https://www.archlinux.org/}{ArchLinux} iar utilizatorii pot instala componnentele BlackArch separat
 
@@ -132,13 +132,13 @@ Este continuu actualizat continand peste
 Toate uneltele sunt testate riguros  si adaugate intr-o baza de date pentru a fi folosite la capacitate maxima
 % should quickly describe the testing methods/code review procedures etc
 
-\section{History of BlackArch Linux}
+\section{Istoria lui BlackArch Linux}
 Incurand...
 
-\section{Supported platforms}
+\section{Platforme Suportate}
 Incurand...
 
-\section{Get involved}
+\section{Ajuta-ne}
 Poti contacta echipa BlackArch print urmatoarele metode:
 
 Website: \url{https://www.blackarch.org/}
@@ -156,7 +156,7 @@ Github: \url{https://github.com/Blackarch/}
 %------------------%
 
 
-\capitolul{Manualul Utilizatorului}
+\chapter{Manualul Utilizatorului}
 
 \sectiunea{Instalare}
 Urmatiarea sectiune iti va arata cum sa instalezi  BlackArch repository si cum sa instalezi pachete. BlackArch suporta ambele variante , instalarea din repository folosind
@@ -165,7 +165,7 @@ pachete binare cat si compiland si instaland din sursa.
 BlackArch este compatibil cu normala instalare Arch.Este exact ca un neoficial "pachet" . Daca vrei un ISO, mai jos 
 \href{https://www.blackarch.org/downloads.html#iso}{Live ISO} section.
 
-\subsection{Installing on top of ArchLinux}
+\subsection{Instalarea sa pe ArchLinux}
 Ruleaza \href{https://blackarch.org/strap.sh}{strap.sh} ca root urmand urmatoarele instructiuni. Urmatorul exemplu
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
@@ -297,11 +297,11 @@ For more information, read (or skim through) the following:
 \item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
 \end{itemize}
 
-\section{Blackarch PKGBUILD standards}
+\section{ PKGBUILD pentru standardele BlackArch}
 Pentru o mai buna intelegere,  PKGBUILDs sunt similare cu cele AUR ,
 cu mici diferente enumerate mai jos . Fiecare pachet trebuie sa apartina BlackArch catusi de putin.
 
-\subsection{Groups}
+\subsection{Grupuri}
 Pentru a instala o specifica ramura de pachete rapid si usor,pachetele au fost separate in grupuri . Acestea se pot instala prin simplul "pacman -S <group name>" pentru a instala multiple pachete
 
 \subsubsection{blackarch}
@@ -582,12 +582,12 @@ O referinta pentru scripturi se gaseste aici  \verb|scripts/| directory:
 \item source-backup - Face backup la pachete.
 \end{itemize}
 
-\section{Contributing to repository}
+\section{Contribuie la proiect}
 In aceasta sectiune va fi prezentat cum sa participi la proiectul BlackArch Linux. Aceptam cereri pull de toate dimensiunile, de la unele minore la pachete intregi.\\Pentru ajutor sau intrebari ne puteti contacta .
 \\\\
 Toate lumea poate participa. Orice contributie e aceptata.
 
-\subsection{Required tutorials}
+\subsection{Tutoriale recomandate}
 Va rugam sa cititi urmatoarele inainte de a ne ajuta:
 \begin{itemize}
 \item
@@ -599,7 +599,7 @@ Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
 \end{itemize}
 
-\subsection{Steps for contributing}
+\subsection{Pasii pentru contributie}
  Pentru a ne trimite schimbariile pentru proiectul BlackArchLinux , urmati urmatorii pasi :
 \begin{enumerate}
 \item Fork the repository from
@@ -610,11 +610,11 @@ Packages}
 \item Spuneti-ne sa va aceptam schimbarile, preferabil printr-un pull .
 \end{enumerate}
 
-\subsection{Example}
+\subsection{Exemple}
 Urmatorul exemplu demonstreaza cum se va trimite un nou pachet catre BlackArch. Folosim \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
 (poti folosi pacaur deasemenea) pentru a lua un pachet pre-existent fisierul PKGBUILD pentru \textbf{nfsshell} din \href{https://aur.archlinux.org/}{AUR} si modifical cum vrei
 
-\subsubsection{Fetch PKGBUILD}
+\subsubsection{Foloseste PKGBUILD}
 Ia \textit{PKGBUILD} fisierul folosind yaourt sau pacaur:
 \begin{lstlisting}
   user@blackarchlinux $ yaourt -G nfsshell
@@ -625,7 +625,7 @@ Ia \textit{PKGBUILD} fisierul folosind yaourt sau pacaur:
   user@blackarchlinux $ cd nfsshell/
 \end{lstlisting}
 
-\subsubsection{Clean up PKGBUILD}
+\subsubsection{Curata PKGBUILD}
 Curata \textit{PKGBUILD} fisierul si salveaza:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
@@ -667,27 +667,27 @@ CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
 ==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
 \end{lstlisting}
 
-\subsubsection{Install and test the package}
+\subsubsection{Instaleaza si testeaza pachetul}
 Instaleaza si testeaza pachetul:
 \begin{lstlisting}
   user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
   user@blackarchlinux nfsshell $ nfsshell # test it
 \end{lstlisting}
 
-\subsubsection{Add, commit and push package}
+\subsubsection{Adauga, modifica si trimite pachetul}
 Adauga, confirma si trimite pachetul
 \begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
 user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
 user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
 \end{lstlisting}
 
-\subsubsection{Create a pull request}
+\subsubsection{Creeaza o cerere pull }
 Creeaza o cerere pe \href{https://github.com/}{github.com}
 \begin{lstlisting}
   firefox https://github.com/<contributor>/blackarchlinux
 \end{lstlisting}
 
-\subsubsection{Adding a remote for upstream}
+\subsubsection{Adauga un remote pentru upstream}
 Un lucru istet de facut este sa dai fork si sa lucrezi remote .
 \begin{lstlisting}
   user@blackarchlinux ~/blackarchlinux $ git remote -v
@@ -714,7 +714,7 @@ Daca poti trimite, ai putea aveam mai mult success cu
 \textit{PKGBUILD} fisierelor din repo.
 \end{enumerate}
 
-\subsection{General tips}
+\subsection{Recomandari}
 \href{http://wiki.archlinux.org/index.php/Namcap}{namcap} poate verifica pentru erori.
 
 %------------------%
