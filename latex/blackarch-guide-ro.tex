@@ -179,7 +179,7 @@ Acum istaleaza o copie noua a pachetului master listeaza si sincronizeaza pachet
 \end{lstlisting}
 
 
-\subsection{Installing packages}
+\subsection{Instalarea pachetelor}
 Acum poti instala uneltele din blackarch repository .
 \begin{enumerate}
 \item Pentru a lista uneltele valabile , ruleaza
@@ -204,7 +204,7 @@ Acum poti instala uneltele din blackarch repository .
 
 \end{enumerate}
 
-\subsection{Installing packages from source}
+\subsection{Instalarea pachetelor din sursa}
 Ca parte din o , you can build the BlackArch
 packages from source. Poti gasi PKGBUILDs in
 \href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
@@ -233,9 +233,9 @@ este configurat , poti instala Blackman:
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} BlackMan e foarte usor de folosit, desi e diferent de ce te-ai fi asteptat , e diferit de pacman .
+\subsection{Folosirea simpla a lui Blackman } BlackMan e foarte usor de folosit, desi e diferent de ce te-ai fi asteptat , e diferit de pacman .
 \begin{itemize}
-\item Download, compile and install packages:
+\item Downloadeaza, compileaza si instaleaza pachete:
 \begin{lstlisting}
   sudo blackman -i package
 \end{lstlisting}
@@ -282,19 +282,19 @@ Poti instala BlackArch Linux din unul dintre live- neinstall-.ISO.\\See
 %  Chapter 3       %
 %------------------%
 
-\chapter{Developer Guide}
+\chapter{Manualul creatorului}
 
-\section{Arch's Build System and Repositories}
+\section{Sistemul de construire al Arch si pachete separate}
 
-PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
-package. PKGBUILD files are written in Bash.
+PKGBUILD sunt fisiere. Fiecare ii  comunica  makepkg(1) cum sa creeze un
+pachet. Fisierele PKGBUILD  sunt scrise in Bash.
 
-For more information, read (or skim through) the following:
+Pentru mai multe informatii, citeste (sau rasfoieste) urmatoarele:
 \begin{itemize}
-\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Crearea pachetelor}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
 \item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
-\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki:  inpacetarea standard a Arch }
 \end{itemize}
 
 \section{ PKGBUILD pentru standardele BlackArch}
