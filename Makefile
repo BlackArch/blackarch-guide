@@ -135,6 +135,20 @@ lint-pt-br:
 		ba-guide:$(VERSION) \
 		/bin/sh -c "chktex ${srcdir}/*-pt-br.tex; exit 0"
 
+PHONY: lint-ro
+lint-ro:
+	@echo "==========================================="
+	@echo "= linting Romanian Guide                 ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-ro.tex; exit 0"
+
 PHONY: lint-ru
 lint-ru:
 	@echo "==========================================="
@@ -286,6 +300,21 @@ pdf-pt-br:
 			    ${srcdir}/blackarch-guide-pt-br.tex 1>./build_log_pt-br; \
 			    lualatex \
 			    ${srcdir}/blackarch-guide-pt-br.tex 1>>./build_log_pt-br"
+
+.PHONY: pdf-ro
+pdf-ro:
+	@echo "Compiling Romanian guide - output in build_log_ro"
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "lualatex \
+			    ${srcdir}/blackarch-guide-ro.tex 1>./build_log_ro; \
+			    lualatex \
+			    ${srcdir}/blackarch-guide-ro.tex 1>>./build_log_ro"
 
 .PHONY: pdf-ru
 pdf-ru:
