@@ -1,4 +1,4 @@
-build_log
+build_log*
 *.acn
 *.acr
 *.alg

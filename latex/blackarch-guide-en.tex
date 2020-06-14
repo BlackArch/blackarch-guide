@@ -13,17 +13,16 @@
 \usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
-\usepackage[paper=a4paper,left=18mm,right=18mm,top=35mm,bottom=35mm]{geometry} %define margins..
+\usepackage[paper=a4paper,left=15mm,right=15mm,top=35mm,bottom=35mm]{geometry} %define margins..
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{ifpdf}
 \usepackage{listings}
 \usepackage{pstricks}
 \usepackage{supertabular}
-\usepackage{tocloft}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-% \usepackage[ngerman, english]{babel}
+\usepackage[ngerman, english]{babel}
 \usepackage{ltablex}
 \usepackage{overcite}
 \usepackage{blindtext}
@@ -33,6 +32,12 @@
 \usepackage{subcaption}
 \usepackage{rotating}
 \usepackage{setspace}
+
+\usepackage{ltablex}
+\usepackage[all]{nowidow}
+
+\keepXColumns
+\usepackage{fullpage}
 
 %%%%% styling
 \onehalfspacing
@@ -44,12 +49,7 @@
 \cfoot{\thepage}
 
 %%% LAYOUT %%%
-\setlength{\parindent}{0em}
-\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
-\widowpenalty=2000
-\clubpenalty=1000
-\frenchspacing
-\sloppy
+\setlength{\headsep}{1cm}
 \pagecolor[HTML]{FFFFFF}
 \color[HTML]{333333}
 \setcounter{tocdepth}{10}
@@ -70,7 +70,6 @@
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand\contentsname{Contents}
-
 % syntax highlighting
 % all options should be set here document wide
 \lstset{
@@ -113,7 +112,6 @@ tabsize=2
 \Huge{\textbf{The BlackArch Linux Guide}}\\
 \vspace{1cm}
 \Large{\color{red}\url{https://www.blackarch.org/}}\\
-\vspace{0.5cm}
 \end{center}
 \newpage
 	\end{titlepage}
@@ -121,8 +119,9 @@ tabsize=2
 %--------------------------%
 %  Table of contents       %
 %--------------------------%
-\newpage
-\tableofcontents 
+\hfill
+\tableofcontents{\protect\thispagestyle{fancy}}
+
 \newpage 
 
 %------------------%
@@ -141,8 +140,15 @@ The toolset is distributed as an Arch Linux
 existing Arch Linux installation. Packages may be installed individually or by
 category.\\
 \\
-The constantly expanding repository currently includes over \href{https://www.blackarch.org/tools.html}{2553} tools.
+The constantly expanding repository currently includes over \href{https://www.blackarch.org/tools.html}{2557} tools.
 All tools are thoroughly tested before being added to the codebase to maintain the quality of the repository.
+
+The BlackArch Linux guide is divided into several parts:
+\begin{itemize}
+\item User Guide - Everything a typical user needs to know to effectively use BlackArch
+\item Developer Guide - How to get started developing for and contributing to BlackArch
+\item Tool Guide - In-depth tool details along example usages (WIP)
+\end{itemize}
 
 \subsection{History of BlackArch Linux}
 Coming soon...
@@ -171,8 +177,9 @@ You can get in touch with the BlackArch team using the following avenues:
 %------------------%
 %  Chapter 2       %
 %------------------%
+\section{User guide}
 
-\section{Installation}
+\subsection{Installation}
 The following sections will show you how to setup the BlackArch repository and
 install packages. BlackArch supports both, installing from the repository using
 binary packages as well as compiling and installing from sources.
@@ -181,12 +188,13 @@ BlackArch is compatible with normal Arch installations. It acts as an unofficial
 user repository. If you want an ISO instead, see the
 \href{https://www.blackarch.org/downloads.html#iso}{Live ISO} section.
 
-\subsection{Installing on top of ArchLinux}
+\subsubsection{Installing on top of ArchLinux}
 \begin{itemize}
 \item Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the instructions. See the following example.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should be: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh 
+   # should be: 6f152b79419491db92c1fdde3fad2d445f09aae3
    sudo ./strap.sh
 \end{lstlisting}
 \item Now download a fresh copy of the master package list and synchronize packages:
@@ -195,7 +203,7 @@ user repository. If you want an ISO instead, see the
 \end{lstlisting}
 \end{itemize}
 
-\subsection{Installing packages}
+\subsubsection{Installing packages}
 You may now install tools from the blackarch repository.
 \begin{itemize}
 \item To list all of the available tools, run
@@ -220,7 +228,7 @@ You may now install tools from the blackarch repository.
 
 \end{itemize}
 
-\subsection{Installing packages from source}
+\subsubsection{Installing packages from source}
 As part of an alternative method of installation, you can build the BlackArch
 packages from source. You can find the PKGBUILDs on
 \href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
@@ -250,7 +258,7 @@ is setup on your machine, you can install Blackman:
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
+\subsubsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
 would typically expect from something like pacman. Basic usage has been outlined below.
 \begin{itemize}
 \item Download, compile and install packages:
@@ -280,7 +288,7 @@ would typically expect from something like pacman. Basic usage has been outlined
 
 \end{itemize}
 
-\subsection{Installing from live-, netinstall- ISO or ArchLinux}
+\subsubsection{Installing from live-, netinstall- ISO or ArchLinux}
 You can install BlackArch Linux from one of our live- or netinstall-ISOs.\\See
 \url{https://www.blackarch.org/download.html#iso}. The following steps are
 required after the ISO boot up.
@@ -295,7 +303,7 @@ required after the ISO boot up.
   sudo blackarch-install
 \end{lstlisting}
 \end{itemize}
-
+\newpage
 %------------------%
 %  Chapter 3       %
 %------------------%
@@ -599,13 +607,15 @@ Here is a reference for scripts in the \verb|scripts/| directory:
 \item blackman - This behaves sort of like pacman but builds from git (not to be
     confused with nrz's Blackman).
 \item check-groups - Check groups.
+\item check-mirror - Check for outdated mirrors.
 \item checkpkgs - Check packages for errors.
 \item conflicts - Check for file conflicts.
 \item dbmod - Modify a package database.
 \item depth-list - Create a list sorted by dependency depth.
 \item deptree - Create a dependency tree, listing only blackarch-provided packages.
+\item find-broken-perl-packages - Find broken perl packages.
 \item get-blackarch-deps - Get a list of blackarch dependencies for a package.
-\item get-official - Get official packages for release.
+\item group-official - Calls dbmod to add all official packages to their groups.
 \item list-loose-packages - List packages that are not in groups and are not
     dependencies for other packages.
 \item list-needed - List missing dependencies.
@@ -615,10 +625,13 @@ Here is a reference for scripts in the \verb|scripts/| directory:
     relative to the git repo.
 \item pkgmod - Modify a build package.
 \item pkgrel - Increment pkgrel in a package.
+\item pkgver - Generates PKGBUILD `pkgver()` functions for various SCM systems.
 \item prep - Clean up a PKGBUILD file's style and find errors.
+\item runtime-exec-qa - QA checks on all blackarch packages.
 \item sitesync - Sync between a local copy of the package repo and a remote copy.
 \item size-hunt - Hunt for large packages.
 \item source-backup - Backup package source files.
+\item syncrepo - A simple mirroring script.
 \end{itemize}
 
 \subsection{Contributing to repository}
@@ -764,7 +777,7 @@ AUTHORS section of BlackArch guide.
 \subsubsection{General tips}
 \href{http://wiki.archlinux.org/index.php/Namcap}{namcap} can check packages for
 errors.
-
+\newpage
 %------------------%
 %  Chapter 4       %
 %------------------%
@@ -776,6 +789,8 @@ Coming soon...
 Coming soon...
 
 \appendix
-\include{./appendix-en}
+\include{latex/appendix-en}
 
-\end{document}%%% EOF %%%
+\end{document}
+
+%%% EOF %%%
