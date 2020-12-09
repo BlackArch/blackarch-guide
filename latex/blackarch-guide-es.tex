@@ -58,9 +58,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -72,7 +72,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -111,7 +111,7 @@ tabsize=2
 \vspace{0.5cm}
 \Large{\textbf{Spanish Version}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -146,7 +146,7 @@ La herramienta se distribuye como un Arch Linux
 existente de Arch Linux. Los paquetese se pueden instalar individualmente o por categorias.
 
 
-El repositorio en constante expansi\'on incluye \href{https://www.blackarch.org/tools.html}{2554} herramientas.
+El repositorio en constante expansi\'on incluye \href{https://www.blackarch.org/tools.html}{2600} herramientas.
 Todas las herramientas son probadas antes de ser agregadas al c\'odigo base para mantener la calidad del repositorio.
 % should quickly describe the testing methods/code review procedures etc
 
@@ -169,6 +169,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %------------------%
 %  Capitulo 2      %
 %------------------%
@@ -190,7 +192,8 @@ Ejecute \href{https://blackarch.org/strap.sh}{strap.sh} como administrador y sig
 las instrucciones. Mire el ejemplo siguiente.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 Ahora descarga una copia nueva de la lista principal de paquetes y paquetes
@@ -242,7 +245,7 @@ est\'a configurado en su equipo, puede instalar Blackman:
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # Aseg\'urese que PKGBUILD no ha sido manipulado maliciosamente.
   makepkg -s
 \end{lstlisting}
@@ -779,7 +782,7 @@ Pr\'oximamente...
 
 %%% Apendice %%%
 \appendix
-\include{latex/appendix}
+\include{latex/appendix-es}
 
 \end{document}
 

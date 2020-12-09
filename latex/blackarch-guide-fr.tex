@@ -48,9 +48,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -62,7 +62,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -99,7 +99,7 @@ tabsize=2
 \vspace{0.5cm}
 \Huge{\textbf{The BlackArch Linux Guide}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -128,7 +128,7 @@ Ce guide est divis\'{e} en quatre parties majeures, soient:
 
 L'ensemble d'outils est distribu\'{e} tel un \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories} {d\'{e}p\^{o}t non-officiel} d'Arch Linux, vous permettant d'installer les composantes de BlackArch sur une installation d'Arch Linux existante. Les paquets peuvent y \^{e}tre install\'{e}s individuellement ou par cat\'{e}gorie.
 
-Le d\'{e}pot logiciel de Black Arch contient plus de 1300 outils et ce nombre augmente sans cesse. Chacun de ces outils est minutieusement test\'{e} avant d'\^{e}tre ajout\'{e} aux d\'{e}pots, afin d'assurer leur bon fonctionnement.
+Le d\'{e}pot logiciel de Black Arch contient plus de 2600 outils et ce nombre augmente sans cesse. Chacun de ces outils est minutieusement test\'{e} avant d'\^{e}tre ajout\'{e} aux d\'{e}pots, afin d'assurer leur bon fonctionnement.
 
 \section{Histoire de BlackArch Linux}
 En construction...
@@ -150,6 +150,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Guide d'utilisation}
@@ -164,7 +166,8 @@ Ex\'{e}cuter \href{https://blackarch.org/strap.sh}{strap.sh} en tant que root et
 
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # doit etre egal a 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sha1sum strap.sh # doit etre egal a d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 
@@ -213,7 +216,7 @@ ce document, vous vous pouvez installer blackman \`{a} l'aide de pacman en utili
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # S'assurer de l'integrite du fichier PKGBUILD avec:
   makepkg -s
 \end{lstlisting}

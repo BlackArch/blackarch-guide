@@ -50,9 +50,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -101,7 +101,7 @@ tabsize=2
 \vspace{0.5cm}
 \Huge{\textbf{BlackArch Linux 指南}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -132,7 +132,7 @@ BlackArch 是一个提供给渗透测试以及安全人员的完整的Linux发�
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
 {非官方用户仓库(Unofficial User Repositories)}，所以你可以在一个已有的Arch Linux系统上安装。可以单独安装某个工具或按分类批量安装。
 
-仓库目前包括超过 \href{https://www.blackarch.org/tools.html}{1300} 个工具，仍在不断扩充。
+仓库目前包括超过 \href{https://www.blackarch.org/tools.html}{2600} 个工具，仍在不断扩充。
 为了保证仓库的质量，所有的工具在添加到代码库之前都经过测试。
 % should quickly describe the testing methods/code review procedures etc
 
@@ -155,6 +155,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %------------------%
 %  Chapter 2       %
 %------------------%
@@ -174,7 +176,8 @@ BlackArch 兼容 Arch Linux 常用的安装方式，比如说非官方用户仓�
 用root权限运行脚本 \href{https://blackarch.org/strap.sh}{strap.sh}，并跟随提示，看下面的例子：
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 
@@ -225,7 +228,7 @@ BlackArch 兼容 Arch Linux 常用的安装方式，比如说非官方用户仓�
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # Make sure the PKGBUILD has not been maliciously tampered with.
   makepkg -s
 \end{lstlisting}

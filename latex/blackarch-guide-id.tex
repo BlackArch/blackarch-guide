@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% BlackArch Linux Guide                                                        %
+% Panduan Blackarch Linux                                                      %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,8 +39,8 @@
 \setcounter{secnumdepth}{10}
 
 \hypersetup{
-  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
-  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdftitle={BlackArch Linux, Panduan BlackArch Linux},
+  pdfsubject={BlackArch Linux, Panduan BlackArch Linux},
   pdfauthor={BlackArch Linux, BlackArch Linux},
   pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
   pdfcenterwindow=true,
@@ -74,7 +74,7 @@ tabsize=2
 \setlength{\headheight}{33pt}
 \setlength{\headsep}{33pt}
 \lhead{{\includegraphics[width=1cm,height=1cm]{images/logo.png}}}
-\rhead{The BlackArch Linux Guide}
+\rhead{Panduan BlackArch Linux}
 
 %%% CUSTOM MACROS %%%
 % for html links
@@ -83,7 +83,7 @@ tabsize=2
 \fi
 
 %------------------%
-%  TITLE PAGE      %
+%  JUDUL HALAMAN   %
 %------------------%
 \begin{document}
 \pagestyle{empty}
@@ -95,7 +95,7 @@ tabsize=2
 \label{fig:logo}
 \end{figure}
 \vspace{0.5cm}
-\Huge{\textbf{The BlackArch Linux Guide}}\\
+\Huge{\textbf{Panduan BlackArch Linux}}\\
 \vspace{1cm}
 \Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
@@ -106,43 +106,43 @@ tabsize=2
 \pagestyle{fancy}
 
 %------------------%
-%  Chapter 1       %
+%  Bab 1           %
 %------------------%
 
 \chapter{Introduction}
 
 \section{Overview}
-The BlackArch Linux guide is divided into several parts:
+Panduan BlackArch Linux dibagi menjadi beberapa bagian:
 \begin{itemize}
-\item Introduction - Provides a broad overview, introduction, and additional helpful project information
-\item User Guide - Everything a typical user needs to know to effectively use BlackArch
-\item Developer Guide - How to get started developing for and contributing to BlackArch
-\item Tool Guide - In-depth tool details along example usages (WIP)
+\item Pendahuluan - Memberikan pandangan luas, pendahuluan dan informasi tambahan seputar proyek
+\item Panduan Pengguna - Segala sesuatu yang perlu diketahui oleh pengguna untuk menggunakan BlackArch secara efektif
+\item Panduan Pengembang - Panduan cara memulai mengembangkan dan berkontribusi pada BlackArch
+\item Panduan Tool - Detail tool mendalam beserta contoh penggunaan(WIP)
 \end{itemize}
 
-\section{What is BlackArch Linux?}
-BlackArch is a complete Linux distribution for penetration testers and security researchers.
-It is derived from \href{https://www.archlinux.org/}{ArchLinux} and users can install BlackArch components
-individually or in groups directly on top of it.
+\section{Apa itu BlackArch Linux?}
+BlackArch adalah distro Linux lengkap untuk penetration tester dan security researchers. 
+BlackArch berasal dari \href{https://www.archlinux.org/}{ArchLinux} dan pengguna dapat install komponen-komponen BlackArch
+secara masing-masing atau dalam kelompok langsung di atasnya.
 
-The toolset is distributed as an Arch Linux
+Toolset didistribusikan sebagai Arch Linux
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
-{unofficial user repository} so you can install BlackArch on top of an
-existing Arch Linux installation. Packages may be installed individually or by
-category.
+{unofficial user repository} sehingga Anda dapat menginstal BlackArch di atas
+instalasi Arch Linux yang ada. Paket dapat diinstal secara individual atau dengan
+kategori.
 
-The constantly expanding repository currently includes over \href{https://www.blackarch.org/tools.html}{2600} tools.
-All tools are thoroughly tested before being added to the codebase to maintain the quality of the repository.
+Repositori yang terus berkembang saat ini mencakup lebih dari \href{https://www.blackarch.org/tools.html}{2600} alat.
+Semua alat diuji secara menyeluruh sebelum ditambahkan ke basis kode untuk menjaga kualitas repositori.
 % should quickly describe the testing methods/code review procedures etc
 
-\section{History of BlackArch Linux}
-Coming soon...
+\section{Sejarah BlackArch Linux}
+Segera...
 
-\section{Supported platforms}
-Coming soon...
+\section{Platform yang didukung}
+Segera...
 
-\section{Get involved}
-You can get in touch with the BlackArch team using the following avenues:
+\section{Terlibat}
+Anda dapat menghubungi tim BlackArch menggunakan jalur berikut:
 
 Website: \url{https://www.blackarch.org/}
 
@@ -161,20 +161,20 @@ Discord: \url{https://discord.com/invite/xMHt8dW}
 %------------------%
 
 
-\chapter{User Guide}
+\chapter{Panduan Pengguna}
 
-\section{Installation}
-The following sections will show you how to setup the BlackArch repository and
-install packages. BlackArch supports both, installing from the repository using
-binary packages as well as compiling and installing from sources.
+\section{Installasi}
+Bagian ini akan menunjukkan kepada Anda cara mempersiapkan repositori BlackArch dan
+instalasi paket. BlackArch mendukung keduanya, instalasi dari repositori meggunakan
+paket biner serta kompilasi dan instalasi dari source.
 
-BlackArch is compatible with normal Arch installations. It acts as an unofficial
-user repository. If you want an ISO instead, see the
-\href{https://www.blackarch.org/downloads.html#iso}{ISOs} section.
+BlackArch kompatibel dengan instalasi Arch normal. Itu bertindak sebagai repositori 
+pengguna tidak resmi. Jika anda menginginkan ISO, lihat bagian
+\href{https://www.blackarch.org/downloads.html#iso}{ISOs}.
 
-\subsection{Installing on top of ArchLinux}
-Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
-instructions. See the following example.
+\subsection{Instalasi di atas ArchLinux}
+Jalankan \href{https://blackarch.org/strap.sh}{strap.sh} sebagai root dan ikuti
+perintah-perintah. Lihat conth berikut.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
    sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
@@ -182,100 +182,100 @@ instructions. See the following example.
    sudo ./strap.sh
 \end{lstlisting}
 
-Now download a fresh copy of the master package list and synchronize packages:
+Sekarang unduh salinan baru dari daftar paket master dan sinkronisasi paket:
 \begin{lstlisting}
   sudo pacman -Syyu
 \end{lstlisting}
 
 
-\subsection{Installing packages}
-You may now install tools from the blackarch repository.
+\subsection{Instalasi paket}
+Anda sekarang dapat menginstal alat dari repositori BlackArch.
 \begin{enumerate}
-\item To list all of the available tools, run
+\item Untuk melihat daftar semua alat yang tersedia, jalankan
 \begin{lstlisting}
   pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 \end{lstlisting}
 
-\item To install all of the tools, run
+\item Untuk instalasi semua alat, jalankan
 \begin{lstlisting}
   pacman -S blackarch
 \end{lstlisting}
 
-\item To install a category of tools, run
+\item Untuk instalasi alat berdasarkan kategori, jalankan
 \begin{lstlisting}
   pacman -S blackarch-<category>
 \end{lstlisting}
 
-\item To see the blackarch categories, run
+\item Untuk melihat kategori blackarch, jalankan
 \begin{lstlisting}
   pacman -Sg | grep blackarch
 \end{lstlisting}
 
 \end{enumerate}
 
-\subsection{Installing packages from source}
-As part of an alternative method of installation, you can build the BlackArch
-packages from source. You can find the PKGBUILDs on
-\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
-build the entire repo, you can use the
-\href{https://github.com/BlackArch/blackman}{Blackman} tool.
+\subsection{Menginstal paket dari sumber}
+Sebagai bagian dari metode instalasi alternatif, Anda dapat membangun BlackArch
+paket dari sumber. Anda dapat menemukan PKGBUILD di
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. Untuk
+membangun seluruh repo, Anda dapat menggunakan
+\href{https://github.com/BlackArch/blackman}{Blackman} alat.
 \begin{itemize}
-\item First, you have to install Blackman. If the BlackArch package repository
-is setup on your machine, you can install Blackman:
+\item Pertama, Anda harus menginstal Blackman. Jika repositori paket BlackArch
+sudah diatur pada mesin Anda, Anda dapat menginstal Blackman:
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item You can build and install Blackman from source:
+\item Anda dapat membangun dan menginstal Blackman dari sumber:
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Make sure the PKGBUILD has not been maliciously tampered with.
+  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # Pastikan PKGBUILD tidak dirusak dengan maksud jahat.
   makepkg -s
 \end{lstlisting}
 
-\item Or you can install Blackman from the AUR:
+\item Atau Anda dapat menginstal Blackman dari AUR:
 \begin{lstlisting}
-  <whatever AUR helper you use> -S blackman
+  <apa pun penolong AUR yang Anda gunakan> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
-would typically expect from something like pacman. Basic usage has been outlined below.
+\subsection{Penggunaan dasar Blackman} Blackman sangat mudah digunakan, meskipun benderanya berbeda dari Anda
+biasanya diharapkan dari sesuatu seperti pacman. Penggunaan dasar telah diuraikan di bawah ini.
 \begin{itemize}
-\item Download, compile and install packages:
+\item Unduh, kompilasi, dan instal paket:
 \begin{lstlisting}
-  sudo blackman -i package
+  sudo blackman -i paket
 \end{lstlisting}
 
-\item Download, compile and install whole category:
+\item Unduh, kompilasi, dan instal seluruh kategori:
 \begin{lstlisting}
-  sudo blackman -g group
+  sudo blackman -g kelompok
 \end{lstlisting}
 
-\item Download, compile and install all of the BlackArch tools:
+\item Unduh, kompilasi, dan instal semua alat BlackArch:
 \begin{lstlisting}
   sudo blackman -a
 \end{lstlisting}
 
-\item To list the blackarch categories:
+\item Untuk membuat daftar kategori blackarch:
 \begin{lstlisting}
   blackman -l
 \end{lstlisting}
 
-\item To list category tools:
+\item Untuk membuat daftar alat katagori:
 \begin{lstlisting}
-  blackman -p category
+  blackman -p kategori
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Installing from full-, netinstall- ISO or ArchLinux}
-You can install BlackArch Linux from one of our full- or netinstall-ISOs.\\See
-\url{https://www.blackarch.org/download.html#iso}. The following steps are
-required after the ISO boot up.
+\subsection{Menginstal dari full-, netinstall- ISO atau ArchLinux}
+Anda dapat menginstal Blackarch Linux dari salah satu live- atau netinstall-ISO kami.\\See
+\url{https://www.blackarch.org/download.html#iso}. Langkah-langkah berikut
+diperlukan setelah ISO boot.
 \begin{itemize}
 \item Install blackarch-installer package:
 \begin{lstlisting}
@@ -468,7 +468,7 @@ Examples: android-sdk-platform-tools, android-udev-rules
 \subsubsection{blackarch-networking}
 Package that involve IP networking.
 
-Examples: arptools, dnsdiag, impacket
+Examples: Anything pretty much
 
 \subsubsection{blackarch-nfc}
 Packages that use nfc (near-field communications).
@@ -476,7 +476,7 @@ Packages that use nfc (near-field communications).
 Examples: nfcutils
 
 \subsubsection{blackarch-packer}
-Packages that operate on or involve packers.
+Packages that operate on or invlove packers.
 
 \textit{packers are programs that embed malware within other executables.}
 
@@ -647,15 +647,15 @@ steps:
 
 \subsection{Example}
 The following example demonstrates submitting a new package to the BlackArch
-project. We use \href{https://github.com/Jguer/yay}{yay}
+project. We use \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
 (you can use pacaur as well) to fetch a pre-existing PKGBUILD file for
 \textbf{nfsshell} from the \href{https://aur.archlinux.org/}{AUR} and adjust it
 according to our needs.
 
 \subsubsection{Fetch PKGBUILD}
-Fetch the \textit{PKGBUILD} file using yay or pacaur:
+Fetch the \textit{PKGBUILD} file using yaourt or pacaur:
 \begin{lstlisting}
-  user@blackarchlinux $ yay -G nfsshell
+  user@blackarchlinux $ yaourt -G nfsshell
   ==> Download nfsshell sources
   x LICENSE
   x PKGBUILD
@@ -771,7 +771,7 @@ Coming soon...
 
 %%% APPENDIX %%%
 \appendix
-\include{latex/appendix-en}
+\include{latex/appendix}
 
 \end{document}
 

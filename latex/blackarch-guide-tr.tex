@@ -50,9 +50,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -64,7 +64,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -101,7 +101,7 @@ tabsize=2
 \vspace{0.5cm}
 \Huge{\textbf{BlackArch Linux Rehberi}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -131,7 +131,7 @@ Araçların yer aldığı paket deposu, Arch Linux işletim sisteminde olduğu g
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
 {resmi olmayan kullanıcı deposu} olarak kullanılabilir. Doğal olarak hali hazırda kurulu olan Arch Linux işletim sistemine kurulum yapılabilir. Paket deposu eklemesi yapıldıktan sonra araçlar doğrudan veya gruplar halinde kurulabilir.
 
-Şu anda depo içerisinde \href{https://www.blackarch.org/tools.html}{1300} araç bulunmaktadır. Depo kalitesinin korunması için tüm araçlar eklenmeden önce test edilmektedir.
+Şu anda depo içerisinde \href{https://www.blackarch.org/tools.html}{2600} araç bulunmaktadır. Depo kalitesinin korunması için tüm araçlar eklenmeden önce test edilmektedir.
 
 % should quickly describe the testing methods/code review procedures etc
 
@@ -154,6 +154,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %------------------%
 %  Chapter 2       %
 %------------------%
@@ -172,7 +174,8 @@ BlackArch normal bir Arch Linux kurulumu ile uyumludur. Resmi olmayan kullanıc�
 
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # bu degere esit olmali: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # bu degere esit olmali: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 
@@ -220,7 +223,7 @@ Kurulumlara alternatif olarak BlackArch paketlerini doğrudan kaynak kod yardım
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # PKGBUILD dosyasinda herhangi bir sikinti olmadigini kontrol etmeyi unutmayiniz!
   makepkg -s
 \end{lstlisting}

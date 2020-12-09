@@ -46,9 +46,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -60,7 +60,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -97,7 +97,7 @@ tabsize=2
 \vspace{0.5cm}
 \Huge{\textbf{The BlackArch Linux Guide}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -130,7 +130,7 @@ Intregul sistem este distribuit ca Arch Linux \href{https://wiki.archlinux.org/i
 {unofficial user repository} deci, poti instala BlackArch intr-o instalatie ArchLinux obisnuita.Pachetele pot fi instalate separat sau pe categorii
 
 Este continuu actualizat continand peste
-\href{https://www.blackarch.org/tools.html}{1300} unelte.
+\href{https://www.blackarch.org/tools.html}{2600} unelte.
 Toate uneltele sunt testate riguros  si adaugate intr-o baza de date pentru a fi folosite la capacitate maxima
 % should quickly describe the testing methods/code review procedures etc
 
@@ -153,6 +153,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %------------------%
 %  Chapter 2       %
 %------------------%
@@ -172,7 +174,8 @@ BlackArch este compatibil cu normala instalare Arch.Este exact ca un neoficial '
 Ruleaza \href{https://blackarch.org/strap.sh}{strap.sh} ca root urmand urmatoarele instructiuni. Urmatorul exemplu
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 
@@ -225,7 +228,7 @@ este configurat, poti instala Blackman:
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # Make sure the PKGBUILD has not been maliciously tampered with.
   makepkg -s
 \end{lstlisting}

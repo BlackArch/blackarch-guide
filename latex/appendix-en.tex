@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% BlackArch Linux Anhang Vorlage
+% BlackArch Linux appendix template                                            %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -10,81 +10,8 @@
 
 \section{FAQ's}
 
-\begin{tabularx}{\linewidth}{lX}
-		\textbf{Q:} & Ist BlackArch Linux die richtige Pentesting-Distribution für mich? \vspace{0.2cm} \\
-		\textbf{A:} & BlackArch ist eine Linux-Pentesting-Distribution, die auf ArchLinux basiert. Wenn du mit ArchLinux oder Linux im Allgemeinen nicht vertraut bist, empfehlen wir dir dringend, BlackArch wegen der Lernkurve für neue Benutzer zu nicht zu verwenden. \vspace{0.7cm} \\
-		\textbf{Q:} & Wo starte ich mit BlackArch? \vspace{0.2cm} \\
-		\textbf{A:} & Du musst zuerst eine ISO auf der Seite \href{https://www.blackarch.org/downloads.html}{downloads} herunterladen und installieren, indem du den Anweisungen des Installationsskripts folgst. Ein Tutorial, das den Prozess Schritt für Schritt zeigt, findest du hier \href{https://www.blackarch.org/blackarch-install.html}{Blackarch-Installation}. Wenn du irgendwelche Probleme hast und Hilfe benötigst, kannst du auf unserem \href{irc://irc.freenode.net/blackarch}{FREENODE IRC channel} (\#blackarch) vorbeischauen.
-		\vspace{0.5cm} \\
-		\textbf{Q:} & Ist BlackArch aktuell? \vspace{0.2cm} \\
-		\textbf{A:} & BlackArch wird ständig aktualisiert und bietet die neuesten Pakete auf Github. Wir veröffentlichen vierteljährlich eine neue ISO. Diese neuen Images enthalten Pakete, die auf dem neuesten Stand sind, und beinhalten in der Regel Bugfixes. Wenn du ein veraltetes Paket findest und es auf den neuesten Stand bringen möchtest, melde es bitte als Problem in unserem \href{https://github.com/BlackArch/blackarch}{Github-Repository}.
-		\vspace{0.5cm} \\
-		\textbf{Q:} & Wie kann ich das neueste verfügbare Update abrufen/installieren? \vspace{0.2cm} \\
-		\textbf{A:} & Indem du einfach den Befehl \texttt{pacman -Syyu --needed --overwrite '*' blackarch} ausführst. Dieser Befehl benötigt root Rechte. \href{https://github.com/BlackArch/blackarch}{Github}. \vspace{0.5cm} \\
-		\textbf{Q:} & Warum erhalte ich eine ungültige Schlüsselbundsignatur? \vspace{0.2cm} \\
-		\textbf{A:} &  Das kann aus einer Vielzahl an Gründen passieren. Unten findest du einige Lösungsvorschläge.
-		\begin{itemize}
-			\item Du hast keine Internetverbindung (wie du dir vorstellen kannst ein seltenes und einfach zu lösendes Problem).
-			\item Du könntest ein DNS Problem haben, welcher \url{pgp.mit.edu} nicht korrekt auflösen kann. Bitte überprüfe deine DNS Einstellungen.
-			\item Möglicherweise hast du ein Netzwerkproblem, welches sich von den oben genannten unterscheidet. Das ist für uns schwer zu lösen, weil es eine Vielzahl an Dingen sein kann. Zum Beispiel: DNS-Caching.
-			\item Du könntest ein Zeit/Uhr Problem haben.
-			\item Es könnte daran liegen, dass etwas die Kommunikation zum \url{mit.edu} Server blockiert, bspw. die Firewall.
-			\item Wenn du mit einem VPN verbunden bist, versuche es kurzzeitig auszuschalten und \texttt{strap.sh} erneut auszuführen.
-			\item \url{pgp.mit.edu} könnte aus irgendwelchen Gründen nicht erreichbar sein (ja, das kann passieren) . Siehe dann Möglichkeiten 2 und 3 weiter unten für mehr Informationen.
-		\end{itemize}
-		Nachdem alle oben genannten Probleme ausgeschlossen wurden, versuche die unten genannten Möglichkeiten:
-\end{tabularx}
-\textbf{Erste Möglichkeit:}
-\begin{lstlisting}
-	# rm -rf /etc/pacman.d/gnupg
-	# pacman-key --populate
-	# pacman-key --update.
-\end{lstlisting}
-\vspace{0.5cm}
-
-\textbf{Zweite Möglichkeit:}\\
-Du könntest die IP Adresse des \url{pgp,mit.edu} Servers mit dem folgenden Befehl verwenden:
-\begin{lstlisting}
-	# curl -O https://blackarch.org/strap.sh
-	# chmod +x strap.sh
-	# sha1sum strap.sh
-	# sed -i "s|pgp.mit.edu|18.9.60.141|g" strap.sh
-	# sh strap.sh
-\end{lstlisting}
-Denk nur daran, dass die oben genannte IP Adresse die aktuelle IP Adresse ist und sich zu jeder Zeit ändern kann. Überprüfe das bevor du die Befehle ausführst. Außerdem muss sha1sum mit dem Hash in den \href{https://blackarch.org/downloads.html}{Downloads} übereinstimmen.
-\vspace{0.5cm}
-
-\textbf{Dritte Möglichkeit:}\\
-Wenn die zweite Möglichkeit das Problem nicht gelöst hat, lade dir eine neue \texttt{strap.sh} Datei herunter und versuche dann folgende Befehle auszuführen:
-\begin{lstlisting}
-	# curl -O https://blackarch.org/strap.sh
-	# chmod +x strap.sh
-	# sha1sum strap.sh
-	# sed -i "s|pgp.mit.edu|hkp://pool.sks-keyservers.net|g" strap.sh
-	# sh strap.sh
-\end{lstlisting}
-Auch hier muss die ha1sum mit dem Hash auf der \href{https://blackarch.org/downloads.html}{Downloads} Seite übereinstimmen.
-
-Es ist sehr wichtig die obigen Vorschläge zu befolgen UND die Archlinux Wiki Seiten zu lesen, um eine möglichst gute Hilfe zu bekommen. Wenn du trotzdem noch Probleme hast, besuche uns doch hier \href{irc://irc.freenode.net/blackarch}{\#blackarch (Freenode)}.
-
-\begin{tabularx}{\linewidth}{lX}
-	\textbf{Q:} & Wo kann ich Hilfe bei meinem Problem finden? \vspace{0.2cm} \\
-	\textbf{A:} & Abhängig von dem Problem kannst du ein Issue auf Github öffnen:
-	\begin{itemize}
-		\item \href{https://github.com/BlackArch/blackarch-site/issues}{BlackArch Website Repository}: Probleme mit unserer Website. Beispielsweise, wenn ein Link nicht mehr funktioniert oder ein Bild nicht lädt.
-		\item \href{https://github.com/BlackArch/blackarch/issues}{BlackArch Repository}: Probleme mit unseren Paketen. Beispielsweise, wenn das Paket schon lange nicht mehr aktualisiert wurde oder wenn es nicht funktioniert.
-		\item \href{https://github.com/BlackArch/blackarch-installer}{BlackArch Installer Repository}: Probleme mit unserem Installer. Beispielsweise, wenn die Installation nicht funktioniert oder du nach einer erfolgreichen Installation nicht booten kannst.
-	\end{itemize}
-Du kannst auch in unseren \href{https://github.com/BlackArch}{anderen Repositories} schauen.
-Wenn du dennoch keine Lösung findest, schaue auf unserem \href{irc://irc.freenode.net/blackarch}{IRC Kanal}  vorbei und frage um Rat. Aber habe im Hinterkopf, dass BlackArch Nutzer auf dem ganzen Planet verteilt sind (also sich in unterschiedlichen Zeitzonen befinden), deshalb sei geduldig nachdem du eine Frage gestellt hast.
-	\vspace{0.7cm} \\
-	\textbf{Q:} & Ich würde gerne helfen, wie kann ich das tun? \vspace{0.2cm} \\
-	\textbf{A:} & BlackArch ist ein riesiges Projekt, wir fügen täglich neue Programme und Features hinzu. Wenn du uns mit was auch immer helfen willst, besuche doch unseren \href{irc://irc.freenode.net/blackarch}{IRC Kanal}. Denke nur daran geduldig zu sein und auf eine Antwort zu waren, wir sind in verschiedenen Zeitzonen.
-	\vspace{0.7cm} \\
-\end{tabularx}
-
-\section{AUTOREN}
-\textbf{Die folgenden Personen haben direkt zu BlackArch beigetragen:}
+\section{AUTHORS}
+The following people have contributed directly to BlackArch:
 \begin{itemize}
 \item Tyler Bennnett (tylerb@trix2voip.com)
 \item fnord0 (fnord0@riseup.net)
@@ -97,48 +24,15 @@ Wenn du dennoch keine Lösung findest, schaue auf unserem \href{irc://irc.freeno
 \item Mathias Nyman
 \item Johannes Löthberg (demizide@gmail.com)
 \item Thiago da Silva Teixeira (teixeira.zeus@gmail.com)
-\item Levon Kayan (noptrix@blackarch.org)
-\item Pedro Freitas (psf@blackarch.org)
-\item Pierre B.(pi3rrot@blackarch.org)
-\item Hannes Eichblatt (heichblatt@blackarch.org)
-\item Stefan Venz (ikstream@blackarch.org)
-\item Sepehrdad Sh (sepehrdad@blackarch.org)
-\item Eduard Toloza (edu4rdshl@blackarch.org)
-\item German Vechtomov (mrsmith0x00@blackarch.org)
-\item Richard Baumann (ohaz@blackarch.org)
-\item Leon L. (tazmain@blackarch.org)
-\item OSO SPEED (oso@blackarch.org)
-\item Jeremy Marlow (i3\_arch@blackarch.org)
-\item Alexandre Zanni (noraj@blackarch.org)
-\item Harry P. (luserx0@blackarch.org)
-\item Semtex (s7x@blackarch.org)
-\item Filipe Lains (ffy00@blackarch.org)
-\item Erik (deep\_m4gic@blackarch.org)
-\item Alexander Rothenberg (eiswiesel@blackarch.org)
-\item Dimitri Mader (anyon3@blackarch.org)
 \end{itemize}
-
-\textbf{Die Hall of Fame von ehemaligen Entwicklern:}
-\begin{itemize}
-	\item Evan Teitelman (teitelmanevan@gmail.com)
-	\item Javier (nrz@nullsecurity.net)
-	\item Ellis Kenyo (elken.tdos@gmail.com)
-	\item Louis Dion-Marcil (louis.dionmarcil@gmail.com)
-	\item Halit Alptekin (me@halitalptekin.com)
-	\item Ano Nymous (sudokode@gmail.com)
-	\item Guy Marquez (guy.marquez@yandex.com)
-	\item Felipe Montes (felipe@smartdefence.cl)
-	\item Abelardo Ricart (aricart@gmail.com)
-\end{itemize}
-
-\textbf{Die folgenden Personen haben direkt an ArchPwn mitgearbeitet und sind BlackArch beigetreten:}
+The following people have contributed directly to ArchPwn,
+and joined BlackArch:
 \begin{itemize}
 \item Francesco Piccinno (stack.box@gmail.com)
 \item jensp (jens@jenux.homelinux.org)
 \item Valentin Churavy (v.churavy@gmail.com)
 \end{itemize}
-
-\textbf{Wir haben den Build-Code von den folgenden Personen übernommen:}
+We have taken build code from the following people:
 \begin{itemize}
 \item  3ED (krzysztof1987@gmail.com)
 \item  AUR Perl (aurperl@juster.info)
