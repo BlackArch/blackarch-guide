@@ -51,9 +51,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -65,7 +65,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -131,7 +131,7 @@ As ferramentas são distribuídas através do Arch Linux
 \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
 {unofficial user repository} então você pode instalar o BlackArch em cima de uma instalação Arch Linux já existente.Os pacotes pode ser instalados individualmente ou por categorias.
 
-O repositório continua aumentando e já possui  \href{https://www.blackarch.org/tools.html}{1300} ferramentas.
+O repositório continua aumentando e já possui  \href{https://www.blackarch.org/tools.html}{2600} ferramentas.
 Todas as ferramentas são testadas depois da adição de algum codigo mantendo a qualidade do repositório.
 % should quickly describe the testing methods/code review procedures etc
 
@@ -154,6 +154,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %------------------%
 %  Chapter 2       %
 %------------------%
@@ -170,7 +172,8 @@ O BlackArch é compatível como toda instalação do Arch.A instalação é feit
 Execute \href{https://blackarch.org/strap.sh}{strap.sh} como root e siga as instruções abaixo.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # Deve ser igual a: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # Deve ser igual a: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 Agora baixe uma copia atualizada da lista de pacotes e os sincronize.
@@ -218,7 +221,7 @@ De maneira alternativa você pode criar os pacotes do BlackArch diretamente do c
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # Tenha certeza que o PKGBUILD nao possui codigo malicioso.
   makepkg -s
 \end{lstlisting}

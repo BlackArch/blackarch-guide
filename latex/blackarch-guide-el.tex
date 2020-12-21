@@ -46,9 +46,9 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
-  urlcolor=red
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
 }
 
 % syntax highlighting
@@ -60,7 +60,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -97,7 +97,7 @@ tabsize=2
 \vspace{0.5cm}
 \Huge{\textbf{The BlackArch Linux Guide}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -131,7 +131,7 @@ tabsize=2
 υπάρχουσα διανομή Arch Linux. Τα πακέτα μπορούν να εγκατασταθούν το καθένα
 μόνο του είτε μαζικά σε ομάδες.
 
-Το συνεχώς αναπτυσσόμενο αποθετήριο περιλαμβάνει  \href{https://www.blackarch.org/tools.html}{1300} εργαλεία.
+Το συνεχώς αναπτυσσόμενο αποθετήριο περιλαμβάνει  \href{https://www.blackarch.org/tools.html}{2600} εργαλεία.
 Όλα τα εργαλεία ελέγχονται πριν προστεθούν για να εξασφαλιστεί η ποιότητα του αποθετηρίου.
 % should quickly describe the testing methods/code review procedures etc
 
@@ -153,6 +153,8 @@ IRC: \url{irc://irc.freenode.net/blackarch}
 Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
+
+Discord: \url{https://discord.com/invite/xMHt8dW}
 
 %------------------%
 %  Chapter 2       %
@@ -176,7 +178,8 @@ Github: \url{https://github.com/Blackarch/}
 οδηγίες. Δείτε το ακόλουθο παράδειγμα.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 86eb4efb68918dbfdd1e22862a48fda20a8145ff
+   sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 
@@ -228,7 +231,7 @@ BlackArch από source. Μπορείτε να βρείτε τα PKGBUILDs στ�
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # Make sure the PKGBUILD has not been maliciously tampered with.
   makepkg -s
 \end{lstlisting}
@@ -271,8 +274,8 @@ BlackArch από source. Μπορείτε να βρείτε τα PKGBUILDs στ�
 
 \end{itemize}
 
-\subsection{Installing from live-, netinstall- ISO or ArchLinux}
-Μπορείτε να εγκαταστήσετε τα BlackArch Linux από ένα απο τα live- ή netinstall-ISOs.\\Δείτε
+\subsection{Installing from full-, netinstall- ISO or ArchLinux}
+Μπορείτε να εγκαταστήσετε τα BlackArch Linux από ένα απο τα full- ή netinstall-ISOs.\\Δείτε
 \url{https://www.blackarch.org/download.html#iso}. Τα ακόλουθα βήματα είναι
 απαραίτητα μετα απο την εκίννηση του ISO.
 \begin{itemize}
@@ -469,7 +472,7 @@ BlackArch από source. Μπορείτε να βρείτε τα PKGBUILDs στ�
 \subsubsection{blackarch-networking}
 Πακέτα που περιλαμβάνουν IP networking.
 
-Παραδείγματα: Anything pretty much
+Παραδείγματα: aprtools, dnsdiag, impacket
 
 \subsubsection{blackarch-nfc}
 Πακέτα που χρησιμοποιούν nfc (near-field communications).
@@ -647,15 +650,15 @@ Packages}
 
 \subsection{Example}
 Το ακόλουθο παράδειγμα δείχνει πως στέλνουμε τις αλλαγές ενός πακέτου
-στο BlackArch. Χρησιμοποιούμε \href{https://wiki.archlinux.org/index.php/yaourt}{yaourt}
+στο BlackArch. Χρησιμοποιούμε \href{https://github.com/Jguer/yay}{yay}
 (ή το pacaur, είναι το ίδιο)  για να φέρουμε τα υπαρχοντα PKGBUILD για
 \textbf{nfsshell}  από \href{https://aur.archlinux.org/}{AUR} και τα
 προσαρμόζουμε ανάλογα με τις ανάγκες μας.
 
 \subsubsection{Fetch PKGBUILD}
-Φέρνουμε το \textit{PKGBUILD} αρχείο χρησιμοποιόντας yaourt ή pacaur:
+Φέρνουμε το \textit{PKGBUILD} αρχείο χρησιμοποιόντας yay ή pacaur:
 \begin{lstlisting}
-  user@blackarchlinux $ yaourt -G nfsshell
+  user@blackarchlinux $ yay -G nfsshell
   ==> Download nfsshell sources
   x LICENSE
   x PKGBUILD
@@ -771,7 +774,7 @@ Coming soon...
 
 %%% APPENDIX %%%
 \appendix
-\include{latex/appendix}
+\include{latex/appendix-el}
 
 \end{document}
 

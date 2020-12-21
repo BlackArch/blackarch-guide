@@ -56,8 +56,8 @@
   pdfcenterwindow=true,
   colorlinks=true,
   breaklinks=true,
-  linkcolor=red,
-  menucolor=red,
+  linkcolor=blue,
+  menucolor=blue,
   urlcolor=red
 }
 
@@ -70,7 +70,7 @@ basicstyle=\footnotesize\ttfamily,
 float,
 deletekeywords={return},
 otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
-pacman, blackman},
+pacman, blackman, chmod},
 keywordstyle=\color{orange},
 commentstyle=\color{blue},
 stringstyle=\color{red},
@@ -107,7 +107,7 @@ tabsize=2
 \vspace{0.5cm}
 \Huge{\textbf{The BlackArch Linux Guide}}\\
 \vspace{1cm}
-\Large{\color{red}https://www.blackarch.org/}\\
+\Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
 \end{center}
 \newpage
@@ -140,7 +140,7 @@ BlackArch представляет собой полный Linux дистриб�
 {неофициальный пользовательский репозиторий} Arch Linux, поэтому вы можете установить BlackArch поверх
 существующего Arch Linux. Пакеты могут устанавливаться отдельно или категориями.
 
-Постоянно расширяющийся репозиторий в настоящее время включает в себя \href{https://www.blackarch.org/tools.html}{1925} инструментов.
+Постоянно расширяющийся репозиторий в настоящее время включает в себя \href{https://www.blackarch.org/tools.html}{2600} инструментов.
 Все инструменты тщательно тестируются перед добавлением в кодовую базу для поддержания качества репозитория.
 % should quickly describe the testing methods/code review procedures etc
 
@@ -163,6 +163,8 @@ Twitter: \url{https://twitter.com/blackarchlinux}
 
 Github: \url{https://github.com/Blackarch/}
 
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
 %------------------%
 %  Chapter 2       %
 %------------------%
@@ -183,7 +185,8 @@ BlackArch совместим с обычной установкой Arch. Он �
 и следуйте инструкциям. Смотрите следующий пример.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 6f152b79419491db92c1fdde3fad2d445f09aae3
+   sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
+   sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
 
@@ -235,7 +238,7 @@ BlackArch совместим с обычной установкой Arch. Он �
 \begin{lstlisting}
   mkdir blackman
   cd blackman
-  wget https://raw2.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
   # Make sure the PKGBUILD has not been maliciously tampered with.
   makepkg -s
 \end{lstlisting}
