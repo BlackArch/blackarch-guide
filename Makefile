@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 .PHONY: all build clean deps html install
-VERSION?=1.1
+VERSION?=1.2
 
 # We only care about tex files at the moment so clear and explictly denote that
 .SUFFIXES:
