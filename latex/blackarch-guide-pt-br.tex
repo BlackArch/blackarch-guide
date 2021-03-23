@@ -166,7 +166,7 @@ Discord: \url{https://discord.com/invite/xMHt8dW}
 \section{Instalação} 
 A seção seguinte mostra como configurar o repositório BlackArch e instalar os pacotes.
 O BlackArch suporta a instalação direta pelo repositório usando pacotes binários ou compilando, como também através de outras fontes.
-O BlackArch é compatível como toda instalação do Arch.A instalação é feita através de um repositório não oficial, se você quiser usar uma ISO olhe na seção \href{https://www.blackarch.org/downloads.html#iso}{Live ISO}.
+O BlackArch é compatível como toda instalação do Arch. A instalação é feita através de um repositório não oficial, se você quiser usar uma ISO olhe na seção \href{https://www.blackarch.org/downloads.html#iso}{Live ISO}.
 
 \subsection{Instalando em cima do ArchLinux}
 Execute \href{https://blackarch.org/strap.sh}{strap.sh} como root e siga as instruções abaixo.
@@ -208,11 +208,11 @@ Agora você pode instalar os pacotes do repositório do blackarch.
 \end{enumerate}
 
 \subsection{Instalando os pacotes pelo codigo fonte}
-De maneira alternativa você pode criar os pacotes do BlackArch diretamente do codigo fonte.Você pode achar os PKGBUILDs no
-\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}.Para criar todo o repositório você pode usar a ferramenta
+De maneira alternativa você pode criar os pacotes do BlackArch diretamente do codigo fonte. Você pode achar os PKGBUILDs no
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. Para criar todo o repositório você pode usar a ferramenta
 \href{https://github.com/BlackArch/blackman}{Blackman}.
 \begin{itemize}
-\item Primeramente, se você tem que instalar o Blackman, se o repositório do BlackArch está configurado na sua máquina, você pode instalar o Blackman:
+\item Primeramente, você tem que instalar o Blackman. Se o repositório do BlackArch está configurado na sua máquina, você pode instalar o Blackman:
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
@@ -228,12 +228,12 @@ De maneira alternativa você pode criar os pacotes do BlackArch diretamente do c
 
 \item Ou você pode instalar o Blackman pelo AUR::
 \begin{lstlisting}
-  <quaquer ajudante do AUR > -S blackman
+  <quaquer ajudante do AUR> -S blackman
 \end{lstlisting} 
 
 \end{itemize}
 
-\subsection{Uso básico do Blackman} Blackman possui um uso simples, suas flags são um pouco diferentes do pacman.O básico será mostrado abaixo.
+\subsection{Uso básico do Blackman} Blackman possui um uso simples, seus parâmetros são um pouco diferentes do que você esperaria de algo como o pacman. O básico será mostrado abaixo.
 \begin{itemize}
 \item Baixa, compila e instala o pacote:
 \begin{lstlisting}
@@ -286,7 +286,7 @@ Você pode instalar o BlackArch através de um live- ou netinstall-ISOs.\\Veja e
 
 \section{Construir sistemas e repositórios Arch}
 
-Os PKGBUILD são scripts de construição.Cada um diz ao makepkg(1) como construir o pacote.Os arquivos PKGBUILD são escritos em Bash.
+Os PKGBUILD são scripts de "construção". Cada um diz ao makepkg(1) como construir o pacote. Os arquivos PKGBUILD são escritos em Bash.
 
 Para mais informações, ler abaixo:
 \begin{itemize}
@@ -297,23 +297,23 @@ Para mais informações, ler abaixo:
 \end{itemize}
 
 \section{Padrão PKGBUILD do Blackarch}
-Por sua simplicidade, os PKGBUILDs são similares aos do AUR, como algumas pequenas diferenças como mostrado a baixo.Cada pacote deve pertencer ao blackarch o minimo possível, e deve haver o máximo de crossover com vários pacotes percentes a vários grupos.
+Por sua simplicidade, os PKGBUILDs são similares aos do AUR, como algumas pequenas diferenças como mostrado a baixo. Cada pacote deve pertencer ao blackarch o minimo possível, e deve haver o máximo de crossover com vários pacotes percentes a vários grupos.
 \subsection{Grupos}
-Permite que os usuários instalem um específico tipo de pacote de forma rápida e fácil, os pacotes são separados por grupos.Os grupos permite que o usuário digite "pacman -S <group name>" e consiga vários pacotes.
+Permite que os usuários instalem um tipo específico de pacote de forma rápida e fácil, os pacotes são separados por grupos. Os grupos permitem que o usuário digite "pacman -S <group name>" e instale vários pacotes de uma vez.
 
 \subsubsection{blackarch}
-O grupo blackarch é a o grupo base onde todos os pacotes se encontram.Isto permite que o usuário instale todos os pacotes com facilidade.
+O grupo blackarch é o grupo base onde todos os pacotes se encontram. Isto permite que o usuário instale todos os pacotes de uma só vez com facilidade.
 
 O que deve estar aqui: Tudo.
 
 \subsubsection{blackarch-anti-forensic}
-Pacotes relacionados a o uso de contra forense, incluindo encriptação, estenografia, e tudo para modificar os atributos de arquivo/arquivos.
+Pacotes relacionados ao uso de anti-forense, incluindo encriptação, estenografia, e tudo para modificar os atributos de arquivo/arquivos.
 Inclui todas as ferramentas para trabalhar com tudo em geral para modificar um sistema com o propósito de esconder uma informação.
 
 Exemplo: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 
 \subsubsection{blackarch-automation}
-Pacotes para uso de ferramentas ou automatização de tarefas.
+Pacotes para o uso de ferramentas ou automatização de tarefas.
 
 Exemplo: blueranger, tiger, wiffy
 
@@ -333,7 +333,7 @@ Pacotes para explorar tudo relacionado ao Bluetooth padrão (802.15.1).
 Exemplo: ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
-Pacotes para analisar um codigo em busca de vulnerabilidades.
+Pacotes para analisar um código em busca de vulnerabilidades.
 
 Exemplo: flawfinder, pscan
 
@@ -343,7 +343,7 @@ Pacotes usados para quebrar criptografia.
 Exemplo: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
-Pacotes para trabalhar com criptografia sem ser sua quebra.
+Pacotes para trabalhar com criptografia sem ser em sua quebra.
 
 Exemplo: ciphertest, xortool, sbd
 
@@ -358,7 +358,7 @@ Pacotes para permitir que o usuário veja o que um programa em particular esta "
 Exemplo: radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
-Pacotes voltados para converter um programa compilado em codigo fonte.
+Pacotes voltados para converter um programa compilado em código fonte.
 
 Exemplo: flasm, jd-gui
 
@@ -368,7 +368,7 @@ Pacotes para proteger o usuário de malware \& ataques de outros usuários.
 Exemplos: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
-Similar ao blackarch-decompiler, possui semelhança em alguns pacotes mas esses são mais voltados a produzir uma saída em assembly, não em codigo fonte.
+Similar ao blackarch-decompiler, possui semelhança em alguns pacotes mas esses são mais voltados a produzir uma saída em assembly, não em código fonte.
 
 Exemplo: inguma, radare2
 
@@ -398,17 +398,17 @@ Pacotes para explorar vulnerabilidades no firmware
 Exemplo: None yet, amend asap.
 
 \subsubsection{blackarch-forensic}
-Pacotes usados para procurar informação em discos físicos ou memoria.
+Pacotes usados para procurar informação em discos físicos ou memória.
 
 Exemplo: aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
-Pacotes que usam o principio do teste fuzz, "jogando" números aleatórios com o objetivo de ver o que acontece.
+Pacotes que usam o princípio do teste fuzz, "jogando" números aleatórios com o objetivo de ver o que acontece.
 
 Exemplo: msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
-Pacotes que explorar ou manejam hardware.
+Pacotes para explorar ou manejar o hardware.
 
 Exemplo: arduino, smali
 
@@ -434,12 +434,12 @@ Pacotes com nada em particular para encaixar em uma categoria.
 Exemplo: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
-Pacotes para manipulação de sistemas moveis.
+Pacotes para manipulação de sistemas móveis.
 
 Exemplo: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
-Pacotes que involvem uma rede IP.
+Pacotes que envolvam redes IP.
 
 Exemplo: Praticamente tudo
 
@@ -461,7 +461,7 @@ Pacotes que agem com proxy, como redirecionar o tráfego para outro nó na inter
 Exemplo: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
-Pacotes que procuram exploits.Mais no grupo umbrella para pacotes similares.
+Pacotes que procuram exploits. Mais no grupo umbrella para pacotes similares.
 
 Exemplo: canri, dnsrecon, netmask
 
@@ -486,7 +486,7 @@ Pacotes para ataque em redes sociais.
 Exemplo: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
-Pacotes para falsificar um ataque, onde um ataque não é mostrado como uma ameaça a vitima.
+Pacotes para falsificar um ataque, onde um ataque não é mostrado como uma ameaça a vítima.
 
 Exemplo: arpoison, lans, netcommander
 
@@ -496,7 +496,7 @@ Pacotes que são usados para reportar/gravar um modelo de ameaça em um cenário
 Exemplo: magictree
 
 \subsubsection{blackarch-tunnel}
-Pacotes que são usados para criar tuneis no tráfego de rede.
+Pacotes que são usados para criar túneis no tráfego de rede.
 
 Exemplo: ctunnel, iodine, ptunnel
 
@@ -506,7 +506,7 @@ Pacotes que são usados para extrair um malware de um executável.
 Exemplo: js-beautify
 
 \subsubsection{blackarch-voip}
-Pacotes que operam em programas e protocolos voip.
+Pacotes que operam em programas e protocolos VoIP.
 
 Exemplo: iaxflood, rtp-flood, teardown
 
@@ -516,8 +516,7 @@ Pacotes que operam em aplicações na internet.
 Exemplo: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
-
-Este grupo é para todo pacote nativo para windows que é executado através do wine.
+Este grupo é para todo pacote nativo para Windows que é executado através do wine.
 
 Exemplo: 3proxy-win32, pwdump, winexe
 
