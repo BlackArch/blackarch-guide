@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% BlackArch Linux Guide                                                        %
+% BlackArch Linux Handboek                                                     %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,6 +24,7 @@
 \usepackage{supertabular}
 \usepackage{tocloft}
 \usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -39,8 +40,8 @@
 \setcounter{secnumdepth}{10}
 
 \hypersetup{
-  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
-  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdftitle={BlackArch Linux, Het BlackArch Linux Handboek},
+  pdfsubject={BlackArch Linux, Het BlackArch Linux Handboek},
   pdfauthor={BlackArch Linux, BlackArch Linux},
   pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
   pdfcenterwindow=true,
@@ -95,7 +96,7 @@ tabsize=2
 \label{fig:logo}
 \end{figure}
 \vspace{0.5cm}
-\Huge{\textbf{The BlackArch Linux Guide}}\\
+\Huge{\textbf{Het BlackArch Linux Handboek}}\\
 \vspace{1cm}
 \Large{\color{blue}https://www.blackarch.org/}\\
 \vspace{0.5cm}
@@ -109,40 +110,37 @@ tabsize=2
 %  Chapter 1       %
 %------------------%
 
-\chapter{Introduction}
+\chapter{Inleiding}
 
-\section{Overview}
-The BlackArch Linux guide is divided into several parts:
+\section{Overzicht}
+Het BlackArch Linux handboek is opgedeeld in enkele delen:
 \begin{itemize}
-\item Introduction - Provides a broad overview, introduction, and additional helpful project information
-\item User Guide - Everything a typical user needs to know to effectively use BlackArch
-\item Developer Guide - How to get started developing for and contributing to BlackArch
-\item Tool Guide - In-depth tool details along example usages (WIP)
+\item Inleiding - Een globaal overzicht, een inleiding en toegevoegde nuttige projectinformatieion
+\item Gebruikershandleiding - Alles wat de gemiddelde gebruiker nodig heeft om effectief te starten met BlackArch
+\item Ontwikkelaarshandleiding - Hoe te beginnen met ontwikkelwerk en bijdragen aan BlackArch
+\item Gereedschapshandleiding - Diepgaande details over de betreffende gereedschappen en applicaties met daarbij praktische voorbeelden (Werk In Uitvoering)
 \end{itemize}
 
-\section{What is BlackArch Linux?}
-BlackArch is a complete Linux distribution for penetration testers and security researchers.
-It is derived from \href{https://www.archlinux.org/}{ArchLinux} and users can install BlackArch components
-individually or in groups directly on top of it.
+\section{Wat is BlackArch Linux?}
+BlackArch is een complete Linux distributie voor pentesters en security onderzoekers.
+Het is een afgeleide van \href{https://www.archlinux.org/}{ArchLinux} en gebruikers kunnen de BlackArch onderdelen stuk voor stuk of in bulk hieraan toevoegen.
 
-The toolset is distributed as an Arch Linux
-\href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
-{unofficial user repository} so you can install BlackArch on top of an
-existing Arch Linux installation. Packages may be installed individually or by
-category.
+De gereedschapskist is gedeeld als Arch Linux \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{unofficial user repository} , dus je kunt BlackArch installeren bovenop een reeds bestaande Arch Linux installatie. 
+Packages kunnen per stuk of per categorie geïnstalleerd worden.
 
-The constantly expanding repository currently includes over \href{https://www.blackarch.org/tools.html}{2600} tools.
-All tools are thoroughly tested before being added to the codebase to maintain the quality of the repository.
-% should quickly describe the testing methods/code review procedures etc
+De constant groeiende repository heeft op dit moment meer dan \href{https://www.blackarch.org/tools.html}{2600} gereedschappen.
+Deze zijn allemaal doorgrondig getest voordat ze aan de codebase worden toegevoegd om de kwaliteit van de repository te waarborgen.
+%Moet snel de testmethode/codereviewprocedures omschrijven.
 
-\section{History of BlackArch Linux}
-Coming soon...
+\section{Geschiedenis van BlackArch Linux}
+Binnenkort beschikbaar...
 
-\section{Supported platforms}
-Coming soon...
+\section{Ondersteunde platforms}
+Binnenkort beschikbaar...
 
-\section{Get involved}
-You can get in touch with the BlackArch team using the following avenues:
+\section{Doe mee}
+Je kunt het BlackArch team bereiken via de volgende kanalen:
 
 Website: \url{https://www.blackarch.org/}
 
@@ -161,7 +159,7 @@ Discord: \url{https://discord.com/invite/xMHt8dW}
 %------------------%
 
 
-\chapter{User Guide}
+\chapter{Gebruikershandleiding}
 
 \section{Installation}
 The following sections will show you how to setup the BlackArch repository and
