@@ -190,10 +190,24 @@ lint-zh:
 		--hostname ba-guide \
 		ba-guide:$(VERSION) \
 		/bin/sh -c "chktex ${srcdir}/*-zh.tex; exit 0"
+		
+PHONY: lint-nl
+lint-nl:
+	@echo "==========================================="
+	@echo "= linting Dutch Guide	                 ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-nl.tex; exit 0"
 
 # run the latex linting tool
 .PHONY: lint
-lint: lint-de lint-el lint-en lint-es lint-fr lint-it lint-pt-br lint-ru lint-tr lint-zh
+lint: lint-de lint-el lint-en lint-es lint-fr lint-it lint-pt-br lint-ru lint-tr lint-zh lint-nl
 
 # generate pdf per language
 .PHONY: pdf-de
@@ -361,6 +375,21 @@ pdf-zh:
 			    lualatex \
 			    ${srcdir}/blackarch-guide-zh.tex 1>>./build_log_zh"
 
+.PHONY: pdf-nl
+pdf-nl:
+	@echo "Compiling Dutch guide - output in build_log_nl"
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "lualatex \
+			    ${srcdir}/blackarch-guide-nl.tex 1>./build_log_nl; \
+			    lualatex \
+			    ${srcdir}/blackarch-guide-nl.tex 1>>./build_log_nl"
+
 # generate for all languages
 .PHONY: pdf
-pdf: pdf-de pdf-el pdf-en pdf-es pdf-fr pdf-it pdf-pt-br pdf-ru pdf-tr pdf-zh
+pdf: pdf-de pdf-el pdf-en pdf-es pdf-fr pdf-it pdf-pt-br pdf-ru pdf-tr pdf-zh pdf-nl
