@@ -32,6 +32,7 @@ This will compile all guides listed as targets in the ```Makefile```.
 * ru
 * tr
 * zh
+* nl
 
 You can also build a single guide (e.g. German)
 ```make pdf-de```
