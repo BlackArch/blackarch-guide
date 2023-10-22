@@ -169,9 +169,8 @@ de repository door middel van binary packages als het compilen en installeren va
 BlackArch is compatibel met een normale Arch installatie. Het fungeert als onofficiele 
 gebruikersrepository. Als je liever een ISO gebruikt, bekijk dan de sectie:\href{https://www.blackarch.org/downloads.html#iso}{ISOs}.
 
-\subsection{Installing on top of ArchLinux}
-Run \href{https://blackarch.org/strap.sh}{strap.sh} as root and follow the
-instructions. See the following example.
+\subsection{Installeren bovenop een bestaande ArchLinux installatie}
+Start \href{https://blackarch.org/strap.sh}{strap.sh} als de root user en volg de gegeven instructies. Hieronder een voorbeeld:
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
    sha1sum strap.sh # should match: d062038042c5f141755ea39dbd615e6ff9e23121
@@ -179,67 +178,65 @@ instructions. See the following example.
    sudo ./strap.sh
 \end{lstlisting}
 
-Now download a fresh copy of the master package list and synchronize packages:
+Download nu een nieuwe kopie van de master package lijst en synchroniseer de packages met:
 \begin{lstlisting}
   sudo pacman -Syyu
 \end{lstlisting}
 
 
-\subsection{Installing packages}
-You may now install tools from the blackarch repository.
+\subsection{Packages Installeren}
+Je kunt de tools van de blackarch repository nu installeren.
 \begin{enumerate}
-\item To list all of the available tools, run
+\item Om alle beschikbare tools weer te geven, gebruik:
 \begin{lstlisting}
   pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
 \end{lstlisting}
 
-\item To install all of the tools, run
+\item Om alle tools te installeren, gebruik:
 \begin{lstlisting}
   pacman -S blackarch
 \end{lstlisting}
 
-\item To install a category of tools, run
+\item Om een specifieke categorie van tools te installeren, gebruik:
 \begin{lstlisting}
   pacman -S blackarch-<category>
 \end{lstlisting}
 
-\item To see the blackarch categories, run
+\item Om de blackarch categorieën te zien, gebruik:
 \begin{lstlisting}
   pacman -Sg | grep blackarch
 \end{lstlisting}
 
 \end{enumerate}
 
-\subsection{Installing packages from source}
-As part of an alternative method of installation, you can build the BlackArch
-packages from source. You can find the PKGBUILDs on
-\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. To
-build the entire repo, you can use the
+\subsection{Packages vanaf broncode installeren}
+Een alternatieve manier van installeren is de BlackArch packages vanaf de broncode zelf te bouwen. De PKGBUILDs zijn te vinden op:
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. Om de hele repo te bouwen, gebruik de
 \href{https://github.com/BlackArch/blackman}{Blackman} tool.
 \begin{itemize}
-\item First, you have to install Blackman. If the BlackArch package repository
+\item De eerste stap is Blackman te installeren. Als de BlackArch package repository al op je systeem staat kan dit met:
 is setup on your machine, you can install Blackman:
 \begin{lstlisting}
   pacman -S blackman
 \end{lstlisting}
 
-\item You can build and install Blackman from source:
+\item Je kunt Blackman ook vanaf de bron opbouwen met:
 \begin{lstlisting}
   mkdir blackman
   cd blackman
   wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
-  # Make sure the PKGBUILD has not been maliciously tampered with.
+  # Zeker weten dat er niet (kwaadwillend) met de PKGBUILD geknoeid is.
   makepkg -s
 \end{lstlisting}
 
-\item Or you can install Blackman from the AUR:
+\item Of je kunt Blackman vanaf de AUR installeren met:
 \begin{lstlisting}
-  <whatever AUR helper you use> -S blackman
+  <welke AUR helper je ook gebruikt> -S blackman
 \end{lstlisting}
 
 \end{itemize}
 
-\subsection{Basic Blackman usage} Blackman is very simple to use, though the flags are different from what you
+\subsection{Basisgebruik van Blackman} Blackman is very simple to use, though the flags are different from what you
 would typically expect from something like pacman. Basic usage has been outlined below.
 \begin{itemize}
 \item Download, compile and install packages:
