@@ -107,7 +107,7 @@ tabsize=2
 \pagestyle{fancy}
 
 %------------------%
-%  Chapter 1       %
+%  Hoofdstuk 1     %
 %------------------%
 
 \chapter{Inleiding}
@@ -286,14 +286,13 @@ na opstarten via een ISO.
 %  Hoofdstuk 3     %
 %------------------%
 
-\chapter{Developer Guide}
+\chapter{Ontwikkelaarsgids}
 
-\section{Arch's Build System and Repositories}
+\section{Arch' Build System en Repositories}
 
-PKGBUILD files are build scripts. Each one tells makepkg(1) how to create a
-package. PKGBUILD files are written in Bash.
+PKGBUILD bestanden zijn build scripts. Elk script geeft instructies aan makepkg(1) hoe een packate te maken. PKGBUILD bestanden zijn in Bash geschreven.
 
-For more information, read (or skim through) the following:
+Voor meer informatie, lees (of scan) de volgende, engelstalige, wikipagina's:
 \begin{itemize}
 \item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
 \item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
@@ -301,256 +300,250 @@ For more information, read (or skim through) the following:
 \item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
 \end{itemize}
 
-\section{Blackarch PKGBUILD standards}
-For the sake of simplicity, our PKGBUILDs are similar to that of the AUR ones,
-with a few small differences outlined below. Every package must
-belong to blackarch at the minimum, there will also be a lot of crossover with
-multiple packages belonging to multiple groups.
+\section{Blackarch PKGBUILD standaarden}
+Om het simpel te houden zijn onze PKGBUILD's vergelijkbaar met die van AUR. Wel zijn er enkele kleine verschillen, deze zijn hieronder verder uitgelegd.
+Elke package moet minimaal van blackarch zijn, maar er zal ook veel overlap zijn met packages die van meerdere groepen zijn.
 
-\subsection{Groups}
-To allow users to install a specific range of packages quickly and easily,
-packages have been separated into groups. Groups allow users to simply
-go "pacman -S <group name>" in order to pull a lot of packages.
+\subsection{Groepen}
+Om het gebruikers makkelijk te maken een specifieke reeks van packages te installeren, zijn deze onderverdeeld in groepen. Groepen maken het mogelijk voor gebruikers om simpelweg het commando: "pacman -S <groep naam>" te gebruiken om een hele groep packages te pullen.
 
 \subsubsection{blackarch}
-The blackarch group is the base group that all packages must belong too. This allows
-users to install every package with ease.
+De blackarch groep is de basisgroep waar alle packages in moeten zitten. Dit maakt het mogelijk voor de gebruiker om alle packages gemakkelijk te installeren.
 
-What should be in here: Everything.
+Wat hierin zou moeten zitten: alles.
 
 \subsubsection{blackarch-anti-forensic}
-Packages that are used for countering forensic activities,
-including encryption, steganography, and anything that modifies files/file attributes.
-This all includes tools to work with anything in general that makes changes to a system
-for the purposes of hiding information.
+Packages die gebruikt worden om forensische activiteiten tegen te gaan,
+dit is inclusief encryption, stenografie en alles dat bestanden of bestand attributen aanpast.
+Dit bevat alle tools die enodig zijn om, in basis, wijzigingen te maken aan een systeem met het doel om informatie te verstoppen.
 
-Examples: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+Voorbeelden: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
 
 \subsubsection{blackarch-automation}
-Packages that are used for tool or workflow automation.
+Packages die gebruikt worden voor tool of workflow automation.
 
-Examples: blueranger, tiger, wiffy
+Voorbeelden: blueranger, tiger, wiffy
 
 \subsubsection{blackarch-backdoor}
-Packages that exploit or open backdoors on already vulnerable systems.
+Packages die backdoors misbruiken of openen op reeds kwetsbare systemen.
 
-Examples: backdoor-factory, rrs, weevely
+Voorbeelden: backdoor-factory, rrs, weevely
 
 \subsubsection{blackarch-binary}
-Packages that operate on binary files in some form.
+Packages die hun uitvoering hebben op binary files.
 
-Examples: binwally, packerid
+Voorbeelden: binwally, packerid
 
 \subsubsection{blackarch-bluetooth}
 Packages that exploit anything concerning the Bluetooth standard (802.15.1).
 
-Examples: ubertooth, tbear, redfang
+Voorbeelden: ubertooth, tbear, redfang
 
 \subsubsection{blackarch-code-audit}
 Packages that audit existing source code for vulnerability analysis.
 
-Examples: flawfinder, pscan
+Voorbeelden: flawfinder, pscan
 
 \subsubsection{blackarch-cracker}
 Packages used for cracking cryptographic functions, ie hashes.
 
-Examples: hashcat, john, crunch
+Voorbeelden: hashcat, john, crunch
 
 \subsubsection{blackarch-crypto}
 Packages that work with cryptography, with the exception of cracking.
 
-Examples: ciphertest, xortool, sbd
+Voorbeelden: ciphertest, xortool, sbd
 
 \subsubsection{blackarch-database}
 Packages that involve database exploitations on any level.
 
-Examples: metacoretex, blindsql
+Voorbeelden: metacoretex, blindsql
 
 \subsubsection{blackarch-debugger}
 Packages that allow the user to view what a particular program is "doing" in realtime.
 
-Examples: radare2, shellnoob
+Voorbeelden: radare2, shellnoob
 
 \subsubsection{blackarch-decompiler}
 Packages that attempt to reverse a compiled program into source code.
 
-Examples: flasm, jd-gui
+Voorbeelden: flasm, jd-gui
 
 \subsubsection{blackarch-defensive}
 Packages that are used to protect a user from malware \& attacks from other users.
 
-Examples: arpon, chkrootkit, sniffjoke
+Voorbeelden: arpon, chkrootkit, sniffjoke
 
 \subsubsection{blackarch-disassembler}
 This is similar to blackarch-decompiler, and there will probably be a lot
 of programs that fall into both, however these packages produce assembly output
 rather than the raw source code.
 
-Examples: inguma, radare2
+Voorbeelden: inguma, radare2
 
 \subsubsection{blackarch-dos}
 Packages that use DoS (Denial of Service) attacks.
 
-Examples: 42zip, nkiller2
+Voorbeelden: 42zip, nkiller2
 
 \subsubsection{blackarch-drone}
 Packages that are used for managing physically engineered
 drones.
 
-Examples: meshdeck, skyjack
+Voorbeelden: meshdeck, skyjack
 
 \subsubsection{blackarch-exploitation}
 Packages that takes advantages of exploits in other programs or services.
 
-Examples: armitage, metasploit, zarp
+Voorbeelden: armitage, metasploit, zarp
 
 \subsubsection{blackarch-fingerprint}
 Packages that exploit fingerprint biometric equipment.
 
-Examples: dns-map, p0f, httprint
+Voorbeelden: dns-map, p0f, httprint
 
 \subsubsection{blackarch-firmware}
 Packages that exploit vulnerabilities in firmware
 
-Examples: None yet, amend asap.
+Voorbeelden: None yet, amend asap.
 
 \subsubsection{blackarch-forensic}
 Packages that are used to find data on physical disks or embedded memory.
 
-Examples: aesfix, nfex, wyd
+Voorbeelden: aesfix, nfex, wyd
 
 \subsubsection{blackarch-fuzzer}
 Packages that use the fuzz testing principle, ie
 "throwing" random inputs at the subject to see what happens.
 
-Examples: msf, mdk3, wfuzz
+Voorbeelden: msf, mdk3, wfuzz
 
 \subsubsection{blackarch-hardware}
 Packages that exploit or manage anything to do with
 physical hardware.
 
-Examples: arduino, smali
+Voorbeelden: arduino, smali
 
 \subsubsection{blackarch-honeypot}
 Packages that act as "honeypots", ie programs that appear to
 be vulnerable services used to attract hackers into a trap.
 
-Examples: artillery, bluepot, wifi-honey
+Voorbeelden: artillery, bluepot, wifi-honey
 
 \subsubsection{blackarch-keylogger}
 Packages that record and retain keystrokes on another system.
 
-Examples: None yet, amend asap.
+Voorbeelden: None yet, amend asap.
 
 \subsubsection{blackarch-malware}
 Packages that count as any type of malicious software or
 malware detection.
 
-Examples: malwaredetect, peepdf, yara
+Voorbeelden: malwaredetect, peepdf, yara
 
 \subsubsection{blackarch-misc}
 Packages that don't particularly fit into any categories.
 
-Examples: oh-my-zsh-git, winexe, stompy
+Voorbeelden: oh-my-zsh-git, winexe, stompy
 
 \subsubsection{blackarch-mobile}
 Packages that manipulate mobile platforms.
 
-Examples: android-sdk-platform-tools, android-udev-rules
+Voorbeelden: android-sdk-platform-tools, android-udev-rules
 
 \subsubsection{blackarch-networking}
 Package that involve IP networking.
 
-Examples: arptools, dnsdiag, impacket
+Voorbeelden: arptools, dnsdiag, impacket
 
 \subsubsection{blackarch-nfc}
 Packages that use nfc (near-field communications).
 
-Examples: nfcutils
+Voorbeelden: nfcutils
 
 \subsubsection{blackarch-packer}
 Packages that operate on or involve packers.
 
 \textit{packers are programs that embed malware within other executables.}
 
-Examples: packerid
+Voorbeelden: packerid
 
 \subsubsection{blackarch-proxy}
 Packages that acts as a proxy, ie redirecting traffic
 through another node on the internet.
 
-Examples: burpsuite, ratproxy, sslnuke
+Voorbeelden: burpsuite, ratproxy, sslnuke
 
 \subsubsection{blackarch-recon}
 Packages that actively seeks vulnerable exploits in the
 wild. More of an umbrella group for similar packages.
 
-Examples: canri, dnsrecon, netmask
+Voorbeelden: canri, dnsrecon, netmask
 
 \subsubsection{blackarch-reversing}
 This is an umbrella group for any decompiler,
 disassembler or any similar program.
 
-Examples: capstone, radare2, zerowine
+Voorbeelden: capstone, radare2, zerowine
 
 \subsubsection{blackarch-scanner}
 Packages that scan selected systems for vulnerabilities.
 
-Examples: scanssh, tiger, zmap
+Voorbeelden: scanssh, tiger, zmap
 
 \subsubsection{blackarch-sniffer}
 Packages that involve analyzing network traffic.
 
-Examples: hexinject, pytactle, xspy
+Voorbeelden: hexinject, pytactle, xspy
 
 \subsubsection{blackarch-social}
 Packages that primarily attack social networking sites.
 
-Examples: jigsaw, websploit
+Voorbeelden: jigsaw, websploit
 
 \subsubsection{blackarch-spoof}
 Packages that attempt to spoof the attacker such, in that
 the attacker doesn't show up as an attacker to the victim.
 
-Examples: arpoison, lans, netcommander
+Voorbeelden: arpoison, lans, netcommander
 
 \subsubsection{blackarch-threat-model}
 Packages that would be used for reporting/recording the
 threat model outlined in a particular scenario.
 
-Examples: magictree
+Voorbeelden: magictree
 
 \subsubsection{blackarch-tunnel}
 Packages that are used to tunnel network traffic on a given
 network.
 
-Examples: ctunnel, iodine, ptunnel
+Voorbeelden: ctunnel, iodine, ptunnel
 
 \subsubsection{blackarch-unpacker}
 Packages that are used to extract pre-packed malware from an
 executable.
 
-Examples: js-beautify
+Voorbeelden: js-beautify
 
 \subsubsection{blackarch-voip}
 Packages that operate on voip programs and protocols.
 
-Examples: iaxflood, rtp-flood, teardown
+Voorbeelden: iaxflood, rtp-flood, teardown
 
 \subsubsection{blackarch-webapp}
 Packages that operate on internet-facing applications.
 
-Examples: metoscan, whatweb, zaproxy
+Voorbeelden: metoscan, whatweb, zaproxy
 
 \subsubsection{blackarch-windows}
 This group is for any native Windows package that runs via wine.
 
-Examples: 3proxy-win32, pwdump, winexe
+Voorbeelden: 3proxy-win32, pwdump, winexe
 
 \subsubsection{blackarch-wireless}
 Packages that operates on wireless networks on any level.
 
-Examples: airpwn, mdk3, wiffy
+Voorbeelden: airpwn, mdk3, wiffy
 
 \section{Repository structure}
 You can find the main BlackArch git repo here:
