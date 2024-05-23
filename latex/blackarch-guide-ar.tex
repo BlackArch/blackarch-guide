@@ -1,0 +1,737 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% BlackArch Linux Guide                                                        %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, oneside, 11pt]{book}
+
+%%% INCLUDES %%%
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{array}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{html}
+\usepackage{hyperref}
+\usepackage{ifpdf}
+\usepackage{listings}
+\usepackage{pstricks}
+\usepackage{supertabular}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+
+%%% LAYOUT %%%
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\geometry{left=2.5cm, textwidth=16cm, top=3cm, textheight=25cm, bottom=3cm}
+\widowpenalty=2000
+\clubpenalty=1000
+\frenchspacing
+\sloppy
+\pagecolor[HTML]{FFFFFF}
+\color[HTML]{333333}
+\setcounter{tocdepth}{10}
+\setcounter{secnumdepth}{10}
+
+\hypersetup{
+  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
+  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdfauthor={BlackArch Linux, BlackArch Linux},
+  pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
+  pdfcenterwindow=true,
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
+}
+
+% syntax highlighting
+% all options should be set here document wide
+\lstset{
+backgroundcolor=\color[HTML]{EEEEEE},
+frame=single,
+basicstyle=\footnotesize\ttfamily,
+float,
+deletekeywords={return},
+otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
+pacman, blackman, chmod},
+keywordstyle=\color{orange},
+commentstyle=\color{blue},
+stringstyle=\color{red},
+language=bash,
+showspaces=false,
+showtabs=false,
+tabsize=2
+}
+
+%%% HEADER / FOOTER %%%
+\setlength{\headheight}{33pt}
+\setlength{\headsep}{33pt}
+\lhead{{\includegraphics[width=1cm,height=1cm]{images/logo.png}}}
+\rhead{The BlackArch Linux Guide}
+
+%%% CUSTOM MACROS %%%
+% for html links
+\ifpdf\else
+\def\href#1#2{\htmladdnormallink{#2}{#1}}
+\fi
+
+%------------------%
+%  TITLE PAGE      %
+%------------------%
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\begin{figure}[htbp]
+\centering
+\vspace{0.5cm}
+\includegraphics[width=8cm]{images/logo.png}
+\label{fig:logo}
+\end{figure}
+\vspace{0.5cm}
+\Huge{\textbf{The BlackArch Linux Guide}}\\
+\vspace{1cm}
+\Large{\color{blue}https://www.blackarch.org/}\\
+\vspace{0.5cm}
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+
+%------------------%
+%  Chapter 1       %
+%------------------%
+
+\chapter{المقدمة }
+
+\section{نظرة عامة }
+يقسم دليل بلاك آرتش لينكس إلى عدة أجزاء:
+
+\begin{itemize}
+\item 	المقدمة – يقدم نظرة عامة واسعة ,و مقدمة ,و معلومات إضافية مفيدة عن المشروع 
+\item 	دليل المستخدم – كل ما يحتاجه المستخدم العادي لمعرفة كيفية استخدام بلاك آرتش بفعالية 
+\item 	دليل المطور – كيفية البدء في التطوير والمساهمة في بلاك آرتش
+\item 	دليل الأدوات – تفاصيل معمقة عن الأدوات ملحقة بأمثلة عن استخداماتها (قيد العمل)  
+\end{itemize}
+
+\section{ما هو بلاك آرتش لينكس؟ }
+يعتبر بلاك آرتش توزيعة لينكس الكاملة لمختبري الاختراق والباحثين في مجال الأمن. مشتقة من  \href{https://www.archlinux.org/}{ArchLinux} وبإمكان المستخدمين تثبيت مكونات بلاك آرتش فرديا أو في مجموعات مباشرة على Arch Linux.
+تتوزع مجموعة الأدوات كمستودع مستخدم غير رسمي 
+\href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{unofficial user repository} لArch Linux  لتتمكن من تثبيت بلاك آرتش على تثبيت Arch Linux الحالي. يمكن تثبيت الحزم بشكل فردي أو حسب الفئة.
+
+
+يضم المستودع الذي يتوسع باستمرار أكثر من  \href{https://www.blackarch.org/tools.html}{2600} tools.
+2600 أداة حاليا. تختبر جميع الأدوات بدقة قبل إضافتها إلى قاعدة الشيفرة للحفاظ على جودة المستودع. 
+
+% should quickly describe the testing methods/code review procedures etc
+
+\section{تاريخ بلاك آرتش لينكس}
+قريبا...
+
+
+\section{المنصات المدعومة }
+قريبا...
+
+
+\section{شارك}
+يمكنك التواصل مع فريق بلاك آرتشباستخدام المنصات التالية:
+
+
+الموقع الإلكتروني:  \url{https://www.blackarch.org/}
+
+البريد الإلكتروني: \href{mailto:team@blackarch.org}{team@blackarch.org}
+
+الدردشة عبر الإنترنت  IRC: \url{irc://irc.freenode.net/blackarch}
+
+تويتر: \url{https://twitter.com/blackarchlinux}
+
+جيت هاب: \url{https://github.com/Blackarch/}
+
+ديسكورد: \url{https://discord.com/invite/xMHt8dW}
+
+%------------------%
+%  Chapter 2       %
+%------------------%
+
+
+\chapter{دليل المستخدم }
+
+\section{التثبيت }
+ستوضح لك الأقسام التالية كيفية إعداد مستودع بلاك آرتش وتثبيت الحزم. يدعم بلاك آرتش كلا من التثبيت من المستودع باستخدام الحزم الثنائية كذلك الترجمة و التثبيت من المصادر.
+
+يتوافق بلاك آرتشمع تبيتات Arch العادية ,وتعمل كمستودع مستخدم غير رسمي. عوضا عن ذلك اذ كنت تريد ملف ISO فاطلع على قسم 
+\href{https://www.blackarch.org/downloads.html#iso}{ISOs} .
+
+\subsection{تثبيت على نظام ArchLinux}
+قم بتشغل  \href{https://blackarch.org/strap.sh}{strap.sh} كجذر و اتبع التعليمات. انظر إلى المثال التالي
+
+\begin{lstlisting}
+   curl -O https://blackarch.org/strap.sh
+   sha1sum strap.sh # should match: 5ea40d49ecd14c2e024deecf90605426db97ea0c
+   sudo chmod +x strap.sh
+   sudo ./strap.sh
+\end{lstlisting}
+
+ثبت الآن نسخة جديدة من قائمة الحزم الرئيسية ومزامنة الحزم:
+
+\begin{lstlisting}
+  sudo pacman -Syyu
+\end{lstlisting}
+
+
+\subsection{تثبيت الحزم }
+يمكنك الآن تثبيت الأدوات من مستودع بلاك آرتش
+
+\begin{enumerate}
+\item :لسرد الأدوات المتاحة قم بتشغيل:
+\begin{lstlisting}
+  pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+\end{lstlisting}
+
+\item	لتثبيت كل الأدوات قم بتشغيل: 
+\begin{lstlisting}
+  pacman -S blackarch
+\end{lstlisting}
+
+\item	لتثبيت فئة من الأدوات قم بتشغيل:
+\begin{lstlisting}
+  pacman -S blackarch-<category>
+\end{lstlisting}
+
+\item	لترى فئات بلاك آرتش قم بتشغيل: 
+\begin{lstlisting}
+  pacman -Sg | grep blackarch
+\end{lstlisting}
+
+\end{enumerate}
+
+\subsection{تثبيت الحزم من المصدر}
+يمكنك إنشاء حزم بلاك آرتش من المصدر كجزء من طريقة بديلة للتثبيت. يمكنك العثور على PKGBUILDs على 
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. 
+يمكنك استعمال أداة 
+\href{https://github.com/BlackArch/blackman}{Blackman} لبناء كامل المستودع.
+
+\begin{itemize}
+\item	أولا, يجب عليك تثبيت Blackman و يمكنك تثبيته إذ أعددت مستودع الحزم بلاك آرتش على جهازك:
+\begin{lstlisting}
+  pacman -S blackman
+\end{lstlisting}
+
+\item	يمكنك إنشاء و تثبيت Blackman من المصدر:
+\begin{lstlisting}
+  mkdir blackman
+  cd blackman
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # Make sure the PKGBUILD has not been maliciously tampered with.
+  makepkg -s
+\end{lstlisting}
+
+\item أو يمكنك تثبيت Blackman من AUR:
+\begin{lstlisting}
+  <whatever AUR helper you use> -S blackman
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{الاستخدام الأساسي لأداة Blackman}
+تعتبر Blackman سهلة الاستخدام للغاية, رغم اختلاف العلامات عن ما قد تتوقعه من أداة مثل pacman عادة. قد أوضح الاستخدام الأساسي أدناه :
+
+\begin{itemize}
+\item تنزيل, وترجمة ,وتثبيت الحزم:
+\begin{lstlisting}
+  sudo blackman -i package
+\end{lstlisting}
+
+\item تنزيل, وترجمة ,وتثبيت كامل الفئة:
+\begin{lstlisting}
+  sudo blackman -g group
+\end{lstlisting}
+
+\item	تنزيل, وترجمة ,وتثبيت جميع معدات بلاك آرتش :
+\begin{lstlisting}
+  sudo blackman -a
+\end{lstlisting}
+
+\item	لعرض فئات بلاك آرتش :
+\begin{lstlisting}
+  blackman -l
+\end{lstlisting}
+
+\item	لعرض فئات بلاك آرتش: 
+\begin{lstlisting}
+  blackman -p category
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{التثبيت من full- , netinstall- ISO , أو ArchLinux}
+يمكنك تنزيل بلاك آرتش Linux من إحدى أدواتنا full- أو netinstall-ISOs .
+\\اطلع  على 
+\url{https://www.blackarch.org/download.html#iso}. الخطوات التالية مطلوبة بعد إقلاع ملف.
+
+\begin{itemize}
+\item	ثبت حزمة بلاك آرتش-installer :
+\begin{lstlisting}
+  sudo pacman -S blackarch-installer
+\end{lstlisting}
+
+\item	قم بتشغيل
+\begin{lstlisting}
+  sudo blackarch-install
+\end{lstlisting}
+
+\end{itemize}
+
+%------------------%
+%  Chapter 3       %
+%------------------%
+
+\chapter{دليل المطور}
+
+\section{نظام بناء ومستودعات Arch }
+
+تعتبر ملفات PKGBUILD نصوص بناء, وتخبر كل وهحدة منها makepkg(1) كيفية إنشاء حزمة. تكتب ملفات PKGBUILD بلغة Bash .
+
+للمزيد من المعلومات اقرأ أو تصفح التالي:
+
+\begin{itemize}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: إنشاء أحزمة}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki : makepkg }
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: معايير تغليف Arch }
+\end{itemize}
+
+\section{معايير بلاك آرتش PKGBUILD }
+تشبه PKGBUILDs لدينا تلك الموجودة في ل AUR لأجل البساطة,مع وجود اختلافات صغيرة موضحة أدناه. يجب أن تنتمي كل حزمة إلى بلاك آرتش على الأقل, وسيكون هناك أيضا الكثير من التداخل مع حزم مختلفة تنتمي إلى مجموعات مختلفة.
+
+\subsection{Groups}
+قسمت الحزم إلى مجموعات للسماح للمستخدمين بتثبيت مجموعة محددة من الحزم بسرعة وبسهولة. تسمح المجموعات للمستخدمين باستخدام  "pacman –S <group name> " بسهولة بهدف تحميل حزم كثيرة.
+
+
+\subsubsection{بلاك آرتش }
+مجموعة بلاك آرتش هي المجموعة الأساسية التي يجب أن تنتمي إليها كل الحزم ,وهذا يسمح للمسنخدمين بتثبيت كل حزمة بسهولة.
+ما يجب ان بكون هنا: كل شيء
+
+
+\subsubsection{blackarch-anti-forensic}
+الحزم المستخدمة لمواجهة الأنشطة الجنائية, من ضمنها التشفير ,والاخفاء ,و أي شيء يعدل الملفات / سمات الملف. يتضمن كل هذا أدوات للعمل بأي شيء يحدث تغييرات بشكل عام في نظام بأهداف إخفاء المعلومات.
+
+
+الأمثلة: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+
+
+\subsubsection{blackarch-automation}
+تستخدم هذه الحزم لتشغيل الأدوات أو سير العمل آليا  
+أمثلة: blueranger, tiger, wiffy 
+
+\subsubsection{blackarch-backdoor}
+ تستغل أوتفتح هذه الحزم الأبواب الخلفية على الأنظمة الضعيفة بالفعل
+الأمثلة:backdoor-factory, rrs, weevely  
+
+
+\subsubsection{blackarch-binary}
+تعمل هذه الحزم على الملفات الثنائية بشكل ما
+الأمثلة: binwally, packerid
+
+
+\subsubsection{blackarch-bluetooth}
+تستغل هذه الحزم أي شيء يتعلق بمعيار بلوتوث (802.15.1)
+الأمثلة: ubertooth, tbear, redfang  
+
+
+\subsubsection{blackarch-code-audit}
+تراجع هذه الحزم الشفرة المصدرية الحالية لتحليل الثغرات
+الأمثلة: flawfinder, pscan 
+
+
+\subsubsection{blackarch-cracker}
+تستخدم هذه الحزم لكسر الوظائف التشفيرية مثل الهاشات
+الأمثلة: hashcat, john, crunch 
+
+
+\subsubsection{blackarch-crypto}
+تعمل هذه الحزم مع التشفير مع استثناء الكسر
+الأمثلة: ciphertest, xortool, sbd 
+
+\subsubsection{blackarch-database}
+تتضمن هذه الحزم استغلال قاعدة البيانات على أي مستوى 
+الأمثلة:metacoretex, blindsql
+
+
+\subsubsection{blackarch-debugger}
+تسمح هذه الحزم للمستخدم بمشاهدة "ما يفعله" برنامج معين في الوقت الحالي 
+الأمثلة: radare2, shellnoob
+
+
+\subsubsection{blackarch-decompiler}
+تحاول هذه الحزم تحويل برنامج مترجم إلى شفرة مصدرية
+الأمثلة: flasm, jd-gui 
+
+
+\subsubsection{blackarch-defensive}
+تستخدم هذه الحزم لحماية المستخدم من البرامج الضارة وهجمات من مستخدمين آخرين.
+الأمثلة:arpon, chkrootkit, sniffjoke 
+
+
+\subsubsection{blackarch-disassembler}
+يشبه هذا مفكك شفرة بلاك آرتش ,ومن المحتمل أن تتواجد الكثير من البرامج التي تقع في كليهما,ولكن تنتج هذه الحزم مخرجات بلغة التجميع عوضا عن الشفرة المصدرية الخام.
+الأمثلة:inguma, radare2 
+
+
+\subsubsection{blackarch-dos}
+تستخدم هذه الحزم هجمات حجب الخدمة
+الأمثلة:  42zip, nkiller2 
+
+\subsubsection{blackarch-drone}
+تستخدم هذه الحزم لإدارة الطائرات دون طيار المهندسة فيزيائيا.
+الأمثلة: meshdeck, skyjack 
+
+
+\subsubsection{blackarch-exploitation}
+تستفيد هذه الحزم من الثغرات الموجودة في برامج أو خدمات أخرى
+الأمثلة:Armitage, metasploit, zarp
+
+\subsubsection{blackarch-fingerprint}
+تستغل هذه الحزم معدات القياسات الحيوية لبصمات الأصابع
+الأمثلة:dns-map, p0f, httprint 
+
+\subsubsection{blackarch-firmware}
+تستغل هذه الحزم الثغرات في البرامج الثابتة 
+الأمثلة: لا توجد أمثلة حتى الآن, عدل في أقرب وقت ممكن
+
+\subsubsection{blackarch-forensic}
+تستخدم هذه الحزم للعثور على البيانات الموجودة على الأقراص الفيزيائية أو الذاكرة المدمجة  
+الأمثلة: aesfix, nfex, wyd 
+
+
+\subsubsection{blackarch-fuzzer}
+تستخدم هذه الحزم مبدأ اختبار الغموض, أي "رمي" مدخلات عشوائية على الهدف بغرض معرفة ما سيحدث
+الأمثلة: msf, mdk3, wfuzz 
+
+
+\subsubsection{blackarch-hardware}
+تستغل هذه الحزم أوتدير أي شيء يتعلق بالأجهزة الفيزيائية
+الأمثلة: arduino, smali
+
+
+\subsubsection{blackarch-honeypot}
+تعمل هذه الحزم "كمصائد", أي البراماج التي تبدو كأنها خدمات ضعيفة تستخدم لجذب القرصان الالكتروني إلى الفخ
+الأمثلة: artillery, bluepot, wifi-honey
+
+\subsubsection{blackarch-keylogger}
+تسجل هذه الحزم وتحتفظ بضربات المفاتيح على نظام آخر
+الأمثلة: لا توجد أمثلة حتى الآن, عدل في أقرب وقت ممكن
+
+
+\subsubsection{blackarch-malware}
+تعد هذه الحزم كأي نوع من البرامج الضارة أو الكشف عن البرامج الضارة
+الأمثلة: malwaredetect, peepdf, yara
+
+\subsubsection{blackarch-misc}
+لا تندمج هذه الحزم بشكل خاص ضمن أي فئة معينة
+الأمثلة: oh-my-zsh-git, winexe, stompy 
+
+\subsubsection{blackarch-mobile}
+تتلاعب هذه الحزم بمنصات الجوال
+الأمثلة: android-sdk-platform-tools, android-udev-rules
+
+\subsubsection{blackarch-networking}
+تتضمن هذه الحزم شبكات IP 
+الأمثلة: arptools, dnsdiag, impacket
+
+\subsubsection{blackarch-nfc}
+تستخدم هذه الحزم nfc (الاتصال عن قرب)
+الأمثلة: nfcutils
+
+
+\subsubsection{blackarch-packer}
+تعمل هذه الحزم على التعبئة أو تتضمن التعبئة
+التعبئة هي برامج تضم برامج ضارة داخل تنفيذيات أخرى
+الأمثلة: packerid
+
+
+\subsubsection{blackarch-proxy}
+تعمل هذه الحزم كوكيل, أي إعادة توجيه حركة المرور من خلال عقدة أخرى على الإنترنت.
+الأمثلة: burpsuite, ratproxy, sslnuke
+
+
+\subsubsection{blackarch-recon}
+تبحث هذه الحزم بشكل نشط عن الثغرات الضعيفة الموجودة في الواقع ,هي غالبا مجموعة مظلية للحزم المماثلة.
+الأمثلة: canri, dnsrecon, netmask
+
+
+\subsubsection{blackarch-reversing}
+إنها مجموعة مظلية لأي مفكك,ومفكك الشيفرة ,واي برنامج مماثل.
+الأمثلة: capstone, radare2, zerowine
+
+
+\subsubsection{blackarch-scanner}
+تفحص هذه الحزم  الأنظمة المحددة لاكتشاف الثغرات.
+الأمثلة: scanssh, tiger, zmap
+
+
+\subsubsection{blackarch-sniffer}
+تتضمن هذه الحزم تحليل حركة المرور في الشبكة.
+الأمثلة: hexinject, pytactle, xspy
+
+\subsubsection{blackarch-social}
+تستهدف في الأساس مواقع التواصل الاجتماعي.
+الأمثلة: jigsaw, websploit
+
+\subsubsection{blackarch-spoof}
+تحاول هذه الحزم تزييف المهاجم, بحيث لا يظهر المهاجم كمهاجم للضحية.
+الأمثلة: arpoison, lans, netcommander
+
+\subsubsection{blackarch-threat-model}
+تستخدم هذه الحزم لتقديم تقرير/ لتسجيل نموذج التهديد المحدد في سيناريو معين.
+الأمثلة: magictree
+
+\subsubsection{blackarch-tunnel}
+توجه هذه الحزم حركة المرور في الشبكة المعطاة.
+الأمثلة: ctunnel, iodine, ptunnel
+
+\subsubsection{blackarch-unpacker}
+تستخم هذه الحزم لاستخراج البرامج الضارة المعبئة مسبقا من ملف تنفيذي
+الأمثلة: js-beautify
+
+
+\subsubsection{blackarch-voip}
+تعمل هذه الحزم على برامج وبروتوكولات الصوت عبر بروتوكول الإنترنت.
+الأمثلة: iaxflood, rtp-flood, teardown
+
+
+\subsubsection{blackarch-webapp}
+تعمل هذه الحزم على تطبيقات تواجه الإنترنت.
+الأمثلة: metoscan, whatweb, zaproxy
+
+\subsubsection{blackarch-windows}
+تخصص هذه المجموعة لأي حزمة ويندوزأصلية تعمل عبر واين.
+الأمثلة: 3proxy-win32, pwdump, winexe
+
+
+\subsubsection{blackarch-wireless}
+تعمل هذه الحزم على شبكات اللاسلكية على أي مستوى.
+الأمثلة: airpwn, mdk3, wiffy
+
+
+\section{هيكل المستودع}
+يمكنك العثور مستودع git الرئيسي لبلاك آرتش هنا: 
+\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
+يوجد الكثير من المستودعات الفرعية هنا: 
+\href{https://github.com/BlackArch}{https://github.com/BlackArch}.
+
+يوجد ثلالة دلائل مهمة داخل مستودع git الأساسي:
+
+
+\begin{itemize}
+\item Docs : الوثائق
+\item الحزم : ملفات PKGBUILD .
+\item السكربتات: سكربتات صغيرة مفيدة.
+\end{itemize}
+
+\subsection{السكربتات}
+هذا مرجع للسكربتات في الدليل/السكربتات:  \verb|scripts/|
+\begin{itemize}
+\item baaur - سيقوم  بتحميل الحزم إلى AUR قريبا.
+\item babuild - بناء حزمة.
+\item bachroot - إدارة chroot للاختبار.
+\item baclean - تنظيف الملفات .pkg.tar.xz القديمة من مستودع الحزم.
+\item baconflict -ستستبدل scripts/conflicts بهذا قريبا \verb|scripts/|.
+\item bad-files - العثور على ملفات سيئة في الحزم المبنية.
+\item balock - الحصول على أو تحرير قفل مستودع الحزم
+\item banotify - إبلاغ IRC عن دفع الحزم .
+\item barelease - إطلاق الحزم إلى مستودع الحزم.
+\item baright -طباعة معلومات حقوق النشر الخاصة ببلاك آرتش .
+\item basign - توقيع الحزم .
+\item basign-key - توقيع مفتاح .
+\item blackman -يتصرف هذا بشكل مشابه لpacman لكنه يبني من git (كي لا يخلط مع nrz's Blackman )
+\item check-groups - التحقق من المجموعات.
+\item checkpkgs -التحقق من الحزم للبحث عن أخطاء.
+\item conflicts - التحقق من تعارض الملفات.
+\item dbmod - تعديل قاعدة بيانات الحزمة.
+\item depth-list - إنشاء قائمة مرتبة حسب عمق الاعتماديات .
+\item deptree - إنشاء شجرة اعتماديات التي تسرد فقط الحزم المقدمة من بلاك آرتش.
+\item get-blackarch-deps -الحصول على قائمة اعتماديات بلاك آرتش الخاصة بحزمة معينة 
+\item get-official - الحصول على حزم رسمية للإصدار.
+\item list-loose-packages - سرد الحزم التي ليست في مجموعات و ليست اعتماديات لحزم أخرى.
+\item list-needed - سرد الاعتماديات المفقودة.
+\item list-removed - سرد الحزم الموجودة في مستودع الحزم و لكن ليس في git .
+\item list-tools - سرد الأدوات .
+\item outdated - البحث عن الحزم القديمة في مستودع الحزم على صلة بمستودع git .
+\item pkgmod - تعديل حزمة بناء .
+\item pkgrel - زيادة pkgrel في حزمة.
+\item prep - تنظيف نمط ملف PKGBUILD والعثور على أخطاء .
+\item sitesync - المزامنة بين نسخة محلية من مستودع الحزم و نسخة بعيدة.
+\item size-hunt -البحث عن حزم كبيرة.
+\item source-backup - نسخ احتياطي لملفات مصدر الحزم .
+\end{itemize}
+
+\section{المساهمة في المستودع}
+سيوضح لك هذا القسم كيفية المساهمة في مشروع بلاك آرتش لينكس, فنحن نقبل طلبات بكافة الأحجام من إصلاح أخطاء صغيرة إلى إضافة حزم جديدة. \\لا تتردد في التواصل معنا للمساعدة ,أو للإقتراحات , أو للأسئلة.
+
+\\\\
+الجميع مرحب به للمساهمة ,ونقدر جميع المساهمات.
+
+
+\subsection{البرامج التعليمية المطلوبة }
+يرجى قراءة البرامج التعليمية التالية قبل المساهمة:
+
+\begin{itemize}
+\item
+\href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{Arch
+Packaging Standards}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Creating
+Packages}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
+\end{itemize}
+
+\subsection{خطوات للمساهمة}
+اتبع الخطوات التالية لتقدم تغييراتك إلى مشروع بلاك آرتش لينكس :
+
+\begin{enumerate}
+\item قم بعمل fork للمستودع من 
+\url{https://github.com/BlackArch/blackarch}
+\item عدل الملفات الضرورية , (e.g. PKGBUILD, .patch files, etc).
+\item Commit تغييراتك.
+\item Push تغييراتك.
+\item ⦁	اطلب منا دمج تغييراتك ,ومن الأفضل أن يكن هذا من خلال طلب سحب (pull request).
+\end{enumerate}
+
+\subsection{مثال}
+يوضح المثال التالي كيفية تقديم حزمة جديدة إلى مشروع بلاك آرتش. نستخدم  \href{https://github.com/Jguer/yay}{yay}
+(you can use pacaur as well) لجلب ملف  PKGBUILD موجود مسبقا لr
+\textbf{nfsshell} من  \href{https://aur.archlinux.org/}{AUR} وتعديله وفقا لاحتياجاتنا
+
+\subsubsection{جلب ملف PKGBUILD}
+احضر ملف  \textit{PKGBUILD} باستخدام yay أو pacaur :
+\begin{lstlisting}
+  user@blackarchlinux $ yay -G nfsshell
+  ==> Download nfsshell sources
+  x LICENSE
+  x PKGBUILD
+  x gcc.patch
+  user@blackarchlinux $ cd nfsshell/
+\end{lstlisting}
+
+\subsubsection{تنظيف ملف PKGBUILD}
+نظف ملف  \textit{PKGBUILD}  ووفر بعض الوقت:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
+  cleaning 'PKGBUILD'...
+  expanding tabs...
+  removing vim modeline...
+  removing id comment...
+  removing contributor and maintainer comments...
+  squeezing extra blank lines...
+  removing '|| return'...
+  removing leading blank line...
+  removing $pkgname...
+  removing trailing whitespace...
+\end{lstlisting}
+
+\subsubsection{عدل ملف PKGBUILD }
+عدل ملف  \textit{PKGBUILD} :
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ vi PKGBUILD
+\end{lstlisting}
+
+\subsubsection{بناء الحزمة}
+بناء الحزمة
+\begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
+==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+-> Downloading nfsshell.tar.gz...
+% Total    % Received % Xferd  Average Speed   Time    Time     Time
+CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
+0  48150      0 --:--:-- --:--:-- --:--:-- 48206
+-> Found gcc.patch
+-> Found LICENSE
+...
+<lots of build process and compiler output here>
+...
+==> Leaving fakeroot environment.
+==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
+\end{lstlisting}
+
+\subsubsection{تثبيت و اختبار الحزمة }
+   تثبيت واختبار الحزمة:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
+  user@blackarchlinux nfsshell $ nfsshell # test it
+\end{lstlisting}
+
+\subsubsection{أضف ,والتزم ,وادفع الحزمة }
+أضف ,والتزم ,وادفع الحزمة: 
+\begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
+user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
+user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
+\end{lstlisting}
+
+\subsubsection{أنشئ طلب سحب }
+أنشئ طلب سحب على  \href{https://github.com/}{github.com}
+\begin{lstlisting}
+  firefox https://github.com/<contributor>/blackarchlinux
+\end{lstlisting}
+
+\subsubsection{إضافة مستودع بعيد لupstream}
+شيء ذكي عليك القيام به في حال كنت تعمل على مصدر Upstream و fork وهو أن تسحب التغييرات من المستودع المتشعب (fork) الخاص بك و تضيف مستودع بلاك آرتش الرئيسي كبعيد (remote ).
+\begin{lstlisting}
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  user@blackarchlinux ~/blackarchlinux $ git remote add upstream https://github.com/blackarch/blackarch
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  upstream https://github.com/blackarch/blackarch (fetch)
+  upstream https://github.com/blackarch/blackarch (push)
+\end{lstlisting}
+
+يجب أن يقوم Git بالدفع مباشرة إلى الأصل (origin ) بشكل افتراضي,و لكن عليك التأكد من إعداد تكوين Git بشكل صحيح. لن تشكل هذه مشكلة إلا إذا كان لديك حقوق الالتزام لنك لن تتمكن من الدفع إلى المستودع الرئيسي (upstream ) دونها.
+
+إذ كان لديك القدرة على الالتزام, قد تحقق نجاحا أكثر باستخدام 
+\textit{git@github.com:blackarch/blackarch.git} لكن الأمر يعود إليك.
+
+\subsection{الطلبات}
+\begin{enumerate}
+\item لا تضيف  \textbf{مشرف} or \textbf{مساهم} تعليقات إلى ملفات 
+\textit{PKGBUILD}.وأضف أسماء المشرف أو المساهم إلى قسم المؤلفين في دليل بلاك آرتش.
+
+\item يرجى اتباع النمط العام لملفات 
+\textit{PKGBUILD} الأخرى الموجودة في المستودع و استخدم مسافة بادئة من خانتين.
+
+\end{enumerate}
+
+\subsection{نصائح عامة }
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} يتمكن من فحص الحزم للتحقق من الأخطاء
+
+%------------------%
+%  Chapter 4       %
+%------------------%
+
+\chapter{دليل الأدوات }
+قريبا...
+
+
+\section{قريبا...}
+قريبا...
+
+
+%%% APPENDIX %%%
+\appendix
+\include{latex/appendix-en}
+
+\end{document}
+
+%%% EOF %%%
