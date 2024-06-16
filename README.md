@@ -20,7 +20,7 @@ To compile the guides run
 ```make pdf```
 
 This will compile all guides listed as targets in the ```Makefile```.
-
+################
 ##### Current Targets are:
 * de
 * el
