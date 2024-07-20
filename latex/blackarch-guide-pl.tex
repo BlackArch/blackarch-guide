@@ -1,0 +1,742 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% BlackArch Linux Przewodnik                                                        %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, oneside, 11pt]{book}
+
+%%% INCLUDES %%%
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{array}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{html}
+\usepackage{hyperref}
+\usepackage{ifpdf}
+\usepackage{listings}
+\usepackage{pstricks}
+\usepackage{supertabular}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+
+%%% LAYOUT %%%
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\geometry{left=2.5cm, textwidth=16cm, top=3cm, textheight=25cm, bottom=3cm}
+\widowpenalty=2000
+\clubpenalty=1000
+\frenchspacing
+\sloppy
+\pagecolor[HTML]{FFFFFF}
+\color[HTML]{333333}
+\setcounter{tocdepth}{10}
+\setcounter{secnumdepth}{10}
+
+\hypersetup{
+  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
+  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdfauthor={BlackArch Linux, BlackArch Linux},
+  pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
+  pdfcenterwindow=true,
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
+}
+
+% syntax highlighting
+% all options should be set here document wide
+\lstset{
+backgroundcolor=\color[HTML]{EEEEEE},
+frame=single,
+basicstyle=\footnotesize\ttfamily,
+float,
+deletekeywords={return},
+otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
+pacman, blackman, chmod},
+keywordstyle=\color{orange},
+commentstyle=\color{blue},
+stringstyle=\color{red},
+language=bash,
+showspaces=false,
+showtabs=false,
+tabsize=2
+}
+
+%%% HEADER / FOOTER %%%
+\setlength{\headheight}{33pt}
+\setlength{\headsep}{33pt}
+\lhead{{\includegraphics[width=1cm,height=1cm]{images/logo.png}}}
+\rhead{The BlackArch Linux Guide}
+
+%%% CUSTOM MACROS %%%
+% for html links
+\ifpdf\else
+\def\href#1#2{\htmladdnormallink{#2}{#1}}
+\fi
+
+%------------------%
+%  TITLE PAGE      %
+%------------------%
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\begin{figure}[htbp]
+\centering
+\vspace{0.5cm}
+\includegraphics[width=8cm]{images/logo.png}
+\label{fig:logo}
+\end{figure}
+\vspace{0.5cm}
+\Huge{\textbf{The BlackArch Linux Guide}}\\
+\vspace{1cm}
+\Large{\color{blue}https://www.blackarch.org/}\\
+\vspace{0.5cm}
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+
+%------------------%
+%  Rozdział 1       %
+%------------------%
+
+\chapter{Introduction}
+
+\section{Overview}
+Przewodnik BlackArch Linux jest podzielony na kilka następujących części:
+\begin{itemize}
+\item Wprowadzenie - Zawiera szeroki przegląd, wprowadzenie i dodatkowe przydatne informacje o projekcie
+\item Przewodnik Użytkownika - Wszystko, co typowy użytkownik powinien wiedzieć, aby efektywnie korzystać z BlackArcha
+\item Przewodnik Dewelopera - Jak pomóc przy tworzeniu BlackArcha
+\item Przewodnik Narzędzi - Dogłębne szczegóły narzędzi wraz z przykładowymi zastosowaniami (WIP)
+\end{itemize}
+
+\section{Czym jest BlackArch Linux?}
+BlackArch to kompletna dystrybucja Linuxa dla testerów penetracyjnych i badaczy cyberbezpieczeństwa.
+Wywodzi się z \href{https://www.archlinux.org/}{ArchLinux} i umożliwia użytkowniką instalować komponenty BlackArch indywidualnie lub w grupach bezpośrednio na nim.
+
+Zestaw narzędzi jest dystrybuowany jako \href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}{nieoficjalne repozytorium użytkowników} Arch Linux, dzięki czemu możesz zainstalować BlackArch na istniejącej instalacji Arch Linux. Pakiety mogą być instalowane indywidualnie lub według kategorii.
+
+Stale rozwijające się repozytorium obecnie zawiera ponad \href{https://www.blackarch.org/tools.html}{2600} narzędzi.
+Wszystkie narzędzia są dokładnie testowane przed dodaniem do bazy kodu, aby utrzymać jakość repozytorium.
+% should quickly describe the testing methods/code review procedures etc
+
+\section{History of BlackArch Linux}
+Wkrótce...
+
+\section{Supported platforms}
+Wkrótce...
+
+\section{Get involved}
+Możesz skontaktować się z zespołem BlackArch za pośrednictwem tych platform:
+
+Strona Internetowa: \url{https://www.blackarch.org/}
+
+Mail: \href{mailto:team@blackarch.org}{team@blackarch.org}
+
+IRC: \url{irc://irc.freenode.net/blackarch}
+
+Twitter: \url{https://twitter.com/blackarchlinux}
+
+Github: \url{https://github.com/Blackarch/}
+
+Discord: \url{https://discord.com/invite/xMHt8dW}
+
+%------------------%
+%  Rozdział 2       %
+%------------------%
+
+
+\chapter{User Guide}
+
+\section{Installation}
+Poniższe sekcje pokażą, jak skonfigurować repozytorium BlackArch i instalować pakiety.
+BlackArch obsługuje zarówno instalację z repozytorium przy użyciu pakietów binarnych, jak i kompilację oraz instalację ze źródeł.
+
+BlackArch jest kompatybilny z normalnymi instalacjami Arch. Działa jako nieoficjalne repozytorium użytkowników.
+Jeśli wolisz obraz ISO, zobacz sekcję \href{https://www.blackarch.org/downloads.html#iso}{ISOs}.
+
+\subsection{Instalacja na ArchLinuxie}
+Uruchom \href{https://blackarch.org/strap.sh}{strap.sh} jako root i wykonuj 
+dalsze instrukcje. Zobacz poniższy przykład.
+\begin{lstlisting}
+   curl -O https://blackarch.org/strap.sh
+   sha1sum strap.sh # should match: 5ea40d49ecd14c2e024deecf90605426db97ea0c
+   sudo chmod +x strap.sh
+   sudo ./strap.sh
+\end{lstlisting}
+
+Teraz pobierz świeżą kopię głównej listy pakietów i zsynchronizuj pakiety:
+\begin{lstlisting}
+  sudo pacman -Syyu
+\end{lstlisting}
+
+
+\subsection{Installing packages}
+Teraz możesz instalować narzędzia z repozytorium BlackArch.
+\begin{enumerate}
+\item By wykazać listę wszytkich dostępnych narzędzi, wykonaj:
+\begin{lstlisting}
+  pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+\end{lstlisting}
+
+\item By zainstalować wsyztkie narzędzia, wykonaj:
+\begin{lstlisting}
+  pacman -S blackarch
+\end{lstlisting}
+
+\item By zainstalować daną kategorię narzędzi, wykonaj
+\begin{lstlisting}
+  pacman -S blackarch-<category>
+\end{lstlisting}
+
+\item By zobaczyć listę kategorii narzędzi BlackArch, wykonaj
+\begin{lstlisting}
+  pacman -Sg | grep blackarch
+\end{lstlisting}
+
+\end{enumerate}
+
+\subsection{Instalowanie pakietów ze źródła}
+Jako alternatywna metoda instalacji, możesz zbudować pakiety BlackArch ze źródła. Możesz znaleźć PKGBUILDy na
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github}. By 
+zbudować załe repozytorium, możesz użyć:
+\href{https://github.com/BlackArch/blackman}{Blackman} tool.
+\begin{itemize}
+\item Najpierw musisz zainstalować Blackman.
+Jeśli repozytorium pakietów BlackArch jest skonfigurowane na twoim komputerze, możesz zainstalować Blackman:
+\begin{lstlisting}
+  pacman -S blackman
+\end{lstlisting}
+
+\item Możesz skompilować i zainstalować Blackmana ze źródła:
+\begin{lstlisting}
+  mkdir blackman
+  cd blackman
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # Upewnij się, że PKGBUILD nie został złośliwie zmodyfikowany.
+  makepkg -s
+\end{lstlisting}
+
+\item Lub możesz zainstalować Blackman z AUR.:
+\begin{lstlisting}
+  <Niezależnie od używanego narzędzia AUR> -S blackman
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{Podstawowe komendy Blackman} Blackman jest bardzo prosty w użyciu, choć flagi różnią się od tych, które zazwyczaj można spotkać w pacmanie.
+Podstawowe użycie zostało opisane poniżej.
+\begin{itemize}
+\item Pobierz, skompiluj i zainstaluj pakiety:
+\begin{lstlisting}
+  sudo blackman -i package
+\end{lstlisting}
+
+\item Pobierz, skompiluj i zainstaluj całą kategorię:
+\begin{lstlisting}
+  sudo blackman -g group
+\end{lstlisting}
+
+\item Pobierz, skompiluj i zainstaluj wszytkie narzędzia BlackArch:
+\begin{lstlisting}
+  sudo blackman -a
+\end{lstlisting}
+
+\item By wylistować wszytkie kategorie BlackArch:
+\begin{lstlisting}
+  blackman -l
+\end{lstlisting}
+
+\item By wylistować kategorie narzędzi:
+\begin{lstlisting}
+  blackman -p category
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{Instalowanie z pełnego obrazu ISO, obrazu netinstall lub ArchLinux}
+Możesz zainstalować BlackArch Linux z jednego z naszych pełnych obrazów ISO lub obrazów netinstall.
+\\Zobacz \url{https://www.blackarch.org/download.html#iso}.
+Po uruchomieniu obrazu ISO wymagane są następujące kroki.
+\begin{itemize}
+\item Zainstaluj pakiet blackarch-installer:
+\begin{lstlisting}
+  sudo pacman -S blackarch-installer
+\end{lstlisting}
+
+\item Wykonaj:
+\begin{lstlisting}
+  sudo blackarch-install
+\end{lstlisting}
+
+\end{itemize}
+
+%------------------%
+%  Rozdział 3      %
+%------------------%
+
+\chapter{Przewodnik Dewelopera}
+
+\section{System budowy i repozytoria Arch}
+
+Pliki PKGBUILD są skryptami budującymi. Każdy z nich informuje `makepkg(1)`, jak stworzyć pakiet.
+Pliki PKGBUILD są napisane w Bashu.
+
+Aby uzyskać więcej informacji, przeczytaj (lub przeskocz) poniższe linki:
+\begin{itemize}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: Creating Packages}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: Arch Packaging Standards}
+\end{itemize}
+
+\section{Standardy PKGBUILD BlackArch}
+Dla uproszczenia, nasze PKGBUILD są podobne do tych z AUR, z kilkoma drobnymi różnicami opisanymi poniżej.
+Każdy pakiet musi przynajmniej należeć do blackarch, dodatkowo może występować wiele nakładających się pakietów należących do różnych grup.
+
+\subsection{Grupy}
+Aby umożliwić użytkownikom szybkie i łatwe instalowanie określonego zakresu pakietów, pakiety zostały podzielone na grupy.
+Grupy pozwalają użytkownikom na łatwe użycie polecenia "pacman -S <nazwa grupy>", aby pobrać wiele pakietów.
+
+\subsubsection{blackarch}
+Grupa blackarch to podstawowa grupa, do której muszą należeć wszystkie pakiety.
+Umożliwia to użytkownikom łatwe zainstalowanie każdego pakietu.
+
+Co powinno się tu znajdować: Wszystko.
+
+\subsubsection{blackarch-anti-forensic}
+Pakiety używane do przeciwdziałania działalnościom śledczym, w tym szyfrowaniu, steganografii oraz wszelkim operacjom modyfikującym pliki/atrybuty plików.
+Obejmuje to narzędzia do pracy z wszelkimi zmianami w systemie w celu ukrywania informacji.
+
+Przykłady: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+
+\subsubsection{blackarch-anti-forensic}
+Pakiety używane do przeciwdziałania działalnościom śledczym, w tym szyfrowaniu, steganografii oraz wszelkim operacjom modyfikującym pliki/atrybuty plików. Obejmuje to narzędzia do pracy z wszelkimi zmianami w systemie w celu ukrywania informacji.
+
+Przykłady: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+
+\subsubsection{blackarch-automation}
+Pakiety używane do automatyzacji narzędzi lub procesów roboczych.
+
+Przykłady: blueranger, tiger, wiffy
+
+\subsubsection{blackarch-backdoor}
+Pakiety, które wykorzystują lub otwierają tylne drzwi w już podatnych systemach.
+
+Przykłady: backdoor-factory, rrs, weevely
+
+\subsubsection{blackarch-binary}
+Pakiety, które działają na plikach binarnych w pewnej formie.
+
+Przykłady: binwally, packerid
+
+\subsubsection{blackarch-bluetooth}
+Pakiety, które wykorzystują standard Bluetooth (802.15.1).
+
+Przykłady: ubertooth, tbear, redfang
+
+\subsubsection{blackarch-code-audit}
+Pakiety, które audytują istniejący kod źródłowy w celu analizy podatności.
+
+Przykłady: flawfinder, pscan
+
+\subsubsection{blackarch-cracker}
+Pakiety używane do łamania funkcji kryptograficznych, tj. haszy.
+
+Przykłady: hashcat, john, crunch
+
+\subsubsection{blackarch-crypto}
+Pakiety, które zajmują się kryptografią, z wyjątkiem łamania.
+
+Przykłady: ciphertest, xortool, sbd
+
+\subsubsection{blackarch-database}
+Pakiety związane z eksploatacją baz danych na dowolnym poziomie.
+
+Przykłady: metacoretex, blindsql
+
+\subsubsection{blackarch-debugger}
+Pakiety, które pozwalają użytkownikowi na oglądanie, co robi dany program w czasie rzeczywistym.
+
+Przykłady: radare2, shellnoob
+
+\subsubsection{blackarch-decompiler}
+Pakiety, które próbują odwrócić skompilowany program do kodu źródłowego.
+
+Przykłady: flasm, jd-gui
+
+\subsubsection{blackarch-defensive}
+Pakiety używane do ochrony użytkownika przed złośliwym oprogramowaniem i atakami od innych użytkowników.
+
+Przykłady: arpon, chkrootkit, sniffjoke
+
+\subsubsection{blackarch-disassembler}
+Jest to podobne do blackarch-decompiler, i prawdopodobnie wiele programów pasuje do obu kategorii, jednak te pakiety generują wyjście w asemblerze, a nie surowy kod źródłowy.
+
+Przykłady: inguma, radare2
+
+\subsubsection{blackarch-dos}
+Pakiety wykorzystujące ataki DoS (Denial of Service).
+
+Przykłady: 42zip, nkiller2
+
+\subsubsection{blackarch-drone}
+Pakiety używane do zarządzania fizycznie skonstruowanymi dronami.
+
+Przykłady: meshdeck, skyjack
+
+\subsubsection{blackarch-exploitation}
+Pakiety wykorzystujące luki w innych programach lub usługach.
+
+Przykłady: armitage, metasploit, zarp
+
+\subsubsection{blackarch-fingerprint}
+Pakiety wykorzystujące sprzęt biometryczny do rozpoznawania linii papilarnych.
+
+Przykłady: dns-map, p0f, httprint
+
+\subsubsection{blackarch-firmware}
+Pakiety wykorzystujące luki w oprogramowaniu układowym.
+
+Przykłady: Brak na razie, poprawić jak najszybciej.
+
+\subsubsection{blackarch-forensic}
+Pakiety używane do znajdowania danych na fizycznych dyskach lub pamięciach wbudowanych.
+
+Przykłady: aesfix, nfex, wyd
+
+\subsubsection{blackarch-fuzzer}
+Pakiety wykorzystujące zasadę testowania fuzzingowego, tj. "rzucanie" losowych wejść na temat, aby zobaczyć, co się stanie.
+
+Przykłady: msf, mdk3, wfuzz
+
+\subsubsection{blackarch-hardware}
+Pakiety wykorzystujące lub zarządzające fizycznym sprzętem.
+
+Przykłady: arduino, smali
+
+\subsubsection{blackarch-honeypot}
+Pakiety działające jako "honeypoty", tj. programy, które wydają się być podatnymi usługami używanymi do wciągania hakerów w pułapkę.
+
+Przykłady: artillery, bluepot, wifi-honey
+
+\subsubsection{blackarch-keylogger}
+Pakiety rejestrujące i przechowujące naciśnięcia klawiszy na innym systemie.
+
+Przykłady: Brak na razie, poprawić jak najszybciej.
+
+\subsubsection{blackarch-malware}
+Pakiety uznawane za jakikolwiek rodzaj złośliwego oprogramowania lub wykrywania malware.
+
+Przykłady: malwaredetect, peepdf, yara
+
+\subsubsection{blackarch-misc}
+Pakiety, które nie pasują szczególnie do żadnej kategorii.
+
+Przykłady: oh-my-zsh-git, winexe, stompy
+
+\subsubsection{blackarch-mobile}
+Pakiety manipulujące platformami mobilnymi.
+
+Przykłady: android-sdk-platform-tools, android-udev-rules
+
+\subsubsection{blackarch-networking}
+Pakiety związane z sieciami IP.
+
+Przykłady: arptools, dnsdiag, impacket
+
+\subsubsection{blackarch-nfc}
+Pakiety wykorzystujące NFC (komunikację bliskiego zasięgu).
+
+Przykłady: nfcutils
+
+\subsubsection{blackarch-packer}
+Pakiety działające na lub związane z pakowaczami.
+
+\textit{Packerzy to programy, które osadzają złośliwe oprogramowanie w innych plikach wykonywalnych.}
+
+Przykłady: packerid
+
+\subsubsection{blackarch-proxy}
+Pakiety działające jako proxy, tj. przekierowujące ruch przez inny węzeł w internecie.
+
+Przykłady: burpsuite, ratproxy, sslnuke
+
+\subsubsection{blackarch-recon}
+Pakiety aktywnie poszukujące podatnych exploitów w dziczy. Więcej pakietów podobnych do siebie.
+
+Przykłady: canri, dnsrecon, netmask
+
+\subsubsection{blackarch-reversing}
+Jest to grupa ogólna dla wszelkich dekompilatorów, disassemblerów lub podobnych programów.
+
+Przykłady: capstone, radare2, zerowine
+
+\subsubsection{blackarch-scanner}
+Pakiety skanujące wybrane systemy pod kątem podatności.
+
+Przykłady: scanssh, tiger, zmap
+
+\subsubsection{blackarch-sniffer}
+Pakiety związane z analizowaniem ruchu sieciowego.
+
+Przykłady: hexinject, pytactle, xspy
+
+\subsubsection{blackarch-social}
+Pakiety, które głównie atakują witryny społecznościowe.
+
+Przykłady: jigsaw, websploit
+
+\subsubsection{blackarch-spoof}
+Pakiety próbujące spoofować atakującego, tak aby atakujący nie był widoczny jako atakujący dla ofiary.
+
+Przykłady: arpoison, lans, netcommander
+
+\subsubsection{blackarch-threat-model}
+Pakiety używane do raportowania/rekordowania modelu zagrożeń w określonym scenariuszu.
+
+Przykłady: magictree
+
+\subsubsection{blackarch-tunnel}
+Pakiety używane do tunelowania ruchu sieciowego w danej sieci.
+
+Przykłady: ctunnel, iodine, ptunnel
+
+\subsubsection{blackarch-unpacker}
+Pakiety używane do ekstrakcji wcześniej zapakowanego złośliwego oprogramowania z pliku wykonywalnego.
+
+Przykłady: js-beautify
+
+\subsubsection{blackarch-voip}
+Pakiety działające na programach i protokołach VOIP.
+
+Przykłady: iaxflood, rtp-flood, teardown
+
+\subsubsection{blackarch-webapp}
+Pakiety działające na aplikacjach dostępnych przez internet.
+
+Przykłady: metoscan, whatweb, zaproxy
+
+\subsubsection{blackarch-windows}
+Ta grupa jest przeznaczona dla wszelkich natywnych pakietów Windows, które działają za pośrednictwem wine.
+
+Przykłady: 3proxy-win32, pwdump, winexe
+
+\subsubsection{blackarch-wireless}
+Pakiety działające na sieciach bezprzewodowych na każdym poziomie.
+
+Przyk
+
+łady: airpwn, mdk3, wiffy
+
+\section{Struktura repozytorium}
+Główne repozytorium BlackArch znajduje się tutaj:
+\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
+Istnieje również kilka repozytoriów pomocniczych:
+\href{https://github.com/BlackArch}{https://github.com/BlackArch}.
+
+W głównym repozytorium git znajdują się trzy ważne katalogi:
+
+\begin{itemize}
+\item docs - Dokumentacja.
+\item packages - Pliki PKGBUILD.
+\item scripts - Przydatne skrypty.
+\end{itemize}
+
+\\subsection{Skrypty}
+Oto odniesienie do skryptów w katalogu \verb|scripts/|:
+
+\begin{itemize}
+\item baaur - Wkrótce ten skrypt będzie przesyłać pakiety do AUR.
+\item babuild - Buduje pakiet.
+\item bachroot - Zarządza chrootem do testowania.
+\item baclean - Czyści stare pliki .pkg.tar.xz z repozytorium pakietów.
+\item baconflict - Wkrótce ten skrypt zastąpi \verb|scripts/conflicts|.
+\item bad-files - Znajduje uszkodzone pliki w zbudowanych pakietach.
+\item balock - Uzyskuje lub zwalnia blokadę repozytorium pakietów.
+\item banotify - Powiadamia IRC o aktualizacjach pakietów.
+\item barelease - Publikuje pakiety w repozytorium pakietów.
+\item baright - Wyświetla informacje o prawach autorskich BlackArch.
+\item basign - Podpisuje pakiety.
+\item basign-key - Podpisuje klucz.
+\item blackman - Działa trochę jak pacman, ale buduje z git (nie mylić z Blackmanem nrz).
+\item check-groups - Sprawdza grupy.
+\item checkpkgs - Sprawdza pakiety pod kątem błędów.
+\item conflicts - Sprawdza konflikty plików.
+\item dbmod - Modyfikuje bazę danych pakietów.
+\item depth-list - Tworzy listę posortowaną według głębokości zależności.
+\item deptree - Tworzy drzewo zależności, wymieniając tylko pakiety dostarczane przez blackarch.
+\item get-blackarch-deps - Pobiera listę zależności blackarch dla pakietu.
+\item get-official - Pobiera oficjalne pakiety do wydania.
+\item list-loose-packages - Wypisuje pakiety, które nie są w grupach i nie są zależnościami innych pakietów.
+\item list-needed - Wypisuje brakujące zależności.
+\item list-removed - Wypisuje pakiety, które są w repozytorium pakietów, ale nie w git.
+\item list-tools - Wypisuje narzędzia.
+\item outdated - Szuka pakietów przestarzałych w repozytorium pakietów w porównaniu do repozytorium git.
+\item pkgmod - Modyfikuje zbudowany pakiet.
+\item pkgrel - Zwiększa pkgrel w pakiecie.
+\item prep - Czyści styl pliku PKGBUILD i znajduje błędy.
+\item sitesync - Synchronizuje lokalną kopię repozytorium pakietów z zdalną kopią.
+\item size-hunt - Poluje na duże pakiety.
+\item source-backup - Tworzy kopię zapasową plików źródłowych pakietów.
+\end{itemize}
+
+\section{Wkład w repozytorium}
+Ta sekcja pokazuje, jak wnieść wkład do projektu BlackArch Linux. Akceptujemy prośby o dodanie zmian w różnym zakresie, od drobnych poprawek literówek po nowe pakiety.\\W razie pomocy, sugestii lub pytań, prosimy o kontakt z nami.
+\\\\
+Każdy jest mile widziany do wkładu. Wszystkie wkłady są doceniane.
+
+\subsection{Wymagane samouczki}
+Proszę przeczytać poniższe samouczki przed wniesieniem wkładu w projekt:
+\begin{itemize}
+\item \href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards}{Standardy pakowania w Arch}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{Tworzenie pakietów}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
+\end{itemize}
+
+\subsection{Kroki do wniesienia wkładu}
+Aby przesłać swoje zmiany do projektu BlackArchLinux, wykonaj następujące kroki:
+\begin{enumerate}
+\item Zforkuj repozytorium z
+\url{https://github.com/BlackArch/blackarch}
+\item Zmodyfikuj odpowiednie pliki (np. PKGBUILD, pliki .patch itp.).
+\item Zatwierdź swoje zmiany.
+\item Push swoje zmiany.
+\item Poproś nas o scalanie zmian, najlepiej za pomocą prośby o pull request.
+\end{enumerate}
+
+\subsection{Przykład}
+Poniższy przykład demonstruje dodanie nowego pakietu do projektu BlackArch.
+Używamy \href{https://github.com/Jguer/yay}{yay} (można również użyć pacaur) do pobrania istniejącego pliku PKGBUILD dla \textbf{nfsshell} z \href{https://aur.archlinux.org/}{AUR} i dostosowania go do naszych potrzeb.
+
+\subsubsection{Pobieranie PKGBUILD}
+Pobierz plik \textit{PKGBUILD} za pomocą yay lub pacaur:
+\begin{lstlisting}
+  user@blackarchlinux $ yay -G nfsshell
+  ==> Pobieranie źródeł nfsshell
+  x LICENSE
+  x PKGBUILD
+  x gcc.patch
+  user@blackarchlinux $ cd nfsshell/
+\end{lstlisting}
+
+\subsubsection{Czyszczenie PKGBUILD}
+Oczyść plik \textit{PKGBUILD} i zaoszczędź czas:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
+  czyszczenie 'PKGBUILD'...
+  rozwijanie tabulatorów...
+  usuwanie modeline vim...
+  usuwanie komentarza id...
+  usuwanie komentarzy o wkładzie i utrzymaniu...
+  usuwanie zbędnych pustych linii...
+  usuwanie '|| return'...
+  usuwanie wiodącej pustej linii...
+  usuwanie $pkgname...
+  usuwanie białych znaków na końcu...
+\end{lstlisting}
+
+\subsubsection{Dostosowanie PKGBUILD}
+Dostosuj plik \textit{PKGBUILD}:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ vi PKGBUILD
+\end{lstlisting}
+
+\subsubsection{Budowanie pakietu}
+Zbuduj pakiet:
+\begin{lstlisting}
+user@blackarchlinux nfsshell $ makepkg -sf
+==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+-> Downloading nfsshell.tar.gz...
+% Total    % Received % Xferd  Average Speed   Time    Time     Time
+CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
+0  48150      0 --:--:-- --:--:-- --:--:-- 48206
+-> Found gcc.patch
+-> Found LICENSE
+...
+<mnóstwo procesu budowania i wyników kompilatora>
+...
+==> Leaving fakeroot environment.
+==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
+\end{lstlisting}
+
+\subsubsection{Instalacja i testowanie pakietu}
+Zainstaluj i przetestuj pakiet:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
+  user@blackarchlinux nfsshell $ nfsshell # przetestuj
+\end{lstlisting}
+
+\subsubsection{Dodanie, zatwierdzenie i wysłanie pakietu}
+Dodaj, zatwierdź i wyślij pakiet:
+\begin{lstlisting}
+user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
+user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
+user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
+\end{lstlisting}
+
+\subsubsection{Utworzenie pull request}
+Utwórz pull request na \href{https://github.com/}{github.com}
+\begin{lstlisting}
+  firefox https://github.com/<contributor>/blackarchlinux
+\end{lstlisting}
+
+\subsubsection{Dodanie zdalnego repozytorium dla upstream}
+Rozsądnym krokiem, jeśli pracujesz nad upstream i forkiem, jest pobranie własnego forka i dodanie głównego repozytorium ba jako zdalnego repozytorium:
+\begin{lstlisting}
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  user@blackarchlinux ~/blackarchlinux $ git remote add upstream https://github.com/blackarch/blackarch
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  upstream https://github.com/blackarch/blackarch (fetch)
+  upstream https://github.com/blackarch/blackarch (push)
+\end{lstlisting}
+
+Domyślnie, git powinien pushować bezpośrednio do origin, ale upewnij się, że twój konfiguracja git jest poprawnie ustawiona.
+To nie będzie problemem, chyba że masz prawa do zatwierdzania, ponieważ bez nich nie będziesz mógł pushować do upstreama.
+
+Jeśli masz uprawnienia do commitowania, możesz mieć więcej szczęścia używając \textit{git@github.com:blackarch/blackarch.git}, ale to zależy od ciebie.
+
+\subsection{Prośby}
+\begin{enumerate}
+\item Nie dodawaj komentarzy \textbf{Maintainer} lub \textbf{Contributor} do plików \textit{PKGBUILD}. Dodaj nazwiska opiekunów i współautorów do sekcji AUTHORS w przewodniku BlackArch.
+\item Dla zachowania spójności, prosimy o stosowanie ogólnego stylu innych plików \textit{PKGBUILD} w repozytorium i używanie wcięcia dwoma spacjami.
+\end{enumerate}
+
+\subsection{Ogólne wskazówki}
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} może sprawdzać pakiety pod kątem błędów.
+
+%------------------%
+%  Rozdział 4      %
+%------------------%
+
+\chapter{Przewodnik Narzędzi}
+Wkrótce...
+
+\section{Wkrótce...}
+Wkrótce...
+
+%%% APPENDIX %%%
+\appendix
+\include{latex/appendix-en}
+
+\end{document}
+
+%%% EOF %%%
