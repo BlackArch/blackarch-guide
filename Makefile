@@ -191,9 +191,23 @@ lint-zh:
 		ba-guide:$(VERSION) \
 		/bin/sh -c "chktex ${srcdir}/*-zh.tex; exit 0"
 
+PHONY: lint-fa
+lint-fa:
+	@echo "==========================================="
+	@echo "= linting Persian Guide                   ="
+	@echo "==========================================="
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "chktex ${srcdir}/*-fa.tex; exit 0"
+
 # run the latex linting tool
 .PHONY: lint
-lint: lint-de lint-el lint-en lint-es lint-fr lint-it lint-pt-br lint-ru lint-tr lint-zh
+lint: lint-de lint-el lint-en lint-es lint-fa lint-fr lint-it lint-pt-br lint-ru lint-tr lint-zh
 
 # generate pdf per language
 .PHONY: pdf-de
@@ -255,6 +269,21 @@ pdf-es:
 			    ${srcdir}/blackarch-guide-es.tex 1>./build_log_es; \
 			    lualatex \
 			    ${srcdir}/blackarch-guide-es.tex 1>>./build_log_es"
+
+.PHONY: pdf-fa
+pdf-fa:
+	@echo "Compiling Persian guide - output in build_log_fa"
+	@docker run \
+		--rm \
+		-ti \
+		-v $(shell pwd):/guide:rw \
+		-w /guide \
+		--hostname ba-guide \
+		ba-guide:$(VERSION) \
+		/bin/sh -c "lualatex \
+			    ${srcdir}/blackarch-guide-fa.tex 1>./build_log_fa; \
+			    lualatex \
+			    ${srcdir}/blackarch-guide-fa.tex 1>>./build_log_fa"
 
 .PHONY: pdf-fr
 pdf-fr:
@@ -363,4 +392,4 @@ pdf-zh:
 
 # generate for all languages
 .PHONY: pdf
-pdf: pdf-de pdf-el pdf-en pdf-es pdf-fr pdf-it pdf-pt-br pdf-ru pdf-tr pdf-zh
+pdf: pdf-de pdf-el pdf-en pdf-es pdf-fa pdf-fr pdf-it pdf-pt-br pdf-ru pdf-tr pdf-zh

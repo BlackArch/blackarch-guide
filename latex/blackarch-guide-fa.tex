@@ -1,0 +1,778 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% BlackArch Linux Guide                                                        %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, oneside, 11pt]{book}
+
+%%% INCLUDES %%%
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{array}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{html}
+\usepackage{hyperref}
+\usepackage{ifpdf}
+\usepackage{listings}
+\usepackage{pstricks}
+\usepackage{supertabular}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+
+%%% LAYOUT %%%
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\geometry{left=2.5cm, textwidth=16cm, top=3cm, textheight=25cm, bottom=3cm}
+\widowpenalty=2000
+\clubpenalty=1000
+\frenchspacing
+\sloppy
+\pagecolor[HTML]{FFFFFF}
+\color[HTML]{333333}
+\setcounter{tocdepth}{10}
+\setcounter{secnumdepth}{10}
+
+\hypersetup{
+  pdftitle={BlackArch Linux, The BlackArch Linux Guide},
+  pdfsubject={BlackArch Linux, The BlackArch Linux Guide},
+  pdfauthor={BlackArch Linux, BlackArch Linux},
+  pdfkeywords={BlackArch Linux, Penetration Testing, Security, Hacking, Linux},
+  pdfcenterwindow=true,
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=blue,
+  menucolor=blue,
+  urlcolor=blue
+}
+
+% syntax highlighting
+% all options should be set here document wide
+\lstset{
+backgroundcolor=\color[HTML]{EEEEEE},
+frame=single,
+basicstyle=\footnotesize\ttfamily,
+float,
+deletekeywords={return},
+otherkeywords={mkdir, curl, sudo, sha1sum, grep, cut, sort, wget, makepkg,
+pacman, blackman, chmod},
+keywordstyle=\color{orange},
+commentstyle=\color{blue},
+stringstyle=\color{red},
+language=bash,
+showspaces=false,
+showtabs=false,
+tabsize=2
+}
+
+%%% HEADER / FOOTER %%%
+\setlength{\headheight}{33pt}
+\setlength{\headsep}{33pt}
+\lhead{{\includegraphics[width=1cm,height=1cm]{images/logo.png}}}
+\rhead{راهنمای BlackArch Linux}
+
+%%% CUSTOM MACROS %%%
+% for html links
+\ifpdf\else
+\def\href#1#2{\htmladdnormallink{#2}{#1}}
+\fi
+
+%------------------%
+%  TITLE PAGE      %
+%------------------%
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\begin{figure}[htbp]
+\centering
+\vspace{0.5cm}
+\includegraphics[width=8cm]{images/logo.png}
+\label{fig:logo}
+\end{figure}
+\vspace{0.5cm}
+\Huge{\textbf{راهنمای BlackArch Linux}}\\
+\vspace{1cm}
+\Large{\color{blue}https://www.blackarch.org/}\\
+\vspace{0.5cm}
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+
+%------------------%
+%  Chapter 1       %
+%------------------%
+
+\chapter{مقدمه}
+
+\section{نمای کلی}
+راهنمای BlackArch Linux به چند بخش تقسیم شده است:
+\begin{itemize}
+\item مقدمه - نمای کلی گسترده، معرفی و اطلاعات مفید اضافی پروژه را ارائه می‌دهد
+\item راهنمای کاربر - همه چیزهایی که یک کاربر معمولی برای استفاده مؤثر از BlackArch نیاز دارد بداند
+\item راهنمای توسعه‌دهنده - چگونه شروع به توسعه و مشارکت در BlackArch کنیم
+\item راهنمای ابزارها - جزئیات عمیق ابزارها به همراه نمونه‌های استفاده (در حال کار)
+\end{itemize}
+
+\section{BlackArch Linux چیست؟}
+BlackArch یک توزیع کامل لینوکس برای تست‌کنندگان نفوذ و محققان امنیت است.
+از \href{https://www.archlinux.org/}{ArchLinux} مشتق شده و کاربران می‌توانند اجزای BlackArch را
+به صورت جداگانه یا در گروه‌ها مستقیماً روی آن نصب کنند.
+
+مجموعه ابزارها به عنوان یک
+\href{https://wiki.archlinux.org/index.php/Unofficial\_User\_Repositories}
+{مخزن کاربر غیررسمی} Arch Linux توزیع می‌شود بنابراین شما می‌توانید BlackArch را روی
+نصب موجود Arch Linux نصب کنید. بسته‌ها می‌توانند به صورت جداگانه یا بر اساس
+دسته نصب شوند.
+
+مخزن در حال گسترش دائمی در حال حاضر شامل بیش از \href{https://www.blackarch.org/tools.html}{2600} ابزار است.
+همه ابزارها قبل از اضافه شدن به کدبیس به طور کامل تست می‌شوند تا کیفیت مخزن حفظ شود.
+% should quickly describe the testing methods/code review procedures etc
+
+\section{تاریخچه BlackArch Linux}
+به زودی...
+
+\section{پلتفرم‌های پشتیبانی شده}
+به زودی...
+
+\section{مشارکت کنید}
+شما می‌توانید با تیم BlackArch از طریق راه‌های زیر در تماس باشید:
+
+وب‌سایت: \url{https://www.blackarch.org/}
+
+ایمیل: \href{mailto:team@blackarch.org}{team@blackarch.org}
+
+IRC: \url{irc://irc.freenode.net/blackarch}
+
+توییتر: \url{https://twitter.com/blackarchlinux}
+
+گیت‌هاب: \url{https://github.com/Blackarch/}
+
+دیسکورد: \url{https://discord.com/invite/xMHt8dW}
+
+%------------------%
+%  Chapter 2       %
+%------------------%
+
+
+\chapter{راهنمای کاربر}
+
+\section{نصب}
+بخش‌های زیر به شما نشان می‌دهند که چگونه مخزن BlackArch را راه‌اندازی کنید و
+بسته‌ها را نصب کنید. BlackArch هم از نصب از مخزن با استفاده از
+بسته‌های باینری و هم کامپایل و نصب از منابع پشتیبانی می‌کند.
+
+BlackArch با نصب‌های عادی Arch سازگار است. به عنوان یک
+مخزن کاربر غیررسمی عمل می‌کند. اگر بجای آن یک ISO می‌خواهید، بخش
+\href{https://www.blackarch.org/downloads.html#iso}{ISO ها} را ببینید.
+
+\subsection{نصب روی ArchLinux}
+\href{https://blackarch.org/strap.sh}{strap.sh} را به عنوان root اجرا کنید و
+دستورالعمل‌ها را دنبال کنید. مثال زیر را ببینید.
+\begin{lstlisting}
+   curl -O https://blackarch.org/strap.sh
+   sha1sum strap.sh # should match: 5ea40d49ecd14c2e024deecf90605426db97ea0c
+   sudo chmod +x strap.sh
+   sudo ./strap.sh
+\end{lstlisting}
+
+حالا یک کپی تازه از لیست بسته‌های اصلی دانلود کنید و بسته‌ها را همگام‌سازی کنید:
+\begin{lstlisting}
+  sudo pacman -Syyu
+\end{lstlisting}
+
+
+\subsection{نصب بسته‌ها}
+حالا می‌توانید ابزارهایی از مخزن blackarch نصب کنید.
+\begin{enumerate}
+\item برای لیست کردن همه ابزارهای موجود، اجرا کنید
+\begin{lstlisting}
+  pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+\end{lstlisting}
+
+\item برای نصب همه ابزارها، اجرا کنید
+\begin{lstlisting}
+  pacman -S blackarch
+\end{lstlisting}
+
+\item برای نصب یک دسته از ابزارها، اجرا کنید
+\begin{lstlisting}
+  pacman -S blackarch-<category>
+\end{lstlisting}
+
+\item برای دیدن دسته‌بندی‌های blackarch، اجرا کنید
+\begin{lstlisting}
+  pacman -Sg | grep blackarch
+\end{lstlisting}
+
+\end{enumerate}
+
+\subsection{نصب بسته‌ها از منبع}
+به عنوان بخشی از روش جایگزین نصب، شما می‌توانید بسته‌های BlackArch را
+از منبع بسازید. شما می‌توانید PKGBUILD ها را در
+\href{https://github.com/BlackArch/blackarch/tree/master/packages}{github} پیدا کنید. برای
+ساخت کل مخزن، می‌توانید از
+ابزار \href{https://github.com/BlackArch/blackman}{Blackman} استفاده کنید.
+\begin{itemize}
+\item ابتدا، باید Blackman را نصب کنید. اگر مخزن بسته BlackArch
+روی دستگاه شما راه‌اندازی شده است، می‌توانید Blackman را نصب کنید:
+\begin{lstlisting}
+  pacman -S blackman
+\end{lstlisting}
+
+\item می‌توانید Blackman را از منبع بسازید و نصب کنید:
+\begin{lstlisting}
+  mkdir blackman
+  cd blackman
+  wget https://raw.github.com/BlackArch/blackarch/master/packages/blackman/PKGBUILD
+  # Make sure the PKGBUILD has not been maliciously tampered with.
+  makepkg -s
+\end{lstlisting}
+
+\item یا می‌توانید Blackman را از AUR نصب کنید:
+\begin{lstlisting}
+  <whatever AUR helper you use> -S blackman
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{استفاده اساسی از Blackman} Blackman استفاده از آن بسیار ساده است، هرچند فلگ‌ها با آنچه شما
+معمولاً از چیزی مانند pacman انتظار دارید متفاوت است. استفاده اساسی در زیر شرح داده شده است.
+\begin{itemize}
+\item دانلود، کامپایل و نصب بسته‌ها:
+\begin{lstlisting}
+  sudo blackman -i package
+\end{lstlisting}
+
+\item دانلود، کامپایل و نصب کل دسته:
+\begin{lstlisting}
+  sudo blackman -g group
+\end{lstlisting}
+
+\item دانلود، کامپایل و نصب همه ابزارهای BlackArch:
+\begin{lstlisting}
+  sudo blackman -a
+\end{lstlisting}
+
+\item برای لیست کردن دسته‌بندی‌های blackarch:
+\begin{lstlisting}
+  blackman -l
+\end{lstlisting}
+
+\item برای لیست کردن ابزارهای دسته:
+\begin{lstlisting}
+  blackman -p category
+\end{lstlisting}
+
+\end{itemize}
+
+\subsection{نصب از ISO کامل، netinstall یا ArchLinux}
+می‌توانید BlackArch Linux را از یکی از ISO های کامل یا netinstall ما نصب کنید.\\
+\url{https://www.blackarch.org/download.html#iso} را ببینید. مراحل زیر پس از
+بوت ISO لازم است.
+\begin{itemize}
+\item بسته blackarch-installer را نصب کنید:
+\begin{lstlisting}
+  sudo pacman -S blackarch-installer
+\end{lstlisting}
+
+\item اجرا کنید
+\begin{lstlisting}
+  sudo blackarch-install
+\end{lstlisting}
+
+\end{itemize}
+
+%------------------%
+%  Chapter 3       %
+%------------------%
+
+\chapter{راهنمای توسعه‌دهنده}
+
+\section{سیستم ساخت Arch و مخازن}
+
+فایل‌های PKGBUILD اسکریپت‌های ساخت هستند. هر کدام به makepkg(1) می‌گوید که چگونه یک
+بسته بسازد. فایل‌های PKGBUILD در Bash نوشته می‌شوند.
+
+برای اطلاعات بیشتر، موارد زیر را بخوانید (یا مرور کنید):
+\begin{itemize}
+\item \href{https://wiki.archlinux.org/index.php/Creating_Packages}{Arch Wiki: ایجاد بسته‌ها}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Arch Wiki: makepkg}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{Arch Wiki: PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Arch_Packaging_Standards}{Arch Wiki: استانداردهای بسته‌بندی Arch}
+\end{itemize}
+
+\section{استانداردهای PKGBUILD Blackarch}
+برای سادگی، PKGBUILD های ما شبیه به آن‌های AUR هستند،
+با چند تفاوت کوچک که در زیر شرح داده شده است. هر بسته باید
+حداقل متعلق به blackarch باشد، همچنین تداخل زیادی وجود خواهد داشت با
+چندین بسته متعلق به چندین گروه.
+
+\subsection{گروه‌ها}
+برای اینکه کاربران بتوانند طیف خاصی از بسته‌ها را سریع و آسان نصب کنند،
+بسته‌ها به گروه‌ها تقسیم شده‌اند. گروه‌ها به کاربران اجازه می‌دهند که به سادگی
+"pacman -S <نام گروه>" را اجرا کنند تا بسته‌های زیادی را دریافت کنند.
+
+\subsubsection{blackarch}
+گروه blackarch گروه پایه است که همه بسته‌ها باید به آن تعلق داشته باشند. این به
+کاربران اجازه می‌دهد که همه بسته‌ها را با آسانی نصب کنند.
+
+چه چیزی باید اینجا باشد: همه چیز.
+
+\subsubsection{blackarch-anti-forensic}
+بسته‌هایی که برای مقابله با فعالیت‌های پزشکی قانونی استفاده می‌شوند،
+شامل رمزگذاری، استگانوگرافی، و هر چیزی که فایل‌ها/ویژگی‌های فایل را تغییر می‌دهد.
+این همه شامل ابزارهایی برای کار با هر چیزی به طور کلی است که تغییرات در سیستم
+به منظور پنهان کردن اطلاعات ایجاد می‌کند.
+
+نمونه‌ها: luks, TrueCrypt, Timestomp, dd, ropeadope, secure-delete
+
+\subsubsection{blackarch-automation}
+بسته‌هایی که برای اتوماسیون ابزار یا گردش کار استفاده می‌شوند.
+
+نمونه‌ها: blueranger, tiger, wiffy
+
+\subsubsection{blackarch-backdoor}
+بسته‌هایی که از سیستم‌های آسیب‌پذیر سوءاستفاده کرده یا بک‌دور باز می‌کنند.
+
+نمونه‌ها: backdoor-factory, rrs, weevely
+
+\subsubsection{blackarch-binary}
+بسته‌هایی که روی فایل‌های باینری به شکلی عمل می‌کنند.
+
+نمونه‌ها: binwally, packerid
+
+\subsubsection{blackarch-bluetooth}
+بسته‌هایی که از هر چیزی مربوط به استاندارد بلوتوث (802.15.1) سوءاستفاده می‌کنند.
+
+نمونه‌ها: ubertooth, tbear, redfang
+
+\subsubsection{blackarch-code-audit}
+بسته‌هایی که کد منبع موجود را برای تجزیه و تحلیل آسیب‌پذیری ممیزی می‌کنند.
+
+نمونه‌ها: flawfinder, pscan
+
+\subsubsection{blackarch-cracker}
+بسته‌های استفاده شده برای شکستن توابع رمزنگاری، یعنی هش‌ها.
+
+نمونه‌ها: hashcat, john, crunch
+
+\subsubsection{blackarch-crypto}
+بسته‌هایی که با رمزنگاری کار می‌کنند، به استثنای شکستن.
+
+نمونه‌ها: ciphertest, xortool, sbd
+
+\subsubsection{blackarch-database}
+بسته‌هایی که شامل سوءاستفاده از پایگاه داده در هر سطحی هستند.
+
+نمونه‌ها: metacoretex, blindsql
+
+\subsubsection{blackarch-debugger}
+بسته‌هایی که به کاربر اجازه می‌دهند ببیند که یک برنامه خاص در زمان واقعی "چه کاری" انجام می‌دهد.
+
+نمونه‌ها: radare2, shellnoob
+
+\subsubsection{blackarch-decompiler}
+بسته‌هایی که سعی می‌کنند یک برنامه کامپایل شده را به کد منبع معکوس کنند.
+
+نمونه‌ها: flasm, jd-gui
+
+\subsubsection{blackarch-defensive}
+بسته‌هایی که برای محافظت از کاربر در برابر بدافزار و حملات سایر کاربران استفاده می‌شوند.
+
+نمونه‌ها: arpon, chkrootkit, sniffjoke
+
+\subsubsection{blackarch-disassembler}
+این شبیه به blackarch-decompiler است، و احتمالاً برنامه‌های زیادی خواهند بود
+که در هر دو دسته قرار می‌گیرند، با این حال این بسته‌ها خروجی اسمبلی تولید می‌کنند
+به جای کد منبع خام.
+
+نمونه‌ها: inguma, radare2
+
+\subsubsection{blackarch-dos}
+بسته‌هایی که از حملات DoS (انکار سرویس) استفاده می‌کنند.
+
+نمونه‌ها: 42zip, nkiller2
+
+\subsubsection{blackarch-drone}
+بسته‌هایی که برای مدیریت پهپادهای
+مهندسی شده فیزیکی استفاده می‌شوند.
+
+نمونه‌ها: meshdeck, skyjack
+
+\subsubsection{blackarch-exploitation}
+بسته‌هایی که از آسیب‌پذیری‌ها در برنامه‌ها یا سرویس‌های دیگر سوءاستفاده می‌کنند.
+
+نمونه‌ها: armitage, metasploit, zarp
+
+\subsubsection{blackarch-fingerprint}
+بسته‌هایی که از تجهیزات بیومتریک اثر انگشت سوءاستفاده می‌کنند.
+
+نمونه‌ها: dns-map, p0f, httprint
+
+\subsubsection{blackarch-firmware}
+بسته‌هایی که از آسیب‌پذیری‌ها در فریم‌ویر سوءاستفاده می‌کنند
+
+نمونه‌ها: هنوز هیچ‌کدام، در اسرع وقت اصلاح شود.
+
+\subsubsection{blackarch-forensic}
+بسته‌هایی که برای یافتن داده‌ها روی دیسک‌های فیزیکی یا حافظه تعبیه شده استفاده می‌شوند.
+
+نمونه‌ها: aesfix, nfex, wyd
+
+\subsubsection{blackarch-fuzzer}
+بسته‌هایی که از اصل تست فاز استفاده می‌کنند، یعنی
+"پرتاب" ورودی‌های تصادفی به سوژه برای دیدن اینکه چه اتفاقی می‌افتد.
+
+نمونه‌ها: msf, mdk3, wfuzz
+
+\subsubsection{blackarch-hardware}
+بسته‌هایی که از هر چیزی مربوط به
+سخت‌افزار فیزیکی سوءاستفاده یا مدیریت می‌کنند.
+
+نمونه‌ها: arduino, smali
+
+\subsubsection{blackarch-honeypot}
+بسته‌هایی که به عنوان "عسل‌دان" عمل می‌کنند، یعنی برنامه‌هایی که به نظر
+سرویس‌های آسیب‌پذیر هستند که برای جذب هکرها به دام استفاده می‌شوند.
+
+نمونه‌ها: artillery, bluepot, wifi-honey
+
+\subsubsection{blackarch-keylogger}
+بسته‌هایی که ضربات کلید را در سیستم دیگری ضبط و نگهداری می‌کنند.
+
+نمونه‌ها: هنوز هیچ‌کدام، در اسرع وقت اصلاح شود.
+
+\subsubsection{blackarch-malware}
+بسته‌هایی که به عنوان هر نوع نرم‌افزار مخرب یا
+تشخیص بدافزار محسوب می‌شوند.
+
+نمونه‌ها: malwaredetect, peepdf, yara
+
+\subsubsection{blackarch-misc}
+بسته‌هایی که به طور خاص در هیچ دسته‌ای قرار نمی‌گیرند.
+
+نمونه‌ها: oh-my-zsh-git, winexe, stompy
+
+\subsubsection{blackarch-mobile}
+بسته‌هایی که پلتفرم‌های موبایل را دستکاری می‌کنند.
+
+نمونه‌ها: android-sdk-platform-tools, android-udev-rules
+
+\subsubsection{blackarch-networking}
+بسته‌هایی که شامل شبکه‌سازی IP هستند.
+
+نمونه‌ها: arptools, dnsdiag, impacket
+
+\subsubsection{blackarch-nfc}
+بسته‌هایی که از nfc (ارتباطات میدان نزدیک) استفاده می‌کنند.
+
+نمونه‌ها: nfcutils
+
+\subsubsection{blackarch-packer}
+بسته‌هایی که روی پکرها عمل می‌کنند یا شامل آن‌ها هستند.
+
+\textit{پکرها برنامه‌هایی هستند که بدافزار را در اجرایی‌های دیگر جاسازی می‌کنند.}
+
+نمونه‌ها: packerid
+
+\subsubsection{blackarch-proxy}
+بسته‌هایی که به عنوان پراکسی عمل می‌کنند، یعنی ترافیک را
+از طریق گره دیگری در اینترنت هدایت می‌کنند.
+
+نمونه‌ها: burpsuite, ratproxy, sslnuke
+
+\subsubsection{blackarch-recon}
+بسته‌هایی که به طور فعال به دنبال آسیب‌پذیری‌های قابل بهره‌برداری در
+طبیعت می‌گردند. بیشتر یک گروه چتری برای بسته‌های مشابه.
+
+نمونه‌ها: canri, dnsrecon, netmask
+
+\subsubsection{blackarch-reversing}
+این یک گروه چتری برای هر دیکامپایلر،
+دیس‌اسمبلر یا هر برنامه مشابه است.
+
+نمونه‌ها: capstone, radare2, zerowine
+
+\subsubsection{blackarch-scanner}
+بسته‌هایی که سیستم‌های انتخاب شده را برای آسیب‌پذیری‌ها اسکن می‌کنند.
+
+نمونه‌ها: scanssh, tiger, zmap
+
+\subsubsection{blackarch-sniffer}
+بسته‌هایی که شامل تجزیه و تحلیل ترافیک شبکه هستند.
+
+نمونه‌ها: hexinject, pytactle, xspy
+
+\subsubsection{blackarch-social}
+بسته‌هایی که در درجه اول به سایت‌های شبکه‌های اجتماعی حمله می‌کنند.
+
+نمونه‌ها: jigsaw, websploit
+
+\subsubsection{blackarch-spoof}
+بسته‌هایی که سعی می‌کنند مهاجم را جعل کنند به طوری که
+مهاجم برای قربانی به عنوان یک مهاجم ظاهر نشود.
+
+نمونه‌ها: arpoison, lans, netcommander
+
+\subsubsection{blackarch-threat-model}
+بسته‌هایی که برای گزارش‌دهی/ضبط
+مدل تهدید ترسیم شده در یک سناریوی خاص استفاده می‌شوند.
+
+نمونه‌ها: magictree
+
+\subsubsection{blackarch-tunnel}
+بسته‌هایی که برای تونل زدن ترافیک شبکه در یک
+شبکه داده شده استفاده می‌شوند.
+
+نمونه‌ها: ctunnel, iodine, ptunnel
+
+\subsubsection{blackarch-unpacker}
+بسته‌هایی که برای استخراج بدافزار از پیش بسته‌بندی شده از یک
+اجرایی استفاده می‌شوند.
+
+نمونه‌ها: js-beautify
+
+\subsubsection{blackarch-voip}
+بسته‌هایی که روی برنامه‌ها و پروتکل‌های voip عمل می‌کنند.
+
+نمونه‌ها: iaxflood, rtp-flood, teardown
+
+\subsubsection{blackarch-webapp}
+بسته‌هایی که روی برنامه‌های مواجه با اینترنت عمل می‌کنند.
+
+نمونه‌ها: metoscan, whatweb, zaproxy
+
+\subsubsection{blackarch-windows}
+این گروه برای هر بسته بومی ویندوز است که از طریق wine اجرا می‌شود.
+
+نمونه‌ها: 3proxy-win32, pwdump, winexe
+
+\subsubsection{blackarch-wireless}
+بسته‌هایی که روی شبکه‌های بی‌سیم در هر سطحی عمل می‌کنند.
+
+نمونه‌ها: airpwn, mdk3, wiffy
+
+\section{ساختار مخزن}
+می‌توانید مخزن اصلی git BlackArch را اینجا پیدا کنید:
+\href{https://github.com/BlackArch/blackarch}{https://github.com/BlackArch/blackarch}.
+همچنین چندین مخزن ثانویه اینجا وجود دارد:
+\href{https://github.com/BlackArch}{https://github.com/BlackArch}.
+
+در مخزن اصلی git، سه دایرکتوری مهم وجود دارد:
+
+\begin{itemize}
+\item docs - مستندات.
+\item packages - فایل‌های PKGBUILD.
+\item scripts - اسکریپت‌های کوچک مفید.
+\end{itemize}
+
+\subsection{اسکریپت‌ها}
+در اینجا مرجعی برای اسکریپت‌ها در دایرکتوری \verb|scripts/| است:
+
+\begin{itemize}
+\item baaur - به زودی، این بسته‌ها را به AUR آپلود خواهد کرد.
+\item babuild - یک بسته بسازید.
+\item bachroot - یک chroot برای تست مدیریت کنید.
+\item baclean - فایل‌های قدیمی .pkg.tar.xz را از مخزن بسته پاک کنید.
+\item baconflict - به زودی این جایگزین \verb|scripts/conflicts| خواهد شد.
+\item bad-files - فایل‌های بد در بسته‌های ساخته شده پیدا کنید.
+\item balock - قفل مخزن بسته را بدست آورید یا آزاد کنید.
+\item banotify - IRC را در مورد push های بسته آگاه کنید.
+\item barelease - بسته‌ها را به مخزن بسته منتشر کنید.
+\item baright - اطلاعات کپی‌رایت BlackArch را چاپ کنید.
+\item basign - بسته‌ها را امضا کنید.
+\item basign-key - یک کلید را امضا کنید.
+\item blackman - این تقریباً مانند pacman رفتار می‌کند اما از git می‌سازد (نباید با
+    Blackman nrz اشتباه گرفته شود).
+\item check-groups - گروه‌ها را بررسی کنید.
+\item checkpkgs - بسته‌ها را برای خطا بررسی کنید.
+\item conflicts - تداخل فایل‌ها را بررسی کنید.
+\item dbmod - یک پایگاه داده بسته را تغییر دهید.
+\item depth-list - یک لیست مرتب شده بر اساس عمق وابستگی ایجاد کنید.
+\item deptree - یک درخت وابستگی ایجاد کنید، فقط بسته‌های ارائه شده توسط blackarch را لیست کنید.
+\item get-blackarch-deps - یک لیست از وابستگی‌های blackarch برای یک بسته بگیرید.
+\item get-official - بسته‌های رسمی را برای انتشار دریافت کنید.
+\item list-loose-packages - بسته‌هایی را لیست کنید که در گروه‌ها نیستند و
+    وابستگی برای بسته‌های دیگر نیستند.
+\item list-needed - وابستگی‌های گمشده را لیست کنید.
+\item list-removed - بسته‌هایی را لیست کنید که در مخزن بسته هستند اما در git نیستند.
+\item list-tools - ابزارها را لیست کنید.
+\item outdated - به دنبال بسته‌هایی بگردید که در مخزن بسته منقضی شده‌اند
+    نسبت به مخزن git.
+\item pkgmod - یک بسته ساخت را تغییر دهید.
+\item pkgrel - pkgrel را در یک بسته افزایش دهید.
+\item prep - سبک یک فایل PKGBUILD را پاک کنید و خطاها را پیدا کنید.
+\item sitesync - بین یک کپی محلی از مخزن بسته و یک کپی راه دور همگام‌سازی کنید.
+\item size-hunt - به دنبال بسته‌های بزرگ بگردید.
+\item source-backup - فایل‌های منبع بسته را پشتیبان‌گیری کنید.
+\end{itemize}
+
+\section{مشارکت در مخزن}
+این بخش به شما نشان می‌دهد که چگونه در پروژه BlackArch Linux مشارکت کنید. ما
+درخواست‌های pull از هر اندازه‌ای را می‌پذیریم، از اصلاحات ریز تایپی تا بسته‌های جدید.\\برای
+کمک، پیشنهادات، یا سؤالات با ما تماس بگیرید.
+\\\\
+همه برای مشارکت خوش آمدند. همه مشارکت‌ها قدردانی می‌شود.
+
+\subsection{آموزش‌های مورد نیاز}
+لطفاً قبل از مشارکت آموزش‌های زیر را بخوانید:
+\begin{itemize}
+\item
+\href{https://wiki.archlinux.org/index.php/Arch\_Packaging\_Standards)}{استانداردهای
+بسته‌بندی Arch}
+\item \href{https://wiki.archlinux.org/index.php/Creating\_Packages}{ایجاد
+بسته‌ها}
+\item \href{https://wiki.archlinux.org/index.php/PKGBUILD}{PKGBUILD}
+\item \href{https://wiki.archlinux.org/index.php/Makepkg}{Makepkg}
+\end{itemize}
+
+\subsection{مراحل مشارکت}
+برای ارسال تغییرات خود به پروژه BlackArchLinux، این
+مراحل را دنبال کنید:
+\begin{enumerate}
+\item مخزن را از
+\url{https://github.com/BlackArch/blackarch} فورک کنید
+\item فایل‌های لازم را تغییر دهید، (مثل PKGBUILD، فایل‌های .patch و غیره).
+\item تغییرات خود را کامیت کنید.
+\item تغییرات خود را پوش کنید.
+\item از ما بخواهید تغییرات شما را ادغام کنیم، ترجیحاً از طریق یک pull request.
+\end{enumerate}
+
+\subsection{مثال}
+مثال زیر ارسال یک بسته جدید به پروژه BlackArch را
+نشان می‌دهد. ما از \href{https://github.com/Jguer/yay}{yay}
+(می‌توانید از pacaur نیز استفاده کنید) برای دریافت یک فایل PKGBUILD از پیش موجود برای
+\textbf{nfsshell} از \href{https://aur.archlinux.org/}{AUR} استفاده می‌کنیم و آن را
+طبق نیازهای ما تنظیم می‌کنیم.
+
+\subsubsection{دریافت PKGBUILD}
+فایل \textit{PKGBUILD} را با استفاده از yay یا pacaur دریافت کنید:
+\begin{lstlisting}
+  user@blackarchlinux $ yay -G nfsshell
+  ==> Download nfsshell sources
+  x LICENSE
+  x PKGBUILD
+  x gcc.patch
+  user@blackarchlinux $ cd nfsshell/
+\end{lstlisting}
+
+\subsubsection{پاک‌سازی PKGBUILD}
+فایل \textit{PKGBUILD} را پاک کنید و مقداری وقت صرفه‌جویی کنید:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ ./blackarch/scripts/prep PKGBUILD
+  cleaning 'PKGBUILD'...
+  expanding tabs...
+  removing vim modeline...
+  removing id comment...
+  removing contributor and maintainer comments...
+  squeezing extra blank lines...
+  removing '|| return'...
+  removing leading blank line...
+  removing $pkgname...
+  removing trailing whitespace...
+\end{lstlisting}
+
+\subsubsection{تنظیم PKGBUILD}
+فایل \textit{PKGBUILD} را تنظیم کنید:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ vi PKGBUILD
+\end{lstlisting}
+
+\subsubsection{ساخت بسته}
+بسته را بسازید:
+\begin{lstlisting}user@blackarchlinux nfsshell $ makepkg -sf
+==> Making package: nfsshell 19980519-1 (Mon Dec  2 17:23:51 CET 2013)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+-> Downloading nfsshell.tar.gz...
+% Total    % Received % Xferd  Average Speed   Time    Time     Time
+CurrentDload  Upload   Total   Spent    Left  Speed100 29213  100 29213    0
+0  48150      0 --:--:-- --:--:-- --:--:-- 48206
+-> Found gcc.patch
+-> Found LICENSE
+...
+<lots of build process and compiler output here>
+...
+==> Leaving fakeroot environment.
+==> Finished making: nfsshell 19980519-1 (Mon Dec  2 17:23:53 CET 2013)
+\end{lstlisting}
+
+\subsubsection{نصب و تست بسته}
+بسته را نصب و تست کنید:
+\begin{lstlisting}
+  user@blackarchlinux nfsshell $ pacman -U nfsshell-19980519-1-x86_64.pkg.tar.xz
+  user@blackarchlinux nfsshell $ nfsshell # test it
+\end{lstlisting}
+
+\subsubsection{اضافه، کامیت و پوش بسته}
+بسته را اضافه، کامیت و پوش کنید
+\begin{lstlisting}user@blackarchlinux nfsshell $ cd /blackarchlinux/packages
+user@blackarchlinux ~/blackarchlinux/packages $ mv ~/nfsshell .
+user@blackarchlinux ~/blackarchlinux/packages $ git commit -am nfsshell && git push
+\end{lstlisting}
+
+\subsubsection{ایجاد pull request}
+یک pull request در \href{https://github.com/}{github.com} ایجاد کنید
+\begin{lstlisting}
+  firefox https://github.com/<contributor>/blackarchlinux
+\end{lstlisting}
+
+\subsubsection{اضافه کردن یک remote برای upstream}
+کار هوشمندانه‌ای که باید انجام دهید اگر روی upstream و fork کار می‌کنید این است که fork خودتان را pull کنید و مخزن اصلی ba را به عنوان یک remote اضافه کنید
+\begin{lstlisting}
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  user@blackarchlinux ~/blackarchlinux $ git remote add upstream https://github.com/blackarch/blackarch
+  user@blackarchlinux ~/blackarchlinux $ git remote -v
+  origin <the url of your fork> (fetch)
+  origin <the url of your fork> (push)
+  upstream https://github.com/blackarch/blackarch (fetch)
+  upstream https://github.com/blackarch/blackarch (push)
+\end{lstlisting}
+
+به طور پیش‌فرض، git باید مستقیماً به origin پوش کند، اما مطمئن شوید که تنظیمات git شما
+به درستی پیکربندی شده است. این مشکلی نخواهد بود مگر اینکه حقوق کامیت داشته باشید چرا که
+بدون آن‌ها نمی‌توانید به upstream پوش کنید.
+
+اگر توانایی کامیت دارید، ممکن است با استفاده از
+\textit{git@github.com:blackarch/blackarch.git} موفق‌تر باشید اما این به شما بستگی دارد.
+
+\subsection{درخواست‌ها}
+\begin{enumerate}
+\item نظرات \textbf{Maintainer} یا \textbf{Contributor} را به
+فایل‌های \textit{PKGBUILD} اضافه نکنید. نام‌های maintainer و contributor را به بخش
+AUTHORS راهنمای BlackArch اضافه کنید.
+\item برای حفظ سازگاری، لطفاً سبک کلی سایر
+فایل‌های \textit{PKGBUILD} در مخزن را دنبال کنید و از تورفتگی دو فاصله استفاده کنید.
+\end{enumerate}
+
+\subsection{نکات کلی}
+\href{http://wiki.archlinux.org/index.php/Namcap}{namcap} می‌تواند بسته‌ها را برای
+خطا بررسی کند.
+
+%------------------%
+%  Chapter 4       %
+%------------------%
+
+\chapter{راهنمای ابزارها}
+به زودی...
+
+\section{به زودی}
+به زودی...
+
+%%% APPENDIX %%%
+\appendix
+\include{latex/appendix-fa}
+
+\end{document}
+
+%%% EOF %%%
