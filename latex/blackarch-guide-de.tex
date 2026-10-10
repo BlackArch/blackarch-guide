@@ -31,7 +31,8 @@
 \widowpenalty10000
 \displaywidowpenalty=10000
 \usepackage{ltablex}
-\keepXColumns
+
+\keepXColumns
 
 %%% LAYOUT %%%
 \setlength{\parindent}{0em}
@@ -183,7 +184,7 @@ Führe \href{https://blackarch.org/strap.sh}{strap.sh} als root aus und folge de
 Hier ein Beispiel.
 \begin{lstlisting}
    curl -O https://blackarch.org/strap.sh
-   sha1sum strap.sh # should match: 5ea40d49ecd14c2e024deecf90605426db97ea0c
+   sha1sum strap.sh
    sudo chmod +x strap.sh
    sudo ./strap.sh
 \end{lstlisting}
